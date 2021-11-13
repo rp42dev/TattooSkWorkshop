@@ -1,0 +1,1 @@
+~/.virtualenvs/tattoostudiokunst/bin/python manage.py runserver 127.0.0.1:62032 --settings=config.settings.local
