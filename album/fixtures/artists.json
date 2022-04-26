@@ -1,0 +1,20 @@
+[
+    {
+        "pk": 1,
+        "model": "album.artist",
+        "fields": {
+            "name": "andrej",
+            "friendly_name": "Andrej",
+            "image": "image"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "album.artist",
+        "fields": {
+            "name": "diana",
+            "friendly_name": "Diana",
+            "image": "image"
+        }
+    }
+]

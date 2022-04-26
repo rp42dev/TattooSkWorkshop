@@ -1,0 +1,92 @@
+
+{% load i18n %}
+{% load thumbnail %} 
+<div class="row gradient-underline">
+
+    <div class="col-12 col-lg-6 position-relative padding-0">
+        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+           
+
+                <div class="carousel-inner">
+                    {% for item in shop %}
+
+                    <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
+                        id="slide{{ forloop.counter }}">
+						
+						{% if item.image %}
+
+						{% thumbnail item.image "600x400" as im %}
+							<img class='d-block w-100' src="{{ im.url }}" alt="{{ image.name }}">
+						{% endthumbnail %}
+                    
+						{% endif %}
+                        
+                        <div class="carousel-caption d-none d-md-block">
+
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="col-12 col-lg-6 d-flex">
+        <div class="my-auto p-2 text-light w-100">
+            <div class="me-auto">
+			{% get_current_language as LANGUAGE_CODE %}		
+			
+                <h2>Tattoo SK Workshop</h2>
+				{% if LANGUAGE_CODE == "en" %}
+                <p class="font" >
+                    Warm, cosy tattoo studio. To keep the privacy between clients Every artists has separate room.
+					Studio has chill area and friendly atmosphere.
+                </p>
+                <p  class="font">
+                    The Tattoo studio located 25 minutes from Oslo. Free parking place available.
+                    Feel free to Contact us for more information or fill our contact form!
+                </p>
+                                
+				<span class="fw-bold text-white">
+                   Contact us:
+				<span/> 
+				{% else %}
+				
+				<p class="font">
+                    Her skal du føle deg velkommen! Koselig tatoveringsstudio, med en avslappende og vennlig atmosfære. Våre artister har hvert sitt rom, for å beholde privatlivet mellom dere klienter. 
+                </p>
+                <p  class="font">
+                    
+					Tattoo studioet ligger 25 minutter fra Oslo. Gratis parkeringsplass tilgjengelig rett utenfor døren. Kontakt oss gjerne for mer informasjon eller fyll ut vårt kontaktskjema!
+                </p>
+                
+				<span class="fw-bold text-white">
+                   Kontakt oss:
+				<span/> 
+				{% endif %}
+				
+                
+            </div>
+			<div class="font">
+			
+			Adresse: Fetveien 467, 1900 Fetsund, Norge</br>
+			Email: info@tattooskworkshop.no </br>
+			Mobil tlf: +4746253760<br>
+
+			</div>
+            {% include 'includes/social.html' %}
+        </div>
+    </div>
+</div>

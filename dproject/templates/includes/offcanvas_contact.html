@@ -1,0 +1,36 @@
+ {% load i18n %}
+ <!-- Off canvas left menu login form -->
+ <div class="offcanvas offcanvas-start d-flex justify-content-around" data-bs-scroll="true" tabindex="-1" id="contact"
+     aria-labelledby="loginLabel">
+
+
+     <div class="offcanvas-header text-center gradient-underline" data-bs-dismiss="offcanvas">
+         <div class="row">
+             <div class="col-3 ">
+
+             </div>
+
+             <div class="col-6 ">
+                 <h4 class="text-uppercase text-center offcanvas-title">
+                     {% translate "Contact" %}
+                 </h4>
+             </div>
+             <div class="col-3">
+             <div role="button" class="btn_close text-end" data-bs-dismiss="offcanvas"
+                 aria-label="Close">
+                 <i class="fas fa-times">
+
+                 </i>
+             </div>
+            </div>
+         </div>
+     </div>
+
+     <div class="offcanvas-body">
+
+         {% include 'includes/contact_form.html' %}
+
+     </div>
+     <div class="offcanvas-footer gradient-underline-top">{% include 'includes/social.html' %}</div>
+
+ </div>

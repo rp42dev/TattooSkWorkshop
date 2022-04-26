@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}		
+{% block nav %}
+<a href="{{request.META.HTTP_REFERER|escape}}"><i class="fas fa-chevron-left"></i></a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="page_container col-12">
+
+    <div class="col text-center ">
+      <h2 class="text-light h1 text-uppercase">faq</h2>
+    </div>
+
+
+<div class=" text-white gradient-underline col-12 col-md-6 mx-auto ">
+
+		<p><strong class="text-uppercase p-2 text-white">Tattoo studio Fetsund:</strong></p>	
+		<div class="font  px-2">
+			
+			Adresse: Fetveien 467, 1900 Fetsund, Norge</br>
+			Email: info@tattooskworkshop.no </br>
+			Mobil tlf: +4746253760<br>
+
+		</div>
+		{% include 'includes/social.html' %}
+</div>			
+<div class="col-12 col-md-6 my-3 mx-auto text-center ">			
+{% if LANGUAGE_CODE == "en" %}
+  <div class="accordion accordion-flush col-12 mx-auto px-3 " id="accordionFlushExample mx-2">
+   
+    {% for item in items %}
+	{% if item.lang == "en" %}
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="btn text-light w-100 mb-2 font collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush{{ forloop.counter }}" aria-expanded="false"
+          aria-controls="flush-{{ forloop.counter }}">
+          {{ item.name}}
+        </button>
+      </h2>
+      <div id="flush{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="flush-{{ item.name }}"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body font w-auto p-2">{{ item.description }}</div>
+      </div>
+    </div>
+	{% endif %}
+    {% endfor %}
+
+  </div>
+{% else %}
+
+  <div class="accordion accordion-flush col-12 mx-auto px-3 " id="accordionFlushExample mx-2">
+    {% for item in items %}
+	{% if item.lang == "nb" %}
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="btn text-light w-100 mb-2 font collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush{{ forloop.counter }}" aria-expanded="false"
+          aria-controls="flush-{{ forloop.counter }}">
+          {{ item.name}}
+        </button>
+      </h2>
+      <div id="flush{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="flush-{{ item.name }}"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body font w-auto p-2">{{ item.description }}</div>
+      </div>
+    </div>
+	{% endif %}
+    {% endfor %}
+
+  </div>
+{% endif %}
+</div>
+
+
+{% endblock %}

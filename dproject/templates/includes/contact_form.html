@@ -1,0 +1,113 @@
+    <!-- Name input-->
+	{% load i18n %}
+    {% load static %}
+	{% get_current_language as LANGUAGE_CODE %}
+<form id="form" class="needs-validation text-uppercase font" action="{% url 'send_email' %}" method="POST" class="my-3" enctype=multipart/form-data novalidate>
+        {% csrf_token %}
+	{% if LANGUAGE_CODE == "en" %}		
+  
+        <div class="form-floating needs-validation mb-3">
+            <input class="form-control " id="name" name="name" type="text" pattern="[a-zA-Z].{2,30}" autocomplete="on" placeholder="Enter your name..."
+                required/>
+            <label for="name"><span class="text-danger">*</span> Name:</label>
+              <div class="invalid-feedback">
+                Invalid: a-z A-Z max-30.
+              </div>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input class="form-control" id="email" type="email" pattern=".{3,40}"  name="email" autocomplete="on" placeholder="name@example.com"
+                required />
+            <label for="email"><span class="text-danger">*</span> Email:</label>
+              <div class="invalid-feedback">
+                example@email.com max-40.
+              </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="phone" name="phone_number" type="tel" autocomplete="on" pattern="[0-9].{5,30}" placeholder="123 456-7890" />
+            <label for="phone">&nbsp Phone:</label>
+              <div class="invalid-feedback">
+                Only numbers (0-9).
+              </div>
+        </div>
+
+        <div class="form-floating mb-2">
+            <textarea class="form-control" id="message" pattern=".{10,500}" oncopy="return false" onpaste="return false" autocomplete="off" name="message" type="text"
+                placeholder="Enter your message here..." required></textarea>
+            <label for="message"><span class="text-danger">*</span> Message: (image references, black or with color, size and place)</label>
+            <div class="invalid-feedback">
+                min-10 max-500.
+              </div>
+        </div>
+        <div class="form-floating file mb-3">
+            <input class="form-control" id="file" name="file" type="file"
+            accept=".png, .jpg, .jpeg, .heic, .hevic, .gif"  title=" "/></intup>
+            <label class="mt-1" for="file"><span class="h1 mt-1"><i class="fas fa-camera"></i></span></label>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              "Are you over 18 ?"
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+            <button class="btn w-100" id="#submits" type="submit" name="submit_button">{% translate "Submit" %}</button>
+        </div>
+      </form>
+	  
+	  {% else %}
+	   
+        <div class="form-floating needs-validation mb-3">
+            <input class="form-control " id="name" name="name" type="text" pattern="[a-zA-Z].{2,30}" autocomplete="on" placeholder="Enter your name..."
+                required/>
+            <label for="name"><span class="text-danger">*</span> Navn:</label>
+              <div class="invalid-feedback">
+                Invalid: a-z A-Z max-30.
+              </div>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input class="form-control" id="email" type="email" pattern=".{3,40}"  name="email" autocomplete="on" placeholder="name@example.com"
+                required />
+            <label for="email"><span class="text-danger">*</span> Email adressen:</label>
+              <div class="invalid-feedback">
+                example@email.com max-40.
+              </div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="phone" name="phone_number" type="tel" autocomplete="on" pattern="[0-9].{5,30}" placeholder="123 456-7890" />
+            <label for="phone">&nbsp Mobil tlf:</label>
+              <div class="invalid-feedback">
+                Only numbers (0-9).
+              </div>
+        </div>
+
+        <div class="form-floating mb-2">
+            <textarea class="form-control" id="message" pattern=".{10,500}" oncopy="return false" onpaste="return false" autocomplete="off" name="message" type="text"
+                placeholder="Enter your message here..." required></textarea>
+            <label for="message"><span class="text-danger">*</span> Kommentar: (bildereferanser, sort eller med farge, størrelsen og plass)</label>
+            <div class="invalid-feedback">
+                min-10 max-500.
+              </div>
+        </div>
+        <div class="form-floating file mb-3">
+            <input class="form-control" id="file" name="file" type="file"
+            accept=".png, .jpg, .jpeg, .heic, .hevic, .gif"  title=" "/></intup>
+            <label class="mt-1" for="file"><span class="h1 mt-1"><i class="fas fa-camera"></i></span></label>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              
+				er alderen din over 18
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+            <button class="btn w-100" id="#submits" type="submit" name="submit_button">Sende inn:</button>
+        </div>
+		{% endif %}
+      </form>

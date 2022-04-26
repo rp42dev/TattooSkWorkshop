@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-16 22:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: workshop/templates/includes/about.html:45
+#: workshop/templates/includes/about.html:50
+msgid "Welcome to our page"
+msgstr ""
+
+#: workshop/templates/includes/about.html:52
+#, fuzzy
+#| msgid "Workshop"
+msgid "Tattoo SK Workshop"
+msgstr "Studio"
+
+#: workshop/templates/includes/about.html:54
+#, fuzzy
+#| msgid ""
+#| "\"Tattoo SK Workshop is a Cosy tattoo studio. Every artists has separate "
+#| "room, to keep the privacy between clients. Studio has chill area and "
+#| "friendly atmosphere.\""
+msgid ""
+"Warm, cosy tattoo studio. Every artists has separate room, to keep the "
+"privacy between clients. Studio has chill area and friendly atmosphere."
+msgstr ""
+"Tatoveringsstudio Koselig tatoveringsstudio. Hver artist har eget rom For å "
+"holde personvernet mellom klienter. Ettromsleiligheten har kjøleområde "
+"ogvennlig atmosfære."
+
+#: workshop/templates/includes/about.html:61
+msgid ""
+"The Tattoo studio located 25 minutes from Oslo. Free parking place "
+"available. Feel free to Contact us for more information or fill our contact "
+"form!"
+msgstr ""
+
+#: workshop/templates/includes/about.html:67
+msgid "Address:"
+msgstr ""
+
+#: workshop/templates/workshop/workshop.html:5
+#, fuzzy
+#| msgid ""
+#| "\"Tattoo SK Workshop is a Cosy tattoo studio. Every artists has separate "
+#| "room, to keep the privacy between clients. Studio has chill area and "
+#| "friendly atmosphere.\""
+msgid ""
+"Tattoo SK Workshop is a Cosy tattoo studio. Every artists has separate room, "
+"to keep the privacy between clients. Studio has chill area and friendly "
+"atmosphere."
+msgstr ""
+"Tatoveringsstudio Koselig tatoveringsstudio. Hver artist har eget rom For å "
+"holde personvernet mellom klienter. Ettromsleiligheten har kjøleområde "
+"ogvennlig atmosfære."
+
+#: workshop/templates/workshop/workshop.html:19
+msgid "Workshop"
+msgstr "Studio"

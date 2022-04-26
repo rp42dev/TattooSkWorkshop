@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block nav %}
+<a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
+{% endblock %}
+{% block content %}
+
+<div class="overflow-hidden">
+
+    <div id="carousel2" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <div class="carousel-inner mx-auto">
+            {% for item in album %}
+
+            <div class="carousel-item {% if item.id == item_id %}active{% endif %}" id="slide{{ forloop.counter }}">
+                {% if item.image %}
+
+                <div class="wrap w-100 d-flex justify-content-center">
+
+                    <img class="vh-100" src="{{ item.image.url }}" alt="{{ item.name }}">
+
+                </div>
+
+                <a href="{{ item.image.url }}">
+                    <div class="carousel-caption caption_ d-none d-md-block">
+
+                    </div>
+                </a>
+
+                {% else %}
+                <div class="wrap w-100 d-flex justify-content-center">
+                    <img class="vh-100" src="{{ item.image_url }}" alt="{{ item.name }}">
+                </div>
+
+                <a href="{{ item.image_url }}">
+                    <div class="carousel-caption d-none d-md-block">
+
+                    </div>
+                </a>
+                {% endif %}
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+</div>
+{% endblock %}

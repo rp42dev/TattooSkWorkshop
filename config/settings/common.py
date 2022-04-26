@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
-
+import os
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (base_dir/config/settings/common.py - 3 = base_dir/)
@@ -41,11 +41,14 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'crispy_forms',
+    'sorl.thumbnail',
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'imprint',
+    'home',
+    'album',
+    'workshop',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -72,19 +75,21 @@ DEBUG = env.bool('DJANGO_DEBUG', False)
 
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
-EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
 
-DEFAULT_FROM_EMAIL = env(
-    'DJANGO_DEFAULT_FROM_EMAIL', default='django app <app@django.group>'
-)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.wservices.ch'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = env('DEFAULT_FROM_EMAIL')
+EMAIL_HOST_PASSWORD = env('PASSWORD_EMAIL')
 
-SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
-    #("""Andrejs Baranovs""", 'studiokunst2019@gmail.com'),
+    ("""Raivis""", 'rapet80@gmail.com'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -110,25 +115,13 @@ if DATABASES['default']['ENGINE'] == 'django.db.backends.mysql':
 TIME_ZONE = 'UTC'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'nb'
 
 LANGUAGES = [
     ('en', 'English'),
-    ('es', 'Spanish'),
-    ('de', 'German'),
-    ('fr', 'French'),
-    ('it', 'Italian'),
-    ('pt', 'Portuguese'),
-    ('zh-hans', 'Simplified Chinese'),
-    ('zh-hant', 'Traditional Chinese'),
-    ('ja', 'Japanese'),
-    ('hi', 'Hindi'),
-    ('ar', 'Arabic'),
-    ('bn', 'Bengali'),
-    ('ru', 'Russian'),
-    ('vi', 'Vietnamese'),
-    ('ko', 'Korean'),
+    ('nb', 'Norsk (bokmål)')
 ]
+
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -178,9 +171,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 #'dproject.context_processors.site_processor',
             ],
-            #'libraries': {
-            #    'sorl_thumbnail': 'sorl.thumbnail.templatetags.thumbnail',
-            #},
+            'libraries': {
+                'sorl_thumbnail': 'sorl.thumbnail.templatetags.thumbnail',
+            },
         },
     },
 ]
@@ -262,3 +255,10 @@ THUMBNAIL_PROCESSORS = (
 
 # See: http://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 50242880
+OPTIMIZED_IMAGE_METHOD = 'pillow'
+DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
+DJANGORESIZED_DEFAULT_KEEP_META = False
+DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'JPEG'
+DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'JPEG': ".jpg"}

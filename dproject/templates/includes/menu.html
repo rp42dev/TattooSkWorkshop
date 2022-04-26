@@ -1,0 +1,50 @@
+ <!-- Off canvas Navigation right Menu -->
+ {% load i18n %}
+ <div class="offcanvas py-3 offcanvas-end d-flex justify-content-around" tabindex="-1" id="menu" data-bs-scroll="true"
+     aria-labelledby="menuLabel">
+
+     <div class="offcanvas-header text-center gradient-underline">
+         <div class="row">
+             <div class="col-3 ">
+                 <div role="button" class="btn_close text-start" data-bs-dismiss="offcanvas"
+                     aria-label="Close">
+                     <i class="fas fa-times">
+
+                     </i>
+                 </div>
+             </div>
+
+             <div class="col-6 ">
+                 <h4 class="text-uppercase text-center offcanvas-title">
+                     {% translate "Menu" %}
+                 </h4>
+             </div>
+             <div class="col-3">
+                <div class="mx-auto mt-2">{% include 'includes/set_lang.html' %}</div>
+             </div>
+
+         </div>
+     </div>
+     <div class="offcanvas-body mb-3">
+
+         <!-- Nav Menu Items -->
+         <div class="menu-items d-flex flex-column justify-content-around align-items-center">
+
+            <a class="btn _button" href="{% url 'home' %}">{% translate "Home" %}</a>
+            <a class="btn _button" href="{% url 'workshop' %}">{% translate "Workshop" %}</a>
+            <a class="btn _button" href="{% url 'gallery' %}">{% translate "Gallery" %}</a>
+
+            <a class="btn _button" data-bs-toggle="offcanvas" href="#contact" role="button"
+                aria-controls="contact">{% translate "Contact" %}</a>
+            <a class="btn _button" href="{% url 'prices' %}">{% translate "Prices" %}</a>
+            <a class="btn _button" href="{% url 'aftercare' %}">{% translate "Aftercare" %}</a>
+            <a class="btn _button" href="{% url 'faq' %}">{% translate "FAQ" %}</a>
+         </div>
+     </div>
+
+     <!-- Copyright side menu  -->
+
+     <div class="offcanvas-footer gradient-underline-top">{% include 'includes/social.html' %}</div>
+ </div>
+
+ </div>
