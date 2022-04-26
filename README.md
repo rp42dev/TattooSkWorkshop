@@ -23,36 +23,30 @@ Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx
 ### **User Stories**
 #### External Visitor goals
 1. Easy to navigate the website and to locate information about products and services.
-1. Good Product photography/gallery is an essential.
-1. Good description (sizes, price, colours etc..)
 1. To be able to connect with Tattoo artist on Social media.
-1. To be able to book an appointment for tattoo session or consultation.
+1. To be able contact for session or consultation appointment.
 1. To locate easily Contact and support details.
 
 #### Site owner goals
 1. Drive new customers to the website and retain existing costumers.
-1. Maximize sales Conversion rate - Offer range of Special Offers and deals.
 1. Build trust with customers - Providing with social media links.
 1. Customer Support – Improve customer satisfaction through better service.
-1. Provide potential customers with online booking options.
-1. Owner's backend management interface for content managment and bookings.
+1. Owner's backend management interface for content management.
 
 # [&#8686;](#TATTOO-SK-WORKSHOP)
 ### **Strategy**
 #### The website needs to enable the User to:
 1. Easy navigate and find the styles that they are interested in.
-1. Easily select the Tatto styles that user wishes to.
-1. To Book a Tattoo session/consultation
+1. Easily select the Tattoo styles that user wishes to.
+1. Contact business for Booking a Tattoo session/consultation.
 1. Stay connected with the company via Social media links.
 1. To locate the map and address for the tattoo shop location.
-1. Be able to contact company if they have a query.
 
 #### The website needs to enable the company to:
 1. Be as unique as possible, clearly defining aesthetic with engaging and descriptive photography.
-1. Showcase brand, website needs to have great product images with clear description.
-1. Provide offers, special deals, and increase potentialy new and existing customer retention and loyalty.
-1. Stay connected with customers by providing social media links and show off new products and reviews.
-1. To enable Owner to update existing Photography and/or content.
+1. Showcase brand, website needs to have good images.
+1. Stay connected with customers by providing social media links.
+1. To enable Site Owner to update existing Photography and/or content.
 1. Provide the customers with contact information and support.
 1. Enable customers to find the business by providing with shop location and map.
 
@@ -63,10 +57,7 @@ Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx
 1. Interactive website Navigation.
 1. Website Hero image/video.
 1. Interactive thumbnail image gallery.
-1. Recent photo opload gallery feature.
 1. Social Media links to external resources.
-1. Back end booking and image management system
-1. Booking Form to Store bookings in DB
 1. Customer Support contact form.
 
 #### Content Requirements
@@ -85,13 +76,6 @@ Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx
  - link to artist gallery
 1. Thumbnail gallery for individual artist
    - Back end management for owner to be able to manage the gallery.
-1. Book a session or consultation
-   - Sellect artist
-   - Name input field
-   - Email input field
-   - Text area
-   - Confirm Age Check box
-   - Submit button
 1. Contact Form
    - Name input field
    - Email input field
@@ -103,26 +87,6 @@ Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx
    - Social Media Links
 1. Back end Admin Page
    - Upload,delete,edit the gallery and manage content
-
-# [&#8686;](#TATTOO-SK-WORKSHOP)
-
-### **Structure**
-- NavBar 
-   - Branding
-   - Navigation Links
-   - Social Links
-   - Book now link
-- Landing Page
-   - Hero video Darkened
-   - Book now option link
-   - What we do with link to about us
-   - Contact Us with contact info, links to social media, book now, and location
-- Contact Form
-   - Name field
-   - eMail field
-   - Text-Area field
-   - File Uoload field
-   - Submit button
 
 # [&#8686;](#TATTOO-SK-WORKSHOP)
 ## **Technologies and Frameworks**
