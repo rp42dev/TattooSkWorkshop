@@ -1,5 +1,5 @@
 # TATTOO SK WORKSHOP
-<!--For assestment - README.md file structure was copied over from my first milestone project."-->
+![banner](README-files/Capture.PNG)
 ## [View the live project here.](https://tattooskworkshop.no/)
 
 # [&#8686;](#TATTOO-SK-WORKSHOP)
