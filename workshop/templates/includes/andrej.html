@@ -1,14 +1,12 @@
 {% load i18n %}
 {% load thumbnail %}
-<section class="row d-flex my-5">
-
-    <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center  order-1 order-lg-0">
+<section class="row my-4 my-sm-5">
+    <div class="col-12 col-xl-6 d-flex justify-content-center align-items-center text_container order-1 order-xl-0">
 
         {% get_current_language as LANGUAGE_CODE %}
         {% if LANGUAGE_CODE == "en" %}
-        <div class="text-white p-2 p-sm-4 me-auto">
+        <div class="text-white px-3 px-sm-4 me-auto">
             <h2 class="text-uppercase">Andrej</h2>
-
 
             <h3 class="text-light">
                 Founder of the tattoo studio
@@ -37,8 +35,6 @@
                 </a> and <a class="text-danger text-capitalize text-decoration-underline"
                     href="https://www.andrejsbaranovs.com" target="blank" rel='noopener noreferrer'>Website</a>
             </p>
-
-
 
             {% else %}
 
@@ -74,20 +70,21 @@
         </div>
     </div>
 
-    <div class="col-12 col-lg-6 position-relative padding-0">
-        <div id="carousel3" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="col-12 col-xl-6 position-relative padding-0">
+        <div id="carousel3" class="carousel slide carousel-fade d-flex justify-content-center align-items-center" data-bs-ride="carousel">
 
             <div class="carousel-inner">
 
                 <div class="carousel-inner">
+
                     {% for item in andrej %}
 
                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
                         id="slide{{ forloop.counter }}">
                         {% if item.image %}
 
-                        {% thumbnail item.image "600x400" as im %}
-                        <img class='d-block w-100' src="{{ im.url }}" alt="{{ image.name }}">
+                        {% thumbnail item.image "1200x800" as im %}
+                        <img class='d-block' src="{{ im.url }}" alt="{{ image.name }}">
                         {% endthumbnail %}
 
                         {% endif %}
@@ -102,13 +99,5 @@
             </div>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 </section>

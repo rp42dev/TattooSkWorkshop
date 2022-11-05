@@ -1,11 +1,14 @@
 {% load i18n %}
 {% load thumbnail %}
-<section class="row my-5">
-    <div class="col-12 col-lg-6 position-relative padding-0">
-        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+<section class="row my-4 my-sm-5">
+    <div class="col-12 col-xl-6 position-relative padding-0">
+        <div id="carouselExampleControls" class="carousel slide carousel-fade d-flex justify-content-center align-items-center" data-bs-ride="carousel">
 
 
             <div class="carousel-inner">
+                {% load static %}
+
                 {% for item in shop %}
 
                 <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
@@ -13,10 +16,10 @@
 
                     {% if item.image %}
 
-                    {% thumbnail item.image "600x400" as im %}
-                    <img class='d-block w-100' src="{{ im.url }}" alt="{{ image.name }}">
+                    {% thumbnail item.image "1200x800" as im %}
+                        <img class='d-block' src="{{ im.url }}" alt="{{ image.name }}">
                     {% endthumbnail %}
-
+                    
                     {% endif %}
 
                     <div class="carousel-caption d-none d-md-block">
@@ -26,23 +29,16 @@
 
                 {% endfor %}
 
+
+
             </div>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+
     </div>
 
-    <div class="col-12 col-lg-6 d-flex">
-        <div class="my-auto p-2 p-sm-4 p-sm-4 text-white w-100">
+    <div class="col-12 col-xl-6 d-flex text_container">
+        <div class="my-auto px-3 ps-sm-4 text-white">
             <div class="me-auto">
                 {% get_current_language as LANGUAGE_CODE %}
 

@@ -73,3 +73,12 @@ staticfiles/
 
 # core dumps
 core
+
+# virtual environments
+.env
+
+# User-uploaded media
+dproject/about/
+
+# collected static file directory
+staticfiles/

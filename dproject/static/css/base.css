@@ -2822,6 +2822,7 @@ textarea.form-control-lg {
 }
 
 
+
 .file>.form-control:not(:placeholder-shown) {
   padding-top: 1.5rem;
   padding-bottom: 0;
@@ -2870,7 +2871,6 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   align-items: stretch;
   width: 100%;
-
 }
 
 .input-group>.form-control,
@@ -3213,7 +3213,6 @@ textarea.form-control.is-invalid {
     "Segoe UI Emoji",
     "Segoe UI Symbol",
     "Noto Color Emoji";
-  font-size: 80%;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   opacity: .9;
@@ -7098,6 +7097,7 @@ fieldset:disabled .btn {
 
 .carousel {
   position: relative;
+  height: 100%;
 }
 
 .carousel.pointer-event {
@@ -7108,6 +7108,13 @@ fieldset:disabled .btn {
   position: relative;
   width: 100%;
   overflow: hidden;
+}
+
+.carousel-inner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
 }
 
 .carousel-inner::after {
@@ -7444,7 +7451,7 @@ fieldset:disabled .btn {
   height: auto;
   align-items: center;
   justify-content: space-between;
-  padding: .5rem 1rem 0 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 
 
@@ -12570,7 +12577,6 @@ body {
 }
 
 @media (hover: hover) {
-
   .masthead h1:hover,
   .masthead .h1 {
     opacity: 8;
@@ -12642,7 +12648,7 @@ body {
 #contact,
 #menu {
   color: #999;
-  transition: transform cubic-bezier(.2,.72,.67,.08) 600ms;
+  transition: transform ease .5s;
 }
 
 #landing_social {
@@ -12690,10 +12696,20 @@ body {
     font-size: 100%;
   }
 }
+.text_container {
+  backdrop-filter: blur(6px)
+}
 
 .offcanvas {
   height: 100vh;
 }
+
+@media (min-width: 992px) {
+
+  .masthead {
+    height: 100vh;
+    padding: 0;
+  }
 
 @media (min-width: 768px) {
 
@@ -12703,12 +12719,6 @@ body {
     line-height: 5.5rem;
   }
 }
-
-@media (min-width: 992px) {
-  .masthead {
-    height: 100vh;
-    padding: 0;
-  }
 
   .masthead h1,
   .masthead .h1 {
@@ -12776,7 +12786,6 @@ a {
 }
 
 .gradient-underline {
-  padding-bottom: 4px;
   position: relative;
   text-decoration: none;
 }
@@ -12788,12 +12797,20 @@ a {
   position: absolute;
   bottom: 0px;
   left: 0;
-  height: 2px;
+  height: 4px;
   width: 100%;
 }
 
+.gradient-line {
+  margin: auto;
+  max-width: 50%;
+  width: 100%;
+  height: 4px;
+  background-size: 180% 180%;
+  background: linear-gradient(to left, rgba(23, 29, 32, 0.4), rgba(149, 151, 255, 0.6) 30%, rgba(196, 197, 255, 0.8) 50%, rgba(149, 151, 255, 0.6) 70%, rgba(23, 29, 32, 0.4));
+}
+
 .gradient-underline-top {
-  padding-top: 4px;
   position: relative;
   text-decoration: none;
 }
@@ -12805,7 +12822,7 @@ a {
   position: absolute;
   top: 0px;
   left: 0;
-  height: 2px;
+  height: 4px;
   width: 100%;
 }
 
@@ -12884,7 +12901,28 @@ a {
   max-width: 2460px;
 }
 
+.offcanvas-footer {
+  padding: 0rem 1rem;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+.file .form-control {
+  padding: 0;
+}
+
 @media screen and (max-width: 600px) {
+
+  .gradient-line {
+    max-width: 80%;
+  }
 
   .padding-0 {
     padding: 0;
