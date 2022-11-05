@@ -1,71 +1,73 @@
 {% load i18n %}
-{% load thumbnail %} 
-<div class="row d-flex gradient-underline">
+{% load thumbnail %}
+<section class="row d-flex my-4">
 
     <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center  order-1 order-lg-0">
-	
-	{% get_current_language as LANGUAGE_CODE %}
-	{% if LANGUAGE_CODE == "en" %}
+
+        {% get_current_language as LANGUAGE_CODE %}
+        {% if LANGUAGE_CODE == "en" %}
+        <div class="text-white p-2 me-auto">
+            <h2>Andrej</h2>
+
+
+            <h3 class="text-light">
+                Founder of the tattoo studio: Tattoo SK Workshop.
+            </h3>
+            <p>
+                I'm working as a tattoo artist for many years.
+                Specializing in black & grey realism, colour realism, abstract black & grey.
+                Old, Faded tattoo cover-up. Body mark and scar cover-up
+            </p>
+
+            <p>
+                I.m Passionate about art and I always want to create something out of imagination.I have successful
+                completed/graduated art, design School and number of intensive Tattoo related courses.
+            </p>
+            <a class="btn mb-2" href="{% url 'artist' 'andrej' %}">My Work</a>
+
+            <h3 class="text-light">
+                The Art Studio Unidecor:
+            </h3>
+            <p>
+                I also do art. I draw paintings with oil and acrylic. Create a bas-relief by sculpting for interior and
+                exterior. Bas-relief means a 3D volumetric drawing made on the wall or also on a special canvas. You can
+                check out my art gallery on <a class="text-danger text-capitalize text-decoration-underline"
+                    href="https://instagram.com/andrejsbaranovs_oslo?igshid=YmMyMTA2M2Y=" target="blank" rel='noopener noreferrer'> Instagram
+                </a> and <a class="text-danger text-capitalize text-decoration-underline"href="https://www.andrejsbaranovs.com" target="blank" rel='noopener noreferrer'>Website</a>
+            </p>
+
+        </div>
+
+        {% else %}
         <div class="text-light p-2 me-auto">
             <h2>Andrej</h2>
 
-            
-                <span class="fw-bold text-white">
-                    Founder of the tattoo studio: Tattoo SK Workshop..
-                </span> <br>
-                <p class="font">
-                    I'm working as a tattoo artist for many years.
-                    Specializing in black & grey realism, colour realism, abstract black & grey.
-                    Old, Faded tattoo cover-up. Body mark and scar cover-up
-                </p>
+            <h3 class="text-light">
+                Grunnlegger av tatoveringsstudioet: Tattoo SK Workshop.
+            </h3>
 
-                <p class="font">
-				I.m Passionate about art and I always want to create something out of imagination.I have successful completed/graduated art, design School and number of intensive Tattoo related courses.
-                </p>
+            <p>Jeg har jobbet som tatovør i mange år. Komfortabel med enhver realistisk eller abstrakt
+                stil. Spesialiserer mer på svart og grå realisme, fargerealisme, abstrakt svart og grått. Gammel, falmet
+                tatoveringsdekning. Kroppsmerke og dekking av arr.</p>
 
-                <span class="fw-bold  text-white">
-                    The Art Studio Unidecor:
-                    
-                </span>
-             <p class="font">   
-                I also do art. I draw paintings with oil and acrylic. Create a bas-relief by sculpting for interior and exterior. Bas-relief means a 3D volumetric drawing made on the wall or also on a special canvas. You can check out my art gallery on Instagram: <a class="text-danger text-capitalize text-decoration-underline" href="https://www.instagram.com/unidecor.no/"
-                target="blank" rel='noopener noreferrer'> @unidecor.no
-            </a>
-				
-            </p>
-			
-
-            <a class="btn mb-2" href="{% url 'artist' 'andrej' %}">My Gallery</a>
-        </div>
-		
-		{% else %}
-		<div class="text-light p-2 me-auto">
-            <h2>Andrej</h2>
-
-            
-                <span class="fw-bold text-white">
-                    Grunnlegger av tatoveringsstudioet: Tattoo SK Workshop.
-                </span> <br>
-                  <p class="font">Jeg har jobbet som tatovør i mange år. Komfortabel med enhver realistisk eller abstrakt stil. Spesialiserer mer på svart og grå realisme, fargerealisme, abstrakt svart og grått. Gammel, falmet tatoveringsdekning. Kroppsmerke og dekking av arr.</p>
-                    
-				<p class="font">Lidenskapelig opptatt av kunst og jeg har alltid ønske å skape noe ut fra fantasi. Jeg er uteksaminert kunst, designskole og en rekke intensive tatoveringsrelaterte kurs.</p>
-					
-                <span class="fw-bold text-white">
-                   The Art Studio Unidecor:
-				<span/>
-                
-				<p class="font">Jeg driver også med kunst. Jeg tegner malerier med olje og akryl. Lag et bas-relieff ved å skulpturere for interiør og eksteriør. Bas-relief betyr en 3D volumetrisk tegning laget på veggen eller også på et spesielt lerret. Dere kan sjekke mitt art galleri  på Instagram: <a class="text-danger text-capitalize text-decoration-underline" href="https://www.instagram.com/unidecor.no/"
-                    target="blank" rel='noopener noreferrer'>@unidecor.no</a>
-				</p>
-					
-                </span>
-         
-            </p>
-
+            <p>Lidenskapelig opptatt av kunst og jeg har alltid ønske å skape noe ut fra fantasi. Jeg er
+                uteksaminert kunst, designskole og en rekke intensive tatoveringsrelaterte kurs.</p>
             <a class="btn mb-2" href="{% url 'artist' 'andrej' %}">Mitt galleri</a>
+
+            <h3 class="text-light">
+                The Art Studio Unidecor:
+            </h3>
+
+            <p>Jeg driver også med kunst. Jeg tegner malerier med olje og akryl. Lag et bas-relieff ved å
+                skulpturere for interiør og eksteriør. Bas-relief betyr en 3D volumetrisk tegning laget på veggen eller
+                også på et spesielt lerret. Dere kan sjekke mitt art galleri på <a class="text-danger text-capitalize text-decoration-underline"
+                href="https://instagram.com/andrejsbaranovs_oslo?igshid=YmMyMTA2M2Y=" target="blank" rel='noopener noreferrer'> Instagram
+            </a> and <a class="text-danger text-capitalize text-decoration-underline"href="https://www.andrejsbaranovs.com" target="blank" rel='noopener noreferrer'>Nettside</a>
+            </p>
+
         </div>
-		{% endif %}
-		
+        {% endif %}
+
     </div>
 
     <div class="col-12 col-lg-6 position-relative padding-0">
@@ -80,11 +82,11 @@
                         id="slide{{ forloop.counter }}">
                         {% if item.image %}
 
-						{% thumbnail item.image "600x400" as im %}
-							<img class='d-block w-100' src="{{ im.url }}" alt="{{ image.name }}">
-						{% endthumbnail %}
-                    
-						{% endif %}
+                        {% thumbnail item.image "600x400" as im %}
+                        <img class='d-block w-100' src="{{ im.url }}" alt="{{ image.name }}">
+                        {% endthumbnail %}
+
+                        {% endif %}
                         <div class="carousel-caption d-none d-md-block">
 
                         </div>
@@ -105,4 +107,4 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-</div>
+</section>
