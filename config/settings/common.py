@@ -98,12 +98,22 @@ MANAGERS = ADMINS
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    'default': env.db('DATABASE_URL', default='mysql://administrator007@localhost/administrator007_tattoostudiokunst'),
-}
-#DATABASES['default']['ATOMIC_REQUESTS'] = True
-if DATABASES['default']['ENGINE'] == 'django.db.backends.mysql':
-    DATABASES['default']['OPTIONS'] = {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
+
+if DEBUG:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase', # This is where you put the name of the db file. 
+                 # If one doesn't exist, it will be created at migration time.
+    }
+} 
+else:
+    DATABASES = {
+        'default': env.db('DATABASE_URL', default='mysql://administrator007@localhost/administrator007_tattoostudiokunst'),
+    }
+    #DATABASES['default']['ATOMIC_REQUESTS'] = True
+    if DATABASES['default']['ENGINE'] == 'django.db.backends.mysql':
+        DATABASES['default']['OPTIONS'] = {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
 
 
 # GENERAL CONFIGURATION
