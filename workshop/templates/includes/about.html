@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load thumbnail %}
-<section class="row my-4">
+<section class="row my-6">
 
     <div class="col-12 col-lg-6 position-relative padding-0">
         <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -43,12 +43,13 @@
     </div>
 
     <div class="col-12 col-lg-6 d-flex">
-        <div class="my-auto p-2 text-white w-100">
+        <div class="my-auto p-2 p-sm-4 p-sm-4 text-white w-100">
             <div class="me-auto">
                 {% get_current_language as LANGUAGE_CODE %}
 
-                <h2>Tattoo SK Workshop</h2>
+                <h2 class="text-uppercase">Tattoo SK Workshop</h2>
                 {% if LANGUAGE_CODE == "en" %}
+                <h3 class="text-light">The Studio</h3>
                 <p>
                     Warm, cosy tattoo studio. To keep the privacy between clients Every artists has separate room.
                     Studio has chill area and friendly atmosphere.
@@ -59,9 +60,10 @@
                 </p>
 
                 <h3 class="text-light">
-                    Contact us:
+                    Contact us
                 </h3>
                 {% else %}
+                <h3 class="text-light">Tatoveringsstudioet</h3>
 
                 <p>
                     Her skal du føle deg velkommen! Koselig tatoveringsstudio, med en avslappende og vennlig atmosfære.
@@ -74,7 +76,7 @@
                 </p>
 
                 <h3 class="text-light">
-                    Kontakt oss:
+                    Kontakt oss
                 </h3>
                 {% endif %}
 

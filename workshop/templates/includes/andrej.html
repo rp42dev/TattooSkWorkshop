@@ -1,17 +1,17 @@
 {% load i18n %}
 {% load thumbnail %}
-<section class="row d-flex my-4">
+<section class="row d-flex my-6">
 
     <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center  order-1 order-lg-0">
 
         {% get_current_language as LANGUAGE_CODE %}
         {% if LANGUAGE_CODE == "en" %}
-        <div class="text-white p-2 me-auto">
-            <h2>Andrej</h2>
+        <div class="text-white p-2 p-sm-4 me-auto">
+            <h2 class="text-uppercase">Andrej</h2>
 
 
             <h3 class="text-light">
-                Founder of the tattoo studio: Tattoo SK Workshop.
+                Founder of the tattoo studio
             </h3>
             <p>
                 I'm working as a tattoo artist for many years.
@@ -23,27 +23,29 @@
                 I.m Passionate about art and I always want to create something out of imagination.I have successful
                 completed/graduated art, design School and number of intensive Tattoo related courses.
             </p>
-            <a class="btn mb-2" href="{% url 'artist' 'andrej' %}">My Work</a>
+            <a class="btn" href="{% url 'artist' 'andrej' %}">My Work</a>
 
             <h3 class="text-light">
-                The Art Studio Unidecor:
+                The Art Studio Unidecor
             </h3>
             <p>
                 I also do art. I draw paintings with oil and acrylic. Create a bas-relief by sculpting for interior and
                 exterior. Bas-relief means a 3D volumetric drawing made on the wall or also on a special canvas. You can
                 check out my art gallery on <a class="text-danger text-capitalize text-decoration-underline"
-                    href="https://instagram.com/andrejsbaranovs_oslo?igshid=YmMyMTA2M2Y=" target="blank" rel='noopener noreferrer'> Instagram
-                </a> and <a class="text-danger text-capitalize text-decoration-underline"href="https://www.andrejsbaranovs.com" target="blank" rel='noopener noreferrer'>Website</a>
+                    href="https://instagram.com/andrejsbaranovs_oslo?igshid=YmMyMTA2M2Y=" target="blank"
+                    rel='noopener noreferrer'> Instagram
+                </a> and <a class="text-danger text-capitalize text-decoration-underline"
+                    href="https://www.andrejsbaranovs.com" target="blank" rel='noopener noreferrer'>Website</a>
             </p>
 
-        </div>
 
-        {% else %}
-        <div class="text-light p-2 me-auto">
-            <h2>Andrej</h2>
+
+            {% else %}
+
+            <h2 class="text-uppercase">Andrej</h2>
 
             <h3 class="text-light">
-                Grunnlegger av tatoveringsstudioet: Tattoo SK Workshop.
+                Grunnlegger av tatoveringsstudioet
             </h3>
 
             <p>Jeg har jobbet som tatovør i mange år. Komfortabel med enhver realistisk eller abstrakt
@@ -52,22 +54,24 @@
 
             <p>Lidenskapelig opptatt av kunst og jeg har alltid ønske å skape noe ut fra fantasi. Jeg er
                 uteksaminert kunst, designskole og en rekke intensive tatoveringsrelaterte kurs.</p>
-            <a class="btn mb-2" href="{% url 'artist' 'andrej' %}">Mitt galleri</a>
+            <a class="btn" href="{% url 'artist' 'andrej' %}">Mitt galleri</a>
 
             <h3 class="text-light">
-                The Art Studio Unidecor:
+                The Art Studio Unidecor
             </h3>
 
             <p>Jeg driver også med kunst. Jeg tegner malerier med olje og akryl. Lag et bas-relieff ved å
                 skulpturere for interiør og eksteriør. Bas-relief betyr en 3D volumetrisk tegning laget på veggen eller
-                også på et spesielt lerret. Dere kan sjekke mitt art galleri på <a class="text-danger text-capitalize text-decoration-underline"
-                href="https://instagram.com/andrejsbaranovs_oslo?igshid=YmMyMTA2M2Y=" target="blank" rel='noopener noreferrer'> Instagram
-            </a> and <a class="text-danger text-capitalize text-decoration-underline"href="https://www.andrejsbaranovs.com" target="blank" rel='noopener noreferrer'>Nettside</a>
+                også på et spesielt lerret. Dere kan sjekke mitt art galleri på <a
+                    class="text-danger text-capitalize text-decoration-underline"
+                    href="https://instagram.com/andrejsbaranovs_oslo?igshid=YmMyMTA2M2Y=" target="blank"
+                    rel='noopener noreferrer'> Instagram
+                </a> and <a class="text-danger text-capitalize text-decoration-underline"
+                    href="https://www.andrejsbaranovs.com" target="blank" rel='noopener noreferrer'>Nettside</a>
             </p>
 
+            {% endif %}
         </div>
-        {% endif %}
-
     </div>
 
     <div class="col-12 col-lg-6 position-relative padding-0">
