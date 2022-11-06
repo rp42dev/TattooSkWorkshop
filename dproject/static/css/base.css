@@ -12880,7 +12880,7 @@ a {
 }
 
 .page_container {
-  padding-top: 100px;
+  padding-top: 2rem;
   max-width: 2500px;
   display: flex;
   flex-direction: column;
@@ -12936,7 +12936,7 @@ a {
   }
 
   .page_container {
-    padding-top: 60px;
+    /* padding-top: 60px; */
 
   }
 }
