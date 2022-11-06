@@ -5,13 +5,10 @@
     <div class="col-12 col-xl-6 position-relative padding-0">
         <div id="carouselExampleControls" class="carousel slide carousel-fade d-flex justify-content-center align-items-center" data-bs-ride="carousel">
 
-
             <div class="carousel-inner">
                 {% load static %}
 
-
                 {% for item in studio %}
-
                 <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
                     id="slide{{ forloop.counter }}">
 
@@ -30,8 +27,6 @@
 
                 {% endfor %}
 
-
-
             </div>
         </div>
 
@@ -43,40 +38,19 @@
             <div class="me-auto">
                 {% get_current_language as LANGUAGE_CODE %}
 
-                <h2 class="text-uppercase text-light fw-light">Tattoo SK Workshop</h2>
-                {% if LANGUAGE_CODE == "en" %}
-                <h3 class="text-light fw-normal">The Studio</h3>
+                <h2 class="text-uppercase text-light fw-light">{% translate 'Tattoo SK Workshop' %}</h2>
+                <h3 class="text-light fw-normal">{% translate 'The Studio' %}</h3>
                 <p>
-                    Warm, cosy tattoo studio. To keep the privacy between clients Every artists has separate room.
-                    Studio has chill area and friendly atmosphere.
+                    {% blocktranslate trimmed %}Warm, cosy tattoo studio. To keep the privacy between clients Every artists has separate room.
+                    Studio has chill area and friendly atmosphere.{% endblocktranslate %}
                 </p>
                 <p>
-                    The Tattoo studio located 25 minutes from Oslo. Free parking place available.
-                    Feel free to Contact us for more information or fill our contact form!
+                    {% blocktranslate trimmed %}The Tattoo studio located 25 minutes from Oslo. Free parking place available.
+                    Feel free to Contact us for more information or fill our contact form!{% endblocktranslate %}
                 </p>
-
                 <h3 class="text-light fw-normal">
-                    Contact us
+                    {% translate 'Contact us' %}
                 </h3>
-                {% else %}
-                <h3 class="text-light fw-light">Tatoveringsstudioet</h3>
-
-                <p>
-                    Her skal du føle deg velkommen! Koselig tatoveringsstudio, med en avslappende og vennlig atmosfære.
-                    Våre artister har hvert sitt rom, for å beholde privatlivet mellom dere klienter.
-                </p>
-                <p>
-
-                    Tattoo studioet ligger 25 minutter fra Oslo. Gratis parkeringsplass tilgjengelig rett utenfor døren.
-                    Kontakt oss gjerne for mer informasjon eller fyll ut vårt kontaktskjema!
-                </p>
-
-                <h3 class="text-light fw-normal">
-                    Kontakt oss
-                </h3>
-                {% endif %}
-
-
             </div>
             <div>
                 <span>Mobil tlf: +4746253760</span></br>

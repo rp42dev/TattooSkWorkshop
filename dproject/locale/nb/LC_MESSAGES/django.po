@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 22:47+0000\n"
+"POT-Creation-Date: 2022-11-06 20:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,63 +48,38 @@ msgid ""
 "email and should be fixed shortly. Thanks for your patience."
 msgstr "e-post og bør rettes snart. Takk for tålmodigheten."
 
-#: dproject/templates/email/base.html:63 dproject/templates/email/base.txt:1
+#: dproject/templates/email/base.html:63
 msgid "Dear "
 msgstr ""
 
-#: dproject/templates/email/base.html:66 dproject/templates/email/base.txt:3
+#: dproject/templates/email/base.html:66
 msgid "Yours sincerely"
 msgstr ""
 
-#: dproject/templates/email/base.html:67 dproject/templates/email/base.txt:4
+#: dproject/templates/email/base.html:67
 #, python-format
 msgid "The %(site_name)s team"
 msgstr ""
 
-#: dproject/templates/includes/contact_form.html:9
-msgid "Name"
-msgstr ""
-
-#: dproject/templates/includes/contact_form.html:18
-msgid "Email"
-msgstr ""
-
-#: dproject/templates/includes/contact_form.html:25
-msgid "Phone"
-msgstr ""
-
-#: dproject/templates/includes/contact_form.html:34
-msgid "Message"
-msgstr ""
-
-#: dproject/templates/includes/contact_form.html:48
-msgid "Are you over 18 ?"
-msgstr ""
-
-#: dproject/templates/includes/contact_form.html:53
+#: dproject/templates/includes/contact_form.html:59
 msgid "Submit"
 msgstr ""
 
-#: dproject/templates/includes/menu.html:19
+#: dproject/templates/includes/menu.html:18
 msgid "Menu"
 msgstr ""
 
-#: dproject/templates/includes/menu.html:33
+#: dproject/templates/includes/menu.html:36
 msgid "Home"
 msgstr "Hjem"
 
-#: dproject/templates/includes/menu.html:34
+#: dproject/templates/includes/menu.html:37
 msgid "Workshop"
 msgstr "Studio"
 
-#: dproject/templates/includes/menu.html:35
+#: dproject/templates/includes/menu.html:38
 msgid "Gallery"
 msgstr "Galleri"
-
-#: dproject/templates/includes/menu.html:38
-#: dproject/templates/includes/offcanvas_contact.html:15
-msgid "Contact"
-msgstr "Kontakt"
 
 #: dproject/templates/includes/menu.html:40
 msgid "Prices"
@@ -116,6 +91,14 @@ msgstr "Ettervern"
 
 #: dproject/templates/includes/menu.html:42
 msgid "FAQ"
+msgstr ""
+
+#: dproject/templates/includes/menu.html:43
+msgid "Message Us"
+msgstr ""
+
+#: dproject/templates/includes/offcanvas_contact.html:12
+msgid "Book Now"
 msgstr ""
 
 #: dproject/templates/registration/logged_out.html:5
@@ -178,3 +161,6 @@ msgstr ""
 #: dproject/templates/registration/password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
+
+#~ msgid "Contact"
+#~ msgstr "Kontakt"

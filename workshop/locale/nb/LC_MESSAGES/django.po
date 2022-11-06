@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-16 22:47+0000\n"
+"POT-Creation-Date: 2022-11-06 20:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,57 +18,103 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: workshop/templates/includes/about.html:45
-#: workshop/templates/includes/about.html:50
-msgid "Welcome to our page"
-msgstr ""
-
-#: workshop/templates/includes/about.html:52
-#, fuzzy
-#| msgid "Workshop"
+#: workshop/templates/includes/about.html:41
 msgid "Tattoo SK Workshop"
-msgstr "Studio"
+msgstr "Tattoo SK Workshop"
 
-#: workshop/templates/includes/about.html:54
-#, fuzzy
-#| msgid ""
-#| "\"Tattoo SK Workshop is a Cosy tattoo studio. Every artists has separate "
-#| "room, to keep the privacy between clients. Studio has chill area and "
-#| "friendly atmosphere.\""
+#: workshop/templates/includes/about.html:42
+msgid "The Studio"
+msgstr "Studioet"
+
+#: workshop/templates/includes/about.html:44
 msgid ""
-"Warm, cosy tattoo studio. Every artists has separate room, to keep the "
-"privacy between clients. Studio has chill area and friendly atmosphere."
+"Warm, cosy tattoo studio. To keep the privacy between clients Every artists "
+"has separate room. Studio has chill area and friendly atmosphere."
 msgstr ""
-"Tatoveringsstudio Koselig tatoveringsstudio. Hver artist har eget rom For å "
-"holde personvernet mellom klienter. Ettromsleiligheten har kjøleområde "
-"ogvennlig atmosfære."
+"Her skal du føle deg velkommen! Koselig tatoveringsstudio, med en "
+"avslappende og vennlig atmosfære. Våre artister har hvert sitt rom, for å "
+"beholde privatlivet mellom dere klienter."
 
-#: workshop/templates/includes/about.html:61
+#: workshop/templates/includes/about.html:48
 msgid ""
 "The Tattoo studio located 25 minutes from Oslo. Free parking place "
 "available. Feel free to Contact us for more information or fill our contact "
 "form!"
 msgstr ""
+"Tattoo studioet ligger 25 minutter fra Oslo. Gratis parkeringsplass "
+"tilgjengelig rett utenfor døren. Kontakt oss gjerne for mer informasjon "
+"eller fyll ut vårt kontaktskjema!"
 
-#: workshop/templates/includes/about.html:67
-msgid "Address:"
-msgstr ""
+#: workshop/templates/includes/about.html:52
+msgid "Contact us"
+msgstr "Kontakt oss"
 
-#: workshop/templates/workshop/workshop.html:5
-#, fuzzy
-#| msgid ""
-#| "\"Tattoo SK Workshop is a Cosy tattoo studio. Every artists has separate "
-#| "room, to keep the privacy between clients. Studio has chill area and "
-#| "friendly atmosphere.\""
+#: workshop/templates/includes/andrej.html:10
+msgid "Founder of the tattoo studio."
+msgstr "Grunnlegger av tatoveringsstudioet"
+
+#: workshop/templates/includes/andrej.html:13
 msgid ""
-"Tattoo SK Workshop is a Cosy tattoo studio. Every artists has separate room, "
-"to keep the privacy between clients. Studio has chill area and friendly "
-"atmosphere."
+"I'm working as a tattoo artist for many years. Specializing in black & grey "
+"realism, colour realism, abstract black & grey. Old, Faded tattoo cover-up. "
+"Body mark and scar cover-up."
 msgstr ""
-"Tatoveringsstudio Koselig tatoveringsstudio. Hver artist har eget rom For å "
-"holde personvernet mellom klienter. Ettromsleiligheten har kjøleområde "
-"ogvennlig atmosfære."
+"Jeg har jobbet som tatovør i mange år. Komfortabel med enhver realistisk "
+"eller abstrakt stil. Spesialiserer mer på svart og grå realisme, "
+"fargerealisme, abstrakt svart og grått. Gammel, falmet tatoveringsdekning. "
+"Kroppsmerke og dekking av arr."
 
-#: workshop/templates/workshop/workshop.html:19
+#: workshop/templates/includes/andrej.html:19
+msgid ""
+"I.m Passionate about art and I always want to create something out of "
+"imagination.I have successful completed/graduated art, design School and "
+"number of intensive Tattoo related courses."
+msgstr ""
+"Lidenskapelig opptatt av kunst og jeg har alltid ønske å skape noe ut fra "
+"fantasi. Jeg er uteksaminert kunst, designskole og en rekke intensive "
+"tatoveringsrelaterte kurs."
+
+#: workshop/templates/includes/andrej.html:22
+msgid "My Work"
+msgstr "Mitt galleri"
+
+#: workshop/templates/includes/andrej.html:25
+#, fuzzy
+#| msgid "The Studio"
+msgid "The Art Studio"
+msgstr "Studioet"
+
+#: workshop/templates/includes/andrej.html:28
+msgid ""
+"I also do art. I draw paintings with oil and acrylic. Create a bas-relief by "
+"sculpting for interior and exterior. Bas-relief means a 3D volumetric "
+"drawing made on the wall or also on a special canvas. You can check out my "
+"art gallery on"
+msgstr ""
+"Jeg driver også med kunst. Jeg tegner malerier med olje og akryl. Lag et bas-"
+"relieff ved å skulpturere for interiør og eksteriør. Bas-relief betyr en 3D "
+"volumetrisk tegning laget på veggen eller også på et spesielt lerret. Dere "
+"kan sjekke mitt art galleri på"
+
+#: workshop/templates/includes/andrej.html:34
+msgid "Website"
+msgstr "Nettside"
+
+#: workshop/templates/includes/jane.html:40
+msgid "Administrator / Manager"
+msgstr "Administrator og og ansvarlig for kundeservice."
+
+#: workshop/templates/includes/jane.html:43
+msgid ""
+"My Job is to ensure smooth-running of a business in the process of bookings, "
+"as well as running through the steps to give an effective client "
+"consultation."
+msgstr "Min jobb er å sørge for en jevn drift av en virksomhet i prosessen med bestillinger, samt å gå gjennom trinnene for å gi en effektiv kundekonsultasjon."
+
+#: workshop/templates/includes/jane.html:47
+msgid "I love tattoos and tattooed people that really stand out."
+msgstr "Jeg elsker tatoveringer og tatoverte mennesker som virkelig skiller seg ut."
+
+#: workshop/templates/workshop/workshop.html:24
 msgid "Workshop"
-msgstr "Studio"
+msgstr "tatoveringsstudio"

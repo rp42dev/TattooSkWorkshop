@@ -2,10 +2,11 @@
 {% load thumbnail %}
 <section class="row my-4 my-sm-5">
     <div class="col-12 col-lg-6 position-relative padding-0">
-        <div id="carousel2" class="carousel slide carousel-fade d-flex justify-content-center align-items-center" data-bs-ride="carousel">
+        <div id="carousel2" class="carousel slide carousel-fade d-flex justify-content-center align-items-center"
+            data-bs-ride="carousel">
 
             <div class="carousel-inner">
-                
+
                 {% for item in jane %}
 
                 <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
@@ -13,7 +14,7 @@
                     {% if item.image %}
 
                     {% thumbnail item.image "1200x800" as im %}
-                        <img class='d-block' src="{{ im.url }}" alt="{{ image.name }}">
+                    <img class='d-block' src="{{ im.url }}" alt="{{ image.name }}">
                     {% endthumbnail %}
 
                     {% endif %}
@@ -25,8 +26,6 @@
                 {% endfor %}
             </div>
         </div>
-
-
     </div>
 
     <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center order-1 order-lg-0 text_container">
@@ -34,34 +33,17 @@
             <h2 class="text-uppercase text-light fw-light">Jane</h2>
 
             {% get_current_language as LANGUAGE_CODE %}
-            {% if LANGUAGE_CODE == "en" %}
-
             <h3 class="text-light fw-normal">
-                Administrator/Manager
+                {% translate 'Administrator / Manager' %}
             </h3>
             <p>
-                My Job is to ensure smooth-running of a business in the process of bookings,
-                as well as running through the steps to give an effective client consultation.
+                {% blocktranslate trimmed %}My Job is to ensure smooth-running of a business in the process of bookings,
+                as well as running through the steps to give an effective client consultation.{% endblocktranslate %}
             </p>
             <p>
-                I love tattoos and tattooed people that really stand out..
+                {% blocktranslate trimmed %}I love tattoos and tattooed people that really stand out.{%
+                endblocktranslate %}
             </p>
-            </p>
-            {% else %}
-
-            <h3 class="text-light fw-normal">
-                Administrator og og ansvarlig for kundeservice.
-            </h3>
-            <p>
-                Min jobb er å sørge for en jevn drift av en virksomhet i prosessen med bestillinger,
-                samt å gå gjennom trinnene for å gi en effektiv kundekonsultasjon.
-            </p>
-            <p>
-                Jeg elsker tatoveringer og tatoverte mennesker som virkelig skiller seg ut..
-            </p>
-            </p>
-
-            {% endif %}
         </div>
     </div>
 
