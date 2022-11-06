@@ -14,9 +14,9 @@
 {% endblock %}
 {% block content %}
 
-<div class="page_container">
+<main class="w-100">
 
-    <div class="row ">
+    <div class="row">
         <div class="col text-center ">
             <h1 class="text-light h1 text-uppercase">Album</h1>
         </div>
@@ -31,7 +31,7 @@
 
                     {% if item.image %}
 
-						{% thumbnail item.image "400x600" as im %}
+						{% thumbnail item.image "800x1200" as im %}
 							<img class="card-img img-fluid" src="{{ im.url }}" alt="{{ image.name }}">
 						{% endthumbnail %}
                     
@@ -52,5 +52,5 @@
         {% endfor %}
     </div>
 
-</div>
+</main>
 {% endblock %}
