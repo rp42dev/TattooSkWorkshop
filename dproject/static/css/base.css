@@ -41,10 +41,10 @@
   --bs-info: #1cabc4;
   --bs-warning: #e4c662;
   --bs-danger: #a16468;
-  --bs-light: rgb(202, 203, 204);
+  --bs-light: rgba(182, 182, 182, 0.801);
   --bs-dark: rgb(45, 56, 62);
   --bs-black: #000;
-  --bs-white: #fff;
+  --bs-white: #dee2e6;
   --bs-primary-rgb: 149, 151, 255;
   --bs-secondary-rgb: 23, 29, 32;
   --bs-success-rgb: 25, 135, 84;
@@ -2233,7 +2233,6 @@ progress {
     "Segoe UI Symbol",
     "Noto Color Emoji";
   font-size: 80%;
-  text-transform: uppercase;
   letter-spacing: 0.15rem;
   opacity: .6;
   border: 0;
@@ -2244,7 +2243,6 @@ progress {
   appearance: none;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
 
 input:-webkit-autofill,
 textarea:-webkit-autofill,
@@ -2443,7 +2441,7 @@ textarea.form-control {
 
 @media screen and (max-width: 800px) {
   textarea.form-control {
-    min-height: 5rem;
+    min-height: 6rem;
   }
 }
 
@@ -2551,8 +2549,8 @@ textarea.form-control-lg {
 }
 
 .form-check-input {
-  width: 1em;
-  height: 1em;
+  width: 1.5em;
+  height: 1.5em;
   margin-top: 0.25em;
   vertical-align: top;
   background-color: #fff;
@@ -2768,6 +2766,7 @@ textarea.form-control-lg {
 
 .form-floating {
   position: relative;
+  width: 100%;
 
 }
 
@@ -3191,7 +3190,7 @@ textarea.form-control.is-invalid {
   border: 1px solid transparent;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-
+  width: 100%;
   max-width: 450px;
   min-width: 300px;
   border-radius: 30px 0px;
@@ -3220,7 +3219,8 @@ textarea.form-control.is-invalid {
     "Noto Color Emoji";
   text-transform: uppercase;
   letter-spacing: 0.15rem;
-  opacity: .9;
+  font-size: .9rem;
+  font-weight: 100;
   border: 0;
   z-index: 15;
 }
@@ -6409,7 +6409,7 @@ fieldset:disabled .btn {
   height: 1em;
   padding: 0.25em 0.25em;
   color: #000;
-  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%ffffff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
   border: 0;
   border-radius: 0.25rem;
   opacity: 0.5;
@@ -7453,6 +7453,7 @@ fieldset:disabled .btn {
 }
 
 .offcanvas-header {
+  position: relative;
   height: auto;
   align-items: center;
   justify-content: space-between;
@@ -7469,12 +7470,9 @@ fieldset:disabled .btn {
 }
 
 .offcanvas-title {
-  margin-bottom: 0;
-  line-height: 1.5;
-  font-family: 'Orbitron',
-    sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: 'Orbitron', sans-serif;
   font-size: 1.6rem;
 }
 
@@ -8962,7 +8960,7 @@ fieldset:disabled .btn {
 }
 
 .text-white {
-  --bs-text-opacity: 1;
+  --bs-text-opacity: .9;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 }
 
@@ -12911,17 +12909,13 @@ a {
   padding: 0rem 1rem;
 }
 
-#form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0 auto;
-
-}
-
 .file .form-control {
   padding: 0;
+}
+
+#close-btn-contact {
+  right: 5%;
+
 }
 
 @media screen and (max-width: 600px) {
@@ -12934,14 +12928,9 @@ a {
     padding: 0;
     margin: 0;
   }
-
-  .page_container {
-    /* padding-top: 60px; */
-
-  }
 }
 
 .accordion .btn {
-  font-size: .7rem;
+  font-size: .9rem;
   min-height: 50px;
 }

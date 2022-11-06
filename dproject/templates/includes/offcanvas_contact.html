@@ -1,38 +1,33 @@
- {% load i18n %}
- <!-- Off canvas left menu login form -->
- <div class="offcanvas offcanvas-start d-flex justify-content-around" data-bs-scroll="true" tabindex="-1" id="contact"
-     aria-labelledby="loginLabel">
+{% load i18n %}
+<!-- Off canvas left menu login form -->
+<div class="offcanvas offcanvas-start d-flex justify-content-around" data-bs-scroll="true" tabindex="-1" id="contact"
+    aria-labelledby="loginLabel">
 
 
-     <div class="offcanvas-header text-center" data-bs-dismiss="offcanvas">
-         <div class="row">
-             <div class="col-3 ">
+    <div class="offcanvas-header" data-bs-dismiss="offcanvas">
 
-             </div>
 
-             <div class="col-6 ">
-                 <h4 class="text-uppercase text-center offcanvas-title">
-                     {% translate "Book Now" %}
-                 </h4>
-             </div>
-             <div class="col-3">
-             <div role="button" class="btn_close text-end" data-bs-dismiss="offcanvas"
-                 aria-label="Close">
-                 <i class="fas fa-times">
-
-                 </i>
-             </div>
-            </div>
-         </div>
-         <div class="gradient-line">
+        <div class="col-12 ">
+            <h3 class="text-uppercase text-center offcanvas-title">
+                {% translate "Book Now" %}
+            </h3>
         </div>
-     </div>
+        <div id="close-btn-contact" role="button" class="btn_close position-absolute top-50 translate-middle-y" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="fas fa-times">
 
-     <div class="offcanvas-body">
+            </i>
+        </div>
 
-         {% include 'includes/contact_form.html' %}
 
-     </div>
-     <div class="offcanvas-footer"></div>
+        <div class="gradient-line">
+        </div>
+    </div>
 
- </div>
+    <div class="offcanvas-body">
+
+        {% include 'includes/contact_form.html' %}
+
+    </div>
+    <div class="offcanvas-footer"></div>
+
+</div>

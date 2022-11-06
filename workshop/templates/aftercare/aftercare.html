@@ -30,35 +30,30 @@
 
     <main class="col-12 col-lg-8 mx-auto d-flex flex-column gap-4 text-white">
 
-        <div class=" text-white  col-12 text_container p-3 p-sm-4">
-            <h3 class="text-uppercase p-2 text-white">Tattoo studio Fetsund:</h3>
-            <div class="mb-2">
-                <span>Adresse: Fetveien 467, 1900 Fetsund, Norge</span> </br>
-                <span>Email: info@tattooskworkshop.no</span> </br>
-                <span>Mobil tlf: +4746253760</span> <br>
-            </div>
+        <div class=" text-white col-12 text_container px-3 px-sm-4">
+            {% include 'includes/contact.html' %}
             {% include 'includes/social.html' %}
 
         </div>
         <div class="gradient-line"></div>
         {% if LANGUAGE_CODE == "nb" %}
 
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center">
-                <p>Hvilken krem skal jeg bruke i etterkant?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5>Hvilken krem skal jeg bruke i etterkant?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class="">- Vi anbefaler Bepanthen Sensi Calm (krem, IKKE salve), denne fester seg ikke så mye til klærne.
                     Vi har også krem fra studio, som du kan kjøpe med. Ingen andre kremer skal brukes.</p>
             </div>
         </article>
 
 
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center">
-                <p>Hvordan ta vare på den ferske tatoveringen?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5>Hvordan ta vare på den ferske tatoveringen?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class="">- Behold plastikken på i 2 dager. Etter 2 dager tar du av plastikken, vasker
                     tatoveringen din med lunket vann og ph nøytral såpe. La tatoveringen din tørke av seg selv,
                     eller forsiktig klapp tatoveringen med et mykt håndkle. Påfør deretter kremen med en tynt
@@ -68,20 +63,20 @@
             </div>
         </article>
 
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center ">
-                <p> Hvis det er masse væske under plastikken, hva gjør jeg?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5> Hvis det er masse væske under plastikken, hva gjør jeg?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class="">- Hvis du ser at plastikken faller av, eller det er mye væske under - fjerner du
                     plastikken. Du trenger altså ikke vente 5 dager dersom dette skjer. Da begynner prosessen
                     skrevet over.</p>
             </div>
         </article>
 
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center">
-                <p>Kan jeg trene rett etter tatovering?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5>Kan jeg trene rett etter tatovering?</h5>
             </div>
             <div class="col-12">
                 <p class="">- Vi anbefaler ikke at du trener, så lenge plastikken er på. Når du trener vil huden
@@ -90,19 +85,19 @@
                     fall ødelagt.</p>
             </div>
         </article>
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center">
-                <p>Kan jeg dusje?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5>Kan jeg dusje?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class="">- Ja, du kan gjøre dine normale rutiner når det gjelder personlig hygiene.</p>
             </div>
         </article>
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center">
-                <p> Kan jeg ta solarium, sole meg ute, eller gå til sauna?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5> Kan jeg ta solarium, sole meg ute, eller gå til sauna?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class="">- Sauna er STRENGT forbudt etter en tatovering, det kan ikke tas før tatoveringen er
                     helbredet. Solarium er ikke lov de neste 2 ukene, men etter dette er det viktig at du dekker
                     området med et plagg som f.eks t skjorte eller genser. I fremtiden må du bruke minst
@@ -112,22 +107,22 @@
 
         {% else %}
 
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center">
-                <p>Which cream should I use?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5>Which cream should I use?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class=""> - We recommend to use Bepanthen Sensi Calm cream (not salve). Its not to sticky to the clothes.
                     But if you don’t have it - salve also is good. Or you can use the cream from our studio.
                     Nothing more is acceptable.</p>
             </div>
         </article>
 
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center">
-                <p>How to take care of my fresh tattoo?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5>How to take care of my fresh tattoo?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class="">- You keep the plastic film for 2 days. After 2 days remove the plastic film, wash
                     tattoo well with cool water and soap (soap with no colour no perfume). Let the tattoo dry
                     itself or gently blot it with a towel. Put the cream on, with very thin layer. Repeat that
@@ -137,23 +132,23 @@
             </div>
         </article>
 
-        <article class="text_container p-3 p-sm-4 ">
+        <article class="text_container px-3 px-sm-4 ">
 
-            <div class="col-12 text-white text-uppercase text-center">
-                <p> If under the plastic film is a lot of liquid?</p>
+            <div class="col-12 text-light text-uppercase">
+                <h5> If under the plastic film is a lot of liquid?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class="">- If you see plastic film falling off (the tattoo is not covered with film) or its a
                     lot of liquid under, just remove it. Don’t need to wait 5 days. Remove the plastic film,
                     wash your tattoo and use the cream</p>
             </div>
         </article>
 
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center">
-                <p>Can I do training?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5>Can I do training?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class="">- We not recommend to train at all during the plastic film is on. During the
                     training tattooed place will sweat too and you will get a lot of bubbles, which means
                     plastic film has to be removed. It will cause burning feeling during the process and tattoo
@@ -161,20 +156,20 @@
             </div>
         </article>
 
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center">
-                <p>Can I go to the shower?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5>Can I go to the shower?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class="">- Yes, you can do all your routine as normal</p>
             </div>
         </article>
 
-        <article class="text_container p-3 p-sm-4 ">
-            <div class="col-12 text-white text-uppercase text-center">
-                <p> Can I go to solarium (take a sun) or sauna?</p>
+        <article class="text_container px-3 px-sm-4 ">
+            <div class="col-12 text-light text-uppercase">
+                <h5> Can I go to solarium (take a sun) or sauna?</h5>
             </div>
-            <div class="col-12 font">
+            <div class="col-12">
                 <p class="">- Sauna is strictly forbidden! Till recovery process is finished. Solarium is not
                     aloud for two weeks, later you must cover your tattoo with some cotton material till the
                     recovery process finished. Further use the sun protection minimum plus 50 SPF for whole your
