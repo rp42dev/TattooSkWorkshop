@@ -20,127 +20,97 @@
         {% endif %}
 
     </div>
-    <div class="row ">
 
-    </div>
-    <div class="col-12 col-sm-6 mx-auto">
+    <main class="col-12 col-lg-8 mx-auto d-flex flex-column gap-4">
 
-		<div class=" text-white gradient-underline col-12">
-
-			<p><strong class="text-uppercase p-2 text-white">Tattoo studio Fetsund:</strong></p>	
-			<div class="font  px-2">
-				
-				Adresse: Fetveien 467, 1900 Fetsund, Norge</br>
-				Email: info@tattooskworkshop.no </br>
-				Mobil tlf: +4746253760<br>
-			</div>
-			{% include 'includes/social.html' %}
-		</div>	
-			{% if LANGUAGE_CODE == "nb" %}
-		
-		<div class="text-light col-12  p-2">
-
-            <div class="row mx-auto my-3">
-
-                <div class="row col-12 mx-auto text-uppercase text-white gradient-underline">
-                    <div class="col-8">
-                        <p>Konsultasjon</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-end"> Gratis</p>
-                    </div>
-                    <div class="col-8">
-                        <p>Minste pris</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-end"> 1000 nok</p>
-                    </div>
-                    <div class="col-8">
-                        <p>Digital skisse</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-end"> 1000 nok</p>
-                    </div>
-                    <div class="col-8">
-                        <p>En time hos Andrej</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-end"> 1700 nok</p>
-                    </div>
-                    <div class="col-8">
-                        <p>En time hos Diana</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-end text-uppercase"> 1000 nok</p>
-                    </div>
-                </div>
-
-                <div class="col-12 font gradient-underline-top mb-3">
-
-                    <p class="col-12 mt-3">Ved bestilling av time, vil du måtte betale et depositum på kr
-                        1000,-, Dette vil inkludere i summen når tatoveringen din er ferdig.</p>
-                    <p class="col-12 text-danger">Gratis avbestilling gjøres 48 timer før en avtale
-                        ellers vil ikke depositumet bli refundert. </p>
-                    <p class="col-12 text-danger ">Vi er et «kontantfri» studio. Vi tar betalinger med
-                        VIPPS og kort </p>
-                </div>
-
+        <div class=" text-white  col-12 text_container p-3 p-sm-4">
+            <h3 class="text-uppercase p-2 text-white">Tattoo studio Fetsund:</h3>
+            <div class="mb-3">
+                <span>Adresse: Fetveien 467, 1900 Fetsund, Norge</span> </br>
+                <span>Email: info@tattooskworkshop.no</span> </br>
+                <span>Mobil tlf: +4746253760</span> <br>
             </div>
+            {% include 'includes/social.html' %}
         </div>
+        <div class="gradient-line"></div>
+
+        {% if LANGUAGE_CODE == "nb" %}
+
+        <article class="row col-12 mx-auto text-uppercase text-white text_container p-3 p-sm-4">
+            <div class="col-8">
+                <p>Konsultasjon</p>
+            </div>
+            <div class="col-4">
+                <p class="text-end"> Gratis</p>
+            </div>
+            <div class="col-8">
+                <p>Minste pris</p>
+            </div>
+            <div class="col-4">
+                <p class="text-end"> 1000 NOK</p>
+            </div>
+            <div class="col-8">
+                <p>Digital skisse</p>
+            </div>
+            <div class="col-4">
+                <p class="text-end"> 1000 NOK</p>
+            </div>
+            <div class="col-12">
+                <p>Prisen avhenger av størrelsen på tatoveringen, vennligst fyll ut skjemaet for å få en pris.
+                </p>
+            </div>
+
+        </article>
+
+        <article class="col-12 mb-3 text_container p-3 p-sm-4">
+
+            <p class="col-12 mt-3">Ved bestilling av time, vil du måtte betale et depositum på 500 NOK,
+                Dette vil inkludere i summen når tatoveringen din er ferdig.</p>
+            <p class="col-12 text-danger">Gratis avbestilling gjøres 48 timer før en avtale
+                ellers vil ikke depositumet bli refundert. </p>
+            <p class="col-12 text-danger ">Vi er et «kontantfri» studio. Vi tar betalinger med
+                VIPPS og kort </p>
+        </article>
+
         {% else %}
 
-        <div class=" text-light col-12  p-2">
-
-            <div class="row col-12 my-3 mx-auto">
-
-                <div class="row col-12 mx-auto  text-white text-uppercase gradient-underline">
-                    <div class="col-8">
-                        <p>Consultation</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-end"> Free</p>
-                    </div>
-                    <div class="col-8">
-                        <p>Minimum price</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-end"> 1000 nok</p>
-                    </div>
-                    <div class="col-8">
-                        <p>Digital sketch</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-end"> 1000 nok</p>
-                    </div>
-                    <div class="col-8">
-                        <p>An hour with Andrej</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-end"> 1700 nok</p>
-                    </div>
-                    <div class="col-8">
-                        <p>An hour with Diana</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-end"> 1000 nok</p>
-                    </div>
-                </div>
-
-                <div class="col-12 font gradient-underline-top mb-3">
-
-                    <p class="col-12 mt-3 ">When booking an appointment, you will have to pay a deposit of NOK
-                        1000, -, This will include in the sum when your tattoo is finished.</p>
-                    <p class="col-12 text-danger">We are a "cashless" studio. We accept payments with
-                        VIPPS and cards </p>
-                    <p class="col-12 text-danger ">Free cancellation is made 48 hours before an
-                        appointment otherwise the deposit will not be refunded. </p>
-                </div>
-
+        <article class="row col-12 mx-auto  text-white text-uppercase text_container p-3 p-sm-4">
+            <div class="col-8">
+                <p>Consultation</p>
             </div>
-        </div>
+            <div class="col-4">
+                <p class="text-end"> Free</p>
+            </div>
+            <div class="col-8">
+                <p>Minimum price</p>
+            </div>
+            <div class="col-4">
+                <p class="text-end"> 1000 NOK</p>
+            </div>
+            <div class="col-8">
+                <p>Digital sketch</p>
+            </div>
+            <div class="col-4">
+                <p class="text-end"> 1000 NOK</p>
+            </div>
+
+            <div class="col-12">
+                <p>The price depends on the size of the tattoo, please fill out the form to get a price.</p>
+            </div>
+
+        </article>
+
+        <article class="col-12 text-white mb-3 text_container p-3 p-sm-4">
+            <p class="col-12 mt-3 ">When booking an appointment, you will have to pay a deposit of 500 NOK,
+                This will include in the sum when your tattoo is finished.</p>
+            <p class="col-12 text-danger">We are a "cashless" studio. We accept payments with
+                VIPPS and cards </p>
+            <p class="col-12 text-danger ">Free cancellation is made 48 hours before an
+                appointment otherwise the deposit will not be refunded. </p>
+        </article>
 
         {% endif %}
-    </div>
+    </main>
 </div>
 
 

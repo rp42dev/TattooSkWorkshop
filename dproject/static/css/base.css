@@ -204,6 +204,11 @@ a {
   text-decoration: underline;
 }
 
+span,
+p {
+  font-weight: 100;
+}
+
 a:hover {
   color: rgba(255, 0, 0, 0.856);
 }
@@ -12696,8 +12701,9 @@ body {
     font-size: 100%;
   }
 }
+
 .text_container {
-  backdrop-filter: blur(6px)
+  backdrop-filter: blur(8px)
 }
 
 .offcanvas {

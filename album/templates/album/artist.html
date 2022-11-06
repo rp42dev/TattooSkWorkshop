@@ -14,17 +14,15 @@
     <div class="row">
         <div class="col text-center ">
             {% if artist_name == 'all' %}
-            <h2 class="text-light h1 text-uppercase">Album</h2>
+            <h1 class="text-light h1 text-uppercase">Album</h1>
             {% else %}
-            <h2 class="text-light h1 text-uppercase">{{ artist_name }}</h2>
+            <h1 class="text-light h1 text-uppercase">{{ artist_name }}</h1>
             {% endif %}
         </div>
     </div>
 
     <div class="row album mb-4">
-        
-
-
+    
         {% for item in album reversed %}
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3">
             <div class="card h-100 mx-sm-2 mx-0 g-dark">
