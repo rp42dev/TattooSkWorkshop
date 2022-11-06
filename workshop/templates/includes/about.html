@@ -43,9 +43,9 @@
             <div class="me-auto">
                 {% get_current_language as LANGUAGE_CODE %}
 
-                <h2 class="text-uppercase text-light">Tattoo SK Workshop</h2>
+                <h2 class="text-uppercase text-light fw-light">Tattoo SK Workshop</h2>
                 {% if LANGUAGE_CODE == "en" %}
-                <h3 class="text-light">The Studio</h3>
+                <h3 class="text-light fw-normal">The Studio</h3>
                 <p>
                     Warm, cosy tattoo studio. To keep the privacy between clients Every artists has separate room.
                     Studio has chill area and friendly atmosphere.
@@ -55,11 +55,11 @@
                     Feel free to Contact us for more information or fill our contact form!
                 </p>
 
-                <h3 class="text-light">
+                <h3 class="text-light fw-normal">
                     Contact us
                 </h3>
                 {% else %}
-                <h3 class="text-light">Tatoveringsstudioet</h3>
+                <h3 class="text-light fw-light">Tatoveringsstudioet</h3>
 
                 <p>
                     Her skal du føle deg velkommen! Koselig tatoveringsstudio, med en avslappende og vennlig atmosfære.
@@ -71,7 +71,7 @@
                     Kontakt oss gjerne for mer informasjon eller fyll ut vårt kontaktskjema!
                 </p>
 
-                <h3 class="text-light">
+                <h3 class="text-light fw-normal">
                     Kontakt oss
                 </h3>
                 {% endif %}
@@ -79,12 +79,9 @@
 
             </div>
             <div>
+                <span>Mobil tlf: +4746253760</span></br>
+                <span>Email: info@tattooskworkshop.no</span></br>
                 <span>Adresse: Fetveien 467, 1900 Fetsund, Norge</span>
-                </br>
-                <span>Email: info@tattooskworkshop.no</span>
-                </br>
-                <span>Mobil tlf: +4746253760</span>
-                <br>
             </div>
             {% include 'includes/social.html' %}
         </div>

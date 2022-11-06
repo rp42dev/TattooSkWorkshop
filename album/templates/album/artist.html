@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
-{% load thumbnail %}    
+{% load i18n %}
+{% load thumbnail %}
 {% block extra_title %}{{ artist_name|title }} Galleri| {% endblock %}
- 
-    
+
+
 {% block nav %}
 
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
@@ -14,31 +15,31 @@
     <div class="row">
         <div class="col text-center ">
             {% if artist_name == 'all' %}
-            <h1 class="text-light h1 text-uppercase">Album</h1>
+            <h1 class="text-light h1 text-uppercase display-3">{% translate "Gallery" %}</h1>
             {% else %}
-            <h1 class="text-light h1 text-uppercase">{{ artist_name }}</h1>
+            <h1 class="text-light h1 text-uppercase display-3">{{ artist_name }}</h1>
             {% endif %}
         </div>
     </div>
 
     <div class="mx-auto row album mb-4 mx-0 mx-sm-2 justify-content-center">
-    
+
         {% for item in album reversed %}
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3">
             <div class="card h-100 mx-sm-2 mx-0 g-dark">
 
                 <div class="card-body bg-dark p-0">
-				
+
                     {% if item.image %}
-						
-						{% thumbnail item.image "600x900" as im %}
-							<img class="card-img img-fluid" src="{{ im.url }}" alt="{{ image.name }}">
-						{% endthumbnail %}
-						
+
+                    {% thumbnail item.image "600x900" as im %}
+                    <img class="card-img img-fluid" src="{{ im.url }}" alt="{{ image.name }}">
+                    {% endthumbnail %}
+
                     {% else %}
-                   
-                        <img class="card-img img-fluid" src="{{ item.image_url }}" alt="{{ image.name }}">
-                    
+
+                    <img class="card-img img-fluid" src="{{ item.image_url }}" alt="{{ image.name }}">
+
                     {% endif %}
                 </div>
 
@@ -47,7 +48,7 @@
                     <div class="card-img-overlay text-left">
                         <div class="row">
                             <div class="col">
-                                <p class="mb-0 text-capitalize">{{ item.artist }}</p>
+                                <p class="mb-0 text-capitalize fw-normal">{{ item.artist }}</p>
                             </div>
                         </div>
                     </div>
@@ -57,7 +58,7 @@
                     <div class="card-img-overlay text-left">
                         <div class="row">
                             <div class="col">
-                                <p class="mb-0 text-capitalize">{{ item.artist }}</p>
+                                <p class="mb-0 text-capitalize fw-normal">{{ item.artist }}</p>
                             </div>
                         </div>
                     </div>
@@ -71,8 +72,8 @@
     </div>
 </div>
 
-	{% block postloadjs %}
+{% block postloadjs %}
 
-		
-    {% endblock %}
+
+{% endblock %}
 {% endblock %}

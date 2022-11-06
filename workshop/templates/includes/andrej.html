@@ -5,16 +5,16 @@
 
         {% get_current_language as LANGUAGE_CODE %}
         <div class="text-white px-3 px-sm-4 me-auto">
-            <h2 class="text-uppercase text-light">Andrej</h2>
+            <h2 class="text-uppercase text-light fw-light">Andrej</h2>
             {% if LANGUAGE_CODE == "en" %}
 
-            <h3 class="text-light">
-                Founder of the tattoo studio
+            <h3 class="text-light fw-normal">
+                Founder of the tattoo studio.
             </h3>
             <p>
                 I'm working as a tattoo artist for many years.
                 Specializing in black & grey realism, colour realism, abstract black & grey.
-                Old, Faded tattoo cover-up. Body mark and scar cover-up
+                Old, Faded tattoo cover-up. Body mark and scar cover-up.
             </p>
 
             <p>
@@ -23,7 +23,7 @@
             </p>
             <a class="btn" href="{% url 'artist' 'andrej' %}">My Work</a>
 
-            <h3 class="text-light">
+            <h3 class="text-light fw-normal">
                 The Art Studio Unidecor
             </h3>
             <p>
@@ -38,7 +38,7 @@
 
             {% else %}
 
-            <h3 class="text-light">
+            <h3 class="text-light fw-normal">
                 Grunnlegger av tatoveringsstudioet
             </h3>
 
@@ -50,7 +50,7 @@
                 uteksaminert kunst, designskole og en rekke intensive tatoveringsrelaterte kurs.</p>
             <a class="btn" href="{% url 'artist' 'andrej' %}">Mitt galleri</a>
 
-            <h3 class="text-light">
+            <h3 class="text-light fw-normal">
                 The Art Studio Unidecor
             </h3>
 
