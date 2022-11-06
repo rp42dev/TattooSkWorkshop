@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-06 20:43+0000\n"
+"POT-Creation-Date: 2022-11-06 20:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: dproject/templates/includes/contact_form.html:59
 msgid "Submit"
-msgstr ""
+msgstr "Sende inn"
 
 #: dproject/templates/includes/menu.html:18
 msgid "Menu"
@@ -95,11 +95,13 @@ msgstr ""
 
 #: dproject/templates/includes/menu.html:43
 msgid "Message Us"
-msgstr ""
+msgstr "Beskjed"
 
 #: dproject/templates/includes/offcanvas_contact.html:12
-msgid "Book Now"
-msgstr ""
+#, fuzzy
+#| msgid "Contact"
+msgid "Contant us"
+msgstr "Kontakt"
 
 #: dproject/templates/registration/logged_out.html:5
 msgid "Logged out"
@@ -161,6 +163,3 @@ msgstr ""
 #: dproject/templates/registration/password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
-
-#~ msgid "Contact"
-#~ msgstr "Kontakt"

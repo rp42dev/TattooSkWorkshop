@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-06 20:43+0000\n"
+"POT-Creation-Date: 2022-11-06 20:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,21 +100,25 @@ msgstr ""
 msgid "Website"
 msgstr "Nettside"
 
-#: workshop/templates/includes/jane.html:40
+#: workshop/templates/includes/jane.html:37
 msgid "Administrator / Manager"
 msgstr "Administrator og og ansvarlig for kundeservice."
 
-#: workshop/templates/includes/jane.html:43
+#: workshop/templates/includes/jane.html:40
 msgid ""
 "My Job is to ensure smooth-running of a business in the process of bookings, "
 "as well as running through the steps to give an effective client "
 "consultation."
-msgstr "Min jobb er å sørge for en jevn drift av en virksomhet i prosessen med bestillinger, samt å gå gjennom trinnene for å gi en effektiv kundekonsultasjon."
-
-#: workshop/templates/includes/jane.html:47
-msgid "I love tattoos and tattooed people that really stand out."
-msgstr "Jeg elsker tatoveringer og tatoverte mennesker som virkelig skiller seg ut."
+msgstr ""
+"Min jobb er å sørge for en jevn drift av en virksomhet i prosessen med "
+"bestillinger, samt å gå gjennom trinnene for å gi en effektiv "
+"kundekonsultasjon."
 
 #: workshop/templates/workshop/workshop.html:24
 msgid "Workshop"
 msgstr "tatoveringsstudio"
+
+#~ msgid "I love tattoos and tattooed people that really stand out."
+#~ msgstr ""
+#~ "Jeg elsker tatoveringer og tatoverte mennesker som virkelig skiller seg "
+#~ "ut."
