@@ -6,7 +6,7 @@ from django.contrib import messages
 
 def gallery(request):
     """A view to return the gallery page and show all album"""
-    artists = Artist.objects.all()
+    artists = Artist.objects.all().order_by('order')
 
     context = {
         'artists': artists,

@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-
+import random
 from django.db import models
 from django_resized import ResizedImageField
 
@@ -8,6 +8,11 @@ from django_resized import ResizedImageField
 class Artist(models.Model):
     name = models.CharField(max_length=254)
     image = ResizedImageField(size=[600, 900], crop=['middle', 'center'], quality=80, upload_to='artist')
+
+    random_string = random.randint(1, 10)
+    order = models.IntegerField(
+        default=random_string,
+        null=False, blank=False)
 
     def __str__(self):
         return self.name
