@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load thumbnail %}
 
-<section class="row my-4 my-sm-5">
+<section class="row mb-4 mb-sm-5">
     <div class="col-12 col-xl-6 position-relative padding-0">
         <div id="carouselExampleControls" class="carousel slide carousel-fade d-flex justify-content-center align-items-center" data-bs-ride="carousel">
 
@@ -15,7 +15,7 @@
                     {% if item.image %}
 
                     {% thumbnail item.image "1200x800" as im %}
-                        <img class='d-block' src="{{ im.url }}" alt="{{ image.name }}">
+                        <img class='d-block rounded-3' src="{{ im.url }}" alt="{{ image.name }}">
                     {% endthumbnail %}
                     
                     {% endif %}
@@ -33,7 +33,7 @@
 
     </div>
 
-    <div class="col-12 col-xl-6 d-flex text_container">
+    <div class="col-12 col-xl-6 d-flex text_container rounded-3">
         <div class="my-auto px-3 ps-sm-4 text-white">
             <div class="me-auto">
                 {% get_current_language as LANGUAGE_CODE %}

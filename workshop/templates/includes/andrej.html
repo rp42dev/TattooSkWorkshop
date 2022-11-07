@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load thumbnail %}
 <section class="row my-4 my-sm-5">
-    <div class="col-12 col-xl-6 d-flex justify-content-center align-items-center text_container order-1 order-xl-0">
+    <div class="col-12 col-xl-6 d-flex justify-content-center align-items-center text_container rounded-3 order-1 order-xl-0">
 
         {% get_current_language as LANGUAGE_CODE %}
         <div class="text-white px-3 px-sm-4 me-auto">
@@ -53,7 +53,7 @@
                         {% if item.image %}
 
                         {% thumbnail item.image "1200x800" as im %}
-                        <img class='d-block' src="{{ im.url }}" alt="{{ image.name }}">
+                        <img class='d-block rounded-3' src="{{ im.url }}" alt="{{ image.name }}">
                         {% endthumbnail %}
 
                         {% endif %}
