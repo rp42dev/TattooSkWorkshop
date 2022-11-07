@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-06 21:07+0000\n"
+"POT-Creation-Date: 2022-11-07 20:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: workshop/templates/aftercare/aftercare.html:16
+msgid "Aftercare"
+msgstr "Ettervern"
+
+#: workshop/templates/aftercare/aftercare.html:29
+msgid "Which cream should I use?"
+msgstr "Hvilken krem skal jeg bruke i etterkant?"
+
+#: workshop/templates/aftercare/aftercare.html:32
+msgid ""
+"We recommend to use Bepanthen Sensi Calm cream (not salve). Its not to "
+"sticky to the clothes. But if you don’t have it - salve also is good. Or you "
+"can use the cream from our studio. Nothing more is acceptable."
+msgstr "Vi anbefaler Bepanthen Sensi Calm (krem, IKKE salve), denne fester seg ikke så mye til klærne. Vi har også krem fra studio, som du kan kjøpe med. Ingen andre kremer skal brukes"
+
+#: workshop/templates/aftercare/aftercare.html:40
+msgid "How to take care of my fresh tattoo?"
+msgstr "Hvordan ta vare på den ferske tatoveringen?"
+
+#: workshop/templates/aftercare/aftercare.html:43
+msgid ""
+"You keep the plastic film for 2 days. After 2 days remove the plastic film, "
+"wash tattoo well with cool water and soap (soap with no colour no perfume). "
+"Let the tattoo dry itself or gently blot it with a towel. Put the cream on, "
+"with very thin layer. Repeat that combination 3-4 times a day. After one "
+"week from plastic film removed u can use the cream 1-2 times a day. When you "
+"see the tattoo is dry, put cream on. NECESSARY: to moisturise tattoo to "
+"avoid crusts."
+msgstr "Behold plastikken på i 2 dager. Etter 2 dager tar du av plastikken, vasker tatoveringen din med lunket vann og ph nøytral såpe. La tatoveringen din tørke av seg selv, eller forsiktig klapp tatoveringen med et mykt håndkle. Påfør deretter kremen med en tynt lag. Det er IKKE nødvendig å ta på masse krem. Repeter dette 4-5 ganger per dag i 1 uke. Etter denne tiden kan du smøre kremen 1-2 ganger per dag. Hvis du ser tatoveringen begynner å tørke, smør gjerne. Dette for å unngå skorper."
+
+#: workshop/templates/aftercare/aftercare.html:55
+msgid "If under the plastic film is a lot of liquid?"
+msgstr "Hvis det er masse væske under plastikken, hva gjør jeg?"
+
+#: workshop/templates/aftercare/aftercare.html:58
+msgid ""
+"If you see plastic film falling off (the tattoo is not covered with film) or "
+"its a lot of liquid under, just remove it. Don’t need to wait 5 days. Remove "
+"the plastic film, wash your tattoo and use the cream."
+msgstr "Hvis du ser at plastikken faller av, eller det er mye væske under - fjerner du plastikken. Du trenger altså ikke vente 5 dager dersom dette skjer. Da begynner prosessen skrevet over."
+
+#: workshop/templates/aftercare/aftercare.html:66
+msgid "Can I do training?"
+msgstr "Kan jeg trene rett etter tatovering?"
+
+#: workshop/templates/aftercare/aftercare.html:69
+msgid ""
+"We not recommend to train at all during the plastic film is on. During the "
+"training tattooed place will sweat too and you will get a lot of bubbles, "
+"which means plastic film has to be removed. It will cause burning feeling "
+"during the process and tattoo can be damaged."
+msgstr "Vi anbefaler ikke at du trener, så lenge plastikken er på. Når du trener vil huden din svette, dette gjør at plastikken får bobler - og da må plastikken fjernes. Det kan bli en brennende følelse, og resultatet av tatoveringen blir ikke som forventet - eller i verste fall ødelagt."
+
+#: workshop/templates/aftercare/aftercare.html:78
+msgid "Can I go to the shower?"
+msgstr "Kan jeg dusje?"
+
+#: workshop/templates/aftercare/aftercare.html:81
+msgid "Yes, you can do all your routine as normal."
+msgstr "Ja, du kan gjøre dine normale rutiner når det gjelder personlig hygiene."
+
+#: workshop/templates/aftercare/aftercare.html:87
+msgid "Can I go to solarium (take a sun) or sauna?"
+msgstr "Kan jeg ta solarium, sole meg ute, eller gå til sauna?"
+
+#: workshop/templates/aftercare/aftercare.html:90
+msgid ""
+"Sauna is strictly forbidden! Till recovery process is finished. Solarium is "
+"not aloud for two weeks, later you must cover your tattoo with some cotton "
+"material till the recovery process finished. Further use the sun protection "
+"minimum plus 50 SPF for whole your life (same on the sun)."
+msgstr "Sauna er STRENGT forbudt etter en tatovering, det kan ikke tas før tatoveringen er helbredet. Solarium er ikke lov de neste 2 ukene, men etter dette er det viktig at du dekker området med et plagg som f.eks t skjorte eller genser. I fremtiden må du bruke minst solfaktor 50."
 
 #: workshop/templates/includes/about.html:41
 msgid "Tattoo SK Workshop"
@@ -118,6 +191,54 @@ msgstr ""
 msgid "I love tattoos and tattooed people that really stand out."
 msgstr ""
 "Jeg elsker tatoveringer og tatoverte mennesker som virkelig skiller seg ut."
+
+#: workshop/templates/prices/prices.html:15
+msgid "Price list"
+msgstr "Priser"
+
+#: workshop/templates/prices/prices.html:28
+msgid "Consultation"
+msgstr "Konsultasjon"
+
+#: workshop/templates/prices/prices.html:28
+msgid "FREE"
+msgstr "GRATIS"
+
+#: workshop/templates/prices/prices.html:30
+msgid "Minimum price"
+msgstr "Minste pris"
+
+#: workshop/templates/prices/prices.html:32
+msgid "Digital sketch"
+msgstr "Digital skisse"
+
+#: workshop/templates/prices/prices.html:34
+msgid ""
+"The price depends on the size of the tattoo, please fill out the form to get "
+"a price."
+msgstr ""
+"Prisen avhenger av størrelsen på tatoveringen, vennligst fyll ut skjemaet "
+"for å få en pris."
+
+#: workshop/templates/prices/prices.html:35
+msgid ""
+"When booking an appointment, you will have to pay a deposit of 500 NOK, This "
+"will include in the sum when your tattoo is finished."
+msgstr ""
+"Ved bestilling av time, vil du måtte betale et depositum på 500 NOK, Dette "
+"vil inkludere i summen når tatoveringen din er ferdig."
+
+#: workshop/templates/prices/prices.html:37
+msgid "We are a \"cashless\" studio. We accept payments with VIPPS and cards."
+msgstr ""
+"Gratis avbestilling gjøres 48 timer før en avtale ellers vil ikke "
+"depositumet bli refundert."
+
+#: workshop/templates/prices/prices.html:39
+msgid ""
+"Free cancellation is made 48 hours before an appointment otherwise the "
+"deposit will not be refunded."
+msgstr "Vi er et «kontantfri» studio. Vi tar betalinger med VIPPS og kort"
 
 #: workshop/templates/workshop/workshop.html:24
 msgid "Workshop"

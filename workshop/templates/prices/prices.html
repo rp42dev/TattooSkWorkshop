@@ -9,16 +9,10 @@
 
 {% block content %}
 
-
-<div class="page_container">
+<div class="page_container pb-4">
 
     <div class="col text-center mb-3">
-        {% if LANGUAGE_CODE == "nb" %}
-        <h1 class="text-light h1 text-uppercase display-3">Priser</h1>
-        {% else %}
-        <h1 class="text-light h1 text-uppercase display-3">Price list</h1>
-        {% endif %}
-
+        <h1 class="text-light h1 text-uppercase display-3">{% translate 'Price list' %}</h1>
     </div>
 
     <main class="col-12 col-lg-8 mx-auto d-flex flex-column gap-4">
@@ -27,84 +21,24 @@
             {% include 'includes/contact.html' %}
             {% include 'includes/social.html' %}
         </div>
+
         <div class="gradient-line"></div>
 
-        {% if LANGUAGE_CODE == "nb" %}
-
-        <article class="row col-12 mx-auto text-uppercase text-white text_container px-3 px-sm-4">
-            <div class="col-8">
-                <p>Konsultasjon</p>
-            </div>
-            <div class="col-4">
-                <p class="text-end"> Gratis</p>
-            </div>
-            <div class="col-8">
-                <p>Minste pris</p>
-            </div>
-            <div class="col-4">
-                <p class="text-end"> 1000 NOK</p>
-            </div>
-            <div class="col-8">
-                <p>Digital skisse</p>
-            </div>
-            <div class="col-4">
-                <p class="text-end"> 1000 NOK</p>
-            </div>
-            <div class="col-12">
-                <p>Prisen avhenger av størrelsen på tatoveringen, vennligst fyll ut skjemaet for å få en pris.
-                </p>
-            </div>
-
+        <article class="row col-12 mx-auto text-white text_container px-3 px-sm-4">
+            <p class="w-100">{% translate 'Consultation' %}<span class="float-end">{% translate 'FREE' %}</span></p> 
+       
+            <p class="w-100">{% translate 'Minimum price' %}<span class="float-end"> 1000 NOK</span></p>
+            
+            <p class="w-100">{% translate 'Digital sketch' %}<span class="float-end"> 1000 NOK</span></p> 
+         
+            <p>{% blocktranslate trimmed %}The price depends on the size of the tattoo, please fill out the form to get a price.{% endblocktranslate %}</p>
+            <p>{% blocktranslate trimmed %}When booking an appointment, you will have to pay a deposit of 500 NOK,
+                This will include in the sum when your tattoo is finished.{% endblocktranslate %}</p>
+            <p class="text-danger">{% blocktranslate trimmed %}We are a "cashless" studio. We accept payments with
+                VIPPS and cards.{% endblocktranslate %}</p>
+            <p class="text-danger ">{% blocktranslate trimmed %}Free cancellation is made 48 hours before an
+                appointment otherwise the deposit will not be refunded.{% endblocktranslate %}</p>
         </article>
-
-        <article class="col-12 mb-3 text-white text_container px-3 px-sm-4">
-
-            <p class="col-12 mt-3">Ved bestilling av time, vil du måtte betale et depositum på 500 NOK,
-                Dette vil inkludere i summen når tatoveringen din er ferdig.</p>
-            <p class="col-12 text-danger">Gratis avbestilling gjøres 48 timer før en avtale
-                ellers vil ikke depositumet bli refundert. </p>
-            <p class="col-12 text-danger ">Vi er et «kontantfri» studio. Vi tar betalinger med
-                VIPPS og kort </p>
-        </article>
-
-        {% else %}
-
-        <article class="row col-12 mx-auto  text-white text-uppercase text_container px-3 px-sm-4">
-            <div class="col-8">
-                <p>Consultation</p>
-            </div>
-            <div class="col-4">
-                <p class="text-end"> Free</p>
-            </div>
-            <div class="col-8">
-                <p>Minimum price</p>
-            </div>
-            <div class="col-4">
-                <p class="text-end"> 1000 NOK</p>
-            </div>
-            <div class="col-8">
-                <p>Digital sketch</p>
-            </div>
-            <div class="col-4">
-                <p class="text-end"> 1000 NOK</p>
-            </div>
-
-            <div class="col-12">
-                <p>The price depends on the size of the tattoo, please fill out the form to get a price.</p>
-            </div>
-
-        </article>
-
-        <article class="col-12 text-white mb-3 text_container px-3 px-sm-4">
-            <p class="col-12 mt-3 ">When booking an appointment, you will have to pay a deposit of 500 NOK,
-                This will include in the sum when your tattoo is finished.</p>
-            <p class="col-12 text-danger">We are a "cashless" studio. We accept payments with
-                VIPPS and cards </p>
-            <p class="col-12 text-danger ">Free cancellation is made 48 hours before an
-                appointment otherwise the deposit will not be refunded. </p>
-        </article>
-
-        {% endif %}
     </main>
 </div>
 
