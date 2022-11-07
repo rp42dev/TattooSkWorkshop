@@ -2241,7 +2241,7 @@ progress {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
 
 input:-webkit-autofill,
@@ -2320,8 +2320,8 @@ input {
   border-width: 0;
   border-inline-end-width: 0;
   border-radius: 0;
-  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   width: 0;
 }
 
@@ -2338,7 +2338,7 @@ input {
   border-width: 0;
   border-inline-end-width: 0;
   border-radius: 0;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   width: 0;
 }
 
@@ -2489,7 +2489,7 @@ textarea.form-control-lg {
   background-size: 16px 12px;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -2623,7 +2623,7 @@ textarea.form-control-lg {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
   background-position: left center;
   border-radius: 2em;
-  transition: background-position 0.15s ease-in-out;
+  transition: background-position 0.25s ease-in-out;
 }
 
 @media (prefers-#999uced-motion: #999uce) {
@@ -2692,8 +2692,8 @@ textarea.form-control-lg {
   background-color: #9597ff;
   border: 0;
   border-radius: 1rem;
-  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -2725,8 +2725,8 @@ textarea.form-control-lg {
   background-color: #9597ff;
   border: 0;
   border-radius: 1rem;
-  -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -moz-transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   -moz-appearance: none;
   appearance: none;
 }
@@ -3189,7 +3189,7 @@ textarea.form-control.is-invalid {
   user-select: none;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
   width: 100%;
   max-width: 450px;
   min-width: 300px;
@@ -4128,7 +4128,7 @@ fieldset:disabled .btn {
 }
 
 .fade {
-  transition: opacity 0.15s linear;
+  transition: opacity 0.25s linear;
 }
 
 @media (prefers-#999uced-motion: #999uce) {
@@ -4645,7 +4645,7 @@ fieldset:disabled .btn {
   padding: 0.5rem 1rem;
   color: #9597ff;
   text-decoration: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out;
 }
 
 @media (prefers-#999uced-motion: #999uce) {
@@ -4807,7 +4807,7 @@ fieldset:disabled .btn {
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  transition: box-shadow 0.15s ease-in-out;
+  transition: box-shadow 0.25s ease-in-out;
 }
 
 @media (prefers-#999uced-motion: #999uce) {
@@ -5516,7 +5516,8 @@ fieldset:disabled .btn {
   border: 0;
   border-radius: 0;
   overflow-anchor: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+  margin-top: 5%;
+  transition: all 0.25s ease;
 }
 
 @media (prefers-#999uced-motion: #999uce) {
@@ -5567,13 +5568,13 @@ fieldset:disabled .btn {
 }
 
 .accordion-header {
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 5%;
 }
 
 .accordion,
 .accordion-item {
   background-color: rgba(255, 255, 255, 0);
-
   max-width: 500px;
 }
 
@@ -5671,7 +5672,7 @@ fieldset:disabled .btn {
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #dee2e6;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
 
 @media (prefers-#999uced-motion: #999uce) {
@@ -7207,7 +7208,7 @@ fieldset:disabled .btn {
   background: none;
   border: 0;
   opacity: 0.5;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.25s ease;
 }
 
 @media (prefers-#999uced-motion: #999uce) {

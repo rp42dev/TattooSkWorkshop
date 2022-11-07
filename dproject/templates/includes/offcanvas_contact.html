@@ -2,32 +2,23 @@
 <!-- Off canvas left menu login form -->
 <div class="offcanvas offcanvas-start d-flex justify-content-around" data-bs-scroll="true" tabindex="-1" id="contact"
     aria-labelledby="loginLabel">
-
-
     <div class="offcanvas-header" data-bs-dismiss="offcanvas">
-
-
         <div class="col-12 ">
             <h3 class="text-uppercase text-center offcanvas-title">
                 {% translate "Contact us" %}
             </h3>
         </div>
-        <div id="close-btn-contact" role="button" class="btn_close position-absolute top-50 translate-middle-y" data-bs-dismiss="offcanvas" aria-label="Close">
+        <div id="close-btn-contact" role="button" class="btn_close position-absolute top-50 translate-middle-y"
+            data-bs-dismiss="offcanvas" aria-label="Close">
             <i class="fas fa-times">
 
             </i>
         </div>
-
-
         <div class="gradient-line">
         </div>
     </div>
-
     <div class="offcanvas-body">
-
         {% include 'includes/contact_form.html' %}
-
     </div>
     <div class="offcanvas-footer"></div>
-
 </div>
