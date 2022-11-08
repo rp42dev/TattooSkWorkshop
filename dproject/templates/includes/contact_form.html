@@ -61,10 +61,9 @@
 <div class=" text-center">
   <div class="gradient-line"></div>
   <p>
-    {% translate 'No, i would like to place the' %} <a id="inquiries"
-      onclick="getSubject(this.getAttribute('data-type'))" class="text-success" data-type="inquiry" role="button">{% translate 'Inquiry' %}</a>
-    <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="text-danger" data-type="complaint"
-      role="button">{% translate 'Complain' %}</a>
+    {% translate 'No, i would like to place the' %} 
+    <a id="inquiries" onclick="getSubject(this.getAttribute('data-type'))" class="text-success" data-type="inquiry" role="button">{% translate 'Inquiry' %}</a>
+    <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="text-danger" data-type="complaint" role="button">{% translate 'Complain' %}</a>
   </p>
 </div>
 
@@ -77,8 +76,9 @@
     const contactHeading = document.getElementById('contact-heading');
     const age = document.getElementById('age');
 
+    
     inputSubject.value = subject
-    if (subject == null || subject === 'contact') {
+    if (subject == null || subject === 'inquiry') {
       messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message' %}: ({% translate 'image references, black or with color, size and place' %})`;
       contactHeading.innerHTML = `{% translate "Inquiries" %}`
       complaintsBtn.classList.remove('d-none');
@@ -86,6 +86,8 @@
       age.classList.remove('d-none');
       document.getElementById('invalidCheck').required = true;
     } else {
+      console.log(subject);
+
       messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message' %}: `;
       contactHeading.innerHTML = `{% translate "Complaints" %}`
       age.classList.add('d-none');
