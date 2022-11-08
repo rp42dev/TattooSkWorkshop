@@ -1,25 +1,26 @@
 <!-- Name input-->
 {% load i18n %}
 {% load static %}
-{% get_current_language as LANGUAGE_CODE %}
+
 <form id="form" class="needs-validation d-flex flex-column justify-content-around align-items-center"
   action="{% url 'send_email' %}" method="POST" class="my-3" enctype=multipart/form-data novalidate>
   {% csrf_token %}
-  {% if LANGUAGE_CODE == "en" %}
+
+  <input id="subject" type="hidden" name="subject" value="">
 
   <div class="form-floating mb-3 needs-validation">
     <input class="form-control " id="name" name="name" type="text" pattern="[a-zA-Z].{2,30}" autocomplete="on"
       placeholder="Enter your name..." required />
-    <label for="name"><span class="text-danger">*</span> Name:</label>
+    <label for="name"><span class="text-danger">*</span> {% translate 'Name' %}:</label>
     <div class="invalid-feedback">
-      Invalid: a-z A-Z max-30.
+      {% translate 'Invalid' }: a-z A-Z max-30.
     </div>
   </div>
 
   <div class="form-floating mb-3">
     <input class="form-control" id="email" type="email" pattern=".{3,40}" name="email" autocomplete="on"
       placeholder="name@example.com" required />
-    <label for="email"><span class="text-danger">*</span> Email:</label>
+    <label for="email"><span class="text-danger">*</span> {% translate 'Email' %}:</label>
     <div class="invalid-feedback">
       example@email.com max-40.
     </div>
@@ -27,91 +28,72 @@
   <div class="form-floating mb-3">
     <input class="form-control" id="phone" name="phone_number" type="tel" autocomplete="on" pattern="[0-9].{5,30}"
       placeholder="123 456-7890" />
-    <label for="phone">&nbsp Phone:</label>
+    <label for="phone">&nbsp {% translate 'Phone' %}:</label>
     <div class="invalid-feedback">
-      Only numbers (0-9).
+      {% translate 'Only numbers' %} (0-9).
     </div>
   </div>
 
   <div class="form-floating mb-2">
     <textarea class="form-control" id="message" pattern=".{10,500}" oncopy="return false" onpaste="return false"
       autocomplete="off" name="message" type="text" placeholder="Enter your message here..." required></textarea>
-    <label for="message"><span class="text-danger">*</span> Message: (image references, black or with color, size and
-      place)</label>
+    <label id="messageLabel" for="message"></label>
     <div class="invalid-feedback">
       min-10 max-500.
     </div>
   </div>
   <div class="form-floating mb-3 file">
-    <input class="form-control" id="file" name="file" type="file" accept=".png, .jpg, .jpeg, .heic, .hevic, .gif"
-      title=" " /></intup>
+    <input class="form-control" id="file" name="file" type="file" accept=".png, .jpg, .jpeg, .heic, .hevic, .gif" />
     <label class="mt-1" for="file"><span class="h1 mt-1"><i class="fas fa-camera"></i></span></label>
   </div>
-  <div class="col-12 mb-4">
+  <div id="age" class="col-12 mb-4">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
       <label class="form-check-label ms-2" for="invalidCheck">
-        Are you over 16 ?
+        {% translate 'Are you over 16' %} ?
       </label>
     </div>
   </div>
-  <div class="col-12">
+  <div class="col-12 mb-4">
     <button class="btn w-100" id="#submits" type="submit" name="submit_button">{% translate "Submit" %}</button>
   </div>
-
-  {% else %}
-
-  <div class="form-floating mb-3">
-    <input class="form-control " id="name" name="name" type="text" pattern="[a-zA-Z].{2,30}" autocomplete="on"
-      placeholder="Enter your name..." required />
-    <label for="name"><span class="text-danger">*</span> Navn:</label>
-    <div class="invalid-feedback">
-      Invalid: a-z A-Z max-30.
-    </div>
-  </div>
-
-  <div class="form-floating mb-3">
-    <input class="form-control" id="email" type="email" pattern=".{3,40}" name="email" autocomplete="on"
-      placeholder="name@example.com" required />
-    <label for="email"><span class="text-danger">*</span> Email adressen:</label>
-    <div class="invalid-feedback">
-      example@email.com max-40.
-    </div>
-  </div>
-  <div class="form-floating mb-3">
-    <input class="form-control" id="phone" name="phone_number" type="tel" autocomplete="on" pattern="[0-9].{5,30}"
-      placeholder="123 456-7890" />
-    <label for="phone">&nbsp Mobil tlf:</label>
-    <div class="invalid-feedback">
-      Only numbers (0-9).
-    </div>
-  </div>
-
-  <div class="form-floating mb-2">
-    <textarea class="form-control" id="message" pattern=".{10,500}" oncopy="return false" onpaste="return false"
-      autocomplete="off" name="message" type="text" placeholder="Enter your message here..." required></textarea>
-    <label for="message"><span class="text-danger">*</span> Kommentar: (bildereferanser, sort eller med farge,
-      størrelsen
-      og plass)</label>
-    <div class="invalid-feedback">
-      min-10 max-500.
-    </div>
-  </div>
-  <div class="form-floating mb-3 file">
-    <input class="form-control" id="file" name="file" type="file" accept=".png, .jpg, .jpeg, .heic, .hevic, .gif"
-      title=" " /></intup>
-    <label class="mt-1" for="file"><span class="h1 mt-1"><i class="fas fa-camera"></i></span></label>
-  </div>
-  <div class="col-12 mb-4">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      <label class="form-check-label ms-2" for="invalidCheck">
-        Er alderen din over 16
-      </label>
-    </div>
-  </div>
-  <div class="col-12">
-    <button class="btn w-100" id="#submits" type="submit" name="submit_button">Sende inn:</button>
-  </div>
-  {% endif %}
 </form>
+<div class=" text-center">
+  <div class="gradient-line"></div>
+  <p>
+    {% translate 'No, i would like to place the' %} <a id="inquiries"
+      onclick="getSubject(this.getAttribute('data-type'))" class="text-success" data-type="inquiry" role="button">{%
+      translate 'Inquiry' %}</a>
+    <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="text-danger" data-type="complaint"
+      role="button">{% translate 'Complain' %}</a>
+  </p>
+</div>
+
+<script>
+  const getSubject = (subject) => {
+    const inputSubject = document.getElementById('subject');
+    const messageLabel = document.getElementById('messageLabel')
+    const inquiriesBtn = document.getElementById('inquiries');
+    const complaintsBtn = document.getElementById('complaints');
+    const contactHeading = document.getElementById('contact-heading');
+    const age = document.getElementById('age');
+
+    inputSubject.value = subject
+    if (subject == null || subject === 'contact') {
+      messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message' %}: ({% translate 'image references, black or with color, size and place' %})`;
+      contactHeading.innerHTML = `{% translate "Inquiries" %}`
+      complaintsBtn.classList.remove('d-none');
+      inquiriesBtn.classList.add('d-none');
+      age.classList.remove('d-none');
+      document.getElementById('invalidCheck').required = true;
+    } else {
+      messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message' %}: `;
+      contactHeading.innerHTML = `{% translate "Complaints" %}`
+      age.classList.add('d-none');
+      complaintsBtn.classList.add('d-none');
+      inquiriesBtn.classList.remove('d-none');
+      document.getElementById('invalidCheck').required = false;
+    }
+  }
+  getSubject()
+</script>

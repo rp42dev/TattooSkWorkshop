@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-07 20:29+0000\n"
+"POT-Creation-Date: 2022-11-08 21:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,19 +61,65 @@ msgstr ""
 msgid "The %(site_name)s team"
 msgstr ""
 
-#: dproject/templates/includes/contact_form.html:59
+#: dproject/templates/includes/contact_form.html:14
+msgid "Name"
+msgstr "Navn"
+
+#: dproject/templates/includes/contact_form.html:23
+msgid "Email"
+msgstr "Epostadresse"
+
+#: dproject/templates/includes/contact_form.html:31
+msgid "Phone"
+msgstr "Telefon"
+
+#: dproject/templates/includes/contact_form.html:33
+msgid "Only numbers"
+msgstr "Bare tall"
+
+#: dproject/templates/includes/contact_form.html:53
+msgid "Are you over 16"
+msgstr "Er du over 16"
+
+#: dproject/templates/includes/contact_form.html:58
 msgid "Submit"
 msgstr "Sende inn"
 
-#: dproject/templates/includes/offcanvas_contact.html:8
+#: dproject/templates/includes/contact_form.html:64
+msgid "No, i would like to place the"
+msgstr "Nei, jeg vil gjerne sende inn"
+
+#: dproject/templates/includes/contact_form.html:64
+msgid "Inquiry"
+msgstr "Forespørsel"
+
+#: dproject/templates/includes/contact_form.html:65
+msgid "Complain"
+msgstr "Klage"
+
+#: dproject/templates/includes/contact_form.html:78
+#: dproject/templates/includes/contact_form.html:84
 #, fuzzy
-#| msgid "Contact"
-msgid "Contact us"
-msgstr "Kontakt"
+#| msgid "Message Us"
+msgid "Message"
+msgstr "Beskjed"
+
+#: dproject/templates/includes/contact_form.html:78
+msgid "image references, black or with color, size and place"
+msgstr "Bildereferanser, sort eller med farge, størrelse og plass"
+
+#: dproject/templates/includes/contact_form.html:79
+#: dproject/templates/includes/offcanvas_contact.html:8
+msgid "Inquiries"
+msgstr "Forespørsler"
+
+#: dproject/templates/includes/contact_form.html:85
+msgid "Complaints"
+msgstr "Klager"
 
 #: dproject/templates/includes/offcanvas_menu.html:13
 msgid "Menu"
-msgstr ""
+msgstr "Meny"
 
 #: dproject/templates/includes/offcanvas_menu.html:26
 msgid "Home"
@@ -163,3 +209,11 @@ msgstr ""
 #: dproject/templates/registration/password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
+
+#~ msgid "instead"
+#~ msgstr "i stedet"
+
+#, fuzzy
+#~| msgid "Contact"
+#~ msgid "Contact us"
+#~ msgstr "Kontakt"

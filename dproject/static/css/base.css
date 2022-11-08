@@ -7471,7 +7471,7 @@ fieldset:disabled .btn {
 }
 
 .offcanvas-title {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   line-height: 1.6;
   font-family: 'Orbitron', sans-serif;
   font-size: 1.6rem;
@@ -12520,6 +12520,9 @@ body {
 .btn_close {
   color: rgba(182, 182, 182, 0.801);
   font-size: 2rem;
+  margin: 0;
+  line-height: 2rem;
+
 }
 
 .nav_btn {

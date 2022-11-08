@@ -25,31 +25,46 @@ def send_email(request):
 
     if request.method == 'POST':
 
-        name = request.POST['name']
+        subject = request.POST['subject'].capitalize()
+        name = request.POST['name'].capitalize()
         email_from = request.POST['email']
         message = request.POST['message']
         number = request.POST['phone_number']
+        my_email = settings.EMAIL_HOST_USER
+
+
+        if subject == 'Undefined':
+            subject = 'Inquiry'
 
         body = f'''
         Name: {name},
         email: {email_from},
         Phone Nmber: {number}.
-
         {message}'''
-        
-        if name and message and email_from:
-            subject = 'Question from' + name
-            my_email = settings.EMAIL_HOST_USER
 
-            subject2 = 'Fra Tattoo SK studio | From Tattoo SK studio'
-            
-            if request.LANGUAGE_CODE == "en":
-                body2 = render_to_string('emails/email_body.txt')
-            else:
-                body2 = render_to_string('emails/email_body_no.txt')
+        subjects_lines = {
+            'en': 'Autoreply... From Tattoo SK Workshop',
+            'nb': 'Automatisk svar.. Fra Tattoo SK Workshop'
+        }
+
+        templates = {
+            'Inquiry': {
+                'en': render_to_string('emails/email_body.txt'),
+                'nb': render_to_string('emails/email_body_no.txt')
+            },
+            'Complaint': {
+                'en': render_to_string('emails/email_complaint.txt'),
+                'nb': render_to_string('emails/email_complaint_no.txt')
+            }
+        }
+
+        if name and message and email_from:
+            subject_line = subject + ' ' + name
+            subject_line2 = subjects_lines[request.LANGUAGE_CODE]
+            body2 = templates[subject][request.LANGUAGE_CODE]
             try:
-                mail = EmailMessage(subject, body, my_email, [my_email])
-                mail2 = EmailMessage(subject2, body2, my_email, [email_from])
+                mail = EmailMessage(subject_line, body, my_email, [my_email])
+                mail2 = EmailMessage(subject_line2, body2, my_email, [email_from])
                 if request.FILES:
                     file = request.FILES['file']
                     mail.attach(file.name, file.read(), file.content_type)

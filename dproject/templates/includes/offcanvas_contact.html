@@ -1,11 +1,11 @@
 {% load i18n %}
 <!-- Off canvas left menu login form -->
-<div class="offcanvas offcanvas-start d-flex justify-content-around" data-bs-scroll="true" tabindex="-1" id="contact"
+<div class="offcanvas offcanvas-start d-flex justify-content-between" data-bs-scroll="true" tabindex="-1" id="contact"
     aria-labelledby="loginLabel">
     <div class="offcanvas-header" data-bs-dismiss="offcanvas">
         <div class="col-12 ">
-            <h3 class="text-uppercase text-center offcanvas-title">
-                {% translate "Contact us" %}
+            <h3 id="contact-heading" class="text-uppercase text-center offcanvas-title my-2">
+                {% translate "Inquiries" %}
             </h3>
         </div>
         <div id="close-btn-contact" role="button" class="btn_close position-absolute top-50 translate-middle-y"
@@ -20,5 +20,7 @@
     <div class="offcanvas-body">
         {% include 'includes/contact_form.html' %}
     </div>
-    <div class="offcanvas-footer"></div>
+    <div class="offcanvas-footer">
+        
+    </div>
 </div>
