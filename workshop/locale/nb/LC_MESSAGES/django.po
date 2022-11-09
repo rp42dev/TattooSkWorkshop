@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-08 21:00+0000\n"
+"POT-Creation-Date: 2022-11-09 19:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "Aftercare"
 msgstr "Ettervern"
 
-#: workshop/templates/aftercare/aftercare.html:29
+#: workshop/templates/aftercare/aftercare.html:28
 msgid "Which cream should I use?"
 msgstr "Hvilken krem skal jeg bruke i etterkant?"
 
-#: workshop/templates/aftercare/aftercare.html:32
+#: workshop/templates/aftercare/aftercare.html:31
 msgid ""
 "We recommend to use Bepanthen Sensi Calm cream (not salve). Its not to "
 "sticky to the clothes. But if you don’t have it - salve also is good. Or you "
@@ -36,11 +36,11 @@ msgstr ""
 "så mye til klærne. Vi har også krem fra studio, som du kan kjøpe med. Ingen "
 "andre kremer skal brukes"
 
-#: workshop/templates/aftercare/aftercare.html:40
+#: workshop/templates/aftercare/aftercare.html:39
 msgid "How to take care of my fresh tattoo?"
 msgstr "Hvordan ta vare på den ferske tatoveringen?"
 
-#: workshop/templates/aftercare/aftercare.html:43
+#: workshop/templates/aftercare/aftercare.html:42
 msgid ""
 "You keep the plastic film for 2 days. After 2 days remove the plastic film, "
 "wash tattoo well with cool water and soap (soap with no colour no perfume). "
@@ -58,11 +58,11 @@ msgstr ""
 "smøre kremen 1-2 ganger per dag. Hvis du ser tatoveringen begynner å tørke, "
 "smør gjerne. Dette for å unngå skorper."
 
-#: workshop/templates/aftercare/aftercare.html:55
+#: workshop/templates/aftercare/aftercare.html:54
 msgid "If under the plastic film is a lot of liquid?"
 msgstr "Hvis det er masse væske under plastikken, hva gjør jeg?"
 
-#: workshop/templates/aftercare/aftercare.html:58
+#: workshop/templates/aftercare/aftercare.html:57
 msgid ""
 "If you see plastic film falling off (the tattoo is not covered with film) or "
 "its a lot of liquid under, just remove it. Don’t need to wait 5 days. Remove "
@@ -72,11 +72,11 @@ msgstr ""
 "du plastikken. Du trenger altså ikke vente 5 dager dersom dette skjer. Da "
 "begynner prosessen skrevet over."
 
-#: workshop/templates/aftercare/aftercare.html:66
+#: workshop/templates/aftercare/aftercare.html:65
 msgid "Can I do training?"
 msgstr "Kan jeg trene rett etter tatovering?"
 
-#: workshop/templates/aftercare/aftercare.html:69
+#: workshop/templates/aftercare/aftercare.html:68
 msgid ""
 "We not recommend to train at all during the plastic film is on. During the "
 "training tattooed place will sweat too and you will get a lot of bubbles, "
@@ -88,20 +88,20 @@ msgstr ""
 "fjernes. Det kan bli en brennende følelse, og resultatet av tatoveringen "
 "blir ikke som forventet - eller i verste fall ødelagt."
 
-#: workshop/templates/aftercare/aftercare.html:78
+#: workshop/templates/aftercare/aftercare.html:77
 msgid "Can I go to the shower?"
 msgstr "Kan jeg dusje?"
 
-#: workshop/templates/aftercare/aftercare.html:81
+#: workshop/templates/aftercare/aftercare.html:80
 msgid "Yes, you can do all your routine as normal."
 msgstr ""
 "Ja, du kan gjøre dine normale rutiner når det gjelder personlig hygiene."
 
-#: workshop/templates/aftercare/aftercare.html:87
+#: workshop/templates/aftercare/aftercare.html:86
 msgid "Can I go to solarium (take a sun) or sauna?"
 msgstr "Kan jeg ta solarium, sole meg ute, eller gå til sauna?"
 
-#: workshop/templates/aftercare/aftercare.html:90
+#: workshop/templates/aftercare/aftercare.html:89
 msgid ""
 "Sauna is strictly forbidden! Till recovery process is finished. Solarium is "
 "not aloud for two weeks, later you must cover your tattoo with some cotton "
@@ -130,7 +130,11 @@ msgstr ""
 "avslappende og vennlig atmosfære. Våre artister har hvert sitt rom, for å "
 "beholde privatlivet mellom dere klienter."
 
-#: workshop/templates/includes/about.html:48
+#: workshop/templates/includes/about.html:47
+msgid "Gallery"
+msgstr ""
+
+#: workshop/templates/includes/about.html:49
 msgid ""
 "The Tattoo studio located 25 minutes from Oslo. Free parking place "
 "available. Feel free to Contact us for more information or fill our contact "
@@ -139,10 +143,6 @@ msgstr ""
 "Tattoo studioet ligger 25 minutter fra Oslo. Gratis parkeringsplass "
 "tilgjengelig rett utenfor døren. Kontakt oss gjerne for mer informasjon "
 "eller fyll ut vårt kontaktskjema!"
-
-#: workshop/templates/includes/about.html:52
-msgid "Contact us"
-msgstr "Kontakt oss"
 
 #: workshop/templates/includes/andrej.html:10
 msgid "Founder of the tattoo studio."
@@ -180,11 +180,17 @@ msgid "The Art Studio"
 msgstr "Studioet"
 
 #: workshop/templates/includes/andrej.html:28
+#, fuzzy
+#| msgid ""
+#| "I also do art. I draw paintings with oil and acrylic. Create a bas-relief "
+#| "by sculpting for interior and exterior. Bas-relief means a 3D volumetric "
+#| "drawing made on the wall or also on a special canvas. You can check out "
+#| "my art gallery on"
 msgid ""
 "I also do art. I draw paintings with oil and acrylic. Create a bas-relief by "
 "sculpting for interior and exterior. Bas-relief means a 3D volumetric "
 "drawing made on the wall or also on a special canvas. You can check out my "
-"art gallery on"
+"art gallery on my"
 msgstr ""
 "Jeg driver også med kunst. Jeg tegner malerier med olje og akryl. Lag et bas-"
 "relieff ved å skulpturere for interiør og eksteriør. Bas-relief betyr en 3D "
@@ -218,23 +224,23 @@ msgstr ""
 msgid "Price list"
 msgstr "Priser"
 
-#: workshop/templates/prices/prices.html:28
+#: workshop/templates/prices/prices.html:27
 msgid "Consultation"
 msgstr "Konsultasjon"
 
-#: workshop/templates/prices/prices.html:28
+#: workshop/templates/prices/prices.html:27
 msgid "FREE"
 msgstr "GRATIS"
 
-#: workshop/templates/prices/prices.html:30
+#: workshop/templates/prices/prices.html:29
 msgid "Minimum price"
 msgstr "Minste pris"
 
-#: workshop/templates/prices/prices.html:32
+#: workshop/templates/prices/prices.html:31
 msgid "Digital sketch"
 msgstr "Digital skisse"
 
-#: workshop/templates/prices/prices.html:34
+#: workshop/templates/prices/prices.html:33
 msgid ""
 "The price depends on the size of the tattoo, please fill out the form to get "
 "a price."
@@ -242,7 +248,7 @@ msgstr ""
 "Prisen avhenger av størrelsen på tatoveringen, vennligst fyll ut skjemaet "
 "for å få en pris."
 
-#: workshop/templates/prices/prices.html:35
+#: workshop/templates/prices/prices.html:34
 msgid ""
 "When booking an appointment, you will have to pay a deposit of 500 NOK, This "
 "will include in the sum when your tattoo is finished."
@@ -250,13 +256,13 @@ msgstr ""
 "Ved bestilling av time, vil du måtte betale et depositum på 500 NOK, Dette "
 "vil inkludere i summen når tatoveringen din er ferdig."
 
-#: workshop/templates/prices/prices.html:37
+#: workshop/templates/prices/prices.html:36
 msgid "We are a \"cashless\" studio. We accept payments with VIPPS and cards."
 msgstr ""
 "Gratis avbestilling gjøres 48 timer før en avtale ellers vil ikke "
 "depositumet bli refundert."
 
-#: workshop/templates/prices/prices.html:39
+#: workshop/templates/prices/prices.html:38
 msgid ""
 "Free cancellation is made 48 hours before an appointment otherwise the "
 "deposit will not be refunded."
@@ -265,3 +271,6 @@ msgstr "Vi er et «kontantfri» studio. Vi tar betalinger med VIPPS og kort"
 #: workshop/templates/workshop/workshop.html:24
 msgid "Workshop"
 msgstr "tatoveringsstudio"
+
+#~ msgid "Contact us"
+#~ msgstr "Kontakt oss"

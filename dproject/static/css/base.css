@@ -4120,13 +4120,6 @@ fieldset:disabled .btn {
   border-radius: 0.3rem;
 }
 
-.btn-sm,
-.btn-group-sm>.btn {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-  border-radius: 0.2rem;
-}
-
 .fade {
   transition: opacity 0.25s linear;
 }
@@ -7458,7 +7451,6 @@ fieldset:disabled .btn {
   height: auto;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1rem 0 1rem;
 }
 
 
@@ -12907,6 +12899,15 @@ a {
 #close-btn-contact {
   right: 5%;
 
+}
+
+.btn-sm,
+.btn-group-sm>.btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.6rem;
+  width: 100%;
+  max-width: 140px;
+  min-width: 0;
 }
 
 @media screen and (max-width: 600px) {

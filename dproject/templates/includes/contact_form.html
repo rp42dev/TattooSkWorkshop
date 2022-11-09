@@ -58,42 +58,26 @@
     <button class="btn w-100" id="#submits" type="submit" name="submit_button">{% translate "Submit" %}</button>
   </div>
 </form>
-<div class=" text-center">
-  <div class="gradient-line"></div>
-  <p>
-    {% translate 'No, i would like to place the' %} 
-    <a id="inquiries" onclick="getSubject(this.getAttribute('data-type'))" class="text-success" data-type="inquiry" role="button">{% translate 'Inquiry' %}</a>
-    <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="text-danger" data-type="complaint" role="button">{% translate 'Complain' %}</a>
-  </p>
-</div>
+
 
 <script>
   const getSubject = (subject) => {
-    const inputSubject = document.getElementById('subject');
     const messageLabel = document.getElementById('messageLabel')
-    const inquiriesBtn = document.getElementById('inquiries');
-    const complaintsBtn = document.getElementById('complaints');
     const contactHeading = document.getElementById('contact-heading');
-    const age = document.getElementById('age');
 
-    
-    inputSubject.value = subject
+    document.getElementById('subject').value = subject
+    document.getElementById('complaints').classList.toggle('d-none')
+    document.getElementById('inquiries').classList.toggle('d-none')
+    document.getElementById('age').classList.toggle('d-none');
+    document.getElementById('invalidCheck').required = subject === 'inquiry' ? false : true;
+
     if (subject == null || subject === 'inquiry') {
-      messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message' %}: ({% translate 'image references, black or with color, size and place' %})`;
+      messageLabel.innerHTML = `<span class="text-danger">*</span> ({% translate 'Message: image references, black or with color, size and place' %})`;
       contactHeading.innerHTML = `{% translate "Inquiries" %}`
-      complaintsBtn.classList.remove('d-none');
-      inquiriesBtn.classList.add('d-none');
-      age.classList.remove('d-none');
-      document.getElementById('invalidCheck').required = true;
+      
     } else {
-      console.log(subject);
-
       messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message' %}: `;
       contactHeading.innerHTML = `{% translate "Complaints" %}`
-      age.classList.add('d-none');
-      complaintsBtn.classList.add('d-none');
-      inquiriesBtn.classList.remove('d-none');
-      document.getElementById('invalidCheck').required = false;
     }
   }
   getSubject()

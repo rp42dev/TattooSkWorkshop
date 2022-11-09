@@ -1,26 +1,33 @@
 {% load i18n %}
 <!-- Off canvas left menu login form -->
-<div class="offcanvas offcanvas-start d-flex justify-content-between" data-bs-scroll="true" tabindex="-1" id="contact"
+<div class="offcanvas offcanvas-start d-flex justify-content-around" data-bs-scroll="true" tabindex="-1" id="contact"
     aria-labelledby="loginLabel">
-    <div class="offcanvas-header" data-bs-dismiss="offcanvas">
+    <div class="row p-3 ">
+    <div class="col-6">
+        <p>
+          <a id="inquiries" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm" data-type="inquiry" role="button">{% translate 'Inquiries' %}</a>
+          <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm d-none" data-type="complaint" role="button">{% translate 'Complaints' %}</a>
+        </p>
+    </div>
+    <div class="row offcanvas-header col-6 " data-bs-dismiss="offcanvas">
+        <div id="close-btn-contact" role="button" class="btn_close"
+             aria-label="Close">
+            <i class="fas fa-times float-end" data-bs-dismiss="offcanvas">
+     
+            </i>
+        </div>
+    </div>
+</div>
+    <div class="offcanvas-body">
         <div class="col-12 ">
             <h3 id="contact-heading" class="text-uppercase text-center offcanvas-title my-2">
                 {% translate "Inquiries" %}
             </h3>
         </div>
-        <div id="close-btn-contact" role="button" class="btn_close position-absolute top-50 translate-middle-y"
-            data-bs-dismiss="offcanvas" aria-label="Close">
-            <i class="fas fa-times">
-
-            </i>
+        <div class="gradient-line mb-4">
         </div>
-        <div class="gradient-line">
-        </div>
-    </div>
-    <div class="offcanvas-body">
         {% include 'includes/contact_form.html' %}
     </div>
     <div class="offcanvas-footer">
-        
     </div>
 </div>

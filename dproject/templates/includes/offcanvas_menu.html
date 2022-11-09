@@ -2,25 +2,25 @@
 {% load i18n %}
 <div class="offcanvas offcanvas-end d-flex justify-content-around" tabindex="-1" id="menu" data-bs-scroll="true"
     aria-labelledby="menuLabel">
-    <div class="offcanvas-header text-center">
+    <div class="offcanvas-header p-3  text-center">
         <div class="d-flex flex-row justify-content-between">
             <div role="button" class="btn_close text-start" data-bs-dismiss="offcanvas" aria-label="Close">
                 <i class="fas fa-times">
                 </i>
             </div>
-            <div>
-                <h3 class="text-uppercase text-center offcanvas-title my-2">
-                    {% translate "Menu" %}
-                </h3>
-            </div>
-
+            
             <div class=" mt-2">{% include 'includes/set_lang.html' %}</div>
+        </div>
+    </div>
+    
+    <div class="offcanvas-body mb-3">
+        <div>
+            <h3 class="text-uppercase text-center offcanvas-title my-2">
+                {% translate "Menu" %}
+            </h3>
         </div>
         <div class="gradient-line">
         </div>
-    </div>
-
-    <div class="offcanvas-body mb-3">
         <!-- Nav Menu Items -->
         <div class="menu-items d-flex flex-column justify-content-around align-items-center">
             <a class="btn _button" href="{% url 'home' %}">{% translate "Home" %}</a>
@@ -31,8 +31,10 @@
             <a class="btn _button" href="{% url 'faq' %}">{% translate "FAQ" %}</a>
             <a class="btn _button" data-bs-toggle="offcanvas" href="#contact" role="button" aria-controls="contact">{% translate "Message Us" %}</a>
         </div>
+        <div class="mt-4">{% include 'includes/social.html' %}</div>
+        
     </div>
 
     <!-- Copyright side menu  -->
-    <div class="offcanvas-footer">{% include 'includes/social.html' %}</div>
+    <div class="offcanvas-footer"></div>
 </div>
