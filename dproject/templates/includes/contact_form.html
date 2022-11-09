@@ -72,11 +72,11 @@
     document.getElementById('invalidCheck').required = subject === 'inquiry' ? false : true;
 
     if (subject == null || subject === 'inquiry') {
-      messageLabel.innerHTML = `<span class="text-danger">*</span> ({% translate 'Message: image references, black or with color, size and place' %})`;
+      messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message: (image references, black or with color, size and place)' %}`;
       contactHeading.innerHTML = `{% translate "Inquiries" %}`
       
     } else {
-      messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message' %}: `;
+      messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message | Beskjed' %}: `;
       contactHeading.innerHTML = `{% translate "Complaints" %}`
     }
   }

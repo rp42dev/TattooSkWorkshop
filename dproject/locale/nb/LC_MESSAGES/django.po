@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 19:26+0000\n"
+"POT-Creation-Date: 2022-11-09 19:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,10 +86,8 @@ msgid "Submit"
 msgstr "Sende inn"
 
 #: dproject/templates/includes/contact_form.html:75
-#, fuzzy
-#| msgid "image references, black or with color, size and place"
-msgid "Message: image references, black or with color, size and place"
-msgstr "Bildereferanser, sort eller med farge, størrelse og plass"
+msgid "Message: (image references, black or with color, size and place)"
+msgstr "Melding: (bildereferanser, svart eller med farge, størrelse og plass)"
 
 #: dproject/templates/includes/contact_form.html:76
 #: dproject/templates/includes/offcanvas_contact.html:8
@@ -137,6 +135,8 @@ msgid "FAQ"
 msgstr ""
 
 #: dproject/templates/includes/offcanvas_menu.html:32
+#, fuzzy
+#| msgid "Message Us"
 msgid "Message Us"
 msgstr "Beskjed"
 
@@ -200,20 +200,3 @@ msgstr ""
 #: dproject/templates/registration/password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
-
-#~ msgid "No, i would like to place the"
-#~ msgstr "Nei, jeg vil gjerne sende inn"
-
-#~ msgid "Inquiry"
-#~ msgstr "Forespørsel"
-
-#~ msgid "Complain"
-#~ msgstr "Klage"
-
-#~ msgid "instead"
-#~ msgstr "i stedet"
-
-#, fuzzy
-#~| msgid "Contact"
-#~ msgid "Contact us"
-#~ msgstr "Kontakt"
