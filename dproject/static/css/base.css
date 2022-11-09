@@ -12905,8 +12905,8 @@ a {
 .btn-group-sm>.btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.6rem;
-  width: 100%;
-  max-width: 140px;
+  width: fit-content;
+  width: max-content;
   min-width: 0;
 }
 
