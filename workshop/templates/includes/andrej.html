@@ -1,10 +1,10 @@
 {% load i18n %}
 {% load thumbnail %}
-<section class="row my-4 my-sm-5">
+<section class="row my-4 my-sm-5 fade">
     <div class="col-12 col-xl-6 d-flex justify-content-center align-items-center text_container rounded-3 order-1 order-xl-0">
 
         {% get_current_language as LANGUAGE_CODE %}
-        <div class="text-white px-3 px-sm-4 me-auto fade">
+        <div class="text-white px-3 px-sm-4 me-auto">
             <h2 class="text-uppercase text-light fw-light">Andrej</h2>
             <h3 class="text-light fw-normal text-capitalize">
                 {% translate 'Founder of the tattoo studio.' %}
@@ -53,7 +53,7 @@
                         {% if item.image %}
 
                         {% thumbnail item.image "1200x800" as im %}
-                        <img class='d-block rounded-3 fade' src="{{ im.url }}" alt="{{ image.name }}">
+                        <img class='d-block rounded-3' src="{{ im.url }}" alt="{{ image.name }}">
                         {% endthumbnail %}
 
                         {% endif %}
