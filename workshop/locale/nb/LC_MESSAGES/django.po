@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 19:50+0000\n"
+"POT-Creation-Date: 2022-11-10 16:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,7 +132,7 @@ msgstr ""
 
 #: workshop/templates/includes/about.html:47
 msgid "Gallery"
-msgstr ""
+msgstr "Galleri"
 
 #: workshop/templates/includes/about.html:49
 msgid ""
@@ -174,18 +174,10 @@ msgid "My Work"
 msgstr "Mitt galleri"
 
 #: workshop/templates/includes/andrej.html:25
-#, fuzzy
-#| msgid "The Studio"
 msgid "The Art Studio"
-msgstr "Studioet"
+msgstr "Kunststudioet"
 
 #: workshop/templates/includes/andrej.html:28
-#, fuzzy
-#| msgid ""
-#| "I also do art. I draw paintings with oil and acrylic. Create a bas-relief "
-#| "by sculpting for interior and exterior. Bas-relief means a 3D volumetric "
-#| "drawing made on the wall or also on a special canvas. You can check out "
-#| "my art gallery on"
 msgid ""
 "I also do art. I draw paintings with oil and acrylic. Create a bas-relief by "
 "sculpting for interior and exterior. Bas-relief means a 3D volumetric "
@@ -268,9 +260,22 @@ msgid ""
 "deposit will not be refunded."
 msgstr "Vi er et «kontantfri» studio. Vi tar betalinger med VIPPS og kort"
 
-#: workshop/templates/workshop/workshop.html:24
-msgid "Workshop"
-msgstr "tatoveringsstudio"
+#: workshop/templates/workshop/workshop.html:7
+msgid ""
+"Tattoo studio Fetsund. Free Car Park. Tel: + 47 46253760 Address: Fetveien "
+"467, 1900 Fetsund, Norway. Email: info@tattooskworkshop.no"
+msgstr ""
+"Tattoo studioet ligger 25 minutter fra Oslo. Gratis parkeringsplass "
+"tilgjengelig rett utenfor døren. Tel: + 47 46253760 Address: Fetveien 467, "
+"1900 Fetsund."
+
+#: workshop/templates/workshop/workshop.html:10
+#: workshop/templates/workshop/workshop.html:20
+msgid "About Us"
+msgstr "Om oss"
+
+#~ msgid "Workshop"
+#~ msgstr "tatoveringsstudio"
 
 #~ msgid "Contact us"
 #~ msgstr "Kontakt oss"

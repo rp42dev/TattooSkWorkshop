@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 19:50+0000\n"
+"POT-Creation-Date: 2022-11-10 16:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,6 +47,15 @@ msgid ""
 "There's been an error. It's been reported to the site administrators via "
 "email and should be fixed shortly. Thanks for your patience."
 msgstr "e-post og bør rettes snart. Takk for tålmodigheten."
+
+#: dproject/templates/base.html:19
+msgid ""
+"Tattoo studio based in Fetveien Norway, 25 minutes from Oslo Specializing in "
+"black & grey realism, colour realism, abstract. old tattoo cover-up. scar "
+"cover-up"
+msgstr ""
+"Tatoveringsstudio i Fetsund,  Spesialiserer mer på svart og grå realisme, "
+"fargerealisme, abstrakt svart og grått. Gammel, falmet tatoveringsdekning"
 
 #: dproject/templates/email/base.html:63 dproject/templates/email/base.txt:1
 msgid "Dear "
@@ -96,9 +105,8 @@ msgid "Inquiries"
 msgstr "Forespørsler"
 
 #: dproject/templates/includes/contact_form.html:79
-#, fuzzy
-#| msgid "Message Us"
-msgid "Message"
+#: dproject/templates/includes/offcanvas_menu.html:32
+msgid "Message Us"
 msgstr "Beskjed"
 
 #: dproject/templates/includes/contact_form.html:80
@@ -115,8 +123,8 @@ msgid "Home"
 msgstr "Hjem"
 
 #: dproject/templates/includes/offcanvas_menu.html:27
-msgid "Workshop"
-msgstr "Studio"
+msgid "About Us"
+msgstr "Om oss"
 
 #: dproject/templates/includes/offcanvas_menu.html:28
 msgid "Gallery"
@@ -133,12 +141,6 @@ msgstr "Ettervern"
 #: dproject/templates/includes/offcanvas_menu.html:31
 msgid "FAQ"
 msgstr ""
-
-#: dproject/templates/includes/offcanvas_menu.html:32
-#, fuzzy
-#| msgid "Message Us"
-msgid "Message Us"
-msgstr "Beskjed"
 
 #: dproject/templates/registration/logged_out.html:5
 msgid "Logged out"
@@ -200,3 +202,11 @@ msgstr ""
 #: dproject/templates/registration/password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Message Us"
+#~ msgid "Message | Beskjed"
+#~ msgstr "Beskjed"
+
+#~ msgid "Workshop"
+#~ msgstr "Studio"

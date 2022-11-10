@@ -2,13 +2,10 @@
 {% load static %}
 {% load i18n %}
 {% load thumbnail %}
-{% if LANGUAGE_CODE == "en" %}
-	<meta name="description" content="Tattoo gallery Tattoo SK Workshop: Check Out tattoo work by our artis Andrej and Diana">
-{% else %}
-
-	<meta name="description" content="Tatoveringsgalleri Tattoo SK Workshop: Sjekk ut tatoveringsarbeid av våre kunstnere Andrej og Diana">
-{% endif %}
-{% block extra_title %}Gallery | {% endblock %}
+{% block extra_meta %}
+<meta name="description" content="{% blocktranslate trimmed %}Tattoo gallery Tattoo SK Workshop: Check Out tattoo work by our artis Andrej{% endblocktranslate %}">
+{% endblock %}
+{% block extra_title %}{% translate "Gallery" %}{% endblock %}
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}

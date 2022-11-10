@@ -1,17 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
-{% block extra_meta %}
-{% if LANGUAGE_CODE == "en" %}
-<meta name="description"
-    content="Tattoo studio Fetsund. Free Car Park. Tel: + 47 46253760 Address: Fetveien 467, 1900 Fetsund, Norway. Email: info@tattooskworkshop.no">
-{% else %}
 
+{% block extra_meta %}
 <meta name="description"
-    content="Tattoo studioet ligger 25 minutter fra Oslo. Gratis parkeringsplass tilgjengelig rett utenfor døren. Tel: + 47 46253760 Address: Fetveien 467, 1900 Fetsund.">
-{% endif %}
+    content="{% blocktranslate trimmed %}Tattoo studio Fetsund. Free Car Park. Tel: + 47 46253760 Address: Fetveien 467, 1900 Fetsund, Norway. Email: info@tattooskworkshop.no{% endblocktranslate %}">
 {% endblock %}
-{% block extra_title %}Om oss | {% endblock %}
+
+{% block extra_title %}{% translate "About Us" %}{% endblock %}
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}
@@ -21,7 +17,7 @@
 <main id="workshop" style="max-width:1920px;" class="page_container align-self-center col-12">
 
     <div class="col text-center">
-        <h1 class="text-light page_heading text-uppercase display-3">{% translate "Workshop" %}</h1>
+        <h1 class="text-light page_heading text-uppercase display-3">{% translate "About Us" %}</h1>
     </div>
     {% include 'includes/about.html' %}
     <div class="gradient-line">
