@@ -9,34 +9,18 @@
 
     <div id="carousel2" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-        <div class="carousel-inner mx-auto">
+        <div class="carousel-inner">
             {% for item in album %}
 
             <div class="carousel-item {% if item.id == item_id %}active{% endif %}" id="slide{{ forloop.counter }}">
                 {% if item.image %}
 
-                <div class="wrap w-100 d-flex justify-content-center">
-
-                    <img class="vh-100" src="{{ item.image.url }}" alt="{{ item.name }}">
-
-                </div>
-
-                <a href="{{ item.image.url }}">
-                    <div class="carousel-caption caption_ d-none d-md-block">
-
-                    </div>
-                </a>
+                <img class="vh-100 mx-auto d-block" src="{{ item.image.url }}" alt="{{ item.name }}">
 
                 {% else %}
-                <div class="wrap w-100 d-flex justify-content-center">
-                    <img class="vh-100" src="{{ item.image_url }}" alt="{{ item.name }}">
-                </div>
 
-                <a href="{{ item.image_url }}">
-                    <div class="carousel-caption d-none d-md-block">
+                <img class="vh-100 mx-auto d-block" src="{{ item.image_url }}" alt="{{ item.name }}">
 
-                    </div>
-                </a>
                 {% endif %}
 
             </div>

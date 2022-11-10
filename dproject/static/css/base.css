@@ -7105,12 +7105,12 @@ fieldset:disabled .btn {
 
 .carousel-inner {
   position: relative;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
 }
 
 .carousel-inner img{
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: cover;
   
