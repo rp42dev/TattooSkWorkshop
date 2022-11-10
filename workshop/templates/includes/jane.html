@@ -14,7 +14,7 @@
                     {% if item.image %}
 
                     {% thumbnail item.image "1200x800" as im %}
-                    <img class='d-block rounded-3' src="{{ im.url }}" alt="{{ image.name }}">
+                    <img class='d-block rounded-3 fade' src="{{ im.url }}" alt="{{ image.name }}">
                     {% endthumbnail %}
 
                     {% endif %}
@@ -29,7 +29,7 @@
     </div>
 
     <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center order-1 rounded-3 order-lg-0 text_container">
-        <div class="text-white px-3 px-sm-4 me-auto">
+        <div class="text-white px-3 px-sm-4 me-auto fade">
             <h2 class="text-uppercase text-light fw-light">Jane</h2>
 
             {% get_current_language as LANGUAGE_CODE %}

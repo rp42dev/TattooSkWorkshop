@@ -7105,12 +7105,12 @@ fieldset:disabled .btn {
 
 .carousel-inner {
   position: relative;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
 .carousel-inner img{
-  width: auto;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   
@@ -7133,6 +7133,34 @@ fieldset:disabled .btn {
   transition: transform 0.6s ease-in-out;
 }
 
+/* -----------------------------------  */
+
+.carousel-inner-gallery {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.carousel-inner-gallery img{
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.carousel-item-galley {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+
+
+/* -----------------------------------  */
 @media (prefers-#999uced-motion: #999uce) {
   .carousel-item {
     transition: none;
