@@ -22,29 +22,19 @@
                 <div class="card-body bg-dark p-0">
 
                     {% if item.image %}
-
-                    {% thumbnail item.image "600x900" as im %}
-                    <img class="card-img img-fluid rounded-3" src="{{ im.url }}"
-                        alt="{{ image.name }}">
-                    {% endthumbnail %}
-
-                    {% else %}
-                    <img class="card-img img-fluid rounded-3" src="{{ item.image_url }}"
-                        alt="{{ image.name }}">
+                    <picture>
+                        {% thumbnail item.image "600x900" format="WEBP" as im %}
+                        <source srcset="{{ im.url }}" type="image/webp">
+                        {% endthumbnail %}
+                        {% thumbnail item.image "600x900" format="JPEG" as im %}
+                        <source srcset="{{ im.url }}" type="image/jpeg">
+                        <img class="card-img img-fluid rounded-3" src="{{ im.url }}" alt="{{ image.name }}">
+                        {% endthumbnail %}
+                    </picture>
                     {% endif %}
                 </div>
 
                 {% if item.image %}
-                <a href="{% url 'details' item.artist item.id %}">
-                    <div class="card-img-overlay text-left rounded-3">
-                        <div class="row">
-                            <div class="col">
-                                <p class="mb-0 text-capitalize fw-normal">{{ item.artist }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                {% else %}
                 <a href="{% url 'details' item.artist item.id %}">
                     <div class="card-img-overlay text-left rounded-3">
                         <div class="row">

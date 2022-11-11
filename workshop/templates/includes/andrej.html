@@ -1,7 +1,8 @@
 {% load i18n %}
 {% load thumbnail %}
 <section class="row my-4 my-sm-5 fade">
-    <div class="col-12 col-xl-6 d-flex justify-content-center align-items-center text_container rounded-3 order-1 order-xl-0">
+    <div
+        class="col-12 col-xl-6 d-flex justify-content-center align-items-center text_container rounded-3 order-1 order-xl-0">
 
         {% get_current_language as LANGUAGE_CODE %}
         <div class="text-white px-3 px-sm-4 me-auto">
@@ -16,7 +17,8 @@
             </p>
 
             <p>
-                {% blocktranslate trimmed %}I.m Passionate about art and I always want to create something out of imagination.I have successful
+                {% blocktranslate trimmed %}I.m Passionate about art and I always want to create something out of
+                imagination.I have successful
                 completed/graduated art, design School and number of intensive Tattoo related courses.{% endblocktranslate %}
             </p>
             <a class="btn" href="{% url 'artist' 'andrej' %}">{% translate 'My Work' %}</a>
@@ -25,16 +27,17 @@
                 {% translate 'The Art Studio' %}
             </h3>
             <p>
-                {% blocktranslate trimmed %}I also do art. I draw paintings with oil and acrylic. Create a bas-relief by sculpting for interior and
+                {% blocktranslate trimmed %}I also do art. I draw paintings with oil and acrylic. Create a bas-relief by
+                sculpting for interior and
                 exterior. Bas-relief means a 3D volumetric drawing made on the wall or also on a special canvas. You can
                 check out my art gallery on my{% endblocktranslate %}<a class="btn btn-sm"
                     href="https://instagram.com/andrejsbaranovs_oslo?igshid=YmMyMTA2M2Y=" target="blank"
                     rel='noopener noreferrer'> Instagram
-                </a> and <a  class="btn btn-sm"
-                    href="https://www.andrejsbaranovs.com" target="blank" rel='noopener noreferrer'>{% translate 'Website' %}</a>.
+                </a> and <a class="btn btn-sm" href="https://www.andrejsbaranovs.com" target="blank"
+                    rel='noopener noreferrer'>{% translate 'Website' %}</a>.
             </p>
 
-            
+
         </div>
     </div>
 
@@ -51,11 +54,15 @@
                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
                         id="slide{{ forloop.counter }}">
                         {% if item.image %}
-
-                        {% thumbnail item.image "1200x800" as im %}
-                        <img class='d-block rounded-3' src="{{ im.url }}" alt="{{ image.name }}">
-                        {% endthumbnail %}
-
+                        <picture>
+                            {% thumbnail item.image "1200x800" format="WEBP" as im %}
+                            <source srcset="{{ im.url }}" type="image/webp">
+                            {% endthumbnail %}
+                            {% thumbnail item.image "1200x800" format="JPEG" as im %}
+                            <source srcset="{{ im.url }}" type="image/jpeg">
+                            <img class='d-block rounded-3'  src="{{ im.url }}" alt="{{ image.name }}">
+                            {% endthumbnail %}
+                        </picture>
                         {% endif %}
                         <div class="carousel-caption d-none d-md-block">
 

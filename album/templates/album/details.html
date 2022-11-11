@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load thumbnail %}
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}
@@ -12,15 +13,19 @@
         <div class="carousel-inner carousel-inner-gallery">
             {% for item in album %}
 
-            <div class="carousel-item carousel-item-gallery {% if item.id == item_id %}active{% endif %}" id="slide{{ forloop.counter }}">
+            <div class="carousel-item carousel-item-gallery {% if item.id == item_id %}active{% endif %}"
+                id="slide{{ forloop.counter }}">
+
                 {% if item.image %}
-
-                <img class="vh-100 mx-auto d-block" src="{{ item.image.url }}" alt="{{ item.name }}">
-
-                {% else %}
-
-                <img class="vh-100 mx-auto d-block" src="{{ item.image_url }}" alt="{{ item.name }}">
-
+                <picture>
+                    {% thumbnail item.image "1920" format="WEBP" as im %}
+                    <source srcset="{{ item.image.url }}" type="image/webp">
+                    {% endthumbnail %}
+                    {% thumbnail item.image "1920" format="JPEG" as im %}
+                    <source srcset="{{ item.image.url }}" type="image/jpeg">
+                    <img class="vh-100 mx-auto d-block" src="{{ item.image.url }}" alt="{{ image.name }}">
+                    {% endthumbnail %}
+                </picture>
                 {% endif %}
 
             </div>
