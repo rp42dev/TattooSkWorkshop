@@ -58,27 +58,3 @@
     <button class="btn w-100" id="#submits" type="submit" name="submit_button">{% translate "Submit" %}</button>
   </div>
 </form>
-
-
-<script>
-  const getSubject = (subject) => {
-    const messageLabel = document.getElementById('messageLabel')
-    const contactHeading = document.getElementById('contact-heading');
-
-    document.getElementById('subject').value = subject
-    document.getElementById('complaints').classList.toggle('d-none')
-    document.getElementById('inquiries').classList.toggle('d-none')
-    document.getElementById('age').classList.toggle('d-none');
-    document.getElementById('invalidCheck').required = subject === 'inquiry' ? false : true;
-
-    if (subject == null || subject === 'inquiry') {
-      messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message: (image references, black or with color, size and place)' %}`;
-      contactHeading.innerHTML = `{% translate "Inquiries" %}`
-      
-    } else {
-      messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message Us' %}: `;
-      contactHeading.innerHTML = `{% translate "Complaints" %}`
-    }
-  }
-  getSubject()
-</script>

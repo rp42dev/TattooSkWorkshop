@@ -3,21 +3,22 @@
 <div class="offcanvas offcanvas-start d-flex justify-content-around" data-bs-scroll="true" tabindex="-1" id="contact"
     aria-labelledby="loginLabel">
     <div class="row p-3 ">
-    <div class="col-6">
-        <p>
-          <a id="inquiries" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm" data-type="inquiry" role="button">{% translate 'Inquiries' %}</a>
-          <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm d-none" data-type="complaint" role="button">{% translate 'Complaints' %}</a>
-        </p>
-    </div>
-    <div class="row offcanvas-header col-6 " data-bs-dismiss="offcanvas">
-        <div id="close-btn-contact" role="button" class="btn_close"
-             aria-label="Close">
-            <i class="fas fa-times float-end" data-bs-dismiss="offcanvas">
-     
-            </i>
+        <div class="col-6">
+            <p>
+                <a id="inquiries" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm"
+                    data-type="inquiry" role="button">{% translate 'Inquiries' %}</a>
+                <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm d-none"
+                    data-type="complaint" role="button">{% translate 'Complaints' %}</a>
+            </p>
+        </div>
+        <div class="row offcanvas-header col-6 " data-bs-dismiss="offcanvas">
+            <div id="close-btn-contact" role="button" class="btn_close" aria-label="Close">
+                <i class="fas fa-times float-end" data-bs-dismiss="offcanvas">
+
+                </i>
+            </div>
         </div>
     </div>
-</div>
     <div class="offcanvas-body">
         <div class="col-12 ">
             <h3 id="contact-heading" class="text-uppercase text-center offcanvas-title my-2">
@@ -31,3 +32,28 @@
     <div class="offcanvas-footer">
     </div>
 </div>
+
+<script>
+    // Form on channge subject
+    const getSubject = (subject) => {
+        const messageLabel = document.getElementById('messageLabel')
+        const contactHeading = document.getElementById('contact-heading');
+
+        document.getElementById('subject').value = subject
+        document.getElementById('complaints').classList.toggle('d-none')
+        document.getElementById('inquiries').classList.toggle('d-none')
+        document.getElementById('age').classList.toggle('d-none');
+        document.getElementById('invalidCheck').required = subject === 'inquiry' ? true : false;
+
+        if (subject == null || subject === 'inquiry') {
+            messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message: (image references, black or with color, size and place)' %}`;
+            contactHeading.innerHTML = `{% translate "Inquiries" %}`
+
+        } else {
+            messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message Us' %}: `;
+            contactHeading.innerHTML = `{% translate "Complaints" %}`
+        }
+    }
+
+    getSubject()
+</script>
