@@ -96,6 +96,7 @@
 
 
 body {
+  overflow-x: hidden;
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -12883,6 +12884,7 @@ a {
 }
 
 .site_container {
+
   width: 100vw;
   height: 100%;
   display: flex;
