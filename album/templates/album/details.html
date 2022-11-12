@@ -17,12 +17,12 @@
                 id="slide{{ forloop.counter }}">
 
                 {% if item.image %}
-                <picture>
+                <picture class="w-100 h-100">
                     {% thumbnail item.image "800x1200" format="WEBP" as im %}
                     <source srcset="{{ im.url }}" type="image/webp">
                     {% endthumbnail %}
                     <source srcset="{{ item.image.url }}" type="image/jpeg">
-                    <img class="vh-100 mx-auto d-block" src="{{ item.image.url }}" alt="{{ item.name }}">
+                    <img class="image-fluid mx-auto d-block" src="{{ item.image.url }}" alt="{{ item.name }}">
                 </picture>
                 {% endif %}
 
