@@ -7117,6 +7117,15 @@ fieldset:disabled .btn {
   
 }
 
+.carousel-inner-gallery img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;	
+  max-height: 100vh;
+  object-position: center;
+  
+}
+
 .carousel-inner::after {
   display: block;
   clear: both;
@@ -7140,15 +7149,6 @@ fieldset:disabled .btn {
   position: relative;
   width: 100vw;
   overflow: hidden;
-}
-
-.carousel-inner-gallery img{
-  width: 100%;
-  max-width: auto;
-  height: 100vh;
-  object-fit: none;
-  object-position: center;
-  
 }
 
 .carousel-item-galley {
