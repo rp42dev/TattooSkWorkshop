@@ -7145,7 +7145,7 @@ fieldset:disabled .btn {
 .carousel-inner-gallery img{
   width: 100%;
   max-width: auto;
-  height: 100%;
+  height: 100vh;
   object-fit: none;
   object-position: center;
   
