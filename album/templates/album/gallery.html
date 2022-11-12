@@ -28,13 +28,13 @@
 
                     {% if item.image %}
                     <picture>
-                        {% thumbnail item.image "800x1200" format="WEBP" as im %}
+                        {% thumbnail item.image "600x900" format="WEBP" as im %}
                         <source srcset="{{ im.url }}" type="image/webp">
                         {% endthumbnail %}
-                        {% thumbnail item.image "800x1200" format="JPEG" as im %}
-                        <source srcset="{{ im.url }}" type="image/jpeg">
-                        <img class="card-img img-fluid rounded-3" src="{{ im.url }}" alt="{{ image.name }}">
-                        {% endthumbnail %}
+                        
+                        <source srcset="{{ item.image..url }}" type="image/jpeg">
+                        <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="{{ image.name }}">
+                      
                     </picture>
                     {% endif %}
 

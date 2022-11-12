@@ -7143,9 +7143,11 @@ fieldset:disabled .btn {
 }
 
 .carousel-inner-gallery img{
-  width: auto;
+  width: 100%;
+  max-width: auto;
   height: 100%;
-  object-fit: cover;
+  object-fit: none;
+  object-position: center;
   
 }
 

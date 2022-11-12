@@ -25,7 +25,7 @@ class Album(models.Model):
     artist = models.ForeignKey(
         'Artist', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
-
     image = ResizedImageField(size=[800, 1200], crop=['middle', 'center'], quality=80, upload_to='album')
+
     def __str__(self):
         return self.name

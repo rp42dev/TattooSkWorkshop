@@ -18,13 +18,11 @@
 
                 {% if item.image %}
                 <picture>
-                    {% thumbnail item.image "1920" format="WEBP" as im %}
-                    <source srcset="{{ item.image.url }}" type="image/webp">
+                    {% thumbnail item.image "800x1200" format="WEBP" as im %}
+                    <source srcset="{{ im.url }}" type="image/webp">
                     {% endthumbnail %}
-                    {% thumbnail item.image "1920" format="JPEG" as im %}
                     <source srcset="{{ item.image.url }}" type="image/jpeg">
-                    <img class="vh-100 mx-auto d-block" src="{{ item.image.url }}" alt="{{ image.name }}">
-                    {% endthumbnail %}
+                    <img class="vh-100 mx-auto d-block" src="{{ item.image.url }}" alt="{{ item.name }}">
                 </picture>
                 {% endif %}
 
