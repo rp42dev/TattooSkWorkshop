@@ -12,12 +12,11 @@ from .common import *  # noqa
 
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = True
+DEBUG = False
 if 'TEMPLATES' in locals():
     for num,t in enumerate(TEMPLATES):
         if type(t.get('OPTIONS')) is dict:
             TEMPLATES[num]['OPTIONS']['debug'] = DEBUG
-
 
 # Mail settings
 # ------------------------------------------------------------------------------

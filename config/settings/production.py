@@ -30,11 +30,11 @@ CSRF_COOKIE_HTTPONLY = True
 
 # Disable DEBUG mode
 DEBUG = False
+
 if 'TEMPLATES' in locals():
     for num,t in enumerate(TEMPLATES):
         if type(t.get('OPTIONS')) is dict:
             TEMPLATES[num]['OPTIONS']['debug'] = DEBUG
-
 
 # SITE CONFIGURATION
 # ------------------------------------------------------------------------------
