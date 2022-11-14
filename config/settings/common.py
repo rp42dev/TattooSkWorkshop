@@ -73,6 +73,24 @@ MIDDLEWARE = [
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
+if not DEBUG:
+    SECURE_HSTS_SECONDS = 60
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
+        'DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS', default=True)
+    SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
+        'DJANGO_SECURE_CONTENT_TYPE_NOSNIFF', default=True)
+    SECURE_BROWSER_XSS_FILTER = True
+    #SESSION_COOKIE_SECURE = True
+    SESSION_COOKIE_HTTPONLY = True
+    SECURE_SSL_REDIRECT = env.bool('DJANGO_SECURE_SSL_REDIRECT', default=False)
+    #CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_HTTPONLY = True
+    #X_FRAME_OPTIONS = 'DENY'
+
+# Disable DEBUG mode
+DEBUG = False
+
+
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
 

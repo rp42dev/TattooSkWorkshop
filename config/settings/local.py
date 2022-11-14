@@ -9,7 +9,6 @@ Local settings
 
 from .common import *  # noqa
 
-
 # DEBUG
 # ------------------------------------------------------------------------------
 DEBUG = False
@@ -21,11 +20,11 @@ if 'TEMPLATES' in locals():
 # Mail settings
 # ------------------------------------------------------------------------------
 EMAIL_HOST = 'localhost'
+
 EMAIL_BACKEND = env(
     'DJANGO_EMAIL_BACKEND',
     default='django.core.mail.backends.console.EmailBackend'
 )
-
 
 # CACHING
 # ------------------------------------------------------------------------------
