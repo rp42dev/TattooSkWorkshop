@@ -73,36 +73,17 @@ MIDDLEWARE = [
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
-if not DEBUG:
-    SECURE_HSTS_SECONDS = 60
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
-        'DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS', default=True)
-    SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
-        'DJANGO_SECURE_CONTENT_TYPE_NOSNIFF', default=True)
-    SECURE_BROWSER_XSS_FILTER = True
-    SESSION_COOKIE_SECURE = True
-    SESSION_COOKIE_HTTPONLY = True
-    SECURE_SSL_REDIRECT = env.bool('DJANGO_SECURE_SSL_REDIRECT', default=False)
-    CSRF_COOKIE_SECURE = True
-    CSRF_COOKIE_HTTPONLY = True
-    X_FRAME_OPTIONS = 'DENY'
-    SECURE_HSTS_PRELOAD = True
-
-# Disable DEBUG mode
-DEBUG = False
-
 
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.wservices.ch'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = env('DEFAULT_FROM_EMAIL')
 EMAIL_HOST_PASSWORD = env('PASSWORD_EMAIL')
-
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -111,21 +92,9 @@ ADMINS = (
     ("""Raivis""", 'rapet80@gmail.com'),
 )
 
+
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
-
-# DATABASE CONFIGURATION
-# ------------------------------------------------------------------------------
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-
- 
-
-DATABASES = {
-    'default': env.db('DATABASE_URL', default='mysql://administrator007@localhost/administrator007_tattoostudiokunst'),
-}
-#DATABASES['default']['ATOMIC_REQUESTS'] = True
-if DATABASES['default']['ENGINE'] == 'django.db.backends.mysql':
-    DATABASES['default']['OPTIONS'] = {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
 
 
 # GENERAL CONFIGURATION

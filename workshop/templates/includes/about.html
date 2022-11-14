@@ -21,7 +21,7 @@
                         {% endthumbnail %}
                         {% thumbnail item.image "1200x800" format="JPEG" as im %}
                         <source srcset="{{ im.url }}" type="image/jpeg">
-                        <img src="{{ im.url }}" alt="{{ image.name }}">
+                        <img class="rounded-3" src="{{ im.url }}" alt="{{ image.name }}">
                         {% endthumbnail %}
                     </picture>
                     {% endif %}

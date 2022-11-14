@@ -11,7 +11,6 @@ from .common import *  # noqa
 
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = False
 if 'TEMPLATES' in locals():
     for num,t in enumerate(TEMPLATES):
         if type(t.get('OPTIONS')) is dict:
