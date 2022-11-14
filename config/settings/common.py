@@ -86,6 +86,7 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
     CSRF_COOKIE_HTTPONLY = True
     X_FRAME_OPTIONS = 'DENY'
+    SECURE_HSTS_PRELOAD = True
 
 # Disable DEBUG mode
 DEBUG = False
