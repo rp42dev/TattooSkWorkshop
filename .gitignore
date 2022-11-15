@@ -36,8 +36,8 @@ nosetests.xml
 htmlcov
 
 # Translations
-*.mo
-*.pot
+# *.mo
+# *.pot
 
 # Pycharm
 .idea/*
