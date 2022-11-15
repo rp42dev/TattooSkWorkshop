@@ -24,7 +24,7 @@ env.read_env()
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # This ensures that Django will be able to detect a secure connection
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -106,11 +106,11 @@ MANAGERS = ADMINS
 TIME_ZONE = 'UTC'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = 'nb'
+LANGUAGE_CODE = 'no'
 
 LANGUAGES = [
     ('en', 'English'),
-    ('nb', 'Norsk (bokmål)')
+    ('no', 'Norsk')
 ]
 
 
