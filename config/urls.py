@@ -6,6 +6,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from django.conf.urls.i18n import i18n_patterns
 
 
 urlpatterns = [
@@ -29,8 +30,8 @@ if settings.DEBUG:
             url(r'^__debug__/', include(debug_toolbar.urls)),
         ] + urlpatterns
 
-urlpatterns += [
+urlpatterns += i18n_patterns(
     path('', inc('home.urls')),
     url(r'^gallery/', include('album.urls')),
     url(r'^workshop/', include('workshop.urls')),
-]
+)
