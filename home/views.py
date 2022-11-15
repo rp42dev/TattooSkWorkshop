@@ -44,17 +44,17 @@ def send_email(request):
 
         subjects_lines = {
             'en': 'Autoreply... From Tattoo SK Workshop',
-            'nb': 'Automatisk svar.. Fra Tattoo SK Workshop'
+            'no': 'Automatisk svar.. Fra Tattoo SK Workshop'
         }
 
         templates = {
             'Inquiry': {
                 'en': render_to_string('emails/email_body.txt'),
-                'nb': render_to_string('emails/email_body_no.txt')
+                'no': render_to_string('emails/email_body_no.txt')
             },
             'Complaint': {
                 'en': render_to_string('emails/email_complaint.txt'),
-                'nb': render_to_string('emails/email_complaint_no.txt')
+                'no': render_to_string('emails/email_complaint_no.txt')
             }
         }
 
