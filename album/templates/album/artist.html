@@ -2,7 +2,14 @@
 {% load static %}
 {% load i18n %}
 {% load thumbnail %}
-{% block extra_title %}{{ artist_name|title }} Galleri| {% endblock %}
+
+{% block extra_meta %}
+<meta name="description" content="{% blocktranslate trimmed %}Tattoo gallery: We have a large selection of tattoo designs and we can also make custom tattoos. {% endblocktranslate %}">
+<link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/gallery/"/>
+<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/gallery/"/>
+{% endblock %}
+
+{% block extra_title %}Tattoo SK Workshop {{ artist_name|title }} Galleri{% endblock %}
 
 
 {% block nav %}

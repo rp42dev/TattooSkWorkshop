@@ -20,10 +20,12 @@ def artist(request, slug):
 
     album = Album.objects.filter(artist__slug=slug)
 
+    artist = get_object_or_404(Artist, slug=slug)
+
     context = {
         'album': album,
-        'artist': artist,
-        'artist_name': slug
+        'artist_name': artist.name,
+        'artist_slug': slug,
         }
 
     return render(request, 'album/artist.html', context)
@@ -38,7 +40,7 @@ def details(request, slug, item_id):
         'item_id': int(item_id),
         'item': item,
         'album': album,
-        'artist_name': slug,
+        'artist_slug': slug,
     }
     print()
     return render(request, 'album/details.html', context)

@@ -2,6 +2,12 @@
 {% load static %}
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
+
+{% block extra_meta %}
+<link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/about/faq"/>
+<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/about/faq"/>
+{% endblock %}
+
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER|escape}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-10 16:50+0000\n"
+"POT-Creation-Date: 2022-11-16 21:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: album/templates/album/gallery.html:6
+#: album/templates/album/artist.html:7
 msgid ""
-"Tattoo gallery Tattoo SK Workshop: Check Out tattoo work by our artis Andrej"
-msgstr ""
-"Tatoveringsgalleri Tattoo SK Workshop: Sjekk ut tatoveringsarbeid av våre "
-"kunstnere Andrej"
+"Tattoo gallery: We have a large selection of tattoo designs and we can also "
+"make custom tattoos."
+msgstr "Tatoveringsstudio Fetsund Fetveien, Norge sjekk tatoveringsgalleriet vårt for flere lage tilpassede tatoveringer."
 
-#: album/templates/album/gallery.html:8 album/templates/album/gallery.html:18
+
+#: album/templates/album/gallery.html:7
+msgid ""
+"Tattoo studio Fetsund Fetveien, Norway check out our tattoo gallery for more "
+"tattoo pictures."
+msgstr "Tatoveringsstudio Fetsund Fetveien, Norge sjekk tatoveringsgalleriet vårt for flere tatoveringsbilder."
+
+#: album/templates/album/gallery.html:12 album/templates/album/gallery.html:22
 msgid "Gallery"
-msgstr "galleri"
+msgstr "Galleri"

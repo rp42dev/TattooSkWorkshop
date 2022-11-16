@@ -2,10 +2,14 @@
 {% load static %}
 {% load i18n %}
 {% load thumbnail %}
+
 {% block extra_meta %}
-<meta name="description" content="{% blocktranslate trimmed %}Tattoo gallery Tattoo SK Workshop: Check Out tattoo work by our artis Andrej{% endblocktranslate %}">
+<meta name="description" content="{% blocktranslate trimmed %}Tattoo studio Fetsund Fetveien, Norway check out our tattoo gallery for more tattoo pictures.{% endblocktranslate %}">
+<link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/gallery/"/>
+<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/gallery/"/>
 {% endblock %}
-{% block extra_title %}{% translate "Gallery" %}{% endblock %}
+
+{% block extra_title %}Tattoo SK Workshop {% translate "Gallery" %}{% endblock %}
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}

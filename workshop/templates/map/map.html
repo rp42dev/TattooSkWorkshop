@@ -2,6 +2,12 @@
 {% load static %}
 {% load i18n %}
 
+{% block extra_meta %}
+<link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/about/map"/>
+<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/about/map"/>
+{% endblock %}
+
+
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}

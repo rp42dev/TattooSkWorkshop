@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-10 16:50+0000\n"
+"POT-Creation-Date: 2022-11-16 21:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,25 +94,25 @@ msgstr "Er du over 16"
 msgid "Submit"
 msgstr "Sende inn"
 
-#: dproject/templates/includes/contact_form.html:75
-msgid "Message: (image references, black or with color, size and place)"
-msgstr "Melding: (bildereferanser, svart eller med farge, størrelse og plass)"
-
-#: dproject/templates/includes/contact_form.html:76
-#: dproject/templates/includes/offcanvas_contact.html:8
-#: dproject/templates/includes/offcanvas_contact.html:24
+#: dproject/templates/includes/offcanvas_contact.html:9
+#: dproject/templates/includes/offcanvas_contact.html:25
+#: dproject/templates/includes/offcanvas_contact.html:50
 msgid "Inquiries"
 msgstr "Forespørsler"
 
-#: dproject/templates/includes/contact_form.html:79
+#: dproject/templates/includes/offcanvas_contact.html:11
+#: dproject/templates/includes/offcanvas_contact.html:54
+msgid "Complaints"
+msgstr "Klager"
+
+#: dproject/templates/includes/offcanvas_contact.html:49
+msgid "Message: (image references, black or with color, size and place)"
+msgstr "Melding: (bildereferanser, svart eller med farge, størrelse og plass)"
+
+#: dproject/templates/includes/offcanvas_contact.html:53
 #: dproject/templates/includes/offcanvas_menu.html:32
 msgid "Message Us"
 msgstr "Beskjed"
-
-#: dproject/templates/includes/contact_form.html:80
-#: dproject/templates/includes/offcanvas_contact.html:9
-msgid "Complaints"
-msgstr "Klager"
 
 #: dproject/templates/includes/offcanvas_menu.html:19
 msgid "Menu"

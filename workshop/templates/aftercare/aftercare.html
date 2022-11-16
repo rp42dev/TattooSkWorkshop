@@ -3,6 +3,11 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
+{% block extra_meta %}
+<link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/about/aftercare"/>
+<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/about/aftercare"/>
+{% endblock %}
+
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}
