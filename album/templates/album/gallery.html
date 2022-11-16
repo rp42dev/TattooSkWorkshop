@@ -33,12 +33,12 @@
                         {% endthumbnail %}
                         
                         <source srcset="{{ item.image..url }}" type="image/jpeg">
-                        <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="{{ image.name }}">
+                        <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="Artist {{ image.name }} thumbnail">
                       
                     </picture>
                     {% endif %}
 
-                    <a href="{% url 'artist' item.name %}">
+                    <a href="{% url 'artist' item.slug %}">
                         <div class="card-img-overlay rounded-3 text-left">
                             <div class="row">
                                 <div class="col">

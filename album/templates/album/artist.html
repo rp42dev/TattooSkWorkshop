@@ -27,15 +27,15 @@
                         <source srcset="{{ im.url }}" type="image/webp">
                         {% endthumbnail %}
                         
-                        <source srcset="{{ item.image..url }}" type="image/jpeg">
-                        <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="{{ image.name }}">
+                        <source srcset="{{ item.image.url }}" type="image/jpeg">
+                        <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="{{ image.name }} thumbnail">
                       
                     </picture>
                     {% endif %}
                 </div>
 
                 {% if item.image %}
-                <a href="{% url 'details' item.artist item.id %}">
+                <a href="{% url 'details' item.artist.slug item.id %}">
                     <div class="card-img-overlay text-left rounded-3">
                         <div class="row">
                             <div class="col">
