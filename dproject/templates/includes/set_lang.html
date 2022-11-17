@@ -4,6 +4,7 @@
 <form action="/i18n/setlang/" method="post">
 	{% csrf_token %}
 	<input name="next" type="hidden" value="{{ redirect_to }}" />
+    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
     {% if LANGUAGE_CODE == "no" %}
     <input type="hidden" name="language" name="lang" value="en">
     <label for="submit" class="float-end text-white"><img

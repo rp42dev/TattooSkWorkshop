@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 import os
 import environ
+from django.utils.translation import gettext_lazy as _
 
 ROOT_DIR = environ.Path(__file__) - 3  # (base_dir/config/settings/common.py - 3 = base_dir/)
 PROJ_DIR = ROOT_DIR.path('dproject')
@@ -109,10 +110,9 @@ TIME_ZONE = 'UTC'
 LANGUAGE_CODE = 'no'
 
 LANGUAGES = [
-    ('en', 'English'),
-    ('no', 'Norwegian')
+    ('en', _('English')),
+    ('no', _('Norwegian'))
 ]
-
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
