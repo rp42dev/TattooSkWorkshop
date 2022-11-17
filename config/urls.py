@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
+from django.utils.translation import ugettext_lazy as _
 
 from .sitemaps import StaticViewSitemap, ArtistSitemap, ArtistItemSitemap
 
@@ -43,7 +44,7 @@ if settings.DEBUG:
 
 urlpatterns += i18n_patterns(
     path('', inc('home.urls')),
-    url(r'^gallery/', include('album.urls')),
-    url(r'^about/', include('workshop.urls')),
+    url(_(r'^gallery/'), include('album.urls')),
+    url(_(r'^about/'), include('workshop.urls')),
     prefix_default_language=False
 )

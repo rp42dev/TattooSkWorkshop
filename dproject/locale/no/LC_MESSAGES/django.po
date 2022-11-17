@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-16 21:32+0000\n"
+"POT-Creation-Date: 2022-11-17 19:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config/settings/common.py:113
+msgid "English"
+msgstr "Engelsk"
+
+#: config/settings/common.py:114
+msgid "Norwegian"
+msgstr "Norsk"
+
+#: config/urls.py:47
+#, fuzzy
+#| msgid "Gallery"
+msgid "^gallery/"
+msgstr "Galleri"
+
+#: config/urls.py:48
+msgid "^about/"
+msgstr "Om"
 
 #: dproject/templates/403.html:4 dproject/templates/403.html:10
 msgid "Permission denied"
