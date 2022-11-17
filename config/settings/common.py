@@ -110,7 +110,7 @@ LANGUAGE_CODE = 'no'
 
 LANGUAGES = [
     ('en', 'English'),
-    ('no', 'Norsk')
+    ('no', 'Norwegian')
 ]
 
 
