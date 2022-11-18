@@ -4,9 +4,14 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 {% block extra_meta %}
+<meta name="description" content="{% blocktranslate trimmed %}Quality Tattoos and tattoo coverups, we focus on quality and safety. We are committed to providing the best quality services to our customers.{% endblocktranslate %}">
 <link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/about/aftercare"/>
 <link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/about/aftercare"/>
 {% endblock %}
+
+{% block title %}{% blocktranslate trimmed %}About Us{% endblocktranslate %}{% endblock %}
+
+{% block extra_title %}{% translate "Tattoo SK Workshop | Tattoo aftercare" %}{% endblock %}
 
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>

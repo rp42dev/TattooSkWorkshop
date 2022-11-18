@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-18 15:17+0000\n"
+"POT-Creation-Date: 2022-11-18 21:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,8 +27,6 @@ msgid "Norwegian"
 msgstr "Norsk"
 
 #: .\config\urls.py:47
-#, fuzzy
-#| msgid "Gallery"
 msgid "^gallery/"
 msgstr "^Galleri/"
 
@@ -68,12 +66,9 @@ msgstr "e-post og bør rettes snart. Takk for tålmodigheten."
 
 #: .\dproject\templates\base.html:19
 msgid ""
-"Tattoo studio based in Fetveien Norway, 25 minutes from Oslo Specializing in "
-"black & grey realism, colour realism, abstract. old tattoo cover-up. scar "
-"cover-up"
-msgstr ""
-"Tatoveringsstudio i Fetsund,  Spesialiserer mer på svart og grå realisme, "
-"fargerealisme, abstrakt svart og grått. Gammel, falmet tatoveringsdekning"
+"We focus on black and grey, realism and traditional tattoos. We also do "
+"cover-ups and custom tattoos. Book an appointment today! + 47 46253760."
+msgstr "Vi fokuserer på svart og grått, realisme og tradisjonelle tatoveringer. Vi gjør også cover-ups og tilpassede tatoveringer. Bestill time i dag! + 47 46253760."
 
 #: .\dproject\templates\email\base.html:63
 #: .\dproject\templates\email\base.txt:1
@@ -223,11 +218,3 @@ msgstr ""
 #: .\dproject\templates\registration\password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
-
-#, fuzzy
-#~| msgid "Message Us"
-#~ msgid "Message | Beskjed"
-#~ msgstr "Beskjed"
-
-#~ msgid "Workshop"
-#~ msgstr "Studio"
