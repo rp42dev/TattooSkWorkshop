@@ -1,36 +1,59 @@
- {% load i18n %}
- <!-- Off canvas left menu login form -->
- <div class="offcanvas offcanvas-start d-flex justify-content-around" data-bs-scroll="true" tabindex="-1" id="contact"
-     aria-labelledby="loginLabel">
+{% load i18n %}
+<!-- Off canvas left menu login form -->
+<div class="offcanvas offcanvas-start d-flex justify-content-around" data-bs-scroll="true" tabindex="-1" id="contact"
+    aria-labelledby="loginLabel">
+    <div class="row px-3 pt-3">
+        <div class="col-6">
+            <p>
+                <a id="inquiries" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm"
+                    data-type="inquiry" role="button">{% translate 'Inquiries' %}</a>
+                <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm d-none"
+                    data-type="complaint" role="button">{% translate 'Complaints' %}</a>
+            </p>
+        </div>
+        <div class="row offcanvas-header col-6 " data-bs-dismiss="offcanvas">
+            <div id="close-btn-contact" role="button" class="btn_close" aria-label="Close">
+                <i class="fas fa-times float-end" data-bs-dismiss="offcanvas">
 
-
-     <div class="offcanvas-header text-center gradient-underline" data-bs-dismiss="offcanvas">
-         <div class="row">
-             <div class="col-3 ">
-
-             </div>
-
-             <div class="col-6 ">
-                 <h4 class="text-uppercase text-center offcanvas-title">
-                     {% translate "Contact" %}
-                 </h4>
-             </div>
-             <div class="col-3">
-             <div role="button" class="btn_close text-end" data-bs-dismiss="offcanvas"
-                 aria-label="Close">
-                 <i class="fas fa-times">
-
-                 </i>
-             </div>
+                </i>
             </div>
-         </div>
-     </div>
+        </div>
+    </div>
+    <div class="offcanvas-body">
+        <div class="col-12 ">
+            <h3 id="contact-heading" class="text-uppercase text-center offcanvas-title my-2">
+                {% translate "Inquiries" %}
+            </h3>
+        </div>
+        <div class="gradient-line mb-4">
+        </div>
+        {% include 'includes/contact_form.html' %}
+    </div>
+    <div class="offcanvas-footer p-3">
+    </div>
+</div>
 
-     <div class="offcanvas-body">
+<script>
+    // Form on channge subject
+    const getSubject = (subject) => {
+        const messageLabel = document.getElementById('messageLabel')
+        const contactHeading = document.getElementById('contact-heading');
 
-         {% include 'includes/contact_form.html' %}
+        document.getElementById('subject').value = subject
+        document.getElementById('complaints').classList.toggle('d-none')
+        document.getElementById('inquiries').classList.toggle('d-none')
+        document.getElementById('age').classList.toggle('d-none');
+        document.getElementById('invalidCheck').required = subject === 'inquiry' ? true : false;
 
-     </div>
-     <div class="offcanvas-footer gradient-underline-top">{% include 'includes/social.html' %}</div>
+        if (subject == null || subject === 'inquiry') {
+            messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message: (image references, black or with color, size and place)' %}`;
+            contactHeading.innerHTML = `{% translate "Inquiries" %}`
 
- </div>
+        } else {
+            messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message Us' %}: `;
+            contactHeading.innerHTML = `{% translate "Complaints" %}`
+        }
+    }
+
+    getSubject()
+</script>

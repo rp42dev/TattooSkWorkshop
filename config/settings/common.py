@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 import os
 import environ
+from django.utils.translation import gettext_lazy as _
 
 ROOT_DIR = environ.Path(__file__) - 3  # (base_dir/config/settings/common.py - 3 = base_dir/)
 PROJ_DIR = ROOT_DIR.path('dproject')
@@ -24,7 +25,7 @@ env.read_env()
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # This ensures that Django will be able to detect a secure connection
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -73,17 +74,17 @@ MIDDLEWARE = [
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
+
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.wservices.ch'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = env('DEFAULT_FROM_EMAIL')
 EMAIL_HOST_PASSWORD = env('PASSWORD_EMAIL')
-
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -92,18 +93,9 @@ ADMINS = (
     ("""Raivis""", 'rapet80@gmail.com'),
 )
 
+
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
-
-# DATABASE CONFIGURATION
-# ------------------------------------------------------------------------------
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    'default': env.db('DATABASE_URL', default='mysql://administrator007@localhost/administrator007_tattoostudiokunst'),
-}
-#DATABASES['default']['ATOMIC_REQUESTS'] = True
-if DATABASES['default']['ENGINE'] == 'django.db.backends.mysql':
-    DATABASES['default']['OPTIONS'] = {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
 
 
 # GENERAL CONFIGURATION
@@ -115,13 +107,12 @@ if DATABASES['default']['ENGINE'] == 'django.db.backends.mysql':
 TIME_ZONE = 'UTC'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = 'nb'
+LANGUAGE_CODE = 'no'
 
 LANGUAGES = [
-    ('en', 'English'),
-    ('nb', 'Norsk (bokmål)')
+    ('en', _('English')),
+    ('no', _('Norwegian'))
 ]
-
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1

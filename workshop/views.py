@@ -8,18 +8,11 @@ from .models import About, AddMember, Faq
 
 def workshop(request):
     """A view to return the workshop page and show all album"""
-   
-    andrej = About.objects.filter(name='andrej').order_by('order')
-    diana = About.objects.filter(name='diana').order_by('order')
-    jane = About.objects.filter(name='jane').order_by('order')
-    shop = About.objects.filter(name='shop').order_by('order')
+    allObjects = About.objects.all()
+    context = {}
 
-    context = {
-        'shop': shop,
-        'andrej': andrej,
-        'jane': jane,
-        'diana': diana,
-    }
+    for item in allObjects:
+        context[item.name] = About.objects.filter(name=item.name).order_by('order')
 
     return render(request, 'workshop/workshop.html', context)
     

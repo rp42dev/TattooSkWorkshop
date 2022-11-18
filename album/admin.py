@@ -20,6 +20,7 @@ class ArtistAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'image',
+        'order',
     )
 
 

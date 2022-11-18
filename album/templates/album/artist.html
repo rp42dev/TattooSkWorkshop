@@ -1,65 +1,52 @@
 {% extends "base.html" %}
 {% load static %}
-{% load thumbnail %}    
-{% block extra_title %}{{ artist_name|title }} Galleri| {% endblock %}
- 
-    
+{% load i18n %}
+{% load thumbnail %}
+
+{% block extra_meta %}
+<meta name="description" content="{% blocktranslate trimmed %}Tattoo gallery: We have a large selection of tattoo designs and we can also make custom tattoos. {% endblocktranslate %}">
+<link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/gallery/"/>
+<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/gallery/"/>
+{% endblock %}
+
+{% block extra_title %}Tattoo SK Workshop {{ artist_name|title }} Galleri{% endblock %}
+
+
 {% block nav %}
 
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}
 {% block content %}
 
-<div class="page_container">
-    <div class="row">
-        <div class="col text-center ">
-            {% if artist_name == 'all' %}
-            <h2 class="text-light h1 text-uppercase">Album</h2>
-            {% else %}
-            <h2 class="text-light h1 text-uppercase">{{ artist_name }}</h2>
-            {% endif %}
-        </div>
-    </div>
+<div class="page_container pb-4 pt-1 mt-0">
 
-    <div class="row album mb-4">
-        
-
+    <div class="mx-auto row album mb-4 mx-0 mx-sm-2 justify-content-center">
 
         {% for item in album reversed %}
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3">
-            <div class="card h-100 mx-sm-2 mx-0 g-dark">
+            <div class="card fade rounded-3 h-100 mx-sm-2 mx-0 g-dark">
 
                 <div class="card-body bg-dark p-0">
-				
+
                     {% if item.image %}
-						
-						{% thumbnail item.image "400x600" as im %}
-							<img class="card-img img-fluid" src="{{ im.url }}" alt="{{ image.name }}">
-						{% endthumbnail %}
-						
-                    {% else %}
-                   
-                        <img class="card-img img-fluid" src="{{ item.image_url }}" alt="{{ image.name }}">
-                    
+                    <picture>
+                        {% thumbnail item.image "600x900" format="WEBP" as im %}
+                        <source srcset="{{ im.url }}" type="image/webp">
+                        {% endthumbnail %}
+                        
+                        <source srcset="{{ item.image.url }}" type="image/jpeg">
+                        <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="{{ image.name }} thumbnail">
+                      
+                    </picture>
                     {% endif %}
                 </div>
 
                 {% if item.image %}
-                <a href="{% url 'details' item.artist item.id %}">
-                    <div class="card-img-overlay text-left">
+                <a href="{% url 'details' item.artist.slug item.id %}">
+                    <div class="card-img-overlay text-left rounded-3">
                         <div class="row">
                             <div class="col">
-                                <p class="mb-0 text-capitalize">{{ item.artist }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                {% else %}
-                <a href="{% url 'details' item.artist item.id %}">
-                    <div class="card-img-overlay text-left">
-                        <div class="row">
-                            <div class="col">
-                                <p class="mb-0 text-capitalize">{{ item.artist }}</p>
+                                <p class="mb-0 text-capitalize fw-normal">{{ item.artist }}</p>
                             </div>
                         </div>
                     </div>
@@ -73,8 +60,7 @@
     </div>
 </div>
 
-	{% block postloadjs %}
+{% block postloadjs %}
 
-		
-    {% endblock %}
+{% endblock %}
 {% endblock %}

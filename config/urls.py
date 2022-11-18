@@ -6,11 +6,23 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from django.conf.urls.i18n import i18n_patterns
+from django.contrib.sitemaps.views import sitemap
+from django.utils.translation import ugettext_lazy as _
 
+from .sitemaps import StaticViewSitemap, ArtistSitemap, ArtistItemSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'artist': ArtistSitemap,
+    'items': ArtistItemSitemap
+}
 
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^admin/', admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
@@ -29,8 +41,10 @@ if settings.DEBUG:
             url(r'^__debug__/', include(debug_toolbar.urls)),
         ] + urlpatterns
 
-urlpatterns += [
+
+urlpatterns += i18n_patterns(
     path('', inc('home.urls')),
-    url(r'^gallery/', include('album.urls')),
-    url(r'^workshop/', include('workshop.urls')),
-]
+    url(_(r'^gallery/'), include('album.urls')),
+    url(_(r'^about/'), include('workshop.urls')),
+    prefix_default_language=False
+)

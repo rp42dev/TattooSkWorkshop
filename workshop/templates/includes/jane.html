@@ -1,58 +1,27 @@
 {% load i18n %}
 {% load thumbnail %}
-<div class="row gradient-underline">
-
-    <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center  order-1 order-lg-0">
-        <div class="text-light p-2 me-auto">
-            <h2>Jane</h2>
-            
-			{% get_current_language as LANGUAGE_CODE %}
-			{% if LANGUAGE_CODE == "en" %}
-			
-                <span class="fw-bold text-white">
-                    Administrator/Manager..
-                </span> <br>
-				<p class="font">
-                My Job is to ensure smooth-running of a business in the process of bookings,
-                as well as running through the steps to give an effective client consultation.
-                </p>
-                <p class="font">
-                    I love tattoos and tattooed people that really stand out..
-                </p>
-            </p>
-			{% else %}
-			
-                <span class="fw-bold text-white">
-                    Administrator og og ansvarlig for kundeservice...
-                </span> <br>
-                <p class="font">
-				Min jobb er å sørge for en jevn drift av en virksomhet i prosessen med bestillinger,
-                samt å gå gjennom trinnene for å gi en effektiv kundekonsultasjon.
-                </p>
-                <p class="font">
-                   Jeg elsker tatoveringer og tatoverte mennesker som virkelig skiller seg ut..
-                </p>
-            </p>
-			
-			{% endif %}
-        </div>
-    </div>
-
+<section class="row my-4 my-sm-5 fade">
     <div class="col-12 col-lg-6 position-relative padding-0">
-        <div id="carousel2" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="carousel2" class="carousel slide carousel-fade d-flex justify-content-center align-items-center"
+            data-bs-ride="carousel">
 
             <div class="carousel-inner">
+
                 {% for item in jane %}
 
                 <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
                     id="slide{{ forloop.counter }}">
-                        {% if item.image %}
-
-						{% thumbnail item.image "600x400" as im %}
-							<img class='d-block w-100' src="{{ im.url }}" alt="{{ image.name }}">
-						{% endthumbnail %}
-                    
-						{% endif %}
+                    {% if item.image %}
+                    <picture>
+                        {% thumbnail item.image "1200x800" format="WEBP" as im %}
+                        <source srcset="{{ im.url }}" type="image/webp">
+                        {% endthumbnail %}
+                        {% thumbnail item.image "1200x800" format="JPEG" as im %}
+                        <source srcset="{{ im.url }}" type="image/jpeg">
+                        <img class='d-block rounded-3' src="{{ im.url }}" alt="{{ image.name }}">
+                        {% endthumbnail %}
+                    </picture>
+                    {% endif %}
                     <div class="carousel-caption d-none d-md-block">
 
                     </div>
@@ -61,15 +30,24 @@
                 {% endfor %}
             </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 
-</div>
+    <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center order-1 rounded-3 order-lg-0 text_container">
+        <div class="text-white px-3 px-sm-4 me-auto">
+            <h2 class="text-uppercase text-light fw-light">Jane</h2>
+
+            {% get_current_language as LANGUAGE_CODE %}
+            <h3 class="text-light fw-normal text-capitalize">
+                {% translate 'Administrator / Manager' %}
+            </h3>
+            <p>
+                {% blocktranslate trimmed %}My Job is to ensure smooth-running of a business in the process of bookings,
+                as well as running through the steps to give an effective client consultation.{% endblocktranslate %}
+            </p>
+            <p>
+                {% blocktranslate trimmed %}I love tattoos and tattooed people that really stand out.{% endblocktranslate %}
+            </p>
+        </div>
+    </div>
+
+</section>

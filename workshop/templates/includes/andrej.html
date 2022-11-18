@@ -1,90 +1,69 @@
 {% load i18n %}
-{% load thumbnail %} 
-<div class="row d-flex gradient-underline">
+{% load thumbnail %}
+<section class="row my-4 my-sm-5 fade">
+    <div
+        class="col-12 col-xl-6 d-flex justify-content-center align-items-center text_container rounded-3 order-1 order-xl-0">
 
-    <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center  order-1 order-lg-0">
-	
-	{% get_current_language as LANGUAGE_CODE %}
-	{% if LANGUAGE_CODE == "en" %}
-        <div class="text-light p-2 me-auto">
-            <h2>Andrej</h2>
-
-            
-                <span class="fw-bold text-white">
-                    Founder of the tattoo studio: Tattoo SK Workshop..
-                </span> <br>
-                <p class="font">
-                    I'm working as a tattoo artist for many years.
-                    Specializing in black & grey realism, colour realism, abstract black & grey.
-                    Old, Faded tattoo cover-up. Body mark and scar cover-up
-                </p>
-
-                <p class="font">
-				I.m Passionate about art and I always want to create something out of imagination.I have successful completed/graduated art, design School and number of intensive Tattoo related courses.
-                </p>
-
-                <span class="fw-bold  text-white">
-                    The Art Studio Unidecor:
-                    
-                </span>
-             <p class="font">   
-                I also do art. I draw paintings with oil and acrylic. Create a bas-relief by sculpting for interior and exterior. Bas-relief means a 3D volumetric drawing made on the wall or also on a special canvas. You can check out my art gallery on Instagram: <a class="text-danger text-capitalize text-decoration-underline" href="https://www.instagram.com/unidecor.no/"
-                target="blank" rel='noopener noreferrer'> @unidecor.no
-            </a>
-				
-            </p>
-			
-
-            <a class="btn mb-2" href="{% url 'artist' 'andrej' %}">My Gallery</a>
-        </div>
-		
-		{% else %}
-		<div class="text-light p-2 me-auto">
-            <h2>Andrej</h2>
-
-            
-                <span class="fw-bold text-white">
-                    Grunnlegger av tatoveringsstudioet: Tattoo SK Workshop.
-                </span> <br>
-                  <p class="font">Jeg har jobbet som tatovør i mange år. Komfortabel med enhver realistisk eller abstrakt stil. Spesialiserer mer på svart og grå realisme, fargerealisme, abstrakt svart og grått. Gammel, falmet tatoveringsdekning. Kroppsmerke og dekking av arr.</p>
-                    
-				<p class="font">Lidenskapelig opptatt av kunst og jeg har alltid ønske å skape noe ut fra fantasi. Jeg er uteksaminert kunst, designskole og en rekke intensive tatoveringsrelaterte kurs.</p>
-					
-                <span class="fw-bold text-white">
-                   The Art Studio Unidecor:
-				<span/>
-                
-				<p class="font">Jeg driver også med kunst. Jeg tegner malerier med olje og akryl. Lag et bas-relieff ved å skulpturere for interiør og eksteriør. Bas-relief betyr en 3D volumetrisk tegning laget på veggen eller også på et spesielt lerret. Dere kan sjekke mitt art galleri  på Instagram: <a class="text-danger text-capitalize text-decoration-underline" href="https://www.instagram.com/unidecor.no/"
-                    target="blank" rel='noopener noreferrer'>@unidecor.no</a>
-				</p>
-					
-                </span>
-         
+        {% get_current_language as LANGUAGE_CODE %}
+        <div class="text-white px-3 px-sm-4 me-auto">
+            <h2 class="text-uppercase text-light fw-light">Andrej</h2>
+            <h3 class="text-light fw-normal text-capitalize">
+                {% translate 'Founder of the tattoo studio.' %}
+            </h3>
+            <p>
+                {% blocktranslate trimmed %}I'm working as a tattoo artist for many years.
+                Specializing in black & grey realism, colour realism, abstract black & grey.
+                Old, Faded tattoo cover-up. Body mark and scar cover-up.{% endblocktranslate %}
             </p>
 
-            <a class="btn mb-2" href="{% url 'artist' 'andrej' %}">Mitt galleri</a>
+            <p>
+                {% blocktranslate trimmed %}I.m Passionate about art and I always want to create something out of
+                imagination.I have successful
+                completed/graduated art, design School and number of intensive Tattoo related courses.{% endblocktranslate %}
+            </p>
+            <a class="btn" href="{% url 'artist' 'andrej' %}">{% translate 'My Work' %}</a>
+
+            <h3 class="text-light fw-normal text-capitalize">
+                {% translate 'The Art Studio' %}
+            </h3>
+            <p>
+                {% blocktranslate trimmed %}I also do art. I draw paintings with oil and acrylic. Create a bas-relief by
+                sculpting for interior and
+                exterior. Bas-relief means a 3D volumetric drawing made on the wall or also on a special canvas. You can
+                check out my art gallery on my{% endblocktranslate %}<a class="btn btn-sm"
+                    href="https://instagram.com/andrejsbaranovs_oslo?igshid=YmMyMTA2M2Y=" target="blank"
+                    rel='noopener noreferrer'> Instagram
+                </a> and <a class="btn btn-sm" href="https://www.andrejsbaranovs.com" target="blank"
+                    rel='noopener noreferrer'>{% translate 'Website' %}</a>.
+            </p>
+
+
         </div>
-		{% endif %}
-		
     </div>
 
-    <div class="col-12 col-lg-6 position-relative padding-0">
-        <div id="carousel3" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="col-12 col-xl-6 position-relative padding-0">
+        <div id="carousel3" class="carousel slide carousel-fade d-flex justify-content-center align-items-center"
+            data-bs-ride="carousel">
 
             <div class="carousel-inner">
 
                 <div class="carousel-inner">
+
                     {% for item in andrej %}
 
                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
                         id="slide{{ forloop.counter }}">
                         {% if item.image %}
-
-						{% thumbnail item.image "600x400" as im %}
-							<img class='d-block w-100' src="{{ im.url }}" alt="{{ image.name }}">
-						{% endthumbnail %}
-                    
-						{% endif %}
+                        <picture>
+                            {% thumbnail item.image "1200x800" format="WEBP" as im %}
+                            <source srcset="{{ im.url }}" type="image/webp">
+                            {% endthumbnail %}
+                            {% thumbnail item.image "1200x800" format="JPEG" as im %}
+                            <source srcset="{{ im.url }}" type="image/jpeg">
+                            <img class='rounded-3'  src="{{ im.url }}" alt="{{ image.name }}">
+                            {% endthumbnail %}
+                        </picture>
+                        {% endif %}
                         <div class="carousel-caption d-none d-md-block">
 
                         </div>
@@ -96,13 +75,5 @@
             </div>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-</div>
+</section>

@@ -2,46 +2,51 @@
 {% load static %}
 {% load i18n %}
 {% load thumbnail %}
-{% if LANGUAGE_CODE == "en" %}
-	<meta name="description" content="Tattoo gallery Tattoo SK Workshop: Check Out tattoo work by our artis Andrej and Diana">
-{% else %}
 
-	<meta name="description" content="Tatoveringsgalleri Tattoo SK Workshop: Sjekk ut tatoveringsarbeid av våre kunstnere Andrej og Diana">
-{% endif %}
-{% block extra_title %}Gallery | {% endblock %}
+{% block extra_meta %}
+<meta name="description" content="{% blocktranslate trimmed %}Tattoo studio Fetsund Fetveien, Norway check out our tattoo gallery for more tattoo pictures.{% endblocktranslate %}">
+<link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/gallery/"/>
+<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/gallery/"/>
+{% endblock %}
+
+{% block extra_title %}Tattoo SK Workshop {% translate "Gallery" %}{% endblock %}
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}
 {% block content %}
 
-<div class="page_container">
+<main class="page_container pb-4">
 
-    <div class="row ">
+    <div class="row">
         <div class="col text-center ">
-            <h2 class="text-light h1 text-uppercase">Album</h2>
+            <h1 class="text-light h1 text-uppercase display-3">{% translate "Gallery" %}</h1>
         </div>
     </div>
 
-    <div class="row mx-auto sellect">
-        {% for item in artists reversed %}
-        <div class="col-12 col-sm-4 mt-3">
-            <div class="card h-100 bg-dark mx-0 mx-sm-2">
+    <div class="mx-auto sellect row mx-0 mx-sm-2 justify-content-center">
+        {% for item in artists %}
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3">
+            <div class="card rounded-3 h-100 mx-sm-2 mx-0 g-dark">
 					
                 <div class="card-body bg-dark text-white p-0">
 
                     {% if item.image %}
-
-						{% thumbnail item.image "400x600" as im %}
-							<img class="card-img img-fluid" src="{{ im.url }}" alt="{{ image.name }}">
-						{% endthumbnail %}
-                    
+                    <picture>
+                        {% thumbnail item.image "600x900" format="WEBP" as im %}
+                        <source srcset="{{ im.url }}" type="image/webp">
+                        {% endthumbnail %}
+                        
+                        <source srcset="{{ item.image..url }}" type="image/jpeg">
+                        <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="Artist {{ image.name }} thumbnail">
+                      
+                    </picture>
                     {% endif %}
 
-                    <a href="{% url 'artist' item.name %}">
-                        <div class="card-img-overlay text-left">
+                    <a href="{% url 'artist' item.slug %}">
+                        <div class="card-img-overlay rounded-3 text-left">
                             <div class="row">
                                 <div class="col">
-                                    <h2 class="mb-0 text-capitalize">{{ item.name }}</h2>
+                                    <h2 class="mb-0 text-capitalize fw-normal">{{ item.name }}</h2>
                                 </div>
                             </div>
                         </div>
@@ -52,5 +57,5 @@
         {% endfor %}
     </div>
 
-</div>
+</main>
 {% endblock %}

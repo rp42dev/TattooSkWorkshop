@@ -9,24 +9,21 @@ Local settings
 
 from .common import *  # noqa
 
-
 # DEBUG
 # ------------------------------------------------------------------------------
-DEBUG = True
 if 'TEMPLATES' in locals():
     for num,t in enumerate(TEMPLATES):
         if type(t.get('OPTIONS')) is dict:
             TEMPLATES[num]['OPTIONS']['debug'] = DEBUG
 
-
 # Mail settings
 # ------------------------------------------------------------------------------
 EMAIL_HOST = 'localhost'
+
 EMAIL_BACKEND = env(
     'DJANGO_EMAIL_BACKEND',
     default='django.core.mail.backends.console.EmailBackend'
 )
-
 
 # CACHING
 # ------------------------------------------------------------------------------
@@ -65,3 +62,11 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 # ------------------------------------------------------------------------------
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['*'])
 
+if DEBUG:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase', # This is where you put the name of the db file. 
+                 # If one doesn't exist, it will be created at migration time.
+    }
+} 
