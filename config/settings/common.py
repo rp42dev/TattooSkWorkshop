@@ -162,9 +162,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 #'dproject.context_processors.site_processor',
             ],
-            'libraries': {
-                'sorl_thumbnail': 'sorl.thumbnail.templatetags.thumbnail',
-            },
+
         },
     },
 ]

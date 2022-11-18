@@ -2,7 +2,7 @@ from django.db import models
 from django_resized import ResizedImageField
 from album.models import Artist
 import random
-from pyheif_pillow_opener import register_heif_opener
+from pillow_heif import register_heif_opener
 
 register_heif_opener()
 

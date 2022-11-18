@@ -57,6 +57,7 @@ node_modules/
 
 # virtual environments
 .env
+.venv
 
 # User-uploaded media
 dproject/media/
@@ -70,6 +71,8 @@ staticfiles/
 # pid and socket file
 *.pid
 *.sock
+
+mydatabase
 
 # core dumps
 core

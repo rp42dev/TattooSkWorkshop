@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Album, Artist
-from pyheif_pillow_opener import register_heif_opener
+from pillow_heif import register_heif_opener
 
 register_heif_opener()
 

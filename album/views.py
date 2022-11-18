@@ -10,6 +10,7 @@ def gallery(request):
 
     context = {
         'artists': artists,
+        'index': 'gallery',
     }
 
     return render(request, 'album/gallery.html', context)
@@ -26,6 +27,7 @@ def artist(request, slug):
         'album': album,
         'artist_name': artist.name,
         'artist_slug': slug,
+        'index': 'gallery',
         }
 
     return render(request, 'album/artist.html', context)
@@ -41,7 +43,8 @@ def details(request, slug, item_id):
         'item': item,
         'album': album,
         'artist_slug': slug,
+        'index': 'gallery',
     }
-    print()
+
     return render(request, 'album/details.html', context)
 

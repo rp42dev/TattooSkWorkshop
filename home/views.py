@@ -17,8 +17,12 @@ import smtplib
 
 def index(request):
     """A view to return the index page"""
-
-    return render(request, 'home/index.html')
+    
+    context = {
+        'index': 'home',
+    }
+    
+    return render(request, 'home/index.html', context)
 
 
 def send_email(request):

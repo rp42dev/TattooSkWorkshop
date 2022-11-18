@@ -1,27 +1,30 @@
-  {% load i18n %}
-  {% get_current_language as LANGUAGE_CODE %}
-        
-<form action="/i18n/setlang/" method="post">
-	{% csrf_token %}
-	<input name="next" type="hidden" value="{{ redirect_to }}" />
-    {% if LANGUAGE_CODE == "en" %}
-    <input type="hidden" name="language" name="lang" value="no">
-    <label class="float-end text-white" for="submit"><img
-        src="https://flagcdn.com/36x27/no.png"
-        srcset="https://flagcdn.com/72x54/no.png 2x"
-        width="36"
-        height="27"
-        alt="South Africa"></label>
-    {% else %}
-        <input type="hidden" name="language" name="lang" value="en">
-        <label for="submit" class="float-end text-white"><img
-            
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% get_available_languages as languages %}
+
+{% for lang_code, lang_name in languages %}
+    {% language lang_code %}
+    <a href="{% url index %}">
+        {% if lang_code == 'no'%}
+        <img
+            class="{% if LANGUAGE_CODE == lang_code %}d-none{% else %}d-block{% endif %}"
+            src="https://flagcdn.com/36x27/no.png"
+            srcset="https://flagcdn.com/72x54/no.png 2x"
+            width="36"
+            height="27"
+            alt="Norwegian">
+        {% elif lang_code == 'en'%}
+        <img
+            class="{% if LANGUAGE_CODE == lang_code %}d-none{% else %}d-block{% endif %}"
             src="https://flagcdn.com/36x27/gb.png"
             srcset="https://flagcdn.com/72x54/gb.png 2x"
             width="36"
             height="27"
-            alt="South Africa"></label>
-    {% endif %}
-    <input type="submit" id="submit" value="{{ lang }}" class="invisible">
-</form>
+            alt="English">
+        {% endif %}
+    </a>
+    {% endlanguage %}
+{% endfor %}
+
            
