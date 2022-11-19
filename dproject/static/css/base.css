@@ -12686,32 +12686,6 @@ body {
   z-index: -1;
 }
 
-.page_heading {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  background: linear-gradient(to left, rgba(23, 29, 32, 0.4), rgba(149, 151, 255, 0.6)8%, rgba(255, 255, 255, 0.8), rgba(149, 151, 255, 0.6)92%, rgba(23, 29, 32, 0.4));
-    -webkit-text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-     font-family: 'Orbitron',
-     sans-serif;
-     letter-spacing: 0.5rem;
-     width: fit-content;
-}
-
-.page_heading::before {
-  background: #f00;
-  background: linear-gradient(to left, rgba(45, 56, 62, 0.4), rgba(149, 151, 255, 0.6) 30%, rgba(196, 197, 255, 0.8) 50%, rgba(149, 151, 255, 0.6) 70%, hsla(201, 16%, 21%, 0.4));
-  content: "";
-  position: absolute;
-  bottom: -.5rem;
-  left: 0;
-  height: 4px;
-  width: 100%;
-}
-
 #contact,
 #menu {
   color: #999;
@@ -12816,10 +12790,6 @@ body {
   min-height: 120px;
 }
 
-.social {
-  position: relative;
-}
-
 .social a {
   margin: .5rem;
   text-align: center;
@@ -12832,14 +12802,6 @@ body {
   color: rgb(224, 224, 224);
   opacity: .9;
   transition: all 150ms;
-}
-
-.social a:nth-child(4),
-.social a:nth-child(2) {
-  transform: scale(1.2) translate(0, -4px);
-}
-.social a:nth-child(3) {
-  transform: scale(1.4) translate(0, -8px);
 }
 
 .s {
@@ -12856,6 +12818,7 @@ a {
 
 .social a:hover {
   color: white;
+  transform: scale(1.08);
   box-shadow: 0 0 3px 3px rgba(24, 30, 33, 0.102);
   opacity: 1;
 }
@@ -12881,6 +12844,8 @@ a {
 }
 
 .gradient-line {
+  margin: auto;
+  max-width: 80%;
   width: 100%;
   height: 4px;
   background-size: 180% 180%;
@@ -12902,7 +12867,6 @@ a {
   height: 4px;
   width: 100%;
 }
-
 
 .text_header {
   position: relative;
@@ -12990,6 +12954,10 @@ a {
 }
 
 @media screen and (max-width: 600px) {
+
+  .gradient-line {
+    max-width: 80%;
+  }
 
   .padding-0 {
     padding: 0;
