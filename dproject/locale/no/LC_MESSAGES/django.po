@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-18 21:44+0000\n"
+"POT-Creation-Date: 2022-11-19 09:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,35 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\config\settings\common.py:113
+#: .\config\settings\common.py:102
 msgid "English"
 msgstr "Engelsk"
 
-#: .\config\settings\common.py:114
+#: .\config\settings\common.py:103
 msgid "Norwegian"
 msgstr "Norsk"
 
-#: .\config\urls.py:47
+#: .\config\urls.py:32
 msgid "^gallery/"
 msgstr "^Galleri/"
 
-#: .\config\urls.py:48
+#: .\config\urls.py:33
 msgid "^about/"
 msgstr "^Om/"
 
-#: .\dproject\templates\403.html:4 .\dproject\templates\403.html:10
+#: .\dproject\templates\403.html:4 .\dproject\templates\403.html:9
 msgid "Permission denied"
 msgstr ""
 
-#: .\dproject\templates\403_csrf.html:3 .\dproject\templates\403_csrf.html:9
+#: .\dproject\templates\403_csrf.html:3 .\dproject\templates\403_csrf.html:7
 msgid "CSRF verification failed. Request aborted."
 msgstr "CSRF-verifisering mislyktes. Forespørsel avbrutt."
 
-#: .\dproject\templates\404.html:4 .\dproject\templates\404.html:10
+#: .\dproject\templates\404.html:4 .\dproject\templates\404.html:9
 msgid "Page not found"
 msgstr "side ikke funnet."
 
-#: .\dproject\templates\404.html:11
+#: .\dproject\templates\404.html:10
 msgid "We're sorry, but the requested page could not be found."
 msgstr "Vi beklager, men den forespurte siden ble ikke funnet."
 
@@ -54,11 +54,11 @@ msgstr "Vi beklager, men den forespurte siden ble ikke funnet."
 msgid "Server error (500)"
 msgstr ""
 
-#: .\dproject\templates\500.html:10
+#: .\dproject\templates\500.html:8
 msgid "Server Error <em>(500)</em>"
 msgstr ""
 
-#: .\dproject\templates\500.html:11
+#: .\dproject\templates\500.html:9
 msgid ""
 "There's been an error. It's been reported to the site administrators via "
 "email and should be fixed shortly. Thanks for your patience."
@@ -68,7 +68,10 @@ msgstr "e-post og bør rettes snart. Takk for tålmodigheten."
 msgid ""
 "We focus on black and grey, realism and traditional tattoos. We also do "
 "cover-ups and custom tattoos. Book an appointment today! + 47 46253760."
-msgstr "Vi fokuserer på svart og grått, realisme og tradisjonelle tatoveringer. Vi gjør også cover-ups og tilpassede tatoveringer. Bestill time i dag! + 47 46253760."
+msgstr ""
+"Vi fokuserer på svart og grått, realisme og tradisjonelle tatoveringer. Vi "
+"gjør også cover-ups og tilpassede tatoveringer. Bestill time i dag! + 47 "
+"46253760."
 
 #: .\dproject\templates\email\base.html:63
 #: .\dproject\templates\email\base.txt:1
