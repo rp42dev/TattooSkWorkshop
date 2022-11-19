@@ -5,7 +5,11 @@
 
 {% for lang_code, lang_name in languages %}
     {% language lang_code %}
-    <a href="{% url index %}">
+    {% if index %}
+    <a href="{% url index  %}">
+    {% else %}
+    <a href="{% url 'home' %}">
+    {% endif %}
         {% if lang_code == 'no'%}
         <img
             class="{% if LANGUAGE_CODE == lang_code %}d-none{% else %}d-block{% endif %}"
@@ -14,7 +18,7 @@
             width="36"
             height="27"
             alt="Norwegian">
-        {% elif lang_code == 'en'%}
+        {% else %}
         <img
             class="{% if LANGUAGE_CODE == lang_code %}d-none{% else %}d-block{% endif %}"
             src="https://flagcdn.com/36x27/gb.png"

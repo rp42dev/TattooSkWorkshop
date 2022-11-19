@@ -12,6 +12,7 @@ import os
 import environ
 from django.utils.translation import gettext_lazy as _
 
+
 ROOT_DIR = environ.Path(__file__) - 3  # (base_dir/config/settings/common.py - 3 = base_dir/)
 PROJ_DIR = ROOT_DIR.path('dproject')
 
@@ -45,12 +46,14 @@ THIRD_PARTY_APPS = (
     'sorl.thumbnail',
 )
 
+
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'home',
     'album',
     'workshop',
 )
+
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -74,18 +77,6 @@ MIDDLEWARE = [
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
-
-# EMAIL CONFIGURATION
-# ------------------------------------------------------------------------------
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.wservices.ch'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = env('DEFAULT_FROM_EMAIL')
-EMAIL_HOST_PASSWORD = env('PASSWORD_EMAIL')
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-
 # MANAGER CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
@@ -93,10 +84,8 @@ ADMINS = (
     ("""Raivis""", 'rapet80@gmail.com'),
 )
 
-
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
-
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------

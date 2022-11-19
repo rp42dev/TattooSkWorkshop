@@ -62,11 +62,11 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 # ------------------------------------------------------------------------------
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['*'])
 
-if DEBUG:
-    DATABASES = {
+
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase', # This is where you put the name of the db file. 
-                 # If one doesn't exist, it will be created at migration time.
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': 'mydatabase', # This is where you put the name of the db file. 
+                # If one doesn't exist, it will be created at migration time.
     }
-} 
+}

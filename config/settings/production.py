@@ -28,12 +28,6 @@ CSRF_COOKIE_HTTPONLY = True
 X_FRAME_OPTIONS = 'DENY'
 SECURE_HSTS_PRELOAD = True
 
-
-if 'TEMPLATES' in locals():
-    for num,t in enumerate(TEMPLATES):
-        if type(t.get('OPTIONS')) is dict:
-            TEMPLATES[num]['OPTIONS']['debug'] = DEBUG
-
 # SITE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Hosts/domain names that are valid for this site
@@ -71,9 +65,20 @@ CACHES = {
 }
 """
 
-
 # Your production stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+
+
+# EMAIL CONFIGURATION
+# ------------------------------------------------------------------------------
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.wservices.ch'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = env('DEFAULT_FROM_EMAIL')
+EMAIL_HOST_PASSWORD = env('PASSWORD_EMAIL')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
