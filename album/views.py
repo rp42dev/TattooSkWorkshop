@@ -23,8 +23,9 @@ def artist(request, slug):
     
     # generate slug for eact album item if not already generated
     for item in album:
-        if item.slug == '':
+        if not item.slug:
             item.save()
+            
     artist = get_object_or_404(Artist, slug=slug)
     context = {
         'album': album,
