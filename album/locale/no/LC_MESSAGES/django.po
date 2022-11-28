@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 16:17+0000\n"
+"POT-Creation-Date: 2022-11-28 19:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,8 +26,9 @@ msgstr "Galleri - Tattoo SK Workshop | Tilpasset tatovering Fetsund"
 msgid ""
 "Andrej's gallery of tattoos. Tattoo artist in Fetsund, Norway. We can work "
 "together to create a unique Tattoo tattoo design for you."
-msgstr "Andrejs galleri med tatoveringer. Tatovør i Fetsund, Norge. Vi kan jobbe"
-"sammen for å lage et unikt tatoveringsdesign for deg"
+msgstr ""
+"Andrejs galleri med tatoveringer. Tatovør i Fetsund, Norge. Vi kan "
+"jobbesammen for å lage et unikt tatoveringsdesign for deg"
 
 #: .\album\templates\album\artist.html:12
 msgid ""
@@ -37,13 +38,35 @@ msgstr ""
 "Galleri - Vi er et tatoveringsstudio i Fetsund, Norge. Vi gjør alle slags "
 "tatoveringer, fra små til store. Vi holder til i Fetsund Fetveien."
 
-#: .\album\templates\album\details.html:7
-msgid ""
-"Quality Tattoos! Contact Phone: +47 462 53 760. Address Fetveien 467, 1900 "
-"Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-up."
+#: .\album\templates\album\details.html:9
+msgid 
+"Tattoo SK Workshop Fetsund - Tattoo  %(name)s done by tattoo artist Andjejs "
+"Baranovs"
 msgstr ""
-"Kvalitetstatoveringer! Kontakt Telefon: +47 462 53 760. Adresse Fetveien 467, 1900 "
-"Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-up."
+"attoo SK Workshop Fetsund - Tatovering %(name) er utført av tatovør Andjejs Baranovs"
+
+#: .\album\templates\album\details.html:11
+msgid ""
+"Tattoo SK Workshop Fetsund - %(name)s | Tattoo studio for best quality "
+"tattoos"
+msgstr ""
+"Tattoo SK Workshop Fetsund - %(name)s | Tatoveringsstudio for tatoveringer av beste "
+"kvalitet"
+
+#: .\album\templates\album\details.html:17
+#, python-format
+msgid ""
+"Best Quality Tattoos like %(name)s in Fetsund. Tattoo artist Andjejs "
+"Baranovs."
+msgstr "Beste kvalitet Tatoveringer som %(name)s i Fetsund. Tatovør Andjejs"
+
+#: .\album\templates\album\details.html:19
+msgid ""
+"Ready to be different and unique? Tattoo SK Workshop is the best tattoo "
+"studio in Fetsund. We offer the best quality tattoos."
+msgstr ""
+"Klar til å være annerledes og unik? Tattoo SK Workshop er den beste "
+"tatoveringenstudio i Fetsund. Vi tilbyr tatoveringer av beste kvalitet."
 
 #: .\album\templates\album\gallery.html:6
 msgid "Gallery - Tattoo SK Workshop | Your Choice for the best tattoos"
@@ -61,6 +84,27 @@ msgstr ""
 #: .\album\templates\album\gallery.html:20
 msgid "Gallery"
 msgstr "galleri"
+
+#~ msgid "Best Quality Tattoos like"
+#~ msgstr "Beste kvalitet tatoveringer som"
+
+#~ msgid "in Fetsund. Tattoo SK Workshop is your choice for the best tattoos."
+#~ msgstr ""
+#~ "i Fetsund. Tattoo SK Workshop er ditt valg for de beste tatoveringene"
+
+#, fuzzy, python-format
+#~| msgid ""
+#~| "Quality Tattoos! Contact Phone: +47 462 53 760. Address Fetveien 467, "
+#~| "1900 Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-"
+#~| "up."
+#~ msgid ""
+#~ "Quality Tattoos like %(item.name)s ! Contact Phone: +47 462 53 760. "
+#~ "Address Fetveien 467, 1900 Fetsund, Norway near Oslo. New Tattoo design "
+#~ "or Tattoo scar cover-up."
+#~ msgstr ""
+#~ "Kvalitetstatoveringer! Kontakt Telefon: +47 462 53 760. Adresse Fetveien "
+#~ "467, 1900 Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar "
+#~ "cover-up."
 
 #~ msgid ""
 #~ "Tattoo gallery: We have a large selection of tattoo designs and we can "

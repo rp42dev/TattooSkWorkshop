@@ -6,12 +6,11 @@ from django.urls import reverse
 
 class ArtistSitemap(sitemaps.Sitemap):
     i18n=True
+    alternates = True
+    x_default = 'no'
 
     def items(self):
         return Artist.objects.all()
-    
-    def changefreq(self, item):
-        return "monthly"
     
     def lastmod(self, item):
         return item.updated_at
@@ -19,6 +18,8 @@ class ArtistSitemap(sitemaps.Sitemap):
 
 class ArtistItemSitemap(sitemaps.Sitemap):
     i18n = True
+    alternates = True
+    x_default = 'no'
 
     def items(self):
         return Album.objects.all()

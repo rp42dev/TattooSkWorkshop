@@ -72,8 +72,16 @@ staticfiles/
 *.pid
 *.sock
 
+/mydatabase
+/mydatabase.sqlite3
 mydatabase
-
+mydatabase.sqlite3
+/migrations
+migrations/
+manage.py
+.\manage.py
+staticfiles
+/staticfiles
 # core dumps
 core
 

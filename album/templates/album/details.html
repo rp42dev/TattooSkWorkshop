@@ -3,8 +3,21 @@
 {% load i18n %}
 {% load thumbnail %}
 
+
+{% block extra_title %}
+{% if item.artist == 'andrej'|lower %}
+"{% blocktranslate with name=item.name  trimmed %}Tattoo SK Workshop Fetsund - Tattoo  {{ name }} done by tattoo artist Andjejs Baranovs {% endblocktranslate %}"
+{% else %}
+"{% blocktranslate with name=item.name trimmed %}Tattoo SK Workshop Fetsund - {{ name }} | Tattoo studio for best quality tattoos {% endblocktranslate %}"
+{% endif %}
+{% endblock %}
+
 {% block extra_meta %}
-<meta name="description" content="{% blocktranslate trimmed %}Quality Tattoos! Contact Phone: +47 462 53 760. Address Fetveien 467, 1900 Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-up.{% endblocktranslate %}">
+{% if item.artist == 'andrej'|lower %}
+<meta name="description" content="{% blocktranslate with name=item.name trimmed %}Best Quality Tattoos like {{ name }} in Fetsund. Tattoo artist Andjejs Baranovs.{% endblocktranslate %}">
+{% else %}
+<meta name="description" content="{% blocktranslate trimmed %}Ready to be different and unique? Tattoo SK Workshop is the best tattoo studio in Fetsund. We offer the best quality tattoos.{% endblocktranslate %}">
+{% endif %}
 {% endblock %}
 
 {% block nav %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 12:41+0000\n"
+"POT-Creation-Date: 2022-11-28 18:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,15 +35,15 @@ msgstr ""
 "mulig. Vi vil gi deg all informasjonen du trenger for å ta vare på "
 "tatoveringen din."
 
-#: .\workshop\templates\aftercare\aftercare.html:24
+#: .\workshop\templates\aftercare\aftercare.html:22
 msgid "Aftercare"
 msgstr "Ettervern"
 
-#: .\workshop\templates\aftercare\aftercare.html:36
+#: .\workshop\templates\aftercare\aftercare.html:34
 msgid "Which cream should I use?"
 msgstr "Hvilken krem skal jeg bruke i etterkant?"
 
-#: .\workshop\templates\aftercare\aftercare.html:39
+#: .\workshop\templates\aftercare\aftercare.html:37
 msgid ""
 "We recommend to use Bepanthen Sensi Calm cream (not salve). Its not to "
 "sticky to the clothes. But if you don’t have it - salve also is good. Or you "
@@ -53,11 +53,11 @@ msgstr ""
 "så mye til klærne. Vi har også krem fra studio, som du kan kjøpe med. Ingen "
 "andre kremer skal brukes"
 
-#: .\workshop\templates\aftercare\aftercare.html:47
+#: .\workshop\templates\aftercare\aftercare.html:45
 msgid "How to take care of my fresh tattoo?"
 msgstr "Hvordan ta vare på den ferske tatoveringen?"
 
-#: .\workshop\templates\aftercare\aftercare.html:50
+#: .\workshop\templates\aftercare\aftercare.html:48
 msgid ""
 "You keep the plastic film for 2 days. After 2 days remove the plastic film, "
 "wash tattoo well with cool water and soap (soap with no colour no perfume). "
@@ -75,11 +75,11 @@ msgstr ""
 "smøre kremen 1-2 ganger per dag. Hvis du ser tatoveringen begynner å tørke, "
 "smør gjerne. Dette for å unngå skorper."
 
-#: .\workshop\templates\aftercare\aftercare.html:62
+#: .\workshop\templates\aftercare\aftercare.html:60
 msgid "If under the plastic film is a lot of liquid?"
 msgstr "Hvis det er masse væske under plastikken, hva gjør jeg?"
 
-#: .\workshop\templates\aftercare\aftercare.html:65
+#: .\workshop\templates\aftercare\aftercare.html:63
 msgid ""
 "If you see plastic film falling off (the tattoo is not covered with film) or "
 "its a lot of liquid under, just remove it. Don’t need to wait 5 days. Remove "
@@ -89,11 +89,11 @@ msgstr ""
 "du plastikken. Du trenger altså ikke vente 5 dager dersom dette skjer. Da "
 "begynner prosessen skrevet over."
 
-#: .\workshop\templates\aftercare\aftercare.html:73
+#: .\workshop\templates\aftercare\aftercare.html:71
 msgid "Can I do training?"
 msgstr "Kan jeg trene rett etter tatovering?"
 
-#: .\workshop\templates\aftercare\aftercare.html:76
+#: .\workshop\templates\aftercare\aftercare.html:74
 msgid ""
 "We not recommend to train at all during the plastic film is on. During the "
 "training tattooed place will sweat too and you will get a lot of bubbles, "
@@ -105,20 +105,20 @@ msgstr ""
 "fjernes. Det kan bli en brennende følelse, og resultatet av tatoveringen "
 "blir ikke som forventet - eller i verste fall ødelagt."
 
-#: .\workshop\templates\aftercare\aftercare.html:85
+#: .\workshop\templates\aftercare\aftercare.html:83
 msgid "Can I go to the shower?"
 msgstr "Kan jeg dusje?"
 
-#: .\workshop\templates\aftercare\aftercare.html:88
+#: .\workshop\templates\aftercare\aftercare.html:86
 msgid "Yes, you can do all your routine as normal."
 msgstr ""
 "Ja, du kan gjøre dine normale rutiner når det gjelder personlig hygiene."
 
-#: .\workshop\templates\aftercare\aftercare.html:94
+#: .\workshop\templates\aftercare\aftercare.html:92
 msgid "Can I go to solarium (take a sun) or sauna?"
 msgstr "Kan jeg ta solarium, sole meg ute, eller gå til sauna?"
 
-#: .\workshop\templates\aftercare\aftercare.html:97
+#: .\workshop\templates\aftercare\aftercare.html:95
 msgid ""
 "Sauna is strictly forbidden! Till recovery process is finished. Solarium is "
 "not aloud for two weeks, later you must cover your tattoo with some cotton "
@@ -255,40 +255,43 @@ msgstr ""
 "minutters kjøring fra Oslo. Vi har åpent hver dag 7 dager i uken. Kontakt "
 "oss nå"
 
-#: .\workshop\templates\map\map.html:22
+#: .\workshop\templates\map\map.html:20
 msgid "Location"
 msgstr "Kartplassering"
 
 #: .\workshop\templates\prices\prices.html:7
-msgid ""
-"Quality Tattoos! Contact Phone: +47 462 53 760. Address Fetveien 467, 1900 "
-"Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-up."
-msgstr ""
-"Kvalitetstatoveringer! Kontakt Telefon: +47 462 53 760. Adresse Fetveien "
-"467, 1900 Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-"
-"up."
+msgid "Prices - Tatoo SK Workshop | Gray wash tattoo tattoo Tattoos Fetsund"
+msgstr "Priser - Tatovering SK Workshop | Gråvask tatovering Fetsund"
 
-#: .\workshop\templates\prices\prices.html:22
+#: .\workshop\templates\prices\prices.html:9
+msgid ""
+"Price list for tattoos at Tatoo SK Workshop. We welcome you to our studio in "
+"Fetsund. Get in touch with us for more information."
+msgstr ""
+"Prisliste for tatoveringer på Tatoo SK Workshop. Vi ønsker deg velkommen til vårt studio i "
+"Fetsund. Ta kontakt med oss ​​for mer informasjon."
+
+#: .\workshop\templates\prices\prices.html:21
 msgid "Price list"
 msgstr "Priser"
 
-#: .\workshop\templates\prices\prices.html:34
+#: .\workshop\templates\prices\prices.html:33
 msgid "Consultation"
 msgstr "Konsultasjon"
 
-#: .\workshop\templates\prices\prices.html:34
+#: .\workshop\templates\prices\prices.html:33
 msgid "FREE"
 msgstr "GRATIS"
 
-#: .\workshop\templates\prices\prices.html:36
+#: .\workshop\templates\prices\prices.html:35
 msgid "Minimum price"
 msgstr "Minste pris"
 
-#: .\workshop\templates\prices\prices.html:38
+#: .\workshop\templates\prices\prices.html:37
 msgid "Digital sketch"
 msgstr "Digital skisse"
 
-#: .\workshop\templates\prices\prices.html:40
+#: .\workshop\templates\prices\prices.html:39
 msgid ""
 "The price depends on the size of the tattoo, please fill out the form to get "
 "a price."
@@ -296,7 +299,7 @@ msgstr ""
 "Prisen avhenger av størrelsen på tatoveringen, vennligst fyll ut skjemaet "
 "for å få en pris."
 
-#: .\workshop\templates\prices\prices.html:41
+#: .\workshop\templates\prices\prices.html:40
 msgid ""
 "When booking an appointment, you will have to pay a deposit of 500 NOK, This "
 "will include in the sum when your tattoo is finished."
@@ -304,13 +307,13 @@ msgstr ""
 "Ved bestilling av time, vil du måtte betale et depositum på 500 NOK, Dette "
 "vil inkludere i summen når tatoveringen din er ferdig."
 
-#: .\workshop\templates\prices\prices.html:43
+#: .\workshop\templates\prices\prices.html:42
 msgid "We are a \"cashless\" studio. We accept payments with VIPPS and cards."
 msgstr ""
 "Gratis avbestilling gjøres 48 timer før en avtale ellers vil ikke "
 "depositumet bli refundert."
 
-#: .\workshop\templates\prices\prices.html:45
+#: .\workshop\templates\prices\prices.html:44
 msgid ""
 "Free cancellation is made 48 hours before an appointment otherwise the "
 "deposit will not be refunded."
@@ -330,7 +333,7 @@ msgstr ""
 "hjelpe deg med tatoveringsdesignet og prosessen. Kontakt oss for en gratis "
 "konsultasjon i dag."
 
-#: .\workshop\templates\workshop\workshop.html:21
+#: .\workshop\templates\workshop\workshop.html:19
 msgid "About Us"
 msgstr "Om oss"
 
@@ -349,6 +352,14 @@ msgstr "kart"
 #: .\workshop\urls.py:12
 msgid "prices"
 msgstr "priser"
+
+#~ msgid ""
+#~ "Quality Tattoos! Contact Phone: +47 462 53 760. Address Fetveien 467, "
+#~ "1900 Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-up."
+#~ msgstr ""
+#~ "Kvalitetstatoveringer! Kontakt Telefon: +47 462 53 760. Adresse Fetveien "
+#~ "467, 1900 Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar "
+#~ "cover-up."
 
 #~ msgid ""
 #~ "Tattoo studio, Tattoo Fetsund, Tattoo Oslo, Tattoo Aftercare. Customer is "
