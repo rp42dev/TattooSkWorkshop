@@ -3,13 +3,13 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
+{% block extra_title %}{% translate "FAQ - Tatoo SK Workshop | Get tattooed in Fetsund near Oslo" %}{% endblock %}
 {% block extra_meta %}
-<meta name="description" content="{% blocktranslate trimmed %}Tattoo studio, Tattoo Fetsund, Tattoo Oslo, Tattoo Aftercare. Customer is our top priority and we are always ready to help you with your tattoo.{% endblocktranslate %}">
+<meta name="description" content="{% blocktranslate trimmed %}Frequently asked questions about tattooing and the tattoo studio Tatoo SK Workshop in Fetsund near Oslo. With a focus on quality and customer service.{% endblocktranslate %}">
+
 <link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/about/faq"/>
 <link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/about/faq"/>
 {% endblock %}
-
-{% block extra_title %}{% translate "Tatoo SK Workshop Faq | Tattoo Aftercare Fetsund" %}{% endblock %}
 
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER|escape}}"><i class="fas fa-chevron-left"></i></a>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-19 10:11+0000\n"
+"POT-Creation-Date: 2022-11-28 12:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,18 +18,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\workshop\templates\aftercare\aftercare.html:7
+#: .\workshop\templates\aftercare\aftercare.html:6
 msgid ""
-"Quality Tattoos and tattoo coverups, we focus on quality and safety. We are "
-"committed to providing the best quality services to our customers."
+"Tattoo aftercare - Tattoo SK Workshop | Realism and black and grey tattoos"
 msgstr ""
-"Kvalitet Tatoveringer og tatovering coverups, vi fokuserer på kvalitet og "
-"sikkerhet. Vi er forpliktet til å tilby tjenester av beste kvalitet til våre "
-"kunder."
+"Tattoo ettervern - Tattoo SK Workshop | Realisme og svarte og grå "
+"tatoveringer"
 
-#: .\workshop\templates\aftercare\aftercare.html:12
-msgid "Tattoo SK Workshop | Tattoo aftercare"
-msgstr "Tattoo SK Workshop | Tatovering ettervern"
+#: .\workshop\templates\aftercare\aftercare.html:8
+msgid ""
+"Out top priority is to provide you with the best tattoo aftercare possible. "
+"We will provide you with all the information you need to take care of your "
+"tattoo."
+msgstr ""
+"Den høyeste prioritet er å gi deg den beste tatoveringsetterbehandlingen som "
+"mulig. Vi vil gi deg all informasjonen du trenger for å ta vare på "
+"tatoveringen din."
 
 #: .\workshop\templates\aftercare\aftercare.html:24
 msgid "Aftercare"
@@ -126,20 +130,17 @@ msgstr ""
 "dette er det viktig at du dekker området med et plagg som f.eks t skjorte "
 "eller genser. I fremtiden må du bruke minst solfaktor 50."
 
-#: .\workshop\templates\faq\faq.html:7
-msgid ""
-"Tattoo studio, Tattoo Fetsund, Tattoo Oslo, Tattoo Aftercare. Customer is "
-"our top priority and we are always ready to help you with your tattoo."
-msgstr ""
-"Tattoo studio, Tattoo Fetsund, Tattoo Oslo, Tattoo Aftercare. Kunden er vår "
-"høyeste prioritet, og vi er alltid klare til å hjelpe deg med tatoveringen "
-"din."
+#: .\workshop\templates\faq\faq.html:6
+msgid "FAQ - Tatoo SK Workshop | Get tattooed in Fetsund near Oslo"
+msgstr "FAQ - Tatovering SK Workshop | Tatovere deg i Fetsund ved Oslo"
 
-#: .\workshop\templates\faq\faq.html:12
-#, fuzzy
-#| msgid "Tattoo SK Workshop | Tattoo aftercare"
-msgid "Tatoo SK Workshop Faq | Tattoo Aftercare Fetsund"
-msgstr "Tattoo SK Workshop | Tatovering ettervern"
+#: .\workshop\templates\faq\faq.html:8
+msgid ""
+"Frequently asked questions about tattooing and the tattoo studio Tatoo SK "
+"Workshop in Fetsund near Oslo. With a focus on quality and customer service."
+msgstr ""
+"Ofte stilte spørsmål om tatovering og tatoveringsstudioet Tatoo SKVerksted i "
+"Fetsund ved Oslo. Med fokus på kvalitet og kundeservice."
 
 #: .\workshop\templates\includes\about.html:47
 msgid "Tattoo SK Workshop"
@@ -240,7 +241,24 @@ msgid "I love tattoos and tattooed people that really stand out."
 msgstr ""
 "Jeg elsker tatoveringer og tatoverte mennesker som virkelig skiller seg ut."
 
-#: .\workshop\templates\map\map.html:7
+#: .\workshop\templates\map\map.html:5
+msgid "Location - Tatoo SK Workshop | Custom Tattoos Fetsund"
+msgstr "Kartplassering - Tattoo SK Workshop | Custom Tatoveringer Fetsund"
+
+#: .\workshop\templates\map\map.html:8
+msgid ""
+"Get tattooed at Tatoo SK Workshop We are located in the centre of Fetsund, "
+"25 minutes drive from Oslo. We are open every day 7 days a week. Contact Us "
+"now."
+msgstr ""
+"Tatovere deg på Tatoo SK Workshop Vi holder til i Fetsundsentrum, 25 "
+"minutters kjøring fra Oslo. Vi har åpent hver dag 7 dager i uken. Kontakt "
+"oss nå"
+
+#: .\workshop\templates\map\map.html:22
+msgid "Location"
+msgstr "Kartplassering"
+
 #: .\workshop\templates\prices\prices.html:7
 msgid ""
 "Quality Tattoos! Contact Phone: +47 462 53 760. Address Fetveien 467, 1900 "
@@ -298,18 +316,19 @@ msgid ""
 "deposit will not be refunded."
 msgstr "Vi er et «kontantfri» studio. Vi tar betalinger med VIPPS og kort"
 
-#: .\workshop\templates\workshop\workshop.html:6
-msgid ""
-"Tattoo studio in Fetveien, Fetsund, Norway. We are open 7 days a week! Free "
-"parking is available! Contact + 47 462 53 760 info@tattooskworkshop.no"
-msgstr ""
-"Tatoveringsstudio i Fetveien, Fetsund, Norge. Vi har åpent 7 dager i uken! "
-"Gratis parkering er tilgjengelig! Ta kontakt + 47 462 53 760 "
-"info@tattooskworkshop.no"
+#: .\workshop\templates\workshop\workshop.html:5
+msgid "About - Tattoo SK Workshop | Tattoo studio in Fetsund Fetveien"
+msgstr "Om - Tattoo SK Workshop | Tatoveringsstudio i Fetsund Fetveien"
 
-#: .\workshop\templates\workshop\workshop.html:11
-msgid "About Tattoo SK Workshop | Tattoo studio near Oslo"
-msgstr "Om Tattoo SK Workshop | Tatoveringsstudio nær Oslo"
+#: .\workshop\templates\workshop\workshop.html:7
+msgid ""
+"Ready to get a tattoo? full arm tattoo or full body tattoo we can help you "
+"with the tattoo design and the process. Contact Us for a free consultation "
+"today."
+msgstr ""
+"Klar for å få en tatovering? full arm tattoo eller full body tattoo vi kan "
+"hjelpe deg med tatoveringsdesignet og prosessen. Kontakt oss for en gratis "
+"konsultasjon i dag."
 
 #: .\workshop\templates\workshop\workshop.html:21
 msgid "About Us"
@@ -321,17 +340,48 @@ msgstr ""
 
 #: .\workshop\urls.py:10
 msgid "aftercare"
-msgstr "Ettervern"
+msgstr "ettervern"
 
 #: .\workshop\urls.py:11
 msgid "map"
-msgstr "Kart"
+msgstr "kart"
 
 #: .\workshop\urls.py:12
-#, fuzzy
-#| msgid "Price list"
 msgid "prices"
-msgstr "Priser"
+msgstr "priser"
+
+#~ msgid ""
+#~ "Tattoo studio, Tattoo Fetsund, Tattoo Oslo, Tattoo Aftercare. Customer is "
+#~ "our top priority and we are always ready to help you with your tattoo."
+#~ msgstr ""
+#~ "Tattoo studio, Tattoo Fetsund, Tattoo Oslo, Tattoo Aftercare. Kunden er "
+#~ "vår høyeste prioritet, og vi er alltid klare til å hjelpe deg med "
+#~ "tatoveringen din."
+
+#, fuzzy
+#~| msgid "Tattoo SK Workshop | Tattoo aftercare"
+#~ msgid "Tatoo SK Workshop Faq | Tattoo Aftercare Fetsund"
+#~ msgstr "Tattoo SK Workshop | Tatovering ettervern"
+
+#~ msgid ""
+#~ "Quality Tattoos and tattoo coverups, we focus on quality and safety. We "
+#~ "are committed to providing the best quality services to our customers."
+#~ msgstr ""
+#~ "Kvalitet Tatoveringer og tatovering coverups, vi fokuserer på kvalitet og "
+#~ "sikkerhet. Vi er forpliktet til å tilby tjenester av beste kvalitet til "
+#~ "våre kunder."
+
+#~ msgid "Tattoo SK Workshop | Tattoo aftercare"
+#~ msgstr "Tattoo SK Workshop | Tatovering ettervern"
+
+#~ msgid ""
+#~ "Tattoo studio in Fetveien, Fetsund, Norway. We are open 7 days a week! "
+#~ "Free parking is available! Contact + 47 462 53 760 info@tattooskworkshop."
+#~ "no"
+#~ msgstr ""
+#~ "Tatoveringsstudio i Fetveien, Fetsund, Norge. Vi har åpent 7 dager i "
+#~ "uken! Gratis parkering er tilgjengelig! Ta kontakt + 47 462 53 760 "
+#~ "info@tattooskworkshop.no"
 
 #~ msgid "Workshop"
 #~ msgstr "tatoveringsstudio"

@@ -2,13 +2,13 @@
 {% load static %}
 {% load i18n %}
 
+{% block extra_title %}{% translate "About - Tattoo SK Workshop | Tattoo studio in Fetsund Fetveien" %}{% endblock %}
 {% block extra_meta %}
-<meta name="description" content="{% blocktranslate trimmed %}Tattoo studio in Fetveien, Fetsund, Norway. We are open 7 days a week! Free parking is available! Contact + 47 462 53 760 info@tattooskworkshop.no{% endblocktranslate %}" />
+<meta name="description" content="{% blocktranslate trimmed %}Ready to get a tattoo? full arm tattoo or full body tattoo we can help you with the tattoo design and the process. Contact Us for a free consultation today.{% endblocktranslate %}">
 <link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/about/"/>
-<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/about/"/>
+<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/Om/"/>
 {% endblock %}
 
-{% block extra_title %}{% translate "About Tattoo SK Workshop | Tattoo studio near Oslo" %}{% endblock %}
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}

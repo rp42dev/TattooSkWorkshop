@@ -12,7 +12,6 @@ class AlbumAdmin(admin.ModelAdmin):
         'name',
         'artist',
         'image',
-
     )
 
 

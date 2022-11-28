@@ -2,14 +2,13 @@
 {% load static %}
 {% load i18n %}
 
+{% block extra_title %}{% translate "Location - Tatoo SK Workshop | Custom Tattoos Fetsund" %}{% endblock %}
+
 {% block extra_meta %}
-
-<meta name="description" content="{% blocktranslate trimmed %}Quality Tattoos! Contact Phone: +47 462 53 760. Address Fetveien 467, 1900 Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-up.{% endblocktranslate %}">
-
+<meta name="description" content="{% blocktranslate trimmed %}Get tattooed at Tatoo SK Workshop We are located in the centre of Fetsund, 25 minutes drive from Oslo. We are open every day 7 days a week. Contact Us now.{% endblocktranslate %}">
 <link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/about/map"/>
 <link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/about/map"/>
 {% endblock %}
-
 
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>

@@ -3,13 +3,13 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
+{% block extra_title %}{% translate "Tattoo aftercare - Tattoo SK Workshop | Realism and black and grey tattoos" %}{% endblock %}
 {% block extra_meta %}
-<meta name="description" content="{% blocktranslate trimmed %}Quality Tattoos and tattoo coverups, we focus on quality and safety. We are committed to providing the best quality services to our customers.{% endblocktranslate %}">
+<meta name="description" content="{% blocktranslate trimmed %}Out top priority is to provide you with the best tattoo aftercare possible. We will provide you with all the information you need to take care of your tattoo.{% endblocktranslate %}">
 <link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/about/aftercare"/>
 <link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/about/aftercare"/>
 {% endblock %}
 
-{% block extra_title %}{% translate "Tattoo SK Workshop | Tattoo aftercare" %}{% endblock %}
 
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>

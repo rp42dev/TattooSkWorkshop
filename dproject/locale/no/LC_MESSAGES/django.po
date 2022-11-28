@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-19 09:52+0000\n"
+"POT-Creation-Date: 2022-11-28 12:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,11 +28,12 @@ msgstr "Norsk"
 
 #: .\config\urls.py:32
 msgid "^gallery/"
-msgstr "^Galleri/"
+msgstr "^galleri/"
 
 #: .\config\urls.py:33
 msgid "^about/"
-msgstr "^Om/"
+msgstr "^om/"
+
 
 #: .\dproject\templates\403.html:4 .\dproject\templates\403.html:9
 msgid "Permission denied"
@@ -64,14 +65,19 @@ msgid ""
 "email and should be fixed shortly. Thanks for your patience."
 msgstr "e-post og bør rettes snart. Takk for tålmodigheten."
 
-#: .\dproject\templates\base.html:19
+#: .\dproject\templates\base.html:11
+msgid "Quality Tattoos and tattoo coverups Fetsund"
+msgstr "Kvalitet Tatoveringer og tattoo coverups Fetsund"
+
+#: .\dproject\templates\base.html:20
 msgid ""
-"We focus on black and grey, realism and traditional tattoos. We also do "
-"cover-ups and custom tattoos. Book an appointment today! + 47 46253760."
-msgstr ""
-"Vi fokuserer på svart og grått, realisme og tradisjonelle tatoveringer. Vi "
-"gjør også cover-ups og tilpassede tatoveringer. Bestill time i dag! + 47 "
+"Tattoo studio in Fetsund, Norway. We specialize in quality tattoos, Custom "
+"tattoos, coverups, scar cover-ups and more. Book an appointment today! + 47 "
 "46253760."
+msgstr ""
+"Tatoveringsstudio i Fetsund, Norge. Vi er spesialister på "
+"kvalitetstatoveringer, tilpassede tatoveringer, coverups, arr cover-ups og "
+"mer. Bestill time i dag! + 47 462 53 760."
 
 #: .\dproject\templates\email\base.html:63
 #: .\dproject\templates\email\base.txt:1
@@ -221,3 +227,6 @@ msgstr ""
 #: .\dproject\templates\registration\password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
+
+#~ msgid "Tattoo Studio In Fetsund Fetveien Near Oslo"
+#~ msgstr "Tattoo Studio I Fetsund Fetveien Nær Oslo"
