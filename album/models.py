@@ -35,7 +35,7 @@ class Album(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=254)
     image = ResizedImageField(size=[800, 1200], crop=['middle', 'center'], quality=80, upload_to='album')
-    slug = models.SlugField(blank=True, null=True)
+    slug = models.SlugField(auto_created=True, blank=True, null=True)
     
     def save(self, *args, **kwargs):
         self.slug = slugify(f"{self.name}-{self.id}")

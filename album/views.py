@@ -20,6 +20,11 @@ def artist(request, slug):
     """A view to return the artist page and show all album"""
 
     album = Album.objects.filter(artist__slug=slug)
+    
+    # generate slug for eact album item if not already generated
+    for item in album:
+        if item.slug == '':
+            item.save()
     artist = get_object_or_404(Artist, slug=slug)
     context = {
         'album': album,
