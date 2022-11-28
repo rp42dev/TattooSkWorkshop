@@ -6,8 +6,6 @@
 {% block extra_title %} {% translate "Gallery - Tattoo SK Workshop | Your Choice for the best tattoos" %}{% endblock %}
 {% block extra_meta %}
 <meta name="description" content="{% blocktranslate trimmed %}A tattoo is the New Addiction, Check out our Gallery and see the Work of our Tattoo Artist Andrejs Baranovs, tattoo studio and tattoo convention.{% endblocktranslate %}">
-<link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/gallery/"/>
-<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/galleri/"/>
 {% endblock %}
 
 {% block nav %}
@@ -27,22 +25,18 @@
         {% for item in artists %}
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3">
             <div class="card rounded-3 h-100 mx-sm-2 mx-0 g-dark">
-					
                 <div class="card-body bg-dark text-white p-0">
-
                     {% if item.image %}
                     <picture>
                         {% thumbnail item.image "600x900" format="WEBP" as im %}
                         <source srcset="{{ im.url }}" type="image/webp">
                         {% endthumbnail %}
                         
-                        <source srcset="{{ item.image..url }}" type="image/jpeg">
+                        <source srcset="{{ item.image.url }}" type="image/jpeg">
                         <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="Artist {{ image.name }} thumbnail">
                       
                     </picture>
-                    {% endif %}
-
-                    <a href="{% url 'artist' item.slug %}">
+                    <a href="{{ item.get_absolute_url }}">
                         <div class="card-img-overlay rounded-3 text-left">
                             <div class="row">
                                 <div class="col">
@@ -51,6 +45,7 @@
                             </div>
                         </div>
                     </a>
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -6,14 +6,15 @@ register_heif_opener()
 
 # Register your models here.
 
-
 class AlbumAdmin(admin.ModelAdmin):
+    
     list_display = (
         'name',
         'artist',
         'image',
     )
-
+    search_fields = ('name', 'artist__name',)
+    readonly_fields = ('created_at', 'updated_at', 'slug')
 
 class ArtistAdmin(admin.ModelAdmin):
     list_display = (
@@ -21,6 +22,8 @@ class ArtistAdmin(admin.ModelAdmin):
         'image',
         'order',
     )
+    readonly_fields = ('slug', 'created_at', 'updated_at')
+    list_display_links = ('name',)
 
 
 admin.site.register(Album, AlbumAdmin)

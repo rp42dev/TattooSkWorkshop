@@ -20,29 +20,27 @@ def artist(request, slug):
     """A view to return the artist page and show all album"""
 
     album = Album.objects.filter(artist__slug=slug)
-
     artist = get_object_or_404(Artist, slug=slug)
-
     context = {
         'album': album,
-        'artist_name': artist.name,
-        'artist_slug': slug,
+        'artist': artist,
         'index': 'gallery',
         }
 
     return render(request, 'album/artist.html', context)
 
 
-def details(request, slug, item_id):
+def details(request, artist_slug, slug):
     """ A view to show individual image with details """
-    item = get_object_or_404(Album, pk=item_id)
-    album = Album.objects.filter(artist__slug=slug)
-
+    item = get_object_or_404(Album, slug=slug)
+    print(item)
+    album = Album.objects.filter(artist__slug=artist_slug)
+    
     context = {
-        'item_id': int(item_id),
+        'item_id': int(item.id),
         'item': item,
         'album': album,
-        'artist_slug': slug,
+        'artist_slug': artist_slug,
         'index': 'gallery',
     }
 

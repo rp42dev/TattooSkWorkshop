@@ -5,9 +5,6 @@
 
 {% block extra_meta %}
 <meta name="description" content="{% blocktranslate trimmed %}Quality Tattoos! Contact Phone: +47 462 53 760. Address Fetveien 467, 1900 Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-up.{% endblocktranslate %}">
-
-<link rel="alternate" hreflang="en" href="https://www.tattooskworkshop.no/en/gallery/{{ artist_slug }}/{{ item_id }}"/>
-<link rel="alternate" hreflang="no" href="https://www.tattooskworkshop.no/gallery/{{ artist_slug }}/{{ item_id }}"/>
 {% endblock %}
 
 {% block nav %}
@@ -16,15 +13,11 @@
 {% block content %}
 
 <main class="overflow-hidden">
-
     <div id="carousel2" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
         <div class="carousel-inner-gallery">
             {% for item in album %}
-
             <div class="carousel-item carousel-item-gallery {% if item.id == item_id %}active{% endif %}"
                 id="slide{{ forloop.counter }}">
-
                 {% if item.image %}
                 <picture class="picture__container">
                     {% thumbnail item.image "800x1200" format="WEBP" as im %}
@@ -34,10 +27,8 @@
                     <img class="" src="{{ item.image.url }}" alt="{{ item.name }} Image">
                 </picture>
                 {% endif %}
-
             </div>
             {% endfor %}
-
         </div>
     </div>
 

@@ -1,9 +1,8 @@
 # sitemaps.py
 from django.contrib import sitemaps
-from django.urls import reverse
 from album.models import Artist, Album
 from datetime import datetime as dt
-
+from django.urls import reverse
 
 class ArtistSitemap(sitemaps.Sitemap):
     i18n=True
@@ -11,11 +10,11 @@ class ArtistSitemap(sitemaps.Sitemap):
     def items(self):
         return Artist.objects.all()
     
-    def location(self, artist):
-        return reverse("artist", kwargs={"slug": artist.slug})
-    
     def changefreq(self, item):
         return "monthly"
+    
+    def lastmod(self, item):
+        return item.updated_at
 
 
 class ArtistItemSitemap(sitemaps.Sitemap):
@@ -24,9 +23,6 @@ class ArtistItemSitemap(sitemaps.Sitemap):
     def items(self):
         return Album.objects.all()
 
-    def location(self, item):
-        return reverse("details", kwargs={"slug": item.artist.slug, "item_id": item.id})
-    
     def lastmod(self, item):
         return item.updated_at
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 12:41+0000\n"
+"POT-Creation-Date: 2022-11-28 16:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\album\templates\album\artist.html:7 .\album\templates\album\details.html:7
+#: .\album\templates\album\artist.html:6
+msgid "Gallery - Tattoo SK Workshop | Custom tattoo Fetsund "
+msgstr "Galleri - Tattoo SK Workshop | Tilpasset tatovering Fetsund"
+
+#: .\album\templates\album\artist.html:10
+msgid ""
+"Andrej's gallery of tattoos. Tattoo artist in Fetsund, Norway. We can work "
+"together to create a unique Tattoo tattoo design for you."
+msgstr "Andrejs galleri med tatoveringer. Tatovør i Fetsund, Norge. Vi kan jobbe"
+"sammen for å lage et unikt tatoveringsdesign for deg"
+
+#: .\album\templates\album\artist.html:12
+msgid ""
+"Gallery - We are a tattoo studio in Fetsund, Norway. We do all kinds of "
+"tattoos, from small to large. We are located in Fetsund Fetveien."
+msgstr ""
+"Galleri - Vi er et tatoveringsstudio i Fetsund, Norge. Vi gjør alle slags "
+"tatoveringer, fra små til store. Vi holder til i Fetsund Fetveien."
+
+#: .\album\templates\album\details.html:7
 msgid ""
 "Quality Tattoos! Contact Phone: +47 462 53 760. Address Fetveien 467, 1900 "
 "Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-up."
 msgstr ""
+"Kvalitetstatoveringer! Kontakt Telefon: +47 462 53 760. Adresse Fetveien 467, 1900 "
+"Fetsund, Norway near Oslo. New Tattoo design or Tattoo scar cover-up."
 
 #: .\album\templates\album\gallery.html:6
 msgid "Gallery - Tattoo SK Workshop | Your Choice for the best tattoos"
@@ -33,10 +54,11 @@ msgid ""
 "A tattoo is the New Addiction, Check out our Gallery and see the Work of our "
 "Tattoo Artist Andrejs Baranovs, tattoo studio and tattoo convention."
 msgstr ""
-"En tatovering er den nye avhengigheten, sjekk ut galleriet vårt og se arbeidet til vår"
-"Tatovør Andrejs Baranovs, tatoveringsstudio og tatoveringskonvensjon."
-#: .\album\templates\album\gallery.html:22
+"En tatovering er den nye avhengigheten, sjekk ut galleriet vårt og se "
+"arbeidet til vårTatovør Andrejs Baranovs, tatoveringsstudio og "
+"tatoveringskonvensjon."
 
+#: .\album\templates\album\gallery.html:20
 msgid "Gallery"
 msgstr "galleri"
 
