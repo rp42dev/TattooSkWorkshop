@@ -74,16 +74,10 @@
   box-sizing: border-box;
 }
 
-@media (prefers-#999uced-motion: no-preference) {
+@media (prefers-reduced-motion: reduce) {
   :root {
     scroll-behavior: smooth;
   }
-}
-
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.example::-webkit-scrollbar {
-  display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -4869,6 +4863,7 @@ fieldset:disabled .btn {
 
   .navbar-expand-sm .offcanvas-header {
     display: none;
+    background-color: transparent;
   }
 
   .navbar-expand-sm .offcanvas {
@@ -7493,6 +7488,7 @@ fieldset:disabled .btn {
   height: auto;
   align-items: center;
   justify-content: space-between;
+  background-color: transparent !important;
 }
 
 
@@ -7513,10 +7509,13 @@ fieldset:disabled .btn {
 
 
 .offcanvas-body {
+  position: relative;
+  z-index: 100;
   flex-shrink: 1;
   padding: .2rem 1rem;
   overflow-y: auto;
 }
+
 
 .offcanvas-start {
   top: 0;
@@ -12577,8 +12576,15 @@ body {
 }
 
 .offcanvas {
-  background-color: #171d20;
+  background-color: rgba(23, 29, 32, 0.2);
+  backdrop-filter: blur(18px);
 }
+
+.offcanvas-body:-webkit-scrollbar {
+  display: none !important;
+
+}
+
 
 .btn_back:hover a,
 .nav_btn:hover {
@@ -12932,7 +12938,8 @@ a {
 }
 
 .offcanvas-footer {
-  padding: 0rem 1rem;
+
+  background-color: tra
 }
 
 .file .form-control {
@@ -12951,6 +12958,27 @@ a {
   width: fit-content;
   width: max-content;
   min-width: 0;
+}
+
+.offcanvas-body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 4px;
+  /* width of the entire scrollbar */
+}
+
+.offcanvas-body::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track {
+  background: transparent;
+  /* color of the tracking area */
+}
+
+.offcanvas-body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient( rgba(23, 29, 32, 0.4), rgba(149, 151, 255, 0.6) 30%, rgba(196, 197, 255, 0.8) 50%, rgba(149, 151, 255, 0.6) 70%, rgba(23, 29, 32, 0.4));
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  /* creates padding around scroll thumb */
 }
 
 @media screen and (max-width: 600px) {
