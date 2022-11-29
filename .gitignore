@@ -82,6 +82,7 @@ manage.py
 .\manage.py
 staticfiles
 /staticfiles
+.\mydatabase
 # core dumps
 core
 
