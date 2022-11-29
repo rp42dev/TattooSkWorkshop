@@ -1,19 +1,22 @@
 {% load i18n %}
 <!-- Off canvas left menu login form -->
-<div class="offcanvas offcanvas-start d-flex justify-content-start" data-bs-scroll="true" tabindex="-1" id="contact"
+<div class="offcanvas offcanvas-start d-flex justify-content-around" data-bs-scroll="true" tabindex="-1" id="contact"
     aria-labelledby="loginLabel">
-    <div class="row px-3 pt-3">
-        <div class="col-6">
-            <p>
-                <a id="inquiries" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm"
-                    data-type="inquiry" role="button">{% translate 'Inquiries' %}</a>
-                <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm d-none"
-                    data-type="complaint" role="button">{% translate 'Complaints' %}</a>
-            </p>
-        </div>
-        <div class="row offcanvas-header col-6 " data-bs-dismiss="offcanvas">
-            <div id="close-btn-contact" role="button" class="btn_close" aria-label="Close">
-                <i class="fas fa-times float-end" data-bs-dismiss="offcanvas">
+
+   <div class="offcanvas-header position-relative text-center">
+        <div class="d-flex flex p-3 justify-content-between position-absolute w-100 top-0 start-0">
+            <div class="">
+                <p>
+                    <a id="inquiries" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm"
+                        data-type="inquiry" role="button">{% translate 'Inquiries' %}</a>
+                    <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm d-none"
+                        data-type="complaint" role="button">{% translate 'Complaints' %}</a>
+                </p>
+            </div>
+
+             <div slass="col-6"> </div>
+            <div id="close-btn-contact" role="button" class="btn_close col-6"  data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="fas fa-times float-end">
 
                 </i>
             </div>

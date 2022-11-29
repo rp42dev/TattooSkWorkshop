@@ -2210,7 +2210,7 @@ progress {
 
 .form-control {
   width: 100%;
-  border-radius: 3px;
+  border-radius: 6px;
   background-color: rgba(68, 68, 68, 0.801);
   color: rgb(255, 255, 255);
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
@@ -3199,7 +3199,7 @@ textarea.form-control.is-invalid {
   color: rgb(233, 233, 233);
 
   box-shadow: 0 0.1875rem 0.1875rem 0 rgb(23, 29, 32, .1) !important;
-  padding: .8rem 1rem;
+  padding: .7rem 1rem;
   font-family: "Varela Round",
     -apple-system,
     BlinkMacSystemFont,
@@ -7485,6 +7485,7 @@ fieldset:disabled .btn {
 
 .offcanvas-header {
   position: relative;
+  z-index: 1000;
   height: auto;
   align-items: center;
   justify-content: space-between;
@@ -7514,6 +7515,14 @@ fieldset:disabled .btn {
   flex-shrink: 1;
   padding: .2rem 1rem;
   overflow-y: auto;
+}
+
+.direction-rtl {
+  direction: rtl;
+}
+
+.direction-ltr {
+  direction: ltr;
 }
 
 
@@ -12580,12 +12589,6 @@ body {
   backdrop-filter: blur(18px);
 }
 
-.offcanvas-body:-webkit-scrollbar {
-  display: none !important;
-
-}
-
-
 .btn_back:hover a,
 .nav_btn:hover {
   color: rgba(221, 226, 240, 0.911);
@@ -12953,8 +12956,8 @@ a {
 
 .btn-sm,
 .btn-group-sm>.btn {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.6rem;
+  padding: 0.25rem 1rem;
+  font-size: 0.5rem;
   width: fit-content;
   width: max-content;
   min-width: 0;

@@ -1,19 +1,19 @@
 <!-- Off canvas Navigation right Menu -->
 {% load i18n %}
-<div class="offcanvas offcanvas-end d-flex justify-content-start" tabindex="-1" id="menu" data-bs-scroll="true"
+<div class="offcanvas offcanvas-end d-flex justify-content-around" tabindex="-1" id="menu" data-bs-scroll="true"
     aria-labelledby="menuLabel">
-    <div class="offcanvas-header px-3 pt-3 text-center">
-        <div class="d-flex flex-row justify-content-between">
-            <div role="button" class="btn_close text-start" data-bs-dismiss="offcanvas" aria-label="Close">
+    <div class="offcanvas-header position-relative text-center">
+        <div class="d-flex flex p-3 justify-content-between position-absolute w-100 top-0 start-0">
+            <div role="button" class="btn_close text-start col-6" data-bs-dismiss="offcanvas" aria-label="Close">
                 <i class="fas fa-times">
                 </i>
             </div>
-            
-            <div class=" mt-2">{% include 'includes/set_lang.html' %}</div>
+            <div slass="col-6"> </div>	
+            <div class="mt-2">{% include 'includes/set_lang.html' %}</div>
         </div>
     </div>
     
-    <div class="offcanvas-body mb-3">
+    <div class="offcanvas-body direction-rtl mb-3">
         <div>
             <h3 class="text-uppercase text-center offcanvas-title my-2">
                 {% translate "Menu" %}
@@ -22,7 +22,7 @@
         <div class="gradient-line">
         </div>
         <!-- Nav Menu Items -->
-        <div class="menu-items d-flex flex-column justify-content-around align-items-center">
+        <div class="menu-items d-flex flex-column justify-content-around align-items-center direction-ltr">
             <a class="btn _button" href="{% url 'home' %}">{% translate "Home" %}</a>
             <a class="btn _button" href="{% url 'about' %}">{% translate "About Us" %}</a>
             <a class="btn _button" href="{% url 'gallery' %}">{% translate "Gallery" %}</a>
@@ -31,7 +31,7 @@
             <a class="btn _button" href="{% url 'faq' %}">{% translate "FAQ" %}</a>
             <a class="btn _button" data-bs-toggle="offcanvas" href="#contact" role="button" aria-controls="contact">{% translate "Message Us" %}</a>
         </div>
-        <div class="mt-4">{% include 'includes/social.html' %}</div>
+        <div class="mt-4 direction-ltr">{% include 'includes/social.html' %}</div>
         
     </div>
 
