@@ -15,27 +15,24 @@
 {% block content %}
 
 
-<div class="page_container col-12">
-
-  <div class="col text-center ">
-    <h1 class="text-light h1 text-uppercase display-3">faq</h1>
+<div class="page_container pt-0 pb-4">
+  <div class="col text-center">
+    <h1 class="text-light h1 text-uppercase display-4">faq</h1>
   </div>
+  
   <main class="col-12 col-lg-8 mx-auto d-flex flex-column gap-4 text-white">
-
-    <div class=" text-white col-12 text_container px-3 px-sm-4 rounded-3">
-      {% include 'includes/social.html' %}
-    </div>
+    <div class="text-white col-12 text_container px-3 px-sm-4 w-100">
+         {% include 'includes/social.html' %}
+     </div>
     <div class="gradient-line">
     </div>
     <div class="col-12 col-md-8 mb-3 mx-auto text-center ">
-      {% if LANGUAGE_CODE == "en" %}
-      <div class="accordion accordion-flush col-12 mx-auto px-3 " id="accordionFlushExample mx-2">
-
+      <div class="accordion accordion-flush col-12 mx-auto px-3 gap-3" id="accordionFlushExample mx-2">
         {% for item in items %}
-        {% if item.lang == "en" %}
-        <div class="accordion-item">
+        {% if item.lang == LANGUAGE_CODE %}
+        <div class="accordion-item  mb-4">
           <h2 class="accordion-header" id="flush-headingOne">
-            <button class="btn text-light w-100 mb-2 font collapsed" type="button" data-bs-toggle="collapse"
+            <button class="btn text-light w-100 fw-light font collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#flush{{ forloop.counter }}" aria-expanded="false"
               aria-controls="flush-{{ forloop.counter }}">
               {{ item.name}}
@@ -43,38 +40,11 @@
           </h2>
           <div id="flush{{ forloop.counter }}" class="accordion-collapse collapse"
             aria-labelledby="flush-{{ item.name }}" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body font w-auto p-2 text_container"> <span>{{ item.description }}</span></div>
+            <div class="accordion-body rounded-bottom fw-lighter w-auto p-2"> <span>{{ item.description }}</span></div>
           </div>
         </div>
         {% endif %}
         {% endfor %}
-
       </div>
-      {% else %}
-
-      <div class="accordion accordion-flush col-12 mx-auto px-3 " id="accordionFlushExample mx-2">
-        {% for item in items %}
-        {% if item.lang == "no" %}
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="btn text-light w-100 mb-2 font collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush{{ forloop.counter }}" aria-expanded="false"
-              aria-controls="flush-{{ forloop.counter }}">
-              {{ item.name}}
-            </button>
-          </h2>
-          <div id="flush{{ forloop.counter }}" class="accordion-collapse collapse"
-            aria-labelledby="flush-{{ item.name }}" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body font w-auto p-2 text_container"> <span>{{ item.description }}</span></div>
-          </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-
-      </div>
-      {% endif %}
   </main>
-</div>
-
-
 {% endblock %}

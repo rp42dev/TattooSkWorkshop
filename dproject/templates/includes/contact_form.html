@@ -2,7 +2,7 @@
 {% load i18n %}
 {% load static %}
 
-<form id="form" class="needs-validation d-flex flex-column justify-content-around align-items-center"
+<form id="form" class="fw-lighter needs-validation d-flex flex-column justify-content-around align-items-center"
   action="{% url 'send_email' %}" method="POST" class="my-3" enctype=multipart/form-data novalidate>
   {% csrf_token %}
 
