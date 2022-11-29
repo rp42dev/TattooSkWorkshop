@@ -29,11 +29,14 @@
                         <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="Artist {{ image.name }} thumbnail">
                       
                     </picture>
+                    <div class="gradient-overlay">
                     <a href="{{ item.get_absolute_url }}">
                         <div class="card-img-overlay p-2 rounded-3 text-left">
                             <h3 class="fs-6 fw-lighter m-0 text-capitalize">{{ item.name }}</h3>
                         </div>
                     </a>
+                    </div>
+    
                     {% endif %}
                 </div>
             </div>
