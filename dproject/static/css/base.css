@@ -36,7 +36,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #171d20;
-  --bs-primary: #7d7fe7;
+  --bs-primary: hsl(239, 69%, 70%);
   --bs-secondary: rgb(23, 29, 32);
   --bs-success: #67c29c;
   --bs-info: #1cabc4;
@@ -5309,17 +5309,23 @@ fieldset:disabled .btn {
 .card-img-overlay {
   transition: all linear 200ms;
   color: var(--bs-white);
-  background: var(--card-overlay-color);
+  background: linear-gradient(180deg, rgba(0, 0, 0, .6) 3%, rgba(0, 0, 0, .2) 10%, rgba(0, 0, 0, .2));
 
 }
 
 .card:hover,
 .card-img-overlay:hover {
-  background: var(--card-overlay-color-hover);
+  background: linear-gradient(180deg, rgba(0, 0, 0, .5) 3%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0));
   color: var(--bs-light);
   box-shadow: var(--box-shadow-hover);
   -webkit-box-shadow: var(--box-shadow-hover);
   -moz-box-shadow: var(--box-shadow-hover);
+}
+
+@media screen and (max-width: 768px) {
+  .card-img-overlay h3{
+    font-size: .5rem !important;
+  }
 }
 
 .card>hr {

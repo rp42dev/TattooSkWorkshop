@@ -16,34 +16,25 @@
 {% block nav %}
 <a href="{{request.META.HTTP_REFERER}}"><i class="fas fa-chevron-left"></i></a>
 {% endblock %}
+
 {% block content %}
-
-<div class="page_container pb-4">
-
-      <div class="row">
-        <div class="col text-center ">
-            <h1 class="text-light h1 text-uppercase display-4">{% translate artist.name %}</h1>
-        </div>
-    </div>
-
-    <div class="album row mb-4 mx-2 mx-sm-3 mx-md-4 g-3 g-sm-4 g-md-5 justify-content-center">
+<div class="page_container py-3 py-sm-4 pt-md-5 d-flex flex-column justify-content-center align-items-center">
+    <div class="album row mx-2 mx-sm-3 mx-md-4 g-3 g-sm-4 g-md-5 justify-content-center">
         {% for item in album reversed %}
         <div class="col-6 col-xl-4 col-xxl-3">
             <div class="card fade rounded-3 h-100 mx-2 mx-sm-3 mx-md-4 g-dark">
                 <div class="card-body bg-dark p-0">
                     {% if item.image %}
                     <picture>
-                        {% thumbnail item.image "600x900" format="WEBP" as im %}
-                        <source srcset="{{ im.url }}" type="image/webp">
-                        {% endthumbnail %}
-                        
-                        <source srcset="{{ item.image.url }}" type="image/jpeg">
-                        <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="{{ image.name }} thumbnail">
-                      
+                    {% thumbnail item.image "600x900" format="WEBP" as im %}
+                    <source srcset="{{ im.url }}" type="image/webp">
+                    {% endthumbnail %}
+                    <source srcset="{{ item.image.url }}" type="image/jpeg">
+                    <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="{{ image.name }} thumbnail">
                     </picture>
                     <a href="{{ item.get_absolute_url }}">
                         <div class="card-img-overlay p-2 text-left rounded-3">
-                            </h3 class="m-0 fs-6 text-capitalize fw-lighter">{{ item.artist }}</>
+                            <h3 class="m-0 fs-6 text-capitalize fw-lighter">{{ item.artist }}</h3>
                         </div>
                     </a>
                     {% endif %}
@@ -53,5 +44,4 @@
         {% endfor %}
     </div>
 </div>
-
 {% endblock %}
