@@ -47,42 +47,6 @@ for (var i = 0; i < zooms.length; i++) {
         setTransform();
     }
 
-    zoom.ontouchstart = function (e) {
-        e.preventDefault();
-        start = { x: e.touches[0].clientX - pointX, y: e.touches[0].clientY - pointY };
-        panning = true;
-    }
-
-    zoom.ontouchend = function (e) {
-        panning = false;
-    }
-
-    zoom.ontouchmove = function (e) {
-        e.preventDefault();
-        if (!panning) {
-            return;
-        }
-        pointX = (e.touches[0].clientX - start.x);
-        pointY = (e.touches[0].clientY - start.y);
-        setTransform();
-    }
-
-    zoom.ontouchcancel = function (e) {
-        panning = false;
-    }
-
-    zoom.ontouchleave = function (e) {
-        panning = false;
-    }
-
-    zoom.ontouchenter = function (e) {
-        panning = false;
-    }
-
-    zoom.ontouchend = function (e) {
-        panning = false;
-    }
-
     // detect pinch zoom
     zoom.addEventListener('touchstart', handleTouchStart, false);
     zoom.addEventListener('touchmove', handleTouchMove, false);
@@ -147,6 +111,7 @@ for (var i = 0; i < zooms.length; i++) {
     }
 
 
+    
 
 }
 
