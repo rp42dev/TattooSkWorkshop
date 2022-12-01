@@ -5312,7 +5312,7 @@ fieldset:disabled .btn {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, .6) 5%, rgba(0, 0, 0, .2) 15%, rgba(0, 0, 0, 0));
+  background: linear-gradient(180deg, rgba(0, 0, 0, .4) 5%, rgba(0, 0, 0, .0) 15%, rgba(0, 0, 0, 0));
   z-index: 1;
 }
 
@@ -5320,6 +5320,7 @@ fieldset:disabled .btn {
   transition: all linear 200ms;
   color: var(--bs-white);
   background: var(--card-overlay-color);
+  opacity: .6;
 }
 
 .card:hover,
@@ -7139,7 +7140,6 @@ fieldset:disabled .btn {
 .carousel-inner-gallery {
   position: relative;
   width: 100vw;
-  overflow: hidden;
 }
 
 .carousel-inner-gallery img{
@@ -7173,6 +7173,9 @@ fieldset:disabled .btn {
   
 }
 
+.hit {
+  z-index: 10000;
+}
 
 /* -----------------------------------  */
 @media (prefers-reduced-motion: reduce) {
@@ -12558,7 +12561,7 @@ p{
 ._navbar {
   padding: 0 5%;
   margin-top: 3%;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   display: flex;
   z-index: 7;
@@ -12584,6 +12587,33 @@ p{
   transition: color linear 200ms;
 }
 
+.zoom_btn {
+  padding: 0 5%;
+}
+
+.zoom_btn {
+  opacity: 0;
+  transform: scale(1);
+  color: rgba(182, 182, 182, 0.801);
+  animation: zoom 1s 2s ease-in-out;
+  animation-iteration-count: 3;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .5;
+    transform: scale(5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
 .btn_back a {
   color: rgba(182, 182, 182, 0.801);
   transition: color linear 200ms;
@@ -12598,6 +12628,7 @@ p{
   backdrop-filter: blur(18px);
 }
 
+.zoom_btn:hover a,
 .btn_back:hover a,
 .nav_btn:hover {
   color: rgba(221, 226, 240, 0.911);
@@ -13008,4 +13039,17 @@ html::-webkit-scrollbar-thumb {
 .accordion .btn {
   font-size: .9rem;
   min-height: 50px;
+}
+
+.zoom {
+  width: 100%;
+  height: 100%;
+  transform-origin: 0px 0px;
+  transform: scale(1) translate(0px, 0px);
+  cursor: grab;
+}
+
+div.zoom>img {
+  width: 100%;
+  height: auto;
 }

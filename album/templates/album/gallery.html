@@ -20,14 +20,11 @@
             <div class="card fade rounded-3 h-100 mx-2 mx-sm-3 mx-md-4 g-dark">
                  <div class="card-body bg-dark p-0">
                     {% if item.image %}
-                    <picture>
-                        {% thumbnail item.image "600x900" format="WEBP" as im %}
-                        <source srcset="{{ im.url }}" type="image/webp">
-                        {% endthumbnail %}
-                        
-                        <source srcset="{{ item.image.url }}" type="image/jpeg">
-                        <img class="card-img img-fluid rounded-3" src="{{ item.image.url }}" alt="Artist {{ image.name }} thumbnail">
-                      
+                     <picture>
+                        <source srcset="{% thumbnail item.image "400x600" crop="center" format="WEBP" as img %}{{ img.url }} {% endthumbnail %} 600w, 
+                        {% thumbnail item.image "600x900" crop="center" format="WEBP" as img %}{{ img.url }}{% endthumbnail %} 900w,
+                        {% thumbnail item.image "800x1200" crop="center" format="WEBP" as img %}{{ img.url }}{% endthumbnail %} 1200w" type="image/webp">
+                        <img class="card-img img-fluid rounded-3" src="{% thumbnail item.image "600x900" crop="center" format="WEBP" as img %}{{ img.url }} {% endthumbnail %}" alt="{{ image.name }} image">
                     </picture>
                     <div class="gradient-overlay">
                     <a href="{{ item.get_absolute_url }}">
@@ -36,7 +33,6 @@
                         </div>
                     </a>
                     </div>
-    
                     {% endif %}
                 </div>
             </div>

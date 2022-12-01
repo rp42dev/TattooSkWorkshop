@@ -39,16 +39,13 @@ def artist(request, slug):
 def details(request, artist_slug, slug):
     """ A view to show individual image with details """
     item = get_object_or_404(Album, slug=slug)
-    print(item)
     album = Album.objects.filter(artist__slug=artist_slug)
     
     context = {
         'item_id': int(item.id),
-        'item': item,
         'album': album,
         'artist_slug': artist_slug,
         'index': 'gallery',
     }
 
     return render(request, 'album/details.html', context)
-
