@@ -12606,15 +12606,15 @@ p{
   }
   50% {
     opacity: .6;
-    transform: translate(-50%, -50%) scale(10);
+    transform: translate(-50%, -50%) scale(4);
   }
   70% {
     opacity: .3;
-    transform: translate(-50%, -50%) scale(7);
+    transform: translate(-50%, -50%) scale(2);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(10);
+    transform: translate(-50%, -50%) scale(4);
   }
 }
 
