@@ -19,6 +19,13 @@ function setTransform() {
     zoom.style.transform = "translate(" + pointX + "px, " + pointY + "px) scale(" + scale + ")";
 }
 
+const reset = function () {
+    scale = 1;
+    pointX = 0;
+    pointY = 0;
+    setTransform();
+}
+
 const onMouseDown = function (e) {
     e.preventDefault();
     start = { x: e.clientX - pointX, y: e.clientY - pointY };

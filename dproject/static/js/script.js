@@ -9,6 +9,7 @@ function detailsPage() {
         viewer.style.backgroundImage = `url(${img.src})`;
         currentTarget = event.currentTarget;
         currentTarget.querySelector('.active').classList.remove('active');
+        reset()
     });
 }
 
