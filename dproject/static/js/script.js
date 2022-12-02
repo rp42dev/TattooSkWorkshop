@@ -1,12 +1,5 @@
+function detailsPage() {
 
-// show Toast when message is sent
-$(document).ready(function () {
-    $(".toast").toast("show");
-});
-
-// fade i on scroll events
-$(window).on("load", function () {
-    // Bootstrap Carousel fade in and image background fade 
     const myCarousel = document.querySelector('#carousel2')
     const viewer = document.querySelector('.viewer');
     var img = myCarousel.querySelector('.img-bg');
@@ -17,6 +10,17 @@ $(window).on("load", function () {
         currentTarget = event.currentTarget;
         currentTarget.querySelector('.active').classList.remove('active');
     });
+}
+
+// show Toast when message is sent
+$(document).ready(function () {
+    $(".toast").toast("show");
+
+});
+
+// fade i on scroll events
+$(window).on("load", function () {
+    // Bootstrap Carousel fade in and image background fade 
 
     $(window).scroll(function () {
         var windowBottom = $(this).scrollTop() + $(this).innerHeight();
@@ -59,5 +63,6 @@ $(window).on("load", function () {
             }, false)
         })
 })()
+
 
 

@@ -65,6 +65,10 @@
 {% endblock %}
 
 {% block extra_js %}
-
+<script>
+    $(document).ready(function(){
+       detailsPage();
+    });
+</script>
 <script defer src="{% static 'js/zoom.js' %}"></script>
 {% endblock %}
