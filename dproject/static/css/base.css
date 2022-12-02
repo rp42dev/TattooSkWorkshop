@@ -7195,7 +7195,7 @@ fieldset:disabled .btn {
   background-position: center;
   background-size: cover;
   filter: blur(30px) brightness(0.5);
-  -webkit-filter: blur(30px) brightness(0.5);
+  -webkit-filter: blur(30px) brightness(0.35);
   font-size: 2rem;
   transition: all .6s;
 }
