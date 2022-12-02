@@ -19,14 +19,9 @@ def gallery(request):
 def artist(request, slug):
     """A view to return the artist page and show all album"""
 
-    album = Album.objects.filter(artist__slug=slug)
-    
-    # generate slug for eact album item if not already generated
-    for item in album:
-        if not item.slug:
-            item.save()
-            
     artist = get_object_or_404(Artist, slug=slug)
+    album = Album.objects.filter(artist__slug=slug).order_by('-id')
+            
     context = {
         'album': album,
         'artist': artist,
@@ -39,7 +34,7 @@ def artist(request, slug):
 def details(request, artist_slug, slug):
     """ A view to show individual image with details """
     item = get_object_or_404(Album, slug=slug)
-    album = Album.objects.filter(artist__slug=artist_slug)
+    album = Album.objects.filter(artist__slug=artist_slug).order_by('-id')
     
     context = {
         'item_id': int(item.id),

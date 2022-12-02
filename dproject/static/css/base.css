@@ -13027,7 +13027,12 @@ html::-webkit-scrollbar-thumb {
   /* roundness of the scroll thumb */
   /* creates padding around scroll thumb */
 }
-
+.viewer{
+  z-index: 1000;
+  color: red;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
 @media screen and (max-width: 600px) {
 
   .gradient-line {
@@ -13043,6 +13048,18 @@ html::-webkit-scrollbar-thumb {
 .accordion .btn {
   font-size: .9rem;
   min-height: 50px;
+}
+.pinch-zoom-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  cursor: grab;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: -ms-grab;
+  cursor: -o-grab;
 }
 
 .zoom {
