@@ -83,9 +83,8 @@ const onPinchZoom = function (e) {
                 if (diff > 0) {
                     (maxScale > scale) && (scale *= 1.02);
                 } else {
-                    (minScale) && (scale /= 1.02);
+                    (minScale < scale) && (scale /= 1.02);
                 }   
-
                 pointX = e.touches[0].clientX - xs * scale;
                 pointY = e.touches[0].clientY - ys * scale;
                 setTransform();

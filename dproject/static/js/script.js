@@ -6,6 +6,17 @@ $(document).ready(function () {
 
 // fade i on scroll events
 $(window).on("load", function () {
+    // Bootstrap Carousel fade in and image background fade 
+    const myCarousel = document.querySelector('#carousel2')
+    const viewer = document.querySelector('.viewer');
+    var img = myCarousel.querySelector('.img-bg');
+    viewer.style.backgroundImage = `url(${img.src})`;
+    myCarousel.addEventListener('slide.bs.carousel', event => {
+        img = event.relatedTarget.querySelector('.img-bg');
+        viewer.style.backgroundImage = `url(${img.src})`;
+        currentTarget = event.currentTarget;
+        currentTarget.querySelector('.active').classList.remove('active');
+    });
 
     $(window).scroll(function () {
         var windowBottom = $(this).scrollTop() + $(this).innerHeight();
