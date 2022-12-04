@@ -9,7 +9,6 @@
 
 
 <div class="masthead d-flex align-items-center justify-content-center flex-column">
-
     <div class="overlay d-flex align-items-center justify-content-center flex-column" id="windows">
         <div class="header_wrap text-center">
             <h1 class="my-0 text-nowrap text-uppercase gradient-underline">
@@ -19,24 +18,20 @@
         </div>
     </div>
     <div id="landing_social" class="social card_home">
-
     {% include 'includes/social.html' %}
     </div> 
-
     <div id="videoContainer">
         <video playsinline="playsinline" muted="muted" loop="loop" id="video" autoplay="autoplay" >
             <source src="{% static 'video/video.mp4' type='video/mp4' %}">
         </video>
     </div>
-
 </div>
 
 {% endblock %}
-	{% block postloadjs %}
-		<script>
-				window.onload = (event) => {
-				    let video = document.getElementById("video");   
-				video.play();
-			}
-		</script>
-    {% endblock %}
+{% block postloadjs %}
+    <script>
+        $(document).ready(function() {
+            $('#video').get(0).play();
+        });
+    </script>
+{% endblock %}
