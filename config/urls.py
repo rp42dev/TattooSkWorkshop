@@ -3,9 +3,6 @@ from django.urls import include, re_path
 from django.conf.urls.static import static
 from django.urls import path, include as inc
 from django.contrib import admin
-from django.contrib.auth import views as auth_views
-from django.views.generic import TemplateView
-from django.views import defaults as default_views
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
 from django.utils.translation import gettext_lazy as _

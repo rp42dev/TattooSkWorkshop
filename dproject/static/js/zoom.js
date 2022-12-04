@@ -2,14 +2,14 @@ var scale = 1,
     panning = false,
     distance = 0,
     prevPositions = [],
-    maxScale = 2,
-    minScale = 0.4,
+    maxScale = 2.5,
+    minScale = 0.6,
     threshold = 5,
     pointX = 0,
     pointY = 0,
     start = { x: 0, y: 0 },
-    zoom = document.querySelector(".zoom")
-    caption = document.querySelector(".viewer");
+    zoom = document.querySelector(".zoom");
+
 
 function scaler(number, in_min, in_max, out_min, out_max) {
     return (number - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -78,29 +78,28 @@ const onTouchUp = function (e) {
 
 const onPinchZoom = function (e) {
     e.preventDefault();
-    if (e.touches.length == 2) {
-        panning = false;
-        var currentDistance = getDistance(e);
-        if (prevPositions.length > 0) {
-            var prevDistance = prevPositions[0].distance;
-            var diff = currentDistance - prevDistance;
-            var xs = (e.touches[0].clientX - pointX) / scale,
-                ys = (e.touches[0].clientY - pointY) / scale;
-            if (Math.abs(diff) > threshold) {
-                if (diff > 0) {
-                    (maxScale > scale) && (scale *= 1.02);
-                } else {
-                    (minScale < scale) && (scale /= 1.02);
-                }   
-                pointX = e.touches[0].clientX - xs * scale;
-                pointY = e.touches[0].clientY - ys * scale;
-                setTransform();
-                caption.innerHTML = "pointX: " + pointX.toFixed(2) + " pointY: " + pointY.toFixed(2);
-                prevPositions = [];
-            }
+    if (e.touches.length != 2) return;
+    panning = false;
+    var currentDistance = getDistance(e);
+    if (prevPositions.length > 0) {
+        var prevDistance = prevPositions[0].distance;
+        var diff = currentDistance - prevDistance;
+        var xs = (e.touches[0].clientX - pointX) / scale,
+            ys = (e.touches[0].clientY - pointY) / scale;
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                (maxScale > scale) && (scale *= 1.02);
+            } else {
+                (minScale < scale) && (scale /= 1.02);
+            }   
+            pointX = e.touches[0].clientX - xs * scale;
+            pointY = e.touches[0].clientY - ys * scale;
+            setTransform();
+            prevPositions = [];
         }
-        prevPositions.push({ distance: currentDistance });
     }
+    prevPositions.push({ distance: currentDistance });
+    
 }
 
 const onMove = function (e) {
@@ -117,7 +116,7 @@ const onMove = function (e) {
     }
 }
 
-const initPc = function () {
+const loadPc = function () {
     setTransform();
     zoom.addEventListener("mousedown", onMouseDown);
     zoom.addEventListener("mouseup", onMouseUp);
@@ -125,15 +124,30 @@ const initPc = function () {
     zoom.addEventListener("wheel", onZoom);
 }
 
-const init = function () {
+const loadMobile = function () {
     setTransform();
     zoom.addEventListener("touchmove", onMove);
     zoom.addEventListener("touchend", onTouchUp);
     zoom.addEventListener("touchstart", onTouchDown);
 }
 
-if (window.matchMedia("(pointer: coarse)").matches) {
-    init();
-} else {
-    initPc();
+const clean = function () {
+    zoom.removeEventListener("mousedown", onMouseDown);
+    zoom.removeEventListener("mouseup", onMouseUp);
+    zoom.removeEventListener("mousemove", onMouseMove);
+    zoom.removeEventListener("wheel", onZoom);
+    zoom.removeEventListener("touchmove", onMove);
+    zoom.removeEventListener("touchend", onTouchUp);
+    zoom.removeEventListener("touchstart", onTouchDown);
+    reset();
+}
+
+const initZoom = function () {
+    clean();
+    zoom = document.querySelector('#zoom');
+    if (window.matchMedia("(pointer: coarse)").matches) {
+        loadMobile();
+    } else {
+        loadPc();
+    }
 }

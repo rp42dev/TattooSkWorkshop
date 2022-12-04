@@ -3,8 +3,6 @@ from django.conf import settings
 from django.templatetags.static import static
 from .models import About, AddMember, Faq
 
-# Create your views here.
-
 
 def workshop(request):
     """A view to return the workshop page and show all album"""
@@ -12,10 +10,13 @@ def workshop(request):
     
     context = {
         'index': 'about',
+        'allObjects': allObjects,
     }
-
-    for item in allObjects:
-        context[item.name] = About.objects.filter(name=item.name).order_by('order')
+    
+    if request.htmx:
+        context['obj'] = allObjects.filter(name=request.GET['name'])
+        print(context['obj'])
+        return render(request, 'includes/carousel.html', context)
 
     return render(request, 'workshop/workshop.html', context)
     

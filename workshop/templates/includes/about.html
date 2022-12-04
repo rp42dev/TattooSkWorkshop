@@ -1,49 +1,17 @@
 {% load i18n %}
 {% load thumbnail %}
-
+ {% load static %}
 <section class="row mb-4 mb-sm-5">
-    <div class="col-12 col-xl-6 position-relative padding-0">
-        <div id="carouselExampleControls"
-            class="carousel slide carousel-fade d-flex justify-content-center align-items-center"
-            data-bs-ride="carousel">
 
-            <div class="carousel-inner">
-                {% load static %}
-
-                {% for item in studio %}
-                <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
-                    id="slide{{ forloop.counter }}">
-
-                    {% if item.image %}
-                    <picture>
-                        {% thumbnail item.image "1200x800" format="WEBP" as im %}
-                        <source srcset="{{ im.url }}" type="image/webp">
-                        {% endthumbnail %}
-                        {% thumbnail item.image "1200x800" format="JPEG" as im %}
-                        <source srcset="{{ im.url }}" type="image/jpeg">
-                        <img class="rounded-3" src="{{ im.url }}" alt="{{ image.name }}">
-                        {% endthumbnail %}
-                    </picture>
-                    {% endif %}
-
-                    <div class="carousel-caption d-none d-md-block">
-
-                    </div>
-                </div>
-
-                {% endfor %}
-
-            </div>
-        </div>
-
-
+    <div class="col-12 col-xl-6 position-relative padding-0" hx-get="{% url 'about' %}?name=studio" hx-target="this" hx-trigger="load" hx-swap="innerHTML">
+        {% include 'includes/carousel.html' %}
     </div>
 
     <div class="col-12 col-xl-6 d-flex text_container rounded-3">
         <div class="my-auto px-3 ps-sm-4 text-white">
             <div class="me-auto">
                 {% get_current_language as LANGUAGE_CODE %}
-
+                
                 <h2 class="text-uppercase text-light fw-light">{% translate 'Tattoo SK Workshop' %}</h2>
                 <h3 class="text-light fw-normal text-capitalize">{% translate 'The Studio' %}</h3>
                 <p>
@@ -51,14 +19,14 @@
                     artists has separate room.
                     Studio has chill area and friendly atmosphere.{% endblocktranslate %}
                 </p>
-                <a class="btn" href="{% url 'artist' 'workshop' %}">{% translate 'Gallery' %}</a>
+                <a class="btn" href="{% url 'gallery' 'workshop' %}">{% translate 'Gallery' %}</a>
                 <p>
                     {% blocktranslate trimmed %}The Tattoo studio located 25 minutes from Oslo. Free parking place
                     available.
                     Feel free to Contact us for more information or fill our contact form!{% endblocktranslate %}
                 </p>
             </div>
-            {% include 'includes/social.html' %}
         </div>
     </div>
-</section>
+    {% include 'includes/social.html' %}
+</section>                                                                                                                                                                                                                                              

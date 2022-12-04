@@ -1,98 +1,99 @@
 {% load static i18n %}
-<!DOCTYPE html>
 {% load static %}
 {% load i18n %}
+{% load django_htmx %}
 {% get_current_language as LANGUAGE_CODE %}
 {% get_available_languages as LANGUAGES %}
+<!DOCTYPE html>
 
 <html lang="{{ LANGUAGE_CODE }}">
+    <head>
+        <title>{% block extra_title %}Tattoo Sk Workshop | {% translate 'Quality Tattoos and tattoo coverups Fetsund' %}{% endblock %}</title>
 
-<head>
-    <title>{% block extra_title %}Tattoo Sk Workshop | {% translate 'Quality Tattoos and tattoo coverups Fetsund' %}{% endblock %}</title>
+        {% block meta %}
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        {% endblock %}
+        
+        {% block extra_meta %}
+        <meta name="description" content="{% blocktranslate trimmed %}Tattoo studio in Fetsund, Norway. We specialize in quality tattoos, Custom tattoos, coverups, scar cover-ups and more. Book an appointment today! + 47 46253760.{% endblocktranslate %}">
+        {% endblock %}
 
-    {% block meta %}
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    {% endblock %}
-    
-    {% block extra_meta %}
-    <meta name="description" content="{% blocktranslate trimmed %}Tattoo studio in Fetsund, Norway. We specialize in quality tattoos, Custom tattoos, coverups, scar cover-ups and more. Book an appointment today! + 47 46253760.{% endblocktranslate %}">
-    {% endblock %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        {% block corecss %}
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% endblock %}
 
-    {% block corecss %}
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% endblock %}
+        {% block extra_css %}
+        {% endblock %}
 
-    {% block extra_css %}
-    {% endblock %}
+        {% block corejs %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{% static 'js/script.js' %}" defer></script>
+        <script src="{% static 'js/htmx.min.js' %}" defer></script>
+        {% django_htmx_script %}
+        {% endblock %}
 
-    {% block corejs %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-    {% endblock %}
+        {% block extra_js %}
+        {% endblock %}
+    </head>
 
-    {% block extra_js %}
-    {% endblock %}
+    <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+        <header>
+            <div class="_navbar d-flex justify-content-between">
+                <div class="btn_back">
+                    {% block nav %}
 
-</head>
-
-<body>
-
-    <header>
-        <!-- Navigation-->
-        <div class="_navbar d-flex justify-content-between">
-            <div class="btn_back">
-                {% block nav %}
-
-                {% endblock %}
-            </div>
-            <div class="nav_btn align-self-end">
-                <a data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu">
-                    <i class="fas fa-bars"></i></a>
-            </div>
-        </div>
-    </header>
-
-    {% if messages %}
-    <div style="opacity: .8; z-index: 100000;" aria-live="polite" aria-atomic="true"
-        class="position-absolute p-3 top-50 start-50 translate-middle">
-        <div class="toast-container ">
-            {% for message in messages %}
-            <div class="toast bg-dark">
-                <div class="toast-body text-light">
-                    {{message}}
+                    {% endblock %}
+                </div>
+                <div class="nav_btn align-self-end">
+                    <a data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu">
+                        <i class="fas fa-bars"></i>
+                    </a>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-    </div>
-
-    {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
-
-    <!-- <div class="page_overlay"></div> -->
-    <div class="site_container justify-content-center min-vh-100">
-        {% block content %}
+        </header>
+        
+        {% block page_header %}
         {% endblock %}
-    </div>
-    {% include 'includes/offcanvas_menu.html' %}
-    {% include 'includes/offcanvas_contact.html' %}
 
-    {% block postloadjs %}
-    {% endblock %}
-    <script src="{% static 'js/script.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    {% block javascript %}{% endblock javascript %}
-</body>
+        {% if messages %}
+        <div style="opacity: .8; z-index: 100000;" aria-live="polite" aria-atomic="true"
+        class="position-absolute p-3 top-50 start-50 translate-middle">
+        <div class="toast-container ">
+                {% for message in messages %}
+                <div class="toast bg-dark">
+                    <div class="toast-body text-light">
+                        {{message}}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
 
+
+        <div class="site_container justify-content-center min-vh-100">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        {% include 'includes/offcanvas_menu.html' %}
+        {% include 'includes/offcanvas_contact.html' %}
+
+        {% block postloadjs %}
+        {% endblock %}
+
+        {% block javascript %}
+        {% endblock javascript %}
+    </body>
 </html>

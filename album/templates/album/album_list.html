@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_title %} 
+{{artist|title}} {% blocktranslate %}Gallery - Tattoo SK Workshop | Custom tattoo Fetsund {% endblocktranslate %}
+{% endblock %}
+
+{% block extra_meta %}
+{% if artist == 'andrej'|lower %}
+<meta name="description" content="{% blocktranslate %}Andrej's gallery of tattoos. Tattoo artist in Fetsund, Norway. We can work together to create a unique Tattoo tattoo design for you.{% endblocktranslate %}">
+{% else %}
+<meta name="description" content="{{artist|title}} {% blocktranslate trimmed %}Gallery - We are a tattoo studio in Fetsund, Norway. We do all kinds of tattoos, from small to large. We are located in Fetsund Fetveien.{% endblocktranslate %}">
+{% endif %}
+{% endblock %}
+
+{% block nav %}
+<a href="{% url 'artist' %}" aria-label="Return back to Gallery page"><i class="fa-solid fa-angles-left"></i></a>
+{% endblock %}
+
+{% block content %}
+<div class="page_container py-3 py-sm-4 pt-md-5 d-flex flex-column justify-content-center align-items-center">
+    <div class="album row mx-2 mx-sm-3 mx-md-4 g-3 g-sm-4 g-md-5 justify-content-center">
+    {% include 'includes/album_list_items.html' %}
+    </div>
+</div>
+{% endblock %}

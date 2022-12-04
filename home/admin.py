@@ -1,15 +1,28 @@
 from django.contrib import admin
-from .models import Prices
+from .models import Page, Seo
+from pillow_heif import register_heif_opener
 
-# Register your models here.
+register_heif_opener()
 
-
-class PricesAdmin(admin.ModelAdmin):
+class PageAdmin(admin.ModelAdmin):
     list_display = (
         'name',
-        'price',
+        'image',
         'description',
     )
+    readonly_fields = ('created_at', 'updated_at', 'slug')
 
-admin.site.register(Prices, PricesAdmin)
+
+class SeoAdmin(admin.ModelAdmin):
+    list_display = (
+        'title',
+        'description',
+        'keywords',
+        'image',
+    )
+
+    
+admin.site.register(Seo, SeoAdmin)
+admin.site.register(Page, PageAdmin)
+
 

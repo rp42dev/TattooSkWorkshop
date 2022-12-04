@@ -1,46 +1,50 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
+from django.views.generic import ListView, DetailView
 from .models import Album, Artist
-from django.db.models import Q
-from django.contrib import messages
 
 
-def gallery(request):
+class ArtistView(ListView):
     """A view to return the gallery page and show all album"""
-    artists = Artist.objects.all().order_by('order')
-
-    context = {
-        'artists': artists,
-        'index': 'gallery',
-    }
-
-    return render(request, 'album/gallery.html', context)
+    ordering = ['order']
+    model = Artist
 
 
-def artist(request, slug):
+class GalleryView(ListView):
     """A view to return the artist page and show all album"""
+    model = Album
+    paginate_by: int = 8
 
-    artist = get_object_or_404(Artist, slug=slug)
-    album = Album.objects.filter(artist__slug=slug).order_by('-id')
-            
-    context = {
-        'album': album,
-        'artist': artist,
-        'index': 'gallery',
-        }
+    def get_queryset(self):
+        self.artist = get_object_or_404(Artist, slug=self.kwargs['slug'])
+        return Album.objects.filter(artist=self.artist).order_by('-id')
 
-    return render(request, 'album/artist.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['url'] = self.request.path
+        context['artist'] = self.artist.name
+        return context
+
+    def get_template_names(self):
+        if self.request.htmx:
+            return 'includes/album_list_items.html'
+        else:
+            return 'album/album_list.html'
 
 
-def details(request, artist_slug, slug):
+class AlbumDetailView(DetailView):
     """ A view to show individual image with details """
-    item = get_object_or_404(Album, slug=slug)
-    album = Album.objects.filter(artist__slug=artist_slug).order_by('-id')
-    
-    context = {
-        'item_id': int(item.id),
-        'album': album,
-        'artist_slug': artist_slug,
-        'index': 'gallery',
-    }
+    model = Album
 
-    return render(request, 'album/details.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['prev'] = Album.objects.filter(
+            artist=self.object.artist, id__gt=self.object.id).first()
+        context['next'] = Album.objects.filter(
+            artist=self.object.artist, id__lt=self.object.id).last()
+        return context
+
+    def get_template_names(self):
+        if self.request.htmx:
+            return 'includes/album_detail_item.html'
+        else:
+            return 'album/album_detail.html'

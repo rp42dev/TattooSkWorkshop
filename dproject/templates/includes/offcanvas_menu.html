@@ -1,7 +1,7 @@
-<!-- Off canvas Navigation right Menu -->
 {% load i18n %}
 <div class="offcanvas offcanvas-end" tabindex="-1" id="menu" data-bs-scroll="true"
     aria-labelledby="menuLabel">
+
     <div class="offcanvas-header position-relative text-center">
         <div class="d-flex flex p-3 justify-content-between position-absolute w-100 top-0 start-0">
             <div role="button" class="btn_close text-start col-6 my-auto" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -21,20 +21,9 @@
         </div>
         <div class="gradient-line">
         </div>
-        <!-- Nav Menu Items -->
-        <div class="menu-items d-flex flex-column justify-content-around align-items-center direction-ltr fw-lighter">
-            <a class="btn _button" href="{% url 'home' %}">{% translate "Home" %}</a>
-            <a class="btn _button" href="{% url 'about' %}">{% translate "About Us" %}</a>
-            <a class="btn _button" href="{% url 'gallery' %}">{% translate "Gallery" %}</a>
-            <a class="btn _button" href="{% url 'prices' %}">{% translate "Prices" %}</a>
-            <a class="btn _button" href="{% url 'aftercare' %}">{% translate "Aftercare" %}</a>
-            <a class="btn _button" href="{% url 'faq' %}">{% translate "FAQ" %}</a>
-            <a class="btn _button" data-bs-toggle="offcanvas" href="#contact" role="button" aria-controls="contact">{% translate "Message Us" %}</a>
-        </div>
+        {% include 'includes/nav_menu.html' %}
         <div class="mt-4 direction-ltr">{% include 'includes/social.html' %}</div>
-        
     </div>
 
-    <!-- Copyright side menu  -->
     <div class="offcanvas-footer"></div>
 </div>

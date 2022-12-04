@@ -1,0 +1,29 @@
+{% load static %}
+{% load i18n %}
+{% load thumbnail %}
+
+{% for item in object_list %}
+{% if forloop.last and page_obj.has_next %}
+<div class="col-6 col-xl-4 col-xxl-3" hx-get="{{url}}?page={{ page_obj.next_page_number }}" hx-trigger="revealed" hx-swap="afterend" hx-target="this">
+{% else %}
+<div class="col-6 col-xl-4 col-xxl-3">
+{% endif %}
+    <div class="card fade rounded-3 h-100 mx-2 mx-sm-3 mx-md-4 g-dark">
+        <div class="card-body rounded-3 loading-card p-0">
+            {% if item.image %}
+            <picture>
+                <source srcset="{% thumbnail item.image "400x600" crop="center" format="WEBP" as img %}{{ img.url }} {% endthumbnail %} 600w, 
+                {% thumbnail item.image "600x900" crop="center" format="WEBP" as img %}{{ img.url }}{% endthumbnail %} 900w,
+                {% thumbnail item.image "800x1200" crop="center" format="WEBP" as img %}{{ img.url }}{% endthumbnail %} 1200w" type="image/webp">
+                <img class="card-img img-fluid rounded-3" src="{% thumbnail item.image "600x900" crop="center" format="WEBP" as img %}{{ img.url }} {% endthumbnail %}" alt="{{ image.name }} image">
+            </picture>
+            <a href="{{ item.get_absolute_url }}">
+                <div class="card-img-overlay p-2 text-left rounded-3">
+                    <h3 class="m-0 fs-6 text-capitalize fw-lighter">{% if item.artist %}{{ item.artist }}{% else %}{{ item.name }}{% endif %}</h3>
+                </div>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}

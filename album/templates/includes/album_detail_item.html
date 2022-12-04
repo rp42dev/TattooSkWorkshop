@@ -1,0 +1,31 @@
+{% load static %}
+{% load i18n %}
+{% load thumbnail %}
+
+
+<div class="detail-item">
+    <img src="{% thumbnail object.image "192x108"%}" class="img-bg" alt="{{ object.name }}">
+    <div id="zoom" class="zoom">
+        <div class="item-gallery {% if object.id == item_id %}active{% endif %}">
+        {% if object.image %}
+            <picture class="picture__container">
+                {% if object.image|is_portrait %}
+                <source srcset="{% thumbnail object.image "x1920" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 1920w, {% thumbnail object.image "x2500" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 2500w" type="image/webp">
+                {% else %}
+                <source srcset="{% thumbnail object.image "1920" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 1920w, {% thumbnail object.image "2500" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 2500w" type="image/webp">
+                {% endif %}
+                <img class="rounded-3" src="{{ object.image.url }}" alt="{{ object.name }} Image">
+            </picture>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% include 'includes/album_detail_buttons.html' %}
+
+<script>
+    $(document).ready(function(){
+        initZoom();
+        $('.item-gallery').removeClass('faded');
+        $('.detail-item').removeClass('faded');
+    });
+</script>

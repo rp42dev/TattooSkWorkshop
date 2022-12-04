@@ -9,38 +9,54 @@ from django.db import models
 from django.utils.timezone import now
 from PIL import Image
 import os
-        
+from home.models import Seo, Page
+
+
 class Artist(models.Model):
     """
     Artist model
-    
     Includes following fields:
     - name
     - image
     - slug
     - created_at
     - updated_at
+    - description
+    - slogan
     - order
-    
+    - Seo -(foreign key)
+    - Page -(foreign key)
     Includes following methods:
     - save
     - get_absolute_url
     - get_friendly_name
-    - __str__
+    - __str__ name
     """
     name = models.CharField(max_length=254)
-    image = ResizedImageField(size=[2500, 2500], quality=100, upload_to='artist', blank=True, null=True)
-    slug = models.SlugField(blank=True, null=True)
+    image = ResizedImageField(
+        size=[2500, 2500], quality=100,
+        upload_to='artist', blank=True, null=True)
+    slug = models.SlugField(auto_created=True, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    order = models.IntegerField(default=id, blank=True, null=True)
+    order = models.IntegerField(blank=True, null=True)
+    Page = models.ForeignKey(
+        Page, on_delete=models.CASCADE, blank=True, null=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
+        existing_name = Artist.objects.filter(name=self.name)
+        if existing_name:
+            counter = 1
+            while True:
+                if not Artist.objects.filter(
+                        slug=slugify(self.name) + '-' + str(counter)).exists():
+                    self.slug = slugify(self.name) + '-' + str(counter)
+                    break
+                counter += 1
+        super(Artist, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse("artist", kwargs={"slug": self.slug})
+        return reverse("gallery", kwargs={"slug": self.slug})
 
     def get_friendly_name(self):
         return self.friendly_name
@@ -48,18 +64,20 @@ class Artist(models.Model):
     def __str__(self):
         return self.name
 
+
 class Album(models.Model):
     """
     Album model
-    
+
     Includes the following fields:
     - name
-    - artist
+    - artist -(foreign key)
     - image
+    - seo -(foreign key)
+    - page -(foreign key)
     - slug
     - created_at
     - updated_at
-    
     Includes the following methods:
     - save
     - get_absolute_url
@@ -70,23 +88,32 @@ class Album(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=254)
-    image = ResizedImageField(size=[2500, 2500], quality=100, upload_to='album', blank=True, null=True)
-    
+    image = ResizedImageField(
+        size=[2500, 2500], quality=100, upload_to='album', blank=True, null=True)
+    seo = models.ForeignKey(
+        Seo, on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(auto_created=True, blank=True, null=True)
-    
+
     def save(self, *args, **kwargs):
-        self.slug = slugify(f"{self.name}-{self.id}")
-        # Check image size and compress if necessary
-        print(self.image.size)
-        super().save(*args, **kwargs)
-        
+        existing_name = Album.objects.filter(name=self.name)
+        if existing_name:
+            counter = 1
+            while True:
+                if not Album.objects.filter(
+                        slug=slugify(self.name) + '-' + str(counter)).exists():
+                    self.slug = slugify(self.name) + '-' + str(counter)
+                    break
+                counter += 1
+        super(Album, self).save(*args, **kwargs)
+
     def get_absolute_url(self):
         return reverse("details", kwargs={"artist_slug": self.artist.slug, "slug": self.slug})
-    
+
     def __str__(self):
         return self.name
-    
 
+
+@receiver(models.signals.pre_save, sender=Page)
 @receiver(models.signals.pre_save, sender=Album)
 @receiver(models.signals.pre_save, sender=Artist)
 def auto_delete_file_on_update(sender, instance, **kwargs):
@@ -96,7 +123,10 @@ def auto_delete_file_on_update(sender, instance, **kwargs):
     """
     if not instance.pk:
         return False
-    
+
+    if not instance.image:
+        return False
+
     if sender == Album:
         try:
             old_file = Album.objects.get(pk=instance.pk).image
@@ -117,6 +147,7 @@ def auto_delete_file_on_update(sender, instance, **kwargs):
         pass
 
 
+@receiver(models.signals.post_save, sender=Page)
 @receiver(models.signals.post_save, sender=Album)
 @receiver(models.signals.post_save, sender=Artist)
 def auto_check_file_size(sender, instance, **kwargs):
@@ -124,14 +155,15 @@ def auto_check_file_size(sender, instance, **kwargs):
     Checks file size and compresses if necessary
     """
     if not instance.pk:
+        return
+    if not instance.image:
         return False
-    
-    if instance.image.size > 1000000:
-        print("Image size too large")
-        print(instance.image.size)
-        image = Image.open(instance.image)
-        image.save(instance.image.path, quality=80, optimize=True)
-        print(instance.image.size)
-    else:
-        return False
-
+    try:
+        if instance.image.size > 1000000:
+            print("Image size too large")
+            print(instance.image.size)
+            image = Image.open(instance.image)
+            image.save(instance.image.path, quality=80, optimize=True)
+            print(instance.image.size)
+    except:
+        pass

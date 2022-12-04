@@ -1,11 +1,10 @@
 from django.contrib import admin
-from .models import Album, Artist
+from .models import Album, Artist, Page, Seo
 from pillow_heif import register_heif_opener
 
 register_heif_opener()
 
 # Register your models here.
-
 class AlbumAdmin(admin.ModelAdmin):
     
     list_display = (

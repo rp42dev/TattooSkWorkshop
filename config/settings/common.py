@@ -45,6 +45,7 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     'crispy_forms',
     'sorl.thumbnail',
+    "django_htmx",
 )
 
 
@@ -72,6 +73,7 @@ MIDDLEWARE = [
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+    "django_htmx.middleware.HtmxMiddleware",
 ]
 
 # DEBUG

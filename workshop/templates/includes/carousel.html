@@ -1,0 +1,27 @@
+{% load i18n %}
+{% load thumbnail %}
+
+<div id="carousel2" class="carousel slide carousel-fade d-flex justify-content-center align-items-center"
+    data-bs-ride="carousel">
+    <div class="carousel-inner">
+        {% for item in obj %}
+        <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
+            id="slide{{ forloop.counter }}">
+            {% if item.image %}
+            <picture>
+                {% thumbnail item.image "1200x800" format="WEBP" as im %}
+                <source srcset="{{ im.url }}" type="image/webp">
+                {% endthumbnail %}
+                {% thumbnail item.image "1200x800" format="JPEG" as im %}
+                <source srcset="{{ im.url }}" type="image/jpeg">
+                <img class='d-block rounded-3' src="{{ im.url }}" alt="{{ image.name }}">
+                {% endthumbnail %}
+            </picture>
+            {% endif %}
+            <div class="carousel-caption d-none d-md-block">
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

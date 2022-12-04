@@ -1,9 +1,10 @@
 from django.urls import path
 from . import views
+from .views import ArtistView, GalleryView, AlbumDetailView
 
 
 urlpatterns = [
-    path('', views.gallery, name='gallery'),
-    path('<slug:slug>/', views.artist, name='artist'),
-    path('<slug:artist_slug>/<slug:slug>', views.details, name='details'),
+    path('', ArtistView.as_view(), name='artist'),
+    path('<slug:slug>/', GalleryView.as_view(), name='gallery'),
+    path('<slug:artist_slug>/<slug:slug>', AlbumDetailView.as_view(), name='details'),
 ]

@@ -1,0 +1,10 @@
+{% load i18n %}
+<div class="menu-items d-flex flex-column justify-content-around align-items-center direction-ltr fw-lighter">
+    <a class="btn _button" href="{% url 'home' %}">{% translate "Home" %}</a>
+    <a class="btn _button" href="{% url 'about' %}">{% translate "About Us" %}</a>
+    <a class="btn _button" href="{% url 'artist' %}">{% translate "Gallery" %}</a>
+    <a class="btn _button" href="{% url 'prices' %}">{% translate "Prices" %}</a>
+    <a class="btn _button" href="{% url 'aftercare' %}">{% translate "Aftercare" %}</a>
+    <a class="btn _button" href="{% url 'faq' %}">{% translate "FAQ" %}</a>
+    <a class="btn _button" data-bs-toggle="offcanvas" href="#contact" role="button" aria-controls="contact">{% translate "Message Us" %}</a>
+</div>

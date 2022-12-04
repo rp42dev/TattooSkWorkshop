@@ -1,8 +1,7 @@
 {% load i18n %}
-{% load thumbnail %}
+
 <section class="row my-4 my-sm-5 fade">
-    <div
-        class="col-12 col-xl-6 d-flex justify-content-center align-items-center text_container rounded-3 order-1 order-xl-0">
+    <div class="col-12 col-xl-6 d-flex justify-content-center align-items-center text_container rounded-3 order-1 order-xl-0">
 
         {% get_current_language as LANGUAGE_CODE %}
         <div class="text-white px-3 px-sm-4 me-auto">
@@ -21,7 +20,7 @@
                 imagination.I have successful
                 completed/graduated art, design School and number of intensive Tattoo related courses.{% endblocktranslate %}
             </p>
-            <a class="btn" href="{% url 'artist' 'andrej' %}">{% translate 'My Work' %}</a>
+            <a class="btn" href="{% url 'gallery' 'andrej' %}">{% translate 'My Work' %}</a>
 
             <h3 class="text-light fw-normal text-capitalize">
                 {% translate 'The Art Studio' %}
@@ -36,44 +35,14 @@
                 </a> and <a class="btn btn-sm" href="https://www.andrejsbaranovs.com" target="blank"
                     rel='noopener noreferrer'>{% translate 'Website' %}</a>.
             </p>
-
-
         </div>
     </div>
 
-    <div class="col-12 col-xl-6 position-relative padding-0">
-        <div id="carousel3" class="carousel slide carousel-fade d-flex justify-content-center align-items-center"
-            data-bs-ride="carousel">
-
-            <div class="carousel-inner">
-
-                <div class="carousel-inner">
-
-                    {% for item in andrej %}
-
-                    <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
-                        id="slide{{ forloop.counter }}">
-                        {% if item.image %}
-                        <picture>
-                            {% thumbnail item.image "1200x800" format="WEBP" as im %}
-                            <source srcset="{{ im.url }}" type="image/webp">
-                            {% endthumbnail %}
-                            {% thumbnail item.image "1200x800" format="JPEG" as im %}
-                            <source srcset="{{ im.url }}" type="image/jpeg">
-                            <img class='rounded-3'  src="{{ im.url }}" alt="{{ image.name }}">
-                            {% endthumbnail %}
-                        </picture>
-                        {% endif %}
-                        <div class="carousel-caption d-none d-md-block">
-
-                        </div>
-                    </div>
-
-                    {% endfor %}
-
-                </div>
-            </div>
+    
+    
+      <div class="col-12 col-xl-6 position-relative padding-0" hx-get="{% url 'about' %}?name=andrej" hx-target="this" hx-trigger="load" hx-swap="innerHTML">
+            {% include 'includes/carousel.html' %}
         </div>
 
-    </div>
+ 
 </section>

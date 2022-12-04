@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_title %} {% translate "Gallery - Tattoo SK Workshop | Your Choice for the best tattoos" %}{% endblock %}
+{% block extra_meta %}
+<meta name="description" content="{% blocktranslate trimmed %}A tattoo is the New Addiction, Check out our Gallery and see the Work of our Tattoo Artist Andrejs Baranovs, tattoo studio and tattoo convention.{% endblocktranslate %}">
+{% endblock %}
+
+{% block nav %}
+<a href="{% url 'home' %}" aria-label="Return back to previous page"><i class="fa-solid fa-angles-left"></i></a>
+{% endblock %}
+
+{% block content %}
+<div class="page_container py-3 py-sm-4 pt-md-5 d-flex flex-column justify-content-center align-items-center">
+    <div class="album row mx-2 mx-sm-3 mx-md-4 g-3 g-sm-4 g-md-5 justify-content-center">
+    {% include 'includes/album_list_items.html' %}
+    </div>
+</div>
+{% endblock %}
