@@ -28,4 +28,15 @@
         $('.item-gallery').removeClass('faded');
         $('.detail-item').removeClass('faded');
     });
+
+    document.body.addEventListener('htmx:beforeSwap', function(evt) {
+        if(evt.detail.xhr.status === 200){
+            setTimeout(function(){
+                clean();
+            }, 400);
+        } 
+    });
+
+
+
 </script>

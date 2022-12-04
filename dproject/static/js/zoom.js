@@ -143,7 +143,6 @@ const clean = function () {
 }
 
 const initZoom = function () {
-    clean();
     zoom = document.querySelector('#zoom');
     if (window.matchMedia("(pointer: coarse)").matches) {
         loadMobile();
