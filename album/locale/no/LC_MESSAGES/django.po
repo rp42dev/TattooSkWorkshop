@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 19:31+0000\n"
+"POT-Creation-Date: 2022-12-06 18:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,49 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\album\templates\album\artist.html:6
-msgid "Gallery - Tattoo SK Workshop | Custom tattoo Fetsund "
-msgstr "Galleri - Tattoo SK Workshop | Tilpasset tatovering Fetsund"
-
-#: .\album\templates\album\artist.html:10
+#: .\album\templates\album\album_detail.html:8
+#, fuzzy, python-format
+#| msgid ""
+#| "Tattoo SK Workshop Fetsund - Tattoo  %(name)s done by tattoo artist "
+#| "Andjejs Baranovs"
 msgid ""
-"Andrej's gallery of tattoos. Tattoo artist in Fetsund, Norway. We can work "
-"together to create a unique Tattoo tattoo design for you."
-msgstr ""
-"Andrejs galleri med tatoveringer. Tatovør i Fetsund, Norge. Vi kan "
-"jobbesammen for å lage et unikt tatoveringsdesign for deg"
-
-#: .\album\templates\album\artist.html:12
-msgid ""
-"Gallery - We are a tattoo studio in Fetsund, Norway. We do all kinds of "
-"tattoos, from small to large. We are located in Fetsund Fetveien."
-msgstr ""
-"Galleri - Vi er et tatoveringsstudio i Fetsund, Norge. Vi gjør alle slags "
-"tatoveringer, fra små til store. Vi holder til i Fetsund Fetveien."
-
-#: .\album\templates\album\details.html:9
-msgid 
 "Tattoo SK Workshop Fetsund - Tattoo  %(name)s done by tattoo artist Andjejs "
 "Baranovs"
 msgstr ""
-"attoo SK Workshop Fetsund - Tatovering %(name) er utført av tatovør Andjejs Baranovs"
+"attoo SK Workshop Fetsund - Tatovering %(name) er utført av tatovør Andjejs "
+"Baranovs"
 
-#: .\album\templates\album\details.html:11
+#: .\album\templates\album\album_detail.html:10
+#, python-format
 msgid ""
 "Tattoo SK Workshop Fetsund - %(name)s | Tattoo studio for best quality "
 "tattoos"
 msgstr ""
-"Tattoo SK Workshop Fetsund - %(name)s | Tatoveringsstudio for tatoveringer av beste "
-"kvalitet"
+"Tattoo SK Workshop Fetsund - %(name)s | Tatoveringsstudio for tatoveringer "
+"av beste kvalitet"
 
-#: .\album\templates\album\details.html:17
+#: .\album\templates\album\album_detail.html:16
 #, python-format
 msgid ""
 "Best Quality Tattoos like %(name)s in Fetsund. Tattoo artist Andjejs "
 "Baranovs."
 msgstr "Beste kvalitet Tatoveringer som %(name)s i Fetsund. Tatovør Andjejs"
 
-#: .\album\templates\album\details.html:19
+#: .\album\templates\album\album_detail.html:18
 msgid ""
 "Ready to be different and unique? Tattoo SK Workshop is the best tattoo "
 "studio in Fetsund. We offer the best quality tattoos."
@@ -68,11 +54,31 @@ msgstr ""
 "Klar til å være annerledes og unik? Tattoo SK Workshop er den beste "
 "tatoveringenstudio i Fetsund. Vi tilbyr tatoveringer av beste kvalitet."
 
-#: .\album\templates\album\gallery.html:6
+#: .\album\templates\album\album_list.html:6
+msgid "Gallery - Tattoo SK Workshop | Custom tattoo Fetsund "
+msgstr "Galleri - Tattoo SK Workshop | Tilpasset tatovering Fetsund"
+
+#: .\album\templates\album\album_list.html:11
+msgid ""
+"Andrej's gallery of tattoos. Tattoo artist in Fetsund, Norway. We can work "
+"together to create a unique Tattoo tattoo design for you."
+msgstr ""
+"Andrejs galleri med tatoveringer. Tatovør i Fetsund, Norge. Vi kan "
+"jobbesammen for å lage et unikt tatoveringsdesign for deg"
+
+#: .\album\templates\album\album_list.html:13
+msgid ""
+"Gallery - We are a tattoo studio in Fetsund, Norway. We do all kinds of "
+"tattoos, from small to large. We are located in Fetsund Fetveien."
+msgstr ""
+"Galleri - Vi er et tatoveringsstudio i Fetsund, Norge. Vi gjør alle slags "
+"tatoveringer, fra små til store. Vi holder til i Fetsund Fetveien."
+
+#: .\album\templates\album\artist_list.html:6
 msgid "Gallery - Tattoo SK Workshop | Your Choice for the best tattoos"
 msgstr "Galleri - Tattoo SK Workshop | Ditt valg av de beste tatoveringene"
 
-#: .\album\templates\album\gallery.html:8
+#: .\album\templates\album\artist_list.html:8
 msgid ""
 "A tattoo is the New Addiction, Check out our Gallery and see the Work of our "
 "Tattoo Artist Andrejs Baranovs, tattoo studio and tattoo convention."
@@ -81,9 +87,8 @@ msgstr ""
 "arbeidet til vårTatovør Andrejs Baranovs, tatoveringsstudio og "
 "tatoveringskonvensjon."
 
-#: .\album\templates\album\gallery.html:20
-msgid "Gallery"
-msgstr "galleri"
+#~ msgid "Gallery"
+#~ msgstr "galleri"
 
 #~ msgid "Best Quality Tattoos like"
 #~ msgstr "Beste kvalitet tatoveringer som"

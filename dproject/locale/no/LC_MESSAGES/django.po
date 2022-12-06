@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 18:39+0000\n"
+"POT-Creation-Date: 2022-12-06 18:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\config\settings\common.py:102
+#: .\config\settings\common.py:107
 msgid "English"
 msgstr "Engelsk"
 
-#: .\config\settings\common.py:103
+#: .\config\settings\common.py:108
 msgid "Norwegian"
 msgstr "Norsk"
 
-#: .\config\urls.py:33
+#: .\config\urls.py:30
 msgid "^gallery/"
 msgstr "^galleri/"
 
-#: .\config\urls.py:34
+#: .\config\urls.py:31
 msgid "^about/"
 msgstr "^om/"
 
@@ -98,6 +98,10 @@ msgstr ""
 msgid "Name"
 msgstr "Navn"
 
+#: .\dproject\templates\includes\contact_form.html:16
+msgid "Invalid"
+msgstr ""
+
 #: .\dproject\templates\includes\contact_form.html:23
 msgid "Email"
 msgstr "Epostadresse"
@@ -118,53 +122,53 @@ msgstr "Er du over 16"
 msgid "Submit"
 msgstr "Sende inn"
 
-#: .\dproject\templates\includes\offcanvas_contact.html:9
-#: .\dproject\templates\includes\offcanvas_contact.html:25
-#: .\dproject\templates\includes\offcanvas_contact.html:50
+#: .\dproject\templates\includes\nav_menu.html:3
+msgid "Home"
+msgstr "Hjem"
+
+#: .\dproject\templates\includes\nav_menu.html:4
+msgid "About Us"
+msgstr "Om oss"
+
+#: .\dproject\templates\includes\nav_menu.html:5
+msgid "Gallery"
+msgstr "Galleri"
+
+#: .\dproject\templates\includes\nav_menu.html:6
+msgid "Prices"
+msgstr "Priser"
+
+#: .\dproject\templates\includes\nav_menu.html:7
+msgid "Aftercare"
+msgstr "Ettervern"
+
+#: .\dproject\templates\includes\nav_menu.html:8
+msgid "FAQ"
+msgstr ""
+
+#: .\dproject\templates\includes\nav_menu.html:9
+#: .\dproject\templates\includes\offcanvas_contact.html:56
+msgid "Message Us"
+msgstr "Beskjed"
+
+#: .\dproject\templates\includes\offcanvas_contact.html:11
+#: .\dproject\templates\includes\offcanvas_contact.html:28
+#: .\dproject\templates\includes\offcanvas_contact.html:53
 msgid "Inquiries"
 msgstr "Forespørsler"
 
-#: .\dproject\templates\includes\offcanvas_contact.html:11
-#: .\dproject\templates\includes\offcanvas_contact.html:54
+#: .\dproject\templates\includes\offcanvas_contact.html:13
+#: .\dproject\templates\includes\offcanvas_contact.html:57
 msgid "Complaints"
 msgstr "Klager"
 
-#: .\dproject\templates\includes\offcanvas_contact.html:49
+#: .\dproject\templates\includes\offcanvas_contact.html:52
 msgid "Message: (image references, black or with color, size and place)"
 msgstr "Melding: (bildereferanser, svart eller med farge, størrelse og plass)"
-
-#: .\dproject\templates\includes\offcanvas_contact.html:53
-#: .\dproject\templates\includes\offcanvas_menu.html:32
-msgid "Message Us"
-msgstr "Beskjed"
 
 #: .\dproject\templates\includes\offcanvas_menu.html:19
 msgid "Menu"
 msgstr "Meny"
-
-#: .\dproject\templates\includes\offcanvas_menu.html:26
-msgid "Home"
-msgstr "Hjem"
-
-#: .\dproject\templates\includes\offcanvas_menu.html:27
-msgid "About Us"
-msgstr "Om oss"
-
-#: .\dproject\templates\includes\offcanvas_menu.html:28
-msgid "Gallery"
-msgstr "Galleri"
-
-#: .\dproject\templates\includes\offcanvas_menu.html:29
-msgid "Prices"
-msgstr "Priser"
-
-#: .\dproject\templates\includes\offcanvas_menu.html:30
-msgid "Aftercare"
-msgstr "Ettervern"
-
-#: .\dproject\templates\includes\offcanvas_menu.html:31
-msgid "FAQ"
-msgstr ""
 
 #: .\dproject\templates\registration\logged_out.html:5
 msgid "Logged out"

@@ -1,7 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.conf import settings
-from django.templatetags.static import static
-from .models import About, AddMember, Faq
+from .models import Faq
 from home.models import Page, Section, Article, ArticleImage, ArticleVideo
 
 
@@ -9,10 +8,15 @@ def about(request):
     """A view to return the about page and show all album"""
     page = Page.objects.get(name='about')
     sections = Section.objects.filter(page=page)
+    articles = Article.objects.filter(section__in=sections)
+    images = ArticleImage.objects.filter(article__in=articles)
+    
 
     context = {
         'page': page,
         'sections': sections,
+        'articles': articles,
+        'images': images,
     }
     
     if request.htmx:

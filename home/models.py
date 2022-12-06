@@ -7,8 +7,11 @@ from django.urls import reverse
 class Seo(models.Model):
     """ SEO model """
     title = models.CharField(max_length=200, blank=True)
+    title_no = models.CharField(max_length=200, blank=True)
     description = models.TextField(max_length=160, blank=True)
+    description_no = models.TextField(max_length=160, blank=True)
     keywords = models.TextField(blank=True)
+    keywords_no = models.TextField(blank=True)
     image = ResizedImageField(
         size=[1200, 630], quality=100, upload_to='seo', blank=True, null=True)
 
@@ -19,7 +22,9 @@ class Seo(models.Model):
 class Page(models.Model):
     """ Page model """
     name = models.CharField(max_length=200, blank=True)
+    name_no = models.CharField(max_length=200, blank=True)
     description = models.TextField(blank=True)
+    description_no = models.TextField(blank=True)
     seo = models.ForeignKey(
         'Seo', on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(max_length=200, blank=True)
@@ -35,6 +40,7 @@ class Page(models.Model):
 class Section(models.Model):
     """ Section model """
     title = models.CharField(max_length=200, blank=True)
+    title_no = models.CharField(max_length=200, blank=True)
     page = models.ForeignKey('Page', on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -45,9 +51,12 @@ class Section(models.Model):
 class Article(models.Model):
     """ Article model """
     title = models.CharField(max_length=200, blank=True)
+    title_no = models.CharField(max_length=200, blank=True)
     subtitle = models.CharField(max_length=200, blank=True)
+    subtitle_no = models.CharField(max_length=200, blank=True)
     section = models.ForeignKey('Section', on_delete=models.CASCADE, blank=True, null=True)
     body = models.TextField(blank=True)
+    body_no = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -63,7 +72,9 @@ class ArticleImage(models.Model):
         2560, 1440], 'portrait': [1440, 2560], 'square': [1440, 1440]}
 
     title = models.CharField(max_length=200, blank=True)
+    title_no = models.CharField(max_length=200, blank=True)
     description = models.TextField(blank=True)
+    description_no = models.TextField(blank=True)
     section = models.ForeignKey(
         'Section', on_delete=models.CASCADE, blank=True, null=True)
     article = models.ForeignKey(
@@ -87,7 +98,9 @@ class ArticleImage(models.Model):
 class ArticleVideo(models.Model):
     """ Video model """
     title = models.CharField(max_length=200, blank=True)
+    title_no = models.CharField(max_length=200, blank=True)
     description = models.TextField(blank=True)
+    description_no = models.TextField(blank=True)
     video = EmbedVideoField(blank=True, null=True)
     section = models.ForeignKey(
         'Section', on_delete=models.CASCADE, blank=True, null=True)
