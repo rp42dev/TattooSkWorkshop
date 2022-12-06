@@ -9,8 +9,8 @@
         <div class="my-auto px-3 ps-sm-4 text-white">
         <div class="me-auto">
             {% for article in articles %}
-            <h2 class="text-uppercase text-light fw-light">{% if LC == 'no' %}{{article.title}}{% else %}{{article.title_no}}{%endif%}</h2>
-            <h3 class="text-light fw-normal text-capitalize">{% if LC == 'no' %}{{article.subtitle}}{% else %}{{article.subtitle_no}}{%endif%}</h3>
+            <h2 class="text-uppercase text-light fw-light">{% if LC == 'en' %}{{article.title}}{% else %}{{article.title_no}}{%endif%}</h2>
+            <h3 class="text-light fw-normal text-capitalize">{% if LC == 'en' %}{{article.subtitle}}{% else %}{{article.subtitle_no}}{%endif%}</h3>
             {% if LC == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
             {% endfor %}
         </div>
