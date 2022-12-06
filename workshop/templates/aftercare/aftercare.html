@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block nav %}
-<a href="#" class="back" aria-label="Return back to previous page"><i class="fa-solid fa-reply-all"></i></a>
+<a href="{% url 'home' %}" class="back" aria-label="Return back to home page"><i class="fa-solid fa-reply-all"></i></a>
 {% endblock %}
 
 {% block content %}
@@ -24,7 +24,7 @@
             {% include 'includes/social.html' %}
         </div>
         <div class="gradient-line"></div>
-        <article class="text_container px-3 px-sm-4 rounded-3">
+        <article class="text_container px-3 px-sm-4 rounded-3 gradient-border">
             <div class="col-12 text-light text-uppercase fw-normal">
                 <h4  class="text-light fw-normal">{% translate 'Which cream should I use?' %}</h4>
             </div>
@@ -34,7 +34,7 @@
                     Nothing more is acceptable.{% endblocktranslate %}</p>
             </div>
         </article>
-        <article class="text_container px-3 px-sm-4 rounded-3">
+        <article class="text_container px-3 px-sm-4 rounded-3 gradient-border">
             <div class="col-12 text-light text-uppercase fw-normal">
                 <h4  class="text-light fw-normal">{% translate 'How to take care of my fresh tattoo?' %}</h4>
             </div>
@@ -47,7 +47,7 @@
                     tattoo to avoid crusts.{% endblocktranslate %}</p>
             </div>
         </article>
-        <article class="text_container px-3 px-sm-4 rounded-3">
+        <article class="text_container px-3 px-sm-4 rounded-3 gradient-border">
             <div class="col-12 text-light text-uppercase fw-normal">
                 <h4  class="text-light fw-normal">{% translate 'If under the plastic film is a lot of liquid?' %}</h4>
             </div>
@@ -57,7 +57,7 @@
                     wash your tattoo and use the cream.{% endblocktranslate %}</p>
             </div>
         </article>
-        <article class="text_container px-3 px-sm-4 rounded-3">
+        <article class="text_container px-3 px-sm-4 rounded-3 gradient-border">
             <div class="col-12 text-light text-uppercase fw-normal">
                 <h4  class="text-light fw-normal">{% translate 'Can I do training?' %}</h4>
             </div>
@@ -68,7 +68,7 @@
                     can be damaged.{% endblocktranslate %}</p>
             </div>
         </article>
-        <article class="text_container px-3 px-sm-4 rounded-3">
+        <article class="text_container px-3 px-sm-4 rounded-3 gradient-border">
             <div class="col-12 text-light text-uppercase fw-normal">
                 <h4  class="text-light fw-normal">{% translate 'Can I go to the shower?' %}</h4>
             </div>
@@ -76,7 +76,7 @@
                 <p>{% blocktranslate trimmed %}Yes, you can do all your routine as normal.{% endblocktranslate %}</p>
             </div>
         </article>
-        <article class="text_container px-3 px-sm-4 rounded-3">
+        <article class="text_container px-3 px-sm-4 rounded-3 gradient-border">
             <div class="col-12 text-light text-uppercase fw-normal">
                 <h4 class="text-light fw-normal">{% translate 'Can I go to solarium (take a sun) or sauna?' %}</h4>
             </div>
@@ -87,6 +87,31 @@
                     life (same on the sun).{% endblocktranslate %}</p>
             </div>
         </article>
+        <article class="text_container px-3 px-sm-4 rounded-3 gradient-border">
+            <div class="col-12 text-light text-uppercase fw-normal">
+                <h4 class="text-light fw-normal">Tattoo SK Workshop</h4>
+            </div>
+            <div class="col-12">
+                <p>{% blocktranslate trimmed %}If you have any questions, please contact us. We will be happy to help you.{% endblocktranslate %}</p>
+            </div>
+                <p>Tel: +47 462 53 760</p>
+                <p>Email: info.tatooskworkshop.no</p>
+                <p>Instagram: @tatooskworkshop</p>
+                <p>Facebook: Tatooskworkshop</p>
+                <p>Address: Fetveien 467, 1900 Fetsund, Norway</p>
+        </article>
     </main>
 </div>
+
+{% comment %} Sticky bottom bootstrap 5 print button {% endcomment %}
+<div class="position-fixed bottom-0 start-0 mb-3 mx-3">
+    <div class="d-print-none">
+        <div class="d-flex justify-content-center">
+            <div class="col-12 col md-6 col-lg-4">
+                <button class="round-btn" onclick="window.print()">{% translate 'Print' %}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

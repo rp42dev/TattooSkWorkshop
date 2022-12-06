@@ -9185,7 +9185,7 @@ p {
 }
 
 .nav_btn,
-.btn_back a {
+.extra_nav a {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-image: var(--linear-gradient);
@@ -9215,7 +9215,7 @@ p {
 .btn span {
   text-align: left;
   display: inline-block;
-  width: 100px !important;
+  width: 125px !important;
   White-space: nowrap;
 }
 
@@ -9467,6 +9467,22 @@ div.zoom>img {
   box-shadow: var(--box-shadow-sm)
 }
 
+.round-btn {
+    margin: .5rem;
+    text-align: center;
+    height: 3rem;
+    max-width: 3rem;
+    min-width: 3rem;
+    background: var(--bs-999);
+    border-radius: 100%;
+    line-height: 3rem;
+    color: var(--bs-white);
+    opacity: var(--bs-btn-opacity);
+    transition: all 150ms;
+    box-shadow: var(--box-shadow-sm);
+    border: none;
+}
+
 .s {
   color: #9597ff;
 }
@@ -9479,6 +9495,7 @@ a {
   text-decoration: none;
 }
 
+.round-btn:hover,
 .social a:hover {
   box-shadow: var(--box-shadow-sm-hover);
   opacity: 1;
@@ -9644,7 +9661,7 @@ html::-webkit-scrollbar-thumb {
     font-size: 2.5rem;
   }
 
-  .btn_back,
+  .extra_nav,
   .nav_btn {
     font-size: 2.5rem;
   }
@@ -9710,4 +9727,26 @@ html::-webkit-scrollbar-thumb {
 .accordion .btn {
   font-size: .9rem;
   min-height: 50px;
+}
+
+
+@media print {
+
+  p,
+  a,
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #000 !important;
+    font-weight: 400 !important;
+    print-color-adjust: exact;
+    margin: .5rem 0;
+    padding: 0;
+  }
+
+  article {
+    margin: 0;
+    padding: 0;
+  }
 }
