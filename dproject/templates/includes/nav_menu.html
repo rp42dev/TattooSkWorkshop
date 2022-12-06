@@ -1,10 +1,10 @@
 {% load i18n %}
 <div class="menu-items d-flex flex-column justify-content-around align-items-center direction-ltr fw-lighter">
-    <a class="btn _button" href="{% url 'home' %}">{% translate "Home" %}</a>
-    <a class="btn _button" href="{% url 'about' %}">{% translate "About Us" %}</a>
-    <a class="btn _button" href="{% url 'artist' %}">{% translate "Gallery" %}</a>
-    <a class="btn _button" href="{% url 'prices' %}">{% translate "Prices" %}</a>
-    <a class="btn _button" href="{% url 'aftercare' %}">{% translate "Aftercare" %}</a>
-    <a class="btn _button" href="{% url 'faq' %}">{% translate "FAQ" %}</a>
-    <a class="btn _button" data-bs-toggle="offcanvas" href="#contact" role="button" aria-controls="contact">{% translate "Message Us" %}</a>
+    <a class="btn _button" href="{% url 'home' %}"><span><i class="fa-solid fa-house"></i>&nbsp{% translate "Home" %}</span></a>
+    <a class="btn _button" href="{% url 'about' %}"><span><i class="fa-solid fa-user-group"></i>&nbsp{% translate "About Us" %}</span></a>
+    <a class="btn _button" href="{% url 'artist' %}"><span><i class="fa-solid fa-images"></i>&nbsp{% translate "Gallery" %}</span></a>
+    <a class="btn _button" href="{% url 'prices' %}"><span><i class="fa-solid fa-money-check"></i>&nbsp{% translate "Prices" %}</span></a>
+    <a class="btn _button" href="{% url 'aftercare' %}"><span><i class="fa-solid fa-hand-holding-hand"></i>&nbsp{% translate "Aftercare" %}</span></a>
+    <a class="btn _button" href="{% url 'faq' %}"><span><i class="fa-solid fa-question"></i>&nbsp{% translate "FAQ" %}</span></a>
+    <a class="btn _button" data-bs-toggle="offcanvas" href="#contact" role="button" aria-controls="contact"><span> <i class="fa-solid fa-comment"></i>&nbsp{% translate "Message Us" %}</span></a>
 </div>

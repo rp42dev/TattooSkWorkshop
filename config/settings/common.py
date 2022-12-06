@@ -46,6 +46,7 @@ THIRD_PARTY_APPS = (
     'crispy_forms',
     'sorl.thumbnail',
     "django_htmx",
+    'embed_video',
 )
 
 

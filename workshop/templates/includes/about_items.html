@@ -1,0 +1,24 @@
+{% load i18n %}
+{% load static %}
+<section class="row my-5 mt-sm-5" >
+    <div class="col-12 col-lg-6 position-relative padding-0 {% if section.title == 'andrej' %}order-lg-2{% endif %}">
+        {% include 'includes/about_carousel.html' with obj=images %}
+    </div>
+
+    <div class="col-12 col-lg-6 d-flex text_container rounded-3 {% if section.title == 'andrej' %}order-lg-1{% endif %}">
+        <div class="my-auto px-3 ps-sm-4 text-white">
+        <div class="me-auto">
+            {% for article in articles %}
+            <h2 class="text-uppercase text-light fw-light">{% translate article.title %}</h2>
+            <h3 class="text-light fw-normal text-capitalize">{% translate article.subtitle %}</h3>
+            {% translate article.body|safe %}     
+            {% endfor %}
+        </div>
+        {% if section.title == 'studio' %}
+        {% include 'includes/social.html' %}
+        {% endif %}
+    </div>
+</section>
+{% if section.title != 'jane' %}
+<div class="gradient-line"></div>
+{% endif %}                                                                                                                                                                                                                                          

@@ -2,23 +2,26 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.templatetags.static import static
 from .models import About, AddMember, Faq
+from home.models import Page, Section, Article, ArticleImage, ArticleVideo
 
 
-def workshop(request):
-    """A view to return the workshop page and show all album"""
-    allObjects = About.objects.all()
-    
+def about(request):
+    """A view to return the about page and show all album"""
+    page = Page.objects.get(name='about')
+    sections = Section.objects.filter(page=page)
+
     context = {
-        'index': 'about',
-        'allObjects': allObjects,
+        'page': page,
+        'sections': sections,
     }
     
     if request.htmx:
-        context['obj'] = allObjects.filter(name=request.GET['name'])
-        print(context['obj'])
-        return render(request, 'includes/carousel.html', context)
+        context['section'] = Section.objects.get(title=request.GET['name'])
+        context['articles'] = Article.objects.filter(section=context['section'])
+        context['images'] = ArticleImage.objects.filter(article__in=context['articles'])
+        return render(request, 'includes/about_items.html', context)
 
-    return render(request, 'workshop/workshop.html', context)
+    return render(request, 'about/about.html', context)
     
 
 def faq(request):

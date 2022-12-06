@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_title %}{% translate "About - Tattoo SK Workshop | Tattoo studio in Fetsund Fetveien" %}{% endblock %}
+{% block extra_meta %}
+<meta name="description" content="{% blocktranslate trimmed %}Ready to get a tattoo? full arm tattoo or full body tattoo we can help you with the tattoo design and the process. Contact Us for a free consultation today.{% endblocktranslate %}">
+{% endblock %}
+
+{% block nav %}
+<a href="#" class="back" aria-label="Return back to previous page"><i class="fa-solid fa-reply-all"></i></a>
+{% endblock %}
+
+{% block content %}
+<main id="workshop" style="max-width:1920px;" class="text-white page_container fade align-self-center col-12 pt-0 pb-4">
+    <div class="col text-center">
+        <h1 class="text-light page_heading text-uppercase display-4">{% translate page.name %}</h1>
+    </div>
+    {% for section in sections %}
+    <div hx-get="?name={{ section.title }}" hx-target="this" hx-trigger="load" hx-swap="innerHTML" class="col-12 mx-auto">
+        {% include 'includes/about_items.html' %}
+    </div>
+    {% endfor %}
+</main>
+{% endblock %} 

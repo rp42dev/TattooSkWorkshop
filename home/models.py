@@ -1,100 +1,100 @@
 from django.db import models
-from django.utils.text import slugify
 from django_resized import ResizedImageField
-from django.dispatch import receiver
-from PIL import Image
-import os
+from embed_video.fields import EmbedVideoField
+from django.urls import reverse
+
 
 class Seo(models.Model):
     """ SEO model """
     title = models.CharField(max_length=200, blank=True)
     description = models.TextField(max_length=160, blank=True)
     keywords = models.TextField(blank=True)
-    image = models.ImageField(upload_to='seo/', blank=True)
+    image = ResizedImageField(
+        size=[1200, 630], quality=100, upload_to='seo', blank=True, null=True)
 
     def __str__(self):
         return self.title
 
-    class Meta:
-        verbose_name = 'SEO'
-        verbose_name_plural = 'SEO'
 
 class Page(models.Model):
+    """ Page model """
     name = models.CharField(max_length=200, blank=True)
     description = models.TextField(blank=True)
     seo = models.ForeignKey(
-        Seo, on_delete=models.CASCADE, blank=True, null=True)
-    image = ResizedImageField(
-        size=[2500, 1600], quality=100, upload_to='pages/', blank=True, null=True)
+        'Seo', on_delete=models.CASCADE, blank=True, null=True)
+    slug = models.SlugField(max_length=200, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=200, blank=True)
 
-    def save(self, *args, **kwargs):
-        existing_name = Page.objects.filter(name=self.name)
-        if existing_name:
-            counter = 1
-            while True:
-                if not Page.objects.filter(
-                        slug=slugify(self.name) + '-' + str(counter)).exists():
-                    self.slug = slugify(self.name) + '-' + str(counter)
-                    break
-                counter += 1
-        super(Page, self).save(*args, **kwargs)
+    def get_absolute_url(self):
+        return reverse(self.slug)
 
     def __str__(self):
         return self.name
 
+class Section(models.Model):
+    """ Section model """
+    title = models.CharField(max_length=200, blank=True)
+    page = models.ForeignKey('Page', on_delete=models.CASCADE, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
-@receiver(models.signals.pre_save, sender=Page)
-@receiver(models.signals.pre_save, sender=Seo)
-def auto_delete_file_on_update(sender, instance, **kwargs):
-    """
-    Deletes file from filesystem
-    when corresponding `MediaFile` object is updated.
-    """
-    if not instance.pk:
-        return False
+    def __str__(self):
+        return self.title + ' - ' + self.page.name
 
-    if not instance.image:
-        return False
+class Article(models.Model):
+    """ Article model """
+    title = models.CharField(max_length=200, blank=True)
+    subtitle = models.CharField(max_length=200, blank=True)
+    section = models.ForeignKey('Section', on_delete=models.CASCADE, blank=True, null=True)
+    body = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
-    if sender == Seo:
-        try:
-            old_file = Seo.objects.get(pk=instance.pk).image
-        except Seo.DoesNotExist:
-            return False
-    elif sender == Page:
-        try:
-            old_file = Page.objects.get(pk=instance.pk).image
-        except Page.DoesNotExist:
-            return False
-
-    new_file = instance.image
-    try:
-        if not old_file == new_file:
-            if os.path.isfile(old_file.path):
-                os.remove(old_file.path)
-    except:
-        pass
+    def __str__(self):
+        return self.title + ' - ' + self.section.title
 
 
-@receiver(models.signals.post_save, sender=Page)
-def auto_check_file_size(sender, instance, **kwargs):
-    """
-    Checks file size and compresses if necessary
-    """
-    if not instance.pk:
-        return False
+class ArticleImage(models.Model):
+    """ Images model """
+    ASPECT_RATIOS = [('original', 'Original'), ('landscape', 'Landscape 16x9'),
+                     ('portrait', 'Portrait 9x16'), ('square', 'Square 1x1')]
+    SIZES = {'original': [2560, 2560], 'landscape': [
+        2560, 1440], 'portrait': [1440, 2560], 'square': [1440, 1440]}
 
-    if not instance.image:
-        return False
+    title = models.CharField(max_length=200, blank=True)
+    description = models.TextField(blank=True)
+    section = models.ForeignKey(
+        'Section', on_delete=models.CASCADE, blank=True, null=True)
+    article = models.ForeignKey(
+        'Article', on_delete=models.CASCADE, blank=True, null=True)
+    aspect_ratio = models.CharField(
+        choices=ASPECT_RATIOS, max_length=20, default='Original')
+    image = ResizedImageField(
+        size=[2560, 2560], quality=100, upload_to='images/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
-    if instance.image.size > 1000000:
-        print("Image size too large")
-        print(instance.image.size)
-        image = Image.open(instance.image)
-        image.save(instance.image.path, quality=80, optimize=True)
-        print(instance.image.size)
-    else:
-        return False
+    def __str__(self):
+        if not self.article:
+            return self.title + ' - ' + self.section.title
+        elif not self.section:
+            return self.title + ' - ' + self.article.title
+        else:
+            return self.title + ' - ' + self.section.title + ' - ' + self.article.title
+
+
+class ArticleVideo(models.Model):
+    """ Video model """
+    title = models.CharField(max_length=200, blank=True)
+    description = models.TextField(blank=True)
+    video = EmbedVideoField(blank=True, null=True)
+    section = models.ForeignKey(
+        'Section', on_delete=models.CASCADE, blank=True, null=True)
+    article = models.ForeignKey(
+        'Article', on_delete=models.CASCADE, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title + ' - ' + self.section.title + ' - ' + self.article.title
