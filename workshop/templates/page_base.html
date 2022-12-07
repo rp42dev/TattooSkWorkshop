@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LC %}
+
+{% block extra_title %}{% if LC == 'en' %}{{page.seo.title}}{% else %}{{page.seo.title_no}}{% endif %}{% endblock %}
+
+{% block extra_meta %}
+{% if LC == 'en' %}
+<meta name="title" content="{{page.seo.title}}" />
+<meta name="description" content="{{page.seo.description}}" />
+<meta name="keywords" content="{{page.seo.keywords}}" />
+<meta property="og:title" content="{{page.seo.title}}" />
+<meta property="og:description" content="{{page.seo.description}}" />
+<meta property="og:url" content="{{request.build_absolute_uri}}" />
+
+{% else %}
+<meta name="title" content="{{page.seo.title_no}}" />
+<meta name="description" content="{{page.seo.description_no}}" />
+<meta name="keywords" content="{{page.seo.keywords_no}}" />
+<meta property="og:title" content="{{page.seo.title_no}}" />
+<meta property="og:description" content="{{page.seo.description_no}}" />
+<meta property="og:url" content="{{request.build_absolute_uri}}" />
+{% endif %}
+
+{% if page.seo.image %}
+<meta property="og:image" content="{{page.seo.image.url}}" />
+{% else %}
+<meta property="og:image" content="{% static 'images/og-image.png' %}" />
+{% endif %}
+{% endblock %}
+
+
+{% block nav %}
+<a href="#" class="back" aria-label="Return back to previous page"><i class="fa-solid fa-reply-all"></i></a>
+{% endblock %}
+
+{% block content %}
+{% block page_content %}
+
+{% endblock %}
+{% endblock %} 

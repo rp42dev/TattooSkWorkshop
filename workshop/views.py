@@ -1,31 +1,38 @@
+from django.views.generic import DetailView
 from django.shortcuts import render
 from django.conf import settings
 from .models import Faq
-from home.models import Page, Section, Article, ArticleImage, ArticleVideo
+from home.models import Page, Section, Article, Image, Video, Element
 
 
-def about(request):
-    """A view to return the about page and show all album"""
-    page = Page.objects.get(name='about')
-    sections = Section.objects.filter(page=page)
-    articles = Article.objects.filter(section__in=sections)
-    images = ArticleImage.objects.filter(article__in=articles)
+class PageDetailView(DetailView):
+    """ A view to show individual image with details """
+    model = Page
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.htmx:
+            context['section'] = Section.objects.get(
+                title=self.request.GET['name'])
+            context['articles'] = Article.objects.filter(
+                section=context['section'])
+            if Image.objects.filter(articles__in=context['articles']).exists():
+                context['images'] = Image.objects.filter(
+                    articles__in=context['articles'])
+            elif Image.objects.filter(sections=context['section']).exists():
+                context['images'] = Image.objects.filter(
+                    sections=context['section'])
+            return context
+        else:
+            context['sections'] = Section.objects.filter(page=self.object)
+            return context
+
+    def get_template_names(self):
+        if self.request.htmx:
+            return 'includes/about_items.html'
+        else:
+            return 'pages/about.html'
     
-
-    context = {
-        'page': page,
-        'sections': sections,
-        'articles': articles,
-        'images': images,
-    }
-    
-    if request.htmx:
-        context['section'] = Section.objects.get(title=request.GET['name'])
-        context['articles'] = Article.objects.filter(section=context['section'])
-        context['images'] = ArticleImage.objects.filter(article__in=context['articles'])
-        return render(request, 'includes/about_items.html', context)
-
-    return render(request, 'about/about.html', context)
     
 
 def faq(request):
@@ -37,7 +44,7 @@ def faq(request):
         'index': 'faq',
     }
     
-    return render(request, 'faq/faq.html', context)
+    return render(request, 'pages/faq.html', context)
 
 
 def aftercare(request):
@@ -47,7 +54,7 @@ def aftercare(request):
         'index': 'aftercare',
     }
     
-    return render(request, 'aftercare/aftercare.html', context)
+    return render(request, 'pages/aftercare.html', context)
 
 
 def map(request):
@@ -57,7 +64,7 @@ def map(request):
         'index': 'map',
     }
     
-    return render(request, 'map/map.html', context)
+    return render(request, 'pages/map.html', context)
 
 
 def prices(request):
@@ -67,4 +74,4 @@ def prices(request):
         'index': 'prices',
     }
     
-    return render(request, 'prices/prices.html', context)
+    return render(request, 'pages/prices.html', context)

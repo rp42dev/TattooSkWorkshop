@@ -1,0 +1,14 @@
+{% extends "page_base.html" %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LC %}
+
+{% block page_content %}
+<main id="workshop" style="max-width:1920px;" class="text-white page_container fade align-self-center col-12">                        
+    {% for section in sections %}
+    <div hx-get="?name={{ section.title }}" hx-target="this" hx-trigger="load" hx-swap="innerHTML" class="col-12 mx-auto">
+        {% include 'includes/about_items.html' %}
+    </div>
+    {% endfor %}
+</main>
+{% endblock %} 

@@ -1,39 +1,34 @@
 {% load static %}
 {% load i18n %}
 {% get_current_language as LC %}
-<section class="row my-5 " >
-    <div class="col-12 col-lg-6 position-relative padding-0 {% if section.title == 'andrej' %}order-lg-2{% endif %}">
+
+
+<section class="row my-3 my-sm-5 pb-lg-5">
+    <div class="col-12 section-header mb-3 mb-sm-5">
+        <h1 class="text-uppercase text-center text-light fw-light display-5 mb-2 clipped-text">
+            {% if LC == 'en' %}{{section.title}}{% else %}{{section.title_no}}{%endif%}
+        </h1>
+        <div class="gradient-line"></div>
+    </div>
+
+    <div class="col-12 col-lg-6 col-xl-8 position-relative padding-0 {% if section.title == 'andrej' %}order-lg-2{% endif %}">
         {% include 'includes/about_carousel.html' with obj=images %}
     </div>
 
-    <div class="col-12 col-lg-6 d-flex text_container rounded-3 {% if section.title == 'andrej' %}order-lg-1{% endif %}">
+    <div class="col-12 col-lg-6 col-xl-4 d-flex text_container rounded-3 {% if section.title == 'andrej' %}order-lg-1{% endif %}">
         <div class="my-auto px-3 ps-sm-4 text-white">
         <div class="me-auto">
             {% for article in articles %}
-            
-            <h2 class="text-uppercase text-light fw-light">
-                {% if LC == 'en' %}{{article.title}}{% else %}{{article.title_no}}{%endif%}</h2>
-            <h3 class="text-light fw-normal text-capitalize">
-                {% if LC == 'en' %}{{article.subtitle}}{% else %}{{article.subtitle_no}}{%endif%}</h3>
-            {% if LC == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
-            {% endfor %}
+            <article>
+                <h2 class="text-light fw-light text-capitalize">
+                    {% if LC == 'en' %}{{article.subtitle}}{% else %}{{article.subtitle_no}}{%endif%}</h2>
+                {% if LC == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
+                {% endfor %}
+            </article>
         </div>
-        {% if section.title == 'studio' %}
+        {% if section.title == 'About studio' %}
         {% include 'includes/social.html' %}
         {% endif %}
     </div>
 </section>
-    
-    {% if section.title == 'studio' %}
-<h3 class="text-uppercase clipped-text fw-light text-center">
-    {% if LC == 'en' %}Creating Great Tattoo with Skilled Hand{% else %}
-Lag en flott tatovering med dyktige hender{%endif%}</h3>
-    {% endif %}
-    {% if section.title == 'andrej' %}
-<h3 class="text-uppercase clipped-text fw-light text-center">
-    {% if LC == 'en' %}Adore your style, you will love it{% else %}
-Elsk stilen din, du vil elske den{%endif%}</h3>
-    {% endif %}
-{% if section.title != 'jane' %}
-<div class="gradient-line"></div>
-{% endif %}                                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                       

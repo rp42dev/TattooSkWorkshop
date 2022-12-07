@@ -4,7 +4,7 @@ from django.dispatch import receiver
 from PIL import Image, ImageOps
 import os
 
-from home.models import Page, ArticleImage
+from home.models import Page, Image
 from album.models import Artist, Album
 
 
@@ -31,7 +31,7 @@ def slugify_name(sender, instance, **kwargs):
 
 @receiver(pre_save, sender=Album)
 @receiver(pre_save, sender=Artist)
-@receiver(post_save, sender=ArticleImage)
+@receiver(post_save, sender=Image)
 def delete_old_file_on_update(sender, instance, **kwargs):
     """Deletes file from filesystem"""
     if not instance.pk:
@@ -53,7 +53,7 @@ def delete_old_file_on_update(sender, instance, **kwargs):
 
 @receiver(post_save, sender=Album)
 @receiver(post_save, sender=Artist)
-@receiver(post_save, sender=ArticleImage)
+@receiver(post_save, sender=Image)
 def pre_save_crop_images(sender, instance, **kwargs):
     """Crops images to aspect ratio"""
     if not instance.pk:
@@ -84,7 +84,7 @@ def pre_save_crop_images(sender, instance, **kwargs):
 
 @receiver(post_save, sender=Album)
 @receiver(post_save, sender=Artist)
-@receiver(post_save, sender=ArticleImage)
+@receiver(post_save, sender=Image)
 def image_post_save(sender, instance, **kwargs):
     """Checks file size and compresses if over 1MB"""
     if not instance.pk:

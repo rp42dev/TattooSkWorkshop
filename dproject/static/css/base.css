@@ -3778,7 +3778,7 @@ fieldset:disabled .btn {
 
 .carousel-inner img {
   width: 100%;
-  max-width: 50vw;
+  max-width: 80vw;
   height: 100%;
   min-height: 100%;
   object-fit: cover;
@@ -9564,7 +9564,7 @@ a {
   z-index: -1;
 }
 
-.site_container {
+.page-container {
 
   width: 100vw;
   height: 100%;
