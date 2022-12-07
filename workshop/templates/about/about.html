@@ -15,7 +15,7 @@
 {% block content %}
 <main id="workshop" style="max-width:1920px;" class="text-white page_container fade align-self-center col-12 pt-0 pb-4">
     <div class="col text-center">
-        <h1 class="text-light page_heading text-uppercase display-4">{% translate page.name %}</h1>
+        <h1 class="text-light page_heading text-uppercase display-4">{% if LC == 'en' %}{{page.name}}{% else %}{{page.name_no}}{% endif %}</h1>
     </div>
     {% for section in sections %}
     <div hx-get="?name={{ section.title }}" hx-target="this" hx-trigger="load" hx-swap="innerHTML" class="col-12 mx-auto">

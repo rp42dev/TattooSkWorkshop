@@ -42,6 +42,7 @@ class Album(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=254)
+    description = models.TextField(blank=True, null=True)
     aspect_ratio = models.CharField(
         choices=ASPECT_RATIOS, max_length=20, default='Original')
     image = ResizedImageField(
