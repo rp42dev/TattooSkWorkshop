@@ -9521,6 +9521,14 @@ a {
   width: 100%;
 }
 
+.clipped-text {
+    background: var(--linear-gradient);
+    font-family: 'Orbitron',sans-serif;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
 .gradient-line {
   margin: auto;
   max-width: 80%;
