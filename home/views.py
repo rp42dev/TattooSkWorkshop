@@ -6,19 +6,21 @@ from django.core.mail import BadHeaderError
 from django.template.loader import render_to_string
 from django.views.decorators.http import require_POST
 from django.http import HttpResponse, HttpResponseRedirect
+from .models import Page
 from django.contrib import messages
 from pytube import *
-
-
-def index(request):
-    """A view to return the index page"""
-    # try:
+ # try:
     #     video = YouTube('https: // www.youtube.com/watch?v=XBSEn2pUa84')
     #     video.streams.get_highest_resolution().download()
     # except:
     #     pass
+
+def index(request):
+    """A view to return the index page"""
+    page = Page.objects.get(name='home')
     
     context = {
+        'page': page,
         'index': 'home',
     }
     return render(request, 'home/index.html', context)

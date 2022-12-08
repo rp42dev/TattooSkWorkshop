@@ -2,15 +2,15 @@
 {% load i18n %}
 
 {% if prev %}
-<button class="carousel-control-prev" type="button">
-    <span hx-target="#swapable" hx-trigger="click delay:0ms" hx-get="{{ prev.get_absolute_url }}" hx-push-url="{{ prev.get_absolute_url }}" class="carousel-control-prev-icon extra_nav" aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+<button class="carousel-control-prev" type="button" hx-target="#swapable" hx-trigger="click delay:0ms" hx-get="{{ prev.get_absolute_url }}" hx-push-url="{{ prev.get_absolute_url }}">
+    <span class="carousel-control-prev-icon extra_nav" aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
     <span class="visually-hidden">Previous</span>
 </button>
 {% endif %}
 
 {% if next %}
-<button class="carousel-control-next" type="button">
-    <span hx-target="#swapable" hx-trigger="click delay:0ms" hx-get="{{ next.get_absolute_url }}" hx-push-url="{{ next.get_absolute_url }}" class="carousel-control-next-icon extra_nav" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+<button class="carousel-control-next" type="button" hx-target="#swapable" hx-trigger="click delay:0ms" hx-get="{{ next.get_absolute_url }}" hx-push-url="{{ next.get_absolute_url }}">
+    <span class="carousel-control-next-icon extra_nav" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
     <span class="visually-hidden">Next</span>
 </button>
 {% endif %}

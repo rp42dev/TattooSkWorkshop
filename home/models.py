@@ -58,7 +58,7 @@ class Section(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title + ' - ' + self.page.name
+        return self.title
 
 
 class Faq(models.Model):

@@ -3,10 +3,38 @@
 {% load i18n %}	
 {% get_current_language as LANGUAGE_CODE %}		
 
-{% block page_header %}
-{% endblock %}
-{% block content %}
 
+{% block extra_title %}{% if LANGUAGE_CODE == 'en' %}{{page.seo.title}}{% else %}{{page.seo.title_no}}{% endif %}{% endblock %}
+
+{% block extra_meta %}
+{% if LANGUAGE_CODE == 'en' %}
+<meta name="title" content="{{page.seo.title}}" />
+<meta name="description" content="{{page.seo.description}}" />
+<meta name="keywords" content="{{page.seo.keywords}}" />
+<meta property="og:title" content="{{page.seo.title}}" />
+<meta property="og:description" content="{{page.seo.description}}" />
+<meta property="og:url" content="{{request.build_absolute_uri}}" />
+<meta property="og:locale" content="en_UK" />
+
+
+{% else %}
+<meta name="title" content="{{page.seo.title_no}}" />
+<meta name="description" content="{{page.seo.description_no}}" />
+<meta name="keywords" content="{{page.seo.keywords_no}}" />
+<meta property="og:title" content="{{page.seo.title_no}}" />
+<meta property="og:description" content="{{page.seo.description_no}}" />
+<meta property="og:url" content="{{request.build_absolute_uri}}" />
+<meta property="og:locale" content="no_NO" />
+{% endif %}
+
+{% if page.seo.image %}
+<meta property="og:image" content="{{request.build_absolute_uri}}{{page.seo.image.url}}" />
+{% else %}
+<meta property="og:image" content="{{request.build_absolute_uri}}{% static 'images/og-image.png' %}" />
+{% endif %}
+{% endblock %}
+
+{% block content %}
 <div class="masthead d-flex align-items-center justify-content-center flex-column">
     <div class="overlay d-flex align-items-center justify-content-center flex-column" id="windows">
         <div class="header_wrap text-center">
