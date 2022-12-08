@@ -117,7 +117,7 @@ class PageAdmin(admin.ModelAdmin):
     )
 
     inlines = [SectionInline, ImagePageInline, ElementPageInline]
-    readonly_fields = ('created_at', 'updated_at', 'slug')
+    readonly_fields = ('created_at', 'updated_at',)
     search_fields = ('name', 'slug')
 
 

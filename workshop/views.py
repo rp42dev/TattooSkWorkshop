@@ -49,16 +49,6 @@ def faq(request):
     return render(request, 'pages/faq.html', context)
 
 
-def aftercare(request):
-    """A view to return the faq page"""
-    
-    context = {
-        'index': 'aftercare',
-    }
-    
-    return render(request, 'pages/aftercare.html', context)
-
-
 def map(request):
     """A view to return the map page"""
     
