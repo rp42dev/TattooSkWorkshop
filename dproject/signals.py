@@ -13,30 +13,24 @@ from album.models import Artist, Album
 @receiver(pre_save, sender=Artist)
 def slugify_name(sender, instance, **kwargs):
     """Slugify name before saving"""
-    if instance.slug:
-        return
-    instance.slug = slugify(instance.name)
     
-    if instance.slug_no:
+    if instance.slug_no and instance.slug:
         return
-    instance.slug_no = slugify(instance.name_no)
 
-    def get_next_slug():
-        slug = slugify(instance.name)
-        slug_no = slugify(instance.name_no)
+    def get_slug(name, lang):
+        slug = slugify(name)
         next_slug = slug
-        next_slug_no = slug_no
         num = 1
-        while sender.objects.filter(slug=next_slug).exists():
+        while sender.objects.filter(**{lang: next_slug}).exists():
             next_slug = f"{slug}-{num}"
-            num += 1
-        while sender.objects.filter(slug_no=next_slug_no).exists():
-            next_slug_no = f"{slug_no}-{num}"
             num += 1
         return next_slug
 
-    instance.slug = get_next_slug()
-    instance.slug_no = get_next_slug()
+    instance.slug = get_slug(instance.name, 'slug')
+    if not instance.name_no:
+        instance.slug_no = instance.slug
+    else:
+        instance.slug_no = get_slug(instance.name_no, 'slug_no')
 
 
 @receiver(pre_save, sender=Album)

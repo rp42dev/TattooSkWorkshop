@@ -33,12 +33,12 @@
 <a href="#" class="back" aria-label="Return back to previous page"><i class="fa-solid fa-reply-all"></i></a>
 {% endblock %}
 
-<div style="max-width:2560px;" class="row mx-auto text-white page_container fade align-self-center col-12">
-    <div class="my-5">
-    {% block content %}
-    {% block page_content %}
-    </div>
-</div>
+{% block content %}
+<div class="row mx-auto text-white page_container fade align-self-center col-12 mb-3 mt-5">
 
-{% endblock %}
-{% endblock %} 
+    {% block page_content %}
+    
+    {% endblock %}
+
+</div>
+    {% endblock %} 

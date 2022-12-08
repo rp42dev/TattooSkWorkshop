@@ -3,6 +3,9 @@ from django_resized import ResizedImageField
 from embed_video.fields import EmbedVideoField
 from django.urls import reverse
 from django.utils.translation import get_language
+from pillow_heif import register_heif_opener
+
+register_heif_opener()
 
 
 class Seo(models.Model):
@@ -22,7 +25,7 @@ class Seo(models.Model):
 
 class Page(models.Model):
     """ Page model """
-    name = models.CharField(max_length=200, blank=True)
+    name = models.CharField(max_length=200, blank=False)
     name_no = models.CharField(max_length=200, blank=True)
     description = models.TextField(blank=True)
     description_no = models.TextField(blank=True)
