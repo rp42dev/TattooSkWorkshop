@@ -1,8 +1,5 @@
-{% load i18n %}
-{% get_current_language as LC %}
-
 <div class="text-white col-12 col-lg-8 mx-auto d-flex flex-column gap-4 px-3">
 {% for article in articles %}
-{% if LC == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
+{% if LANGUAGE_CODE == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
 {% endfor %}
 </div>

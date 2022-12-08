@@ -1,12 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
-{% load i18n %}
-{% get_current_language as LC %}
 
-{% block extra_title %}{% if LC == 'en' %}{{page.seo.title}}{% else %}{{page.seo.title_no}}{% endif %}{% endblock %}
+{% block extra_title %}{% if LANGUAGE_CODE == 'en' %}{{page.seo.title}}{% else %}{{page.seo.title_no}}{% endif %}{% endblock %}
 
 {% block extra_meta %}
-{% if LC == 'en' %}
+{% if LANGUAGE_CODE == 'en' %}
 <meta name="title" content="{{page.seo.title}}" />
 <meta name="description" content="{{page.seo.description}}" />
 <meta name="keywords" content="{{page.seo.keywords}}" />

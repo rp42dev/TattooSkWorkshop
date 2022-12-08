@@ -1,21 +1,16 @@
-{% load static %}
-{% load i18n %}
-{% get_current_language as LC %}
-
-
 <div class="row my-3 my-sm-5 pb-lg-5">
-    <div class="col-12 col-lg-6 col-xl-8 position-relative padding-0 {% if section.title == 'andrej' %}order-lg-2{% endif %}">
+    <div class="col-12 col-lg-6 col-xxl-7 position-relative padding-0 {% if section.title == 'andrej' %}order-lg-2{% endif %}">
         {% include 'includes/about_carousel.html' with obj=images %}
     </div>
 
-    <div class="col-12 col-lg-6 col-xl-4 d-flex text_container rounded-3 {% if section.title == 'andrej' %}order-lg-1{% endif %}">
+    <div class="col-12 col-lg-6 col-xxl-5 d-flex text_container rounded-3 {% if section.title == 'andrej' %}order-lg-1{% endif %}">
         <div class="my-auto px-3 ps-sm-4 text-white">
         <div class="me-auto">
             {% for article in articles %}
             <article>
                 <h2 class="text-light fw-light text-capitalize">
-                    {% if LC == 'en' %}{{article.subtitle}}{% else %}{{article.subtitle_no}}{%endif%}</h2>
-                {% if LC == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
+                    {% if LANGUAGE_CODE == 'en' %}{{article.subtitle}}{% else %}{{article.subtitle_no}}{%endif%}</h2>
+                {% if LANGUAGE_CODE == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
                 {% endfor %}
             </article>
         </div>
