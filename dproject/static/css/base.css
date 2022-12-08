@@ -9645,6 +9645,10 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
+.btn_close i{
+  font-size: 2rem;
+}
+
 @media (min-width: 500px) {
 
   .masthead h1,
@@ -9653,7 +9657,7 @@ html::-webkit-scrollbar-thumb {
     line-height: 4rem;
   }
 
-  .btn_close {
+  .btn_close i{
     font-size: 2.5rem;
   }
 
