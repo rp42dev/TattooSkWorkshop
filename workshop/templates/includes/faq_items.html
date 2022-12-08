@@ -1,0 +1,19 @@
+
+
+<div class="accordion accordion-flush col-12 mx-auto px-3 gap-3" id="accordionFlushExample mx-2">
+  {% for item in object_list %}
+  <div class="accordion-item  mb-4">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="btn text-light w-100 fw-light font collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#flush{{ forloop.counter }}" aria-expanded="false"
+        aria-controls="flush-{{ forloop.counter }}">
+         {% if LANGUAGE_CODE == 'en'  %}{{ item.question}}{% else %}{{ item.question_no }}{% endif %}
+      </button>
+    </h2>
+    <div id="flush{{ forloop.counter }}" class="accordion-collapse collapse"
+      aria-labelledby="flush-{{ item.question }}" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body rounded-bottom text-light fw-lighter w-auto p-2"> <span>{% if LANGUAGE_CODE == 'en'  %}{{ item.answer|safe }}{% else %}{{ item.answer_no|safe }}{% endif %}</span></div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

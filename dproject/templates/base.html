@@ -49,13 +49,12 @@
 
     <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
         <header>
-            <div class="_navbar d-flex justify-content-between">
-                <div class="extra_nav">
+            <div class="navbar d-flex justify-content-between">
+                <div>
                     {% block nav %}
-
                     {% endblock %}
                 </div>
-                <div class="nav_btn align-self-end">
+                <div class="align-self-end">
                     <a data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu">
                         <i class="fas fa-bars"></i>
                     </a>
@@ -82,7 +81,7 @@
         {% endif %}
 
 
-        <div class="page-container justify-content-center min-vh-100">
+        <div class="pt-5 justify-content-center min-vh-100">
             {% block content %}
             {% endblock %}
         </div>

@@ -4,7 +4,6 @@ from embed_video.fields import EmbedVideoField
 from django.urls import reverse
 
 
-
 class Seo(models.Model):
     """ SEO model """
     title = models.CharField(max_length=200, blank=True)
@@ -18,6 +17,7 @@ class Seo(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Page(models.Model):
     """ Page model """
@@ -37,19 +37,34 @@ class Page(models.Model):
     def __str__(self):
         return self.name
 
+
 class Section(models.Model):
     """ Section model """
     title = models.CharField(max_length=200, blank=True)
     title_no = models.CharField(max_length=200, blank=True)
     subtitle = models.CharField(max_length=300, blank=True)
     subtitle_no = models.CharField(max_length=300, blank=True)
-    page = models.ForeignKey('Page', on_delete=models.CASCADE, blank=True, null=True)
+    page = models.ForeignKey(
+        'Page', on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title + ' - ' + self.page.name
-    
+
+
+class Faq(models.Model):
+    """ FAQ model """
+    question = models.CharField(max_length=200, blank=True)
+    question_no = models.CharField(max_length=200, blank=True)
+    answer = models.TextField(blank=True)
+    answer_no = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.question
+
 
 class Image(models.Model):
     """ Images model """
@@ -76,13 +91,15 @@ class Image(models.Model):
     def __str__(self):
         return self.title
 
+
 class Article(models.Model):
     """ Article model """
     title = models.CharField(max_length=200, blank=True)
     title_no = models.CharField(max_length=200, blank=True)
     subtitle = models.CharField(max_length=200, blank=True)
     subtitle_no = models.CharField(max_length=200, blank=True)
-    section = models.ForeignKey('Section', on_delete=models.CASCADE, blank=True, null=True)
+    section = models.ForeignKey(
+        'Section', on_delete=models.CASCADE, blank=True, null=True)
     body = models.TextField(blank=True)
     body_no = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -90,7 +107,7 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title + ' - ' + self.section.title
-    
+
 
 class Element(models.Model):
     """ Article model """

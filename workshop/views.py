@@ -1,8 +1,7 @@
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from django.shortcuts import render
 from django.conf import settings
-from .models import Faq
-from home.models import Page, Section, Article, Image, Video, Element
+from home.models import Page, Section, Article, Image, Video, Element, Faq
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import to_locale, get_language
 
@@ -24,10 +23,11 @@ class PageDetailView(DetailView):
             elif Image.objects.filter(sections=context['section']).exists():
                 context['images'] = Image.objects.filter(
                     sections=context['section'])
+            if self.object.name == 'faq':
+                context['object_list'] = Faq.objects.all()
             return context
         else:
             context['sections'] = Section.objects.filter(page=self.object)
-            print(self.object.name)
             return context
 
     def get_template_names(self):
@@ -36,17 +36,9 @@ class PageDetailView(DetailView):
             return f"includes/{page_name}_items.html"
         return 'pages/about.html'
 
-
-def faq(request):
-    """A view to return the faq page"""
-    items = Faq.objects.all()
-    
-    context = {
-        'items': items,
-        'index': 'faq',
-    }
-    
-    return render(request, 'pages/faq.html', context)
+def def_lang():
+    """ A function to return the default language """
+    return settings.LANGUAGE_CODE
 
 
 def map(request):

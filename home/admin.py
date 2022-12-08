@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Page, Seo, Section, Article, Image, Video, Image, Element
+from .models import Page, Seo, Section, Article, Image, Video, Image, Element, Faq
 from pillow_heif import register_heif_opener
 
 register_heif_opener()
@@ -93,6 +93,13 @@ class PageInline(admin.TabularInline):
     extra: 0
     inlines = [SectionInline, ImagePageInline, ElementPageInline]
 
+class FaqAdmin(admin.ModelAdmin):
+    list_display = (
+        'question',
+        'answer',
+    )
+
+    search_fields = ('question', 'answer',)
 
 class SeoAdmin(admin.ModelAdmin):
     list_display = (
@@ -169,6 +176,7 @@ class VideoAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'updated_at')
 
 
+admin.site.register(Faq, FaqAdmin)
 admin.site.register(Seo, SeoAdmin)
 admin.site.register(Page, PageAdmin)
 admin.site.register(Article, ArticleAdmin)
