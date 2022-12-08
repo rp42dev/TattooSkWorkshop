@@ -28,6 +28,6 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('', inc('home.urls')),
     re_path(_(r'^gallery/'), include('album.urls')),
-    re_path('', include('workshop.urls')),
+    re_path('', include('about.urls')),
     prefix_default_language=False
 )

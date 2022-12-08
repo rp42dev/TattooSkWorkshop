@@ -13,7 +13,7 @@ class AlbumAdmin(admin.ModelAdmin):
         'image',
     )
     search_fields = ('name', 'artist__name',)
-    readonly_fields = ('created_at', 'updated_at', 'slug')
+    readonly_fields = ('created_at', 'updated_at')
 
 class ArtistAdmin(admin.ModelAdmin):
     list_display = (
@@ -21,7 +21,7 @@ class ArtistAdmin(admin.ModelAdmin):
         'image',
         'order',
     )
-    readonly_fields = ('slug', 'created_at', 'updated_at')
+    readonly_fields = ('created_at', 'updated_at')
     list_display_links = ('name',)
 
 

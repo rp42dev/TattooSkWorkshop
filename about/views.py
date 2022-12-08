@@ -10,8 +10,14 @@ class PageDetailView(DetailView):
     """ A view to show individual image with details """
     model = Page
     
+    def get_slug_field(self) -> str:
+        if get_language() == 'no':
+            return 'slug_no'
+        return super().get_slug_field()
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        print(get_language())
         if self.request.htmx:
             context['section'] = Section.objects.get(
                 id=self.request.GET['name'])
@@ -38,7 +44,7 @@ class PageDetailView(DetailView):
 
 def def_lang():
     """ A function to return the default language """
-    return settings.LANGUAGE_CODE
+    return get_language()
 
 
 def map(request):

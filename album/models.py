@@ -3,8 +3,10 @@ from django.db import models
 from django.urls import reverse
 from django.utils.timezone import now
 from django_resized import ResizedImageField
+from pillow_heif import register_heif_opener
 
 from home.models import Seo, Page
+register_heif_opener()
 
 
 class Artist(models.Model):
@@ -14,6 +16,7 @@ class Artist(models.Model):
         size=[2560, 2560], quality=100,
         upload_to='artist', blank=True, null=True)
     slug = models.SlugField(auto_created=True, blank=True, null=True)
+    slug_no = models.SlugField(auto_created=True, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     order = models.IntegerField(blank=True, null=True)
@@ -50,6 +53,7 @@ class Album(models.Model):
     seo = models.ForeignKey(
         Seo, on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(auto_created=True, blank=True, null=True)
+    slug_no = models.SlugField(auto_created=True, blank=True, null=True)
 
     def get_absolute_url(self):
         return reverse("details", kwargs={"artist_slug": self.artist.slug, "slug": self.slug})

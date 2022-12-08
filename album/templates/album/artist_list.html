@@ -9,11 +9,11 @@
 {% endblock %}
 
 {% block nav %}
-<a href="{% url 'home' %}" aria-label="Return back to previous page"><i class="fa-solid fa-reply-all"></i></a>
+<a href="{% url 'home' %}" aria-label="Return back to previous page"><i class="fa-solid fa-angles-left"></i></a>
 {% endblock %}
 
 {% block content %}
-<div class="page_container py-3 py-sm-4 pt-md-5 d-flex flex-column justify-content-center align-items-center">
+<div class="page_container min-vh-100 py-3 py-sm-4 pt-md-5 d-flex flex-column justify-content-center align-items-center">
     <div class="album row mx-2 mx-sm-3 mx-md-4 g-3 g-sm-4 g-md-5 justify-content-center">
     {% include 'includes/album_list_items.html' %}
     </div>

@@ -9314,7 +9314,8 @@ p {
 
 #landing_social {
   position: absolute;
-  max-width: 400px;
+  width: 100%;
+  max-width: 600px;
   bottom: 5%;
 }
 
@@ -9735,7 +9736,15 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 450px) {
+  .masthead h1,
+  .masthead .h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+
+@media screen and (min-width: 575px) {
   body {
     font-size: 1.2rem !important;
   }
@@ -9747,7 +9756,7 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 810px) {
 
 
   .masthead h1,
@@ -9757,7 +9766,7 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 980px) {
 
   .masthead h1,
   .masthead .h1 {
@@ -9772,7 +9781,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1220px) {
 
   .accordion .btn,
   .btn {
@@ -9801,7 +9810,6 @@ html::-webkit-scrollbar-thumb {
 
   .accordion-header .btn {
     width: 100%;
-
     padding: 1rem;
   }
 }

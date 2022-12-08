@@ -2,6 +2,7 @@ from django.db import models
 from django_resized import ResizedImageField
 from embed_video.fields import EmbedVideoField
 from django.urls import reverse
+from django.utils.translation import get_language
 
 
 class Seo(models.Model):
@@ -28,11 +29,15 @@ class Page(models.Model):
     seo = models.ForeignKey(
         'Seo', on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(max_length=200, blank=True)
+    slug_no = models.SlugField(max_length=200, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
-        return reverse(self.slug + '/')
+        if get_language() == 'no':
+            return reverse(self.slug_no + '/')
+        else:
+            return reverse(self.slug + '/')
 
     def __str__(self):
         return self.name

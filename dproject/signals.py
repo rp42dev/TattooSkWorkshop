@@ -16,17 +16,27 @@ def slugify_name(sender, instance, **kwargs):
     if instance.slug:
         return
     instance.slug = slugify(instance.name)
+    
+    if instance.slug_no:
+        return
+    instance.slug_no = slugify(instance.name_no)
 
     def get_next_slug():
         slug = slugify(instance.name)
+        slug_no = slugify(instance.name_no)
         next_slug = slug
+        next_slug_no = slug_no
         num = 1
         while sender.objects.filter(slug=next_slug).exists():
             next_slug = f"{slug}-{num}"
             num += 1
+        while sender.objects.filter(slug_no=next_slug_no).exists():
+            next_slug_no = f"{slug_no}-{num}"
+            num += 1
         return next_slug
 
     instance.slug = get_next_slug()
+    instance.slug_no = get_next_slug()
 
 
 @receiver(pre_save, sender=Album)
