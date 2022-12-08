@@ -9777,6 +9777,7 @@ html::-webkit-scrollbar-thumb {
 
 
 @media screen and (min-width: 1200px) {
+  .accordion .btn,
   .btn {
     font-size: 1.2rem;
   }
