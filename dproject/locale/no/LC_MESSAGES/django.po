@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-06 18:20+0000\n"
+"POT-Creation-Date: 2022-12-07 21:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,10 +29,6 @@ msgstr "Norsk"
 #: .\config\urls.py:30
 msgid "^gallery/"
 msgstr "^galleri/"
-
-#: .\config\urls.py:31
-msgid "^about/"
-msgstr "^om/"
 
 #: .\dproject\templates\403.html:4 .\dproject\templates\403.html:9
 msgid "Permission denied"
@@ -126,27 +122,27 @@ msgstr "Sende inn"
 msgid "Home"
 msgstr "Hjem"
 
-#: .\dproject\templates\includes\nav_menu.html:4
+#: .\dproject\templates\includes\nav_menu.html:6
 msgid "About Us"
 msgstr "Om oss"
 
-#: .\dproject\templates\includes\nav_menu.html:5
+#: .\dproject\templates\includes\nav_menu.html:7
 msgid "Gallery"
 msgstr "Galleri"
 
-#: .\dproject\templates\includes\nav_menu.html:6
+#: .\dproject\templates\includes\nav_menu.html:8
 msgid "Prices"
 msgstr "Priser"
 
-#: .\dproject\templates\includes\nav_menu.html:7
+#: .\dproject\templates\includes\nav_menu.html:9
 msgid "Aftercare"
 msgstr "Ettervern"
 
-#: .\dproject\templates\includes\nav_menu.html:8
+#: .\dproject\templates\includes\nav_menu.html:10
 msgid "FAQ"
 msgstr ""
 
-#: .\dproject\templates\includes\nav_menu.html:9
+#: .\dproject\templates\includes\nav_menu.html:11
 #: .\dproject\templates\includes\offcanvas_contact.html:56
 msgid "Message Us"
 msgstr "Beskjed"
@@ -230,6 +226,9 @@ msgstr ""
 #: .\dproject\templates\registration\password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
+
+#~ msgid "^about/"
+#~ msgstr "^om/"
 
 #~ msgid "Tattoo Studio In Fetsund Fetveien Near Oslo"
 #~ msgstr "Tattoo Studio I Fetsund Fetveien Nær Oslo"

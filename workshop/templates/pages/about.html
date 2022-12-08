@@ -4,11 +4,28 @@
 {% get_current_language as LC %}
 
 {% block page_content %}
-<main id="workshop" style="max-width:1920px;" class="text-white page_container fade align-self-center col-12">                        
-    {% for section in sections %}
-    <div hx-get="?name={{ section.title }}" hx-target="this" hx-trigger="load" hx-swap="innerHTML" class="col-12 mx-auto">
-        {% include 'includes/about_items.html' %}
-    </div>
-    {% endfor %}
-</main>
+
+
+<div style="max-width:2560px;" class="row mx-auto text-white page_container fade align-self-center col-12">
+    <div class="my-5">
+        {% for section in sections %}
+        <div class="col-12 col-lg-8 mx-auto section-header my-4 my-sm-5">
+            <h1 class="text-uppercase text-center text-light fw-light display-5 mb-2 clipped-text">
+                {% if LC == 'en' %}{{section.title}}{% else %}{{section.title_no}}{%endif%}
+            </h1>
+            <div class="gradient-line mb-3"></div>
+            {% if not object.name == 'about' %}
+            {% include 'includes/social.html' %}
+            {% endif %}
+        </div>
+    
+
+        {% with "includes/"|add:section.page.name|add:"_items.html" as template %}
+        <section hx-get="?name={{ section.id }}" hx-target="this" hx-trigger="load" hx-swap="innerHTML" class="col-12 mx-auto">
+            {% include template %}
+        </section>
+        {% endwith %}
+        {% endfor %}
+</div>
+</div>
 {% endblock %} 
