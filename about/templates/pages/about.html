@@ -3,6 +3,7 @@
 {% block page_content %}
 {% for section in sections %}
 <div class="col-12 col-xl-10 col-xxl-8 mx-auto section-header mb-3 mb-sm-4">
+    <div class="text_container px-3 px-sm-4 rounded-3">
     <h1 class="text-uppercase text-center text-light fw-light display-5 mb-2 clipped-text">
         {% if LANGUAGE_CODE == 'en' %}{{section.title}}{% else %}{{section.title_no}}{%endif%}
     </h1>
@@ -10,6 +11,7 @@
     {% if not object.name == 'about' %}
     {% include 'includes/social.html' %}
     {% endif %}
+    </div>
 </div>
 
 {% with "includes/"|add:section.page.name|add:"_items.html" as template %}

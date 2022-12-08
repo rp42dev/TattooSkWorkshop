@@ -3886,7 +3886,7 @@ fieldset:disabled .btn {
   justify-content: center;
   width: 15%;
   padding: 0;
-  color: #fff;
+  color: var(--bs-white);
   text-align: center;
   background: none;
   border: 0;
@@ -3928,6 +3928,11 @@ fieldset:disabled .btn {
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: 100% 100%;
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+  font-size: 2.5rem;
 }
 
 .carousel-indicators {
@@ -9450,7 +9455,7 @@ div.zoom>img {
 
 .social {
   margin: auto;
-  max-width: 80%;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9551,6 +9556,7 @@ div.zoom>img {
 
 .page_container {
   width: 100%;
+  margin: 0 auto;
   max-width: 2500px;
 }
 
@@ -9614,6 +9620,12 @@ html::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 600px) {
+
+  .carousel-control-prev i,
+  .carousel-control-next i {
+    font-size: 2rem;
+  }
+
 
   .gradient-line {
     max-width: 80%;
@@ -9815,6 +9827,10 @@ html::-webkit-scrollbar-thumb {
 @media screen and (min-width: 1400px) {
   body {
     font-size: 1.6rem !important;
+  }
+
+  .social a {
+    max-width: 90%;
   }
 
   .masthead h1,

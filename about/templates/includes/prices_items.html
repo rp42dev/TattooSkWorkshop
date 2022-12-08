@@ -1,4 +1,4 @@
-<div class="text-white col-12 col-xl-10 col-xxl-8 mx-auto d-flex flex-column gap-4 px-3 mb-5">
+<div class="text-white col-12 col-xl-10 col-xxl-8 mx-auto d-flex flex-column gap-4 mb-5">
 {% for article in articles %}
 {% if LANGUAGE_CODE == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
 {% endfor %}
