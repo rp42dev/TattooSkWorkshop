@@ -67,13 +67,3 @@ def map(request):
     }
     
     return render(request, 'pages/map.html', context)
-
-
-def prices(request):
-    """A view to return the map page"""
-    
-    context = {
-        'index': 'prices',
-    }
-    
-    return render(request, 'pages/prices.html', context)

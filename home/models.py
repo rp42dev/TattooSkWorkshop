@@ -32,7 +32,7 @@ class Page(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
-        return reverse(self.slug)
+        return reverse(self.slug + '/')
 
     def __str__(self):
         return self.name
