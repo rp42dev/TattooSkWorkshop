@@ -9456,8 +9456,9 @@ div.zoom>img {
   margin: .5rem;
   text-align: center;
   height: 3rem;
-  max-width: 3rem;
-  min-width: 3rem;
+  width: 3rem;
+  display: grid;
+  place-items: center;
   background: var(--linear-gradient);
   border-radius: 100%;
   line-height: 3rem;
@@ -9752,3 +9753,59 @@ html::-webkit-scrollbar-thumb {
     padding: 0;
   }
 }
+
+@media screen and (min-width: 500px) {
+  body {
+    font-size: 1.2rem !important;
+  }
+  .masthead h1,
+  .masthead .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media screen and (min-width: 680px) {
+
+
+  .masthead h1,
+  .masthead .h1 {
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .btn {
+    font-size: 1.2rem;
+  }
+  .display-5 {
+    font-size: 4rem !important;
+  }
+  .social a {
+    height: 4rem;
+
+    width: 4rem;
+  }
+    body {
+      font-size: 1.4rem !important;
+    }
+  .masthead h1,
+  .masthead .h1 {
+    font-size: 10rem;
+    line-height: 10rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  body {
+    font-size: 1.6rem !important;
+  }
+  .masthead h1,
+  .masthead .h1 {
+    font-size: 12rem;
+    line-height: 12rem;
+  }
+}
+
