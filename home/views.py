@@ -9,12 +9,14 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Page
 from django.contrib import messages
 from pytube import *
+from django.views.decorators.gzip import gzip_page
  # try:
     #     video = YouTube('https: // www.youtube.com/watch?v=XBSEn2pUa84')
     #     video.streams.get_highest_resolution().download()
     # except:
     #     pass
 
+@gzip_page
 def index(request):
     """A view to return the index page"""
     page = Page.objects.get(name='home')
