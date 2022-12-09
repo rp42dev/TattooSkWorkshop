@@ -9,6 +9,35 @@ $(document).ready(function () {
 
 });
 
+// stretch text to fit container
+$((function () {
+    $.fn.stretch = function (init) {
+        var text = $(this);
+        text.css('font-size', init);
+        var textWidth = text.width();
+        var containerWidth = $('.masthead-content').width();
+        var fontSize = parseInt(text.css('font-size'));
+
+        var newFontSize = Math.floor(fontSize * containerWidth / textWidth);
+        text.css('font-size', newFontSize);
+        clearTimeout($.data(this, 1000));
+    };
+}));
+
+$(window).on('resize', function () {
+    $('.stretch').stretch ('.70rem');
+    $('.heading').stretch ('2rem');
+});
+
+$('.masthead').ready(function () {
+    if ($(".masthead")[0]) {
+        $('#video').get(0).play();
+    }
+    $('.stretch ').stretch ('.70rem');
+    $('.heading').stretch ('2rem');
+});
+
+
 // Lazy load images
 $(window).on("load", function () {
     $(window).scroll(function () {

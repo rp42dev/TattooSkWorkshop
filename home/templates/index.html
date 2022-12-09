@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load i18n %}	
-{% get_current_language as LANGUAGE_CODE %}		
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 
 {% block extra_title %}{% if LANGUAGE_CODE == 'en' %}{{page.seo.title}}{% else %}{{page.seo.title_no}}{% endif %}{% endblock %}
@@ -37,63 +37,26 @@
 {% block content %}
 {% for section in sections %}
 <div class="masthead d-flex align-items-center justify-content-center flex-column">
-    <div class="overlay" id="windows">
-        <div class="text-center masthead-content p-2">
-            <h1 class="my-0 text-nowrap text-uppercase heading">
-                TATTOO SK <br>
-                Workshop
-            </h1>       
-            <h2 class="text-uppercase strech">
-                {% if LANGUAGE_CODE == 'en' %}{{section.subtitle}}{% else %}{{section.subtitle_no}}{% endif %}
-            </h2>
-        </div>
+  <div class="overlay" id="windows">
+    <div class="text-center masthead-content p-2">
+      <h1 class="my-0 text-nowrap text-uppercase heading">
+        TATTOO SK <br>
+        Workshop
+      </h1>
+      <h2 class="text-uppercase stretch">
+        {% if LANGUAGE_CODE == 'en' %}{{section.subtitle}}{% else %}{{section.subtitle_no}}{% endif %}
+      </h2>
     </div>
-    <div id="videoContainer">
-        <video playsinline="playsinline" muted="muted" loop="loop" id="video" autoplay="autoplay" >
-            <source src="{% static 'video/video.mp4' type='video/mp4' %}">
-            <source src="{% static 'video/video.webm' type='video/webm' %}">
-        </video>
-    </div>
-    <div class="social px-2">
-        {% include 'includes/social.html' %}
-    </div> 
+  </div>
+  <div id="videoContainer">
+    <video playsinline="playsinline" muted="muted" loop="loop" id="video" autoplay="autoplay">
+      <source src="{% static 'video/video.mp4' type='video/mp4' %}">
+      <source src="{% static 'video/video.webm' type='video/webm' %}">
+    </video>
+  </div>
+  <div class="social px-2">
+    {% include 'includes/social.html' %}
+  </div>
 </div>
 {% endfor %}
-{% endblock %}
-{% block postloadjs %}
-    <script>
-        $((function() {
-
-
-            $.fn.strech = function(init) {
-                var text = $(this);
-                text.css('font-size', init);
-                var textWidth = text.width();
-                var containerWidth = $('.masthead-content').width();
-                var fontSize = parseInt(text.css('font-size'));
-
-                var newFontSize = Math.floor(fontSize * containerWidth / textWidth);
-                text.css('font-size', newFontSize);
-                console.log('textWidth: ' + textWidth);
-                console.log('containerWidth: ' + containerWidth);
-                console.log('fontSize: ' + fontSize);
-                console.log('newFontSize: ' + newFontSize);
-
-                clearTimeout($.data(this, 1000));
-            };
-        }));
-
-        $(window).on('resize', function(){
-            $('.strech').strech('.70rem');
-            $('.heading').strech('2rem');
-        });
-
-        $(document).ready(function() {
-            $('#video').get(0).play();
-            $('.strech').strech('.70rem');
-            $('.heading').strech('2rem');
-        });
-
-
-    </script>
 {% endblock %}
