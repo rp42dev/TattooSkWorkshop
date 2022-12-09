@@ -28,6 +28,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+@require_POST
 def send_email(request):
     if not request.method == 'POST':
         return redirect('/')

@@ -1,23 +1,22 @@
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView
 from django.shortcuts import render
 from django.conf import settings
-from home.models import Page, Section, Article, Image, Video, Element, Faq
+from home.models import Page, Section, Article, Image, Faq
 from django.utils.translation import gettext_lazy as _
-from django.utils.translation import to_locale, get_language
+from django.utils.translation import get_language
 
 
 class PageDetailView(DetailView):
     """ A view to show individual image with details """
     model = Page
-    
+
     def get_slug_field(self) -> str:
         if get_language() == 'no':
             return 'slug_no'
         return super().get_slug_field()
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(get_language())
         if self.request.htmx:
             context['section'] = Section.objects.get(
                 id=self.request.GET['name'])
@@ -42,16 +41,12 @@ class PageDetailView(DetailView):
             return f"includes/{page_name}_items.html"
         return 'pages/about.html'
 
-def def_lang():
-    """ A function to return the default language """
-    return get_language()
-
 
 def map(request):
     """A view to return the map page"""
-    
+
     context = {
         'index': 'map',
     }
-    
+
     return render(request, 'pages/map.html', context)
