@@ -3,7 +3,7 @@
   {% if LANGUAGE_CODE == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
   {% endfor %}
   <div class="mx-3">
-  {% include 'includes/contact_card.html' %}
+    {% include 'includes/contact_card.html' %}
   </div>
   {% include 'includes/print_button.html' %}
 </div>

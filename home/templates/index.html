@@ -38,7 +38,7 @@
 {% for section in sections %}
 <div class="masthead d-flex align-items-center justify-content-center flex-column">
   <div class="overlay" id="windows">
-    <div class="text-center masthead-content p-2">
+    <div class="text-center masthead-content min-vw-100 p-2">
       <h1 class="my-0 text-nowrap text-uppercase heading">
         TATTOO SK <br>
         Workshop
@@ -59,4 +59,15 @@
   </div>
 </div>
 {% endfor %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  $(document).ready(function () {
+     if ($(".masthead")[0]) {
+      $('#video').get(0).play();
+     }
+  });
+</script>
+<script defer src="{% static 'js/stretchtext.js' %}"></script>
 {% endblock %}
