@@ -3891,13 +3891,13 @@ fieldset:disabled .btn {
   border: 0;
   opacity: 0.5;
   transition: opacity 0.2s ease;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .carousel-control-prev,
   .carousel-control-next {
-    transition: none;
+    transition: none
   }
 }
 
@@ -4094,7 +4094,7 @@ fieldset:disabled .btn {
 .offcanvas {
   position: fixed;
   bottom: 0;
-  z-index: 1045;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   max-width: 100%;
@@ -4103,6 +4103,10 @@ fieldset:disabled .btn {
   outline: 0;
   transition: transform 0.2s ease-in-out;
   justify-content: space-between;
+}
+
+.offcanvas .btn_close {
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4115,7 +4119,7 @@ fieldset:disabled .btn {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1040;
+  z-index: 99;
   width: 100vw;
   height: 100vh;
   background-color: #000;
@@ -4131,7 +4135,7 @@ fieldset:disabled .btn {
 
 .offcanvas-header {
   position: relative;
-  z-index: 1000;
+  z-index: 1;
   height: auto;
   align-items: center;
   justify-content: space-between;
@@ -4157,7 +4161,6 @@ fieldset:disabled .btn {
 
 .offcanvas-body {
   position: relative;
-  z-index: 1001;
   flex-shrink: 1;
   padding: .2rem 1rem;
   overflow-y: auto;
@@ -9339,7 +9342,7 @@ p {
   max-width: 600px;
   transform: translateX(-50%);
   padding: 0 .5rem;
-  z-index: 100;
+  z-index: 10;
 }
 
 @media (hover: hover) {
