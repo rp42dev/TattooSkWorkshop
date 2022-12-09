@@ -104,6 +104,9 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
 }
 
 hr {
@@ -9177,6 +9180,9 @@ html {
   border: 4px solid transparent;
   border-radius: 0.25rem;
   padding-top: calc(1rem + 1vw);
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 .gradient-card h4 {
