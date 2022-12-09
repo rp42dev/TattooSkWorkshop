@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-07 21:04+0000\n"
+"POT-Creation-Date: 2022-12-06 20:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,38 +17,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\workshop\templates\pages\aftercare.html:6
+#: .\about\templates\about\about.html:5
+msgid "About - Tattoo SK Workshop | Tattoo studio in Fetsund Fetveien"
+msgstr ""
+
+#: .\about\templates\about\about.html:7
+msgid ""
+"Ready to get a tattoo? full arm tattoo or full body tattoo we can help you "
+"with the tattoo design and the process. Contact Us for a free consultation "
+"today."
+msgstr ""
+
+#: .\about\templates\aftercare\aftercare.html:6
 msgid ""
 "Tattoo aftercare - Tattoo SK Workshop | Realism and black and grey tattoos"
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:8
+#: .\about\templates\aftercare\aftercare.html:8
 msgid ""
 "Out top priority is to provide you with the best tattoo aftercare possible. "
 "We will provide you with all the information you need to take care of your "
 "tattoo."
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:19
+#: .\about\templates\aftercare\aftercare.html:19
 msgid "Aftercare"
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:29
+#: .\about\templates\aftercare\aftercare.html:29
 msgid "Which cream should I use?"
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:32
+#: .\about\templates\aftercare\aftercare.html:32
 msgid ""
 "We recommend to use Bepanthen Sensi Calm cream (not salve). Its not to "
 "sticky to the clothes. But if you don’t have it - salve also is good. Or you "
 "can use the cream from our studio. Nothing more is acceptable."
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:39
+#: .\about\templates\aftercare\aftercare.html:39
 msgid "How to take care of my fresh tattoo?"
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:42
+#: .\about\templates\aftercare\aftercare.html:42
 msgid ""
 "You keep the plastic film for 2 days. After 2 days remove the plastic film, "
 "wash tattoo well with cool water and soap (soap with no colour no perfume). "
@@ -59,22 +70,22 @@ msgid ""
 "avoid crusts."
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:52
+#: .\about\templates\aftercare\aftercare.html:52
 msgid "If under the plastic film is a lot of liquid?"
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:55
+#: .\about\templates\aftercare\aftercare.html:55
 msgid ""
 "If you see plastic film falling off (the tattoo is not covered with film) or "
 "its a lot of liquid under, just remove it. Don’t need to wait 5 days. Remove "
 "the plastic film, wash your tattoo and use the cream."
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:62
+#: .\about\templates\aftercare\aftercare.html:62
 msgid "Can I do training?"
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:65
+#: .\about\templates\aftercare\aftercare.html:65
 msgid ""
 "We not recommend to train at all during the plastic film is on. During the "
 "training tattooed place will sweat too and you will get a lot of bubbles, "
@@ -82,19 +93,19 @@ msgid ""
 "during the process and tattoo can be damaged."
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:73
+#: .\about\templates\aftercare\aftercare.html:73
 msgid "Can I go to the shower?"
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:76
+#: .\about\templates\aftercare\aftercare.html:76
 msgid "Yes, you can do all your routine as normal."
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:81
+#: .\about\templates\aftercare\aftercare.html:81
 msgid "Can I go to solarium (take a sun) or sauna?"
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:84
+#: .\about\templates\aftercare\aftercare.html:84
 msgid ""
 "Sauna is strictly forbidden! Till recovery process is finished. Solarium is "
 "not aloud for two weeks, later you must cover your tattoo with some cotton "
@@ -102,108 +113,105 @@ msgid ""
 "minimum plus 50 SPF for whole your life (same on the sun)."
 msgstr ""
 
-#: .\workshop\templates\pages\aftercare.html:95
-msgid ""
-"If you have any questions, please contact us. We will be happy to help you."
-msgstr ""
-
-#: .\workshop\templates\pages\aftercare.html:121
-msgid "Print"
-msgstr ""
-
-#: .\workshop\templates\pages\faq.html:6
+#: .\about\templates\faq\faq.html:6
 msgid "FAQ - Tatoo SK Workshop | Get tattooed in Fetsund near Oslo"
 msgstr ""
 
-#: .\workshop\templates\pages\faq.html:8
+#: .\about\templates\faq\faq.html:8
 msgid ""
 "Frequently asked questions about tattooing and the tattoo studio Tatoo SK "
 "Workshop in Fetsund near Oslo. With a focus on quality and customer service."
 msgstr ""
 
-#: .\workshop\templates\pages\map.html:5
+#: .\about\templates\includes\about_items.html:11
+#, python-format
+msgid "%(str(articles.0.body))s"
+msgstr ""
+
+#: .\about\templates\includes\about_items.html:15
+#, python-format
+msgid "%(body)s"
+msgstr ""
+
+#: .\about\templates\map\map.html:5
 msgid "Location - Tatoo SK Workshop | Custom Tattoos Fetsund"
 msgstr ""
 
-#: .\workshop\templates\pages\map.html:8
+#: .\about\templates\map\map.html:8
 msgid ""
 "Get tattooed at Tatoo SK Workshop We are located in the centre of Fetsund, "
 "25 minutes drive from Oslo. We are open every day 7 days a week. Contact Us "
 "now."
 msgstr ""
 
-#: .\workshop\templates\pages\map.html:20
+#: .\about\templates\map\map.html:20
 msgid "Location"
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:6
+#: .\about\templates\prices\prices.html:6
 msgid "Prices - Tatoo SK Workshop | Gray wash tattoo tattoo Tattoos Fetsund"
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:8
+#: .\about\templates\prices\prices.html:8
 msgid ""
 "Price list for tattoos at Tatoo SK Workshop. We welcome you to our studio in "
 "Fetsund. Get in touch with us for more information."
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:20
+#: .\about\templates\prices\prices.html:20
 msgid "Price list"
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:31
+#: .\about\templates\prices\prices.html:31
 msgid "Consultation"
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:31
+#: .\about\templates\prices\prices.html:31
 msgid "FREE"
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:33
+#: .\about\templates\prices\prices.html:33
 msgid "Minimum price"
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:35
+#: .\about\templates\prices\prices.html:35
 msgid "Digital sketch"
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:38
+#: .\about\templates\prices\prices.html:38
 msgid ""
 "The price depends on the size of the tattoo, please fill out the form to get "
 "a price."
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:39
+#: .\about\templates\prices\prices.html:39
 msgid ""
 "When booking an appointment, you will have to pay a deposit of 500 NOK, This "
 "will include in the sum when your tattoo is finished."
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:43
+#: .\about\templates\prices\prices.html:43
 msgid "We are a \"cashless\" studio. We accept payments with VIPPS and cards."
 msgstr ""
 
-#: .\workshop\templates\pages\prices.html:45
+#: .\about\templates\prices\prices.html:45
 msgid ""
 "Free cancellation is made 48 hours before an appointment otherwise the "
 "deposit will not be refunded."
 msgstr ""
 
-#: .\workshop\urls.py:9
-msgid "<slug:slug>"
-msgstr ""
-
-#: .\workshop\urls.py:10
+#: .\about\urls.py:9
 msgid "faq"
 msgstr ""
 
-#: .\workshop\urls.py:11
+#: .\about\urls.py:10
 msgid "aftercare"
 msgstr ""
 
-#: .\workshop\urls.py:12
+#: .\about\urls.py:11
 msgid "map"
 msgstr ""
 
-#: .\workshop\urls.py:13
+#: .\about\urls.py:12
 msgid "prices"
 msgstr ""

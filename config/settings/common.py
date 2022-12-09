@@ -105,7 +105,7 @@ LANGUAGE_CODE = 'no'
 
 LANGUAGES = [
     ('en', _('English')),
-    ('no', _('Norwegian'))
+    ('no', _('Norwegian')),
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id

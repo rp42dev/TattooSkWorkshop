@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-07 21:04+0000\n"
+"POT-Creation-Date: 2021-11-16 22:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,217 +18,163 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\config\settings\common.py:107
-msgid "English"
-msgstr "Engelsk"
-
-#: .\config\settings\common.py:108
-msgid "Norwegian"
-msgstr "Norsk"
-
-#: .\config\urls.py:30
-msgid "^gallery/"
-msgstr "^galleri/"
-
-#: .\dproject\templates\403.html:4 .\dproject\templates\403.html:9
+#: dproject/templates/403.html:4 dproject/templates/403.html:10
 msgid "Permission denied"
 msgstr ""
 
-#: .\dproject\templates\403_csrf.html:3 .\dproject\templates\403_csrf.html:7
+#: dproject/templates/403_csrf.html:3 dproject/templates/403_csrf.html:9
 msgid "CSRF verification failed. Request aborted."
 msgstr "CSRF-verifisering mislyktes. Forespørsel avbrutt."
 
-#: .\dproject\templates\404.html:4 .\dproject\templates\404.html:9
+#: dproject/templates/404.html:4 dproject/templates/404.html:10
 msgid "Page not found"
 msgstr "side ikke funnet."
 
-#: .\dproject\templates\404.html:10
+#: dproject/templates/404.html:11
 msgid "We're sorry, but the requested page could not be found."
 msgstr "Vi beklager, men den forespurte siden ble ikke funnet."
 
-#: .\dproject\templates\500.html:4
+#: dproject/templates/500.html:4
 msgid "Server error (500)"
 msgstr ""
 
-#: .\dproject\templates\500.html:8
+#: dproject/templates/500.html:10
 msgid "Server Error <em>(500)</em>"
 msgstr ""
 
-#: .\dproject\templates\500.html:9
+#: dproject/templates/500.html:11
 msgid ""
 "There's been an error. It's been reported to the site administrators via "
 "email and should be fixed shortly. Thanks for your patience."
 msgstr "e-post og bør rettes snart. Takk for tålmodigheten."
 
-#: .\dproject\templates\base.html:11
-msgid "Quality Tattoos and tattoo coverups Fetsund"
-msgstr "Kvalitet Tatoveringer og tattoo coverups Fetsund"
-
-#: .\dproject\templates\base.html:20
-msgid ""
-"Tattoo studio in Fetsund, Norway. We specialize in quality tattoos, Custom "
-"tattoos, coverups, scar cover-ups and more. Book an appointment today! + 47 "
-"46253760."
-msgstr ""
-"Tatoveringsstudio i Fetsund, Norge. Vi er spesialister på "
-"kvalitetstatoveringer, tilpassede tatoveringer, coverups, arr cover-ups og "
-"mer. Bestill time i dag! + 47 462 53 760."
-
-#: .\dproject\templates\email\base.html:63
-#: .\dproject\templates\email\base.txt:1
+#: dproject/templates/email/base.html:63 dproject/templates/email/base.txt:1
 msgid "Dear "
 msgstr ""
 
-#: .\dproject\templates\email\base.html:66
-#: .\dproject\templates\email\base.txt:3
+#: dproject/templates/email/base.html:66 dproject/templates/email/base.txt:3
 msgid "Yours sincerely"
 msgstr ""
 
-#: .\dproject\templates\email\base.html:67
-#: .\dproject\templates\email\base.txt:4
+#: dproject/templates/email/base.html:67 dproject/templates/email/base.txt:4
 #, python-format
 msgid "The %(site_name)s team"
 msgstr ""
 
-#: .\dproject\templates\includes\contact_form.html:14
+#: dproject/templates/includes/contact_form.html:9
 msgid "Name"
-msgstr "Navn"
-
-#: .\dproject\templates\includes\contact_form.html:16
-msgid "Invalid"
 msgstr ""
 
-#: .\dproject\templates\includes\contact_form.html:23
+#: dproject/templates/includes/contact_form.html:18
 msgid "Email"
-msgstr "Epostadresse"
+msgstr ""
 
-#: .\dproject\templates\includes\contact_form.html:31
+#: dproject/templates/includes/contact_form.html:25
 msgid "Phone"
-msgstr "Telefon"
+msgstr ""
 
-#: .\dproject\templates\includes\contact_form.html:33
-msgid "Only numbers"
-msgstr "Bare tall"
+#: dproject/templates/includes/contact_form.html:34
+msgid "Message"
+msgstr ""
 
-#: .\dproject\templates\includes\contact_form.html:53
-msgid "Are you over 16"
-msgstr "Er du over 16"
+#: dproject/templates/includes/contact_form.html:48
+msgid "Are you over 18 ?"
+msgstr ""
 
-#: .\dproject\templates\includes\contact_form.html:58
+#: dproject/templates/includes/contact_form.html:53
 msgid "Submit"
-msgstr "Sende inn"
+msgstr ""
 
-#: .\dproject\templates\includes\nav_menu.html:3
+#: dproject/templates/includes/menu.html:19
+msgid "Menu"
+msgstr ""
+
+#: dproject/templates/includes/menu.html:33
 msgid "Home"
 msgstr "Hjem"
 
-#: .\dproject\templates\includes\nav_menu.html:6
-msgid "About Us"
-msgstr "Om oss"
+#: dproject/templates/includes/menu.html:34
+msgid "Workshop"
+msgstr "Studio"
 
-#: .\dproject\templates\includes\nav_menu.html:7
+#: dproject/templates/includes/menu.html:35
 msgid "Gallery"
 msgstr "Galleri"
 
-#: .\dproject\templates\includes\nav_menu.html:8
+#: dproject/templates/includes/menu.html:38
+#: dproject/templates/includes/offcanvas_contact.html:15
+msgid "Contact"
+msgstr "Kontakt"
+
+#: dproject/templates/includes/menu.html:40
 msgid "Prices"
 msgstr "Priser"
 
-#: .\dproject\templates\includes\nav_menu.html:9
+#: dproject/templates/includes/menu.html:41
 msgid "Aftercare"
 msgstr "Ettervern"
 
-#: .\dproject\templates\includes\nav_menu.html:10
+#: dproject/templates/includes/menu.html:42
 msgid "FAQ"
 msgstr ""
 
-#: .\dproject\templates\includes\nav_menu.html:11
-#: .\dproject\templates\includes\offcanvas_contact.html:56
-msgid "Message Us"
-msgstr "Beskjed"
-
-#: .\dproject\templates\includes\offcanvas_contact.html:11
-#: .\dproject\templates\includes\offcanvas_contact.html:28
-#: .\dproject\templates\includes\offcanvas_contact.html:53
-msgid "Inquiries"
-msgstr "Forespørsler"
-
-#: .\dproject\templates\includes\offcanvas_contact.html:13
-#: .\dproject\templates\includes\offcanvas_contact.html:57
-msgid "Complaints"
-msgstr "Klager"
-
-#: .\dproject\templates\includes\offcanvas_contact.html:52
-msgid "Message: (image references, black or with color, size and place)"
-msgstr "Melding: (bildereferanser, svart eller med farge, størrelse og plass)"
-
-#: .\dproject\templates\includes\offcanvas_menu.html:19
-msgid "Menu"
-msgstr "Meny"
-
-#: .\dproject\templates\registration\logged_out.html:5
+#: dproject/templates/registration/logged_out.html:5
 msgid "Logged out"
 msgstr ""
 
-#: .\dproject\templates\registration\logged_out.html:6
+#: dproject/templates/registration/logged_out.html:6
 msgid "Log in again"
 msgstr ""
 
-#: .\dproject\templates\registration\login.html:5
-#: .\dproject\templates\registration\login.html:9
-#: .\dproject\templates\registration\login.html:15
-#: .\dproject\templates\registration\password_reset_complete.html:11
+#: dproject/templates/registration/login.html:5
+#: dproject/templates/registration/login.html:9
+#: dproject/templates/registration/login.html:15
+#: dproject/templates/registration/password_reset_complete.html:11
 msgid "Log in"
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_complete.html:8
+#: dproject/templates/registration/password_reset_complete.html:8
 msgid "Your password has been set.  You may go ahead and log in now."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_confirm.html:10
+#: dproject/templates/registration/password_reset_confirm.html:10
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_confirm.html:14
+#: dproject/templates/registration/password_reset_confirm.html:14
 msgid "Change my password"
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_confirm.html:18
+#: dproject/templates/registration/password_reset_confirm.html:18
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_confirm.html:20
+#: dproject/templates/registration/password_reset_confirm.html:20
 msgid "Request a new password"
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_done.html:8
+#: dproject/templates/registration/password_reset_done.html:8
 msgid ""
 "We've emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_done.html:9
+#: dproject/templates/registration/password_reset_done.html:9
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_form.html:9
+#: dproject/templates/registration/password_reset_form.html:9
 msgid ""
 "Forgotten your password? Enter your email address below, and we'll email "
 "instructions for setting a new one."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_form.html:14
+#: dproject/templates/registration/password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
-
-#~ msgid "^about/"
-#~ msgstr "^om/"
-
-#~ msgid "Tattoo Studio In Fetsund Fetveien Near Oslo"
-#~ msgstr "Tattoo Studio I Fetsund Fetveien Nær Oslo"

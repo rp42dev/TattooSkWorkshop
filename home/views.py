@@ -6,7 +6,7 @@ from django.core.mail import BadHeaderError
 from django.template.loader import render_to_string
 from django.views.decorators.http import require_POST
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Page
+from .models import Page, Section
 from django.contrib import messages
 from pytube import *
  # try:
@@ -18,12 +18,14 @@ from pytube import *
 def index(request):
     """A view to return the index page"""
     page = Page.objects.get(name='home')
+    sections = Section.objects.filter(page=page)
     
     context = {
+        'sections': sections,
         'page': page,
         'index': 'home',
     }
-    return render(request, 'home/index.html', context)
+    return render(request, 'index.html', context)
 
 
 def send_email(request):

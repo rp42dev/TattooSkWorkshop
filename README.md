@@ -12,7 +12,7 @@ The website is translated into two languages English and Norwegian, using Django
 
 Combined with Nginx as a web server efficiently serve static files.
 
-Github repository: https://github.com/Raivis80/django-workshop-app
+Github repository: https://github.com/Raivis80/django-about-app
 
 Live Site: https://tattooskworkshop.no
 
