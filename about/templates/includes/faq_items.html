@@ -1,4 +1,4 @@
-<div class="accordion accordion-flush col-12 mx-auto px-3 gap-4 mb-5" id="accordionFlushExample mx-2">
+<div class="accordion accordion-flush col-12 mx-auto px-3 gap-4" id="accordionFlushExample">
   {% for item in object_list %}
   <div class="accordion-item ">
     <h2 class="accordion-header" id="flush-headingOne">
@@ -15,7 +15,9 @@
     </div>
   </div>
   {% endfor %}
-  <div class="mx-3">
+</div>
+<div class="col-12 col-xl-10 col-xxl-8 mx-auto my-4">
+    <div class="mx-3">
     {% include 'includes/contact_card.html' %}
-  </div>
+    </div>
 </div>
