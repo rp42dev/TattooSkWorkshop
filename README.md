@@ -1,6 +1,6 @@
 # TATTOO SK WORKSHOP
 
-![banner](README-files/Capture.PNG)
+![banner](README-files/Capture.jpg)
 
 ## [View the live project here.](https://tattooskworkshop.no/)
 
