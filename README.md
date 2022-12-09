@@ -76,28 +76,25 @@ Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx, HTMX
 
 #### Functionality Requirements
 
-1. Landing Page scroll down function:
-   - Video Full size Darkened.
-   - Interactive elements within landing page.
-   - Book a session links
-   - Links to social media sites
-1. About The company
-   - About Company
-   - Contact and address
-1. About artist
-   - Artist description
-   - Artist Profile image
-   - Artist gallery carousel with latest work display
-   - link to artist gallery
-1. Thumbnail gallery for individual artist
-   - Back end management for owner to be able to manage the gallery.
-1. Contact Form
-   - Name input field
-   - Email input field
-   - Text area
-   - Submit button
-1. Back end Admin Page
-   - Upload,delete,edit the gallery and manage content
+- The website needs to be easy to navigate and to locate information about products and services.
+- The website needs to be easy to connect with Tattoo artist on Social media.
+- The website needs to be easy to contact for session or consultation appointment.
+- The website needs to be easy to locate easily Contact and support details.
+- The website needs to be easy to find the Tattoo shop location and map.
+
+#### Content Requirements
+
+- The website needs to have a hero video.
+- The website needs to have a large responsive title and subtitle.
+- The website needs to have a image gallery.
+- The website needs to have a about section.
+- The website needs to have a social media links.
+- The website needs to have a contact details.
+- The website needs to have a map with location.
+- The website needs to have a tattoo prices table.
+- The website needs to have a FAQ section.
+- The website needs to have a contact form.
+
 
 # [&#8686;](#TATTOO-SK-WORKSHOP)
 
@@ -176,5 +173,7 @@ Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx, HTMX
 
 ### **Features Left to Implement**
 
-- **Contact Form** - The contact form is not yet implemented. The form will be implemented using the Django framework.
-- **Back end Admin Page**
+- **Blog** - Blog page that will allow the user to leave comments. 
+- **Newsletter** - Newsletter subscription form that will allow the user to subscribe to the newsletter.
+
+# [&#8686;](#TATTOO-SK-WORKSHOP)
