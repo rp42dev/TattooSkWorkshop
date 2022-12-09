@@ -40,13 +40,3 @@ class PageDetailView(DetailView):
         if self.request.htmx:
             return f"includes/{page_name}_items.html"
         return 'pages/about.html'
-
-
-def map(request):
-    """A view to return the map page"""
-
-    context = {
-        'index': 'map',
-    }
-
-    return render(request, 'pages/map.html', context)

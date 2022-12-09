@@ -1,0 +1,21 @@
+{% if LANGUAGE_CODE == 'no' %}
+<div class="position-fixed bottom-0 start-0 mb-3 mx-3">
+  <div class="d-print-none">
+    <div class="d-flex justify-content-center">
+      <div class="col-12 col md-6 col-lg-4">
+        <button class="round-btn" onclick="window.print()">Print</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="position-fixed bottom-0 start-0 mb-3 mx-3">
+  <div class="d-print-none">
+    <div class="d-flex justify-content-center">
+      <div class="col-12 col md-6 col-lg-4">
+        <button class="round-btn" onclick="window.print()">Skrive ut</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

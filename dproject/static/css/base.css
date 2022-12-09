@@ -52,9 +52,9 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --radial-gradient: radial-gradient(rgba(0, 81, 96, 1) 17%, rgba(73, 134, 144, 1) 50%, rgba(206, 230, 238, 1) 67%, rgb(95, 176, 189) 73%, rgba(0, 36, 42, 1) 92%);
-  --linear-gradient: linear-gradient(90deg, rgba(5, 22, 46, 1) 0%, rgba(73, 134, 144, 1) 49%, rgba(117, 206, 207, 1) 76%, rgba(206, 230, 238, 1) 86%, rgba(73, 134, 144, 1) 100%);
-  --linear-gradient-vertical: linear-gradient(180deg, rgba(5, 22, 46, 1) 0%, rgba(73, 134, 144, 1) 49%, rgba(117, 206, 207, 1) 76%, rgba(206, 230, 238, 1) 86%, rgba(73, 134, 144, 1) 100%);
+  --radial-gradient: radial-gradient(rgba(0, 81, 96, 1) 17%, rgba(73, 134, 144, 1) 50%, rgba(206, 230, 238, 1) 67%, rgb(95, 176, 189) 73%, rgb(31, 44, 54) 92%);
+  --linear-gradient: linear-gradient(90deg, rgb(31, 44, 54) 0%, rgba(73, 134, 144, 1) 49%, rgba(117, 206, 207, 1) 76%, rgba(206, 230, 238, 1) 86%, rgba(73, 134, 144, 1) 100%);
+  --linear-gradient-vertical: linear-gradient(180deg, rgb(31, 44, 54) 0%, rgba(73, 134, 144, 1) 49%, rgba(117, 206, 207, 1) 76%, rgba(206, 230, 238, 1) 86%, rgba(73, 134, 144, 1) 100%);
   --bs-body-font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 100;
@@ -9160,12 +9160,76 @@ html {
 }
 
 .gradient-border {
+  position: relative;
   background: linear-gradient(rgb(23, 29, 32) 0 0) padding-box,
     var(--linear-gradient) border-box;
   padding: 10px;
   border: 4px solid transparent;
   border-radius: 0.25rem;
 }
+
+.gradient-card {
+  position: relative;
+  background: linear-gradient(rgb(23, 29, 32) 0 0) padding-box,
+    var(--linear-gradient) border-box;
+  padding: 10px;
+  border: 4px solid transparent;
+  border-radius: 0.25rem;
+  padding-top: calc(1rem + 1vw);
+}
+
+.gradient-card h4 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+  margin-top: 1rem;
+}
+
+.gradient-card li {
+  margin: 0;
+  font-weight: 100;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gradient-card ul {
+  margin: .5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.gradient-card li::before {
+  content: '';
+  color: var(--bs-light);
+  font-weight: 900;
+  display: inline-block;
+  width: 1rem;
+  margin-left: -1rem;
+}
+
+.gradient-card p {
+  font-weight: 100;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--bs-light);
+}
+
+.gradient-card::after {
+  content: 'Tattoo SK Workshop';
+  position: absolute;
+  top: 0rem;
+  left: .5rem;
+  width: 100%;
+  z-index: 1000;
+  font-weight: 700;
+  font-size: 1.5rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: var(--linear-gradient);
+}
+
 
 body {
   letter-spacing: 0.0625em;
@@ -9346,14 +9410,13 @@ p {
   z-index: 10;
 }
 
+#contact,
+#menu {
+  color: #999;
+  transition: transform ease .5s;
+}
+
 @media (hover: hover) {
-
-  #contact,
-  #menu {
-    color: #999;
-    transition: transform ease .5s;
-  }
-
   #landing_social {
     position: absolute;
     width: 100%;
@@ -9752,7 +9815,7 @@ html::-webkit-scrollbar-thumb {
 
   .accordion .btn,
   .btn {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .display-5 {
@@ -9764,13 +9827,12 @@ html::-webkit-scrollbar-thumb {
   }
 
   .social a {
-    height: 4rem;
-
-    width: 4rem;
+    height: 3.5rem;
+    width: 3.5rem;
   }
 
   body {
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
   }
 
   .accordion-header .btn {
@@ -9780,6 +9842,18 @@ html::-webkit-scrollbar-thumb {
 }
 
 @media screen and (min-width: 1400px) {
+  body {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  body {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media screen and (min-width: 1800px) {
   body {
     font-size: 1.6rem !important;
   }
@@ -9809,4 +9883,11 @@ html::-webkit-scrollbar-thumb {
     margin: 0;
     padding: 0;
   }
+}
+
+.open span {
+  white-space: nowrap;
+  font-weight: 100;
+  font-size: 1rem;
+  margin-bottom: 0;
 }

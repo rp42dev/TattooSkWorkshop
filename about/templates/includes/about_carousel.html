@@ -1,19 +1,22 @@
 {% load thumbnail %}
 
-<div id="carousel2" class="carousel slide carousel-fade d-flex justify-content-center align-items-center"data-bs-ride="carousel">
-    <div class="carousel-inner">
-        {% for item in obj %}
-        <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
-            id="slide{{ forloop.counter }}">
-            {% if item.image %}
-            <picture>
-                <source srcset="{% thumbnail item.image "1920x1080" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 1920w, {% thumbnail item.image "1280x720" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 1280w" type="image/webp">
-                <img class='d-block rounded-3' src="{% thumbnail item.image "1280x720" as im %} {{ im.url }} {% endthumbnail %}"  alt="{{ item.title }}">
-            </picture>
-            {% endif %}
-            <div class="carousel-caption d-none d-md-block">
-            </div>
-        </div>
-        {% endfor %}
+<div id="carousel2" class="carousel slide carousel-fade d-flex justify-content-center align-items-center"
+  data-bs-ride="carousel">
+  <div class="carousel-inner">
+    {% for item in obj %}
+    <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" id="slide{{ forloop.counter }}">
+      {% if item.image %}
+      <picture>
+        <source
+          srcset="{% thumbnail item.image "1920x1080" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 1920w, {% thumbnail item.image "1280x720" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 1280w"
+          type="image/webp">
+        <img class='d-block rounded-3' src="{% thumbnail item.image "1280x720" as im %} {{ im.url }} {% endthumbnail %}"
+          alt="{{ item.title }}">
+      </picture>
+      {% endif %}
+      <div class="carousel-caption d-none d-md-block">
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>
