@@ -52,6 +52,7 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-gradient-light: linear-gradient(105deg, rgba(164, 161, 161, 0.998), #dfe7eb);
   --radial-gradient: radial-gradient(rgb(10, 84, 103) 17%, rgb(57, 165, 189) 67%, rgb(7, 87, 107) 80%);
   --linear-gradient: linear-gradient(105deg, rgb(5, 51, 63) 0%, rgb(43, 114, 142) 100%);
   --linear-gradient-social: linear-gradient(105deg, rgb(5, 51, 63) 0%, rgb(43, 114, 142) 100%);
@@ -9231,7 +9232,8 @@ html {
   z-index: 1000;
   font-weight: 500;
   font-size: 1.5rem;
-  color: var(--bs-light);
+  color: var(--bs-white);
+  opacity: .9;
 }
 
 
@@ -9620,6 +9622,12 @@ div.zoom>img {
 .clipped-text {
   color: var(--bs-light) !important;
   font-family: 'Orbitron', sans-serif;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  background-image: var(--bs-gradient-light);
   opacity: .8;
 }
 

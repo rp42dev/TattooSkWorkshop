@@ -1,0 +1,24 @@
+/* Coolors Exported Palette - https://coolors.co/fdfdfd-161c1f-245966-b0ccd7 */
+
+/* CSV */
+FDFDFD,161C1F,245966,B0CCD7
+
+/* With # */
+#FDFDFD, #161C1F, #245966, #B0CCD7
+
+/* Array */
+["FDFDFD","161C1F","245966","B0CCD7"]
+
+/* Object */
+{"White":"FDFDFD","Eerie Black":"161C1F","Midnight Green Eagle Green":"245966","Columbia Blue":"B0CCD7"}
+
+/* Extended Array */
+[{"name":"White","hex":"FDFDFD","rgb":[253,253,253],"cmyk":[0,0,0,1],"hsb":[0,0,99],"hsl":[0,0,99],"lab":[99,0,0]},{"name":"Eerie Black","hex":"161C1F","rgb":[22,28,31],"cmyk":[29,10,0,88],"hsb":[200,29,12],"hsl":[200,17,10],"lab":[10,-2,-3]},{"name":"Midnight Green Eagle Green","hex":"245966","rgb":[36,89,102],"cmyk":[65,13,0,60],"hsb":[192,65,40],"hsl":[192,48,27],"lab":[35,-13,-13]},{"name":"Columbia Blue","hex":"B0CCD7","rgb":[176,204,215],"cmyk":[18,5,0,16],"hsb":[197,18,84],"hsl":[197,33,77],"lab":[80,-7,-9]}]
+
+/* XML */
+<palette>
+  <color name="White" hex="FDFDFD" r="253" g="253" b="253" />
+  <color name="Eerie Black" hex="161C1F" r="22" g="28" b="31" />
+  <color name="Midnight Green Eagle Green" hex="245966" r="36" g="89" b="102" />
+  <color name="Columbia Blue" hex="B0CCD7" r="176" g="204" b="215" />
+</palette>
