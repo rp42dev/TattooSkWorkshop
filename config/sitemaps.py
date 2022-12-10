@@ -1,6 +1,6 @@
 # sitemaps.py
 from django.contrib import sitemaps
-from album.models import Artist, Album
+from album.models import Artist, Album, Page
 from datetime import datetime as dt
 from django.urls import reverse
 
@@ -26,6 +26,17 @@ class ArtistItemSitemap(sitemaps.Sitemap):
 
     def lastmod(self, item):
         return item.updated_at
+    
+class PageSitemap(sitemaps.Sitemap):
+    i18n = True
+    alternates = True
+    x_default = 'no'
+
+    def items(self):
+        return Page.objects.all()
+
+    def lastmod(self, item):
+        return item.updated_at
 
 class StaticViewSitemap(sitemaps.Sitemap):
     i18n = True
@@ -34,11 +45,6 @@ class StaticViewSitemap(sitemaps.Sitemap):
     
     static_url_list = [
         {'url': 'home'},
-        {'url': 'about'},
-        {'url': 'faq'},
-        {'url': 'aftercare'},
-        {'url': 'prices'},
-        {'url': 'gallery'},
     ]
 
     def items(self):

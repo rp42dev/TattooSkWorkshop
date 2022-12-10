@@ -5800,7 +5800,7 @@ fieldset:disabled .btn {
 }
 
 .rounded-3 {
-  border-radius: 0.3rem !important;
+  border-radius: 0.5rem !important;
 }
 
 .rounded-circle {
@@ -9170,7 +9170,7 @@ html {
     var(--linear-gradient) border-box;
   padding: 10px;
   border: 4px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 
 .gradient-card {
@@ -9179,7 +9179,7 @@ html {
     var(--linear-gradient) border-box;
   padding: 10px;
   border: 4px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   padding-top: calc(1rem + 1vw);
   -webkit-user-select: text;
   -ms-user-select: text;
