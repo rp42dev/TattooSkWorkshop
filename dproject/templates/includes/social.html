@@ -1,3 +1,4 @@
+{% if LANGUAGE_CODE == 'en' %}
 <div class="w-100 social d-flex flex-row align-self-center justify-content-between">
     <a data-bs-toggle="offcanvas" href="#contact" role="button" aria-controls="contact" data-bs-toggle="tooltip"
         data-bs-placement="top" title="Contact Us"><i class="fa-solid fa-comment"></i></a>
@@ -9,3 +10,18 @@
     <a href="https://www.instagram.com/tattooskworkshop/" title="Instagram" target="blank" rel="noopener noreferrer"><i
             class="fab fa-instagram"></i></a>
 </div>
+{% endif %}
+
+{% if LANGUAGE_CODE == 'no' %}
+<div class="w-100 social d-flex flex-row align-self-center justify-content-between">
+    <a data-bs-toggle="offcanvas" href="#contact" role="button" aria-controls="contact" data-bs-toggle="tooltip"
+        data-bs-placement="top" title="Kontakt oss"><i class="fa-solid fa-comment"></i></a>
+    <a href="tel:+4746253760"><i class="fas fa-phone" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Ring +4746253760"></i></a>
+    <a href="{% url 'page' 'lokasjon' %}" title="Lokasjon"><i class="fas fa-street-view"></i></a>
+    <a href="https://www.facebook.com/tattooskworkshop/" title="Facebook" target="blank" rel="noopener noreferrer"><i
+            class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/tattooskworkshop/" title="Instagram" target="blank" rel="noopener noreferrer"><i
+            class="fab fa-instagram"></i></a>
+</div>
+{% endif %}
