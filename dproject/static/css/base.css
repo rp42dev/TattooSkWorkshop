@@ -3984,20 +3984,29 @@ fieldset:disabled .btn {
 .carousel-indicators .active {
   opacity: 1;
 }
-
+.quote i{
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--bs-primary);
+  border-bottom: 2px solid var(--bs-primary);
+}
 .carousel-caption {
   position: absolute;
-  width: fit-content;
-  width: max-content;
   right: 0;
   left: 0;
   bottom: 0;
   top: 0;
   padding-top: 1.25rem;
+  width: 100%;
   padding-bottom: 1.25rem;
-  color: #fff;
+  color: var(--bs-light);
   text-align: center;
-  background: rgba(0, 0, 0, 0.151);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.7));
+  display: flex;
+  align-items: flex-end;
+  border-radius: 0.5rem;
 }
 
 .carousel-dark .carousel-control-prev-icon,

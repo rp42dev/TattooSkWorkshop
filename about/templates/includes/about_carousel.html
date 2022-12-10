@@ -14,7 +14,13 @@
           alt="{{ item.title }}">
       </picture>
       {% endif %}
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption px-3">
+        {% if LANGUAGE_CODE == 'en' %}
+        <h5 class="text-light">{{ item.description }}</h5>
+        {% else %}
+        <h5 class="text-light">{{ item.description_no }}</h5>
+        {% endif %}
+        <span clas="quote"><i class="fa-solid fa-quote-left mb-3"></i></span>
       </div>
     </div>
     {% endfor %}
