@@ -6,6 +6,10 @@ $(document).ready(function () {
         text.css('font-size', init);
         var textWidth = text.width();
         var containerWidth = $('.masthead-content').width();
+        var windowWidth = $(window).width();
+        if (windowWidth < 1920) {
+            containerWidth = windowWidth;
+        }
         var fontSize = parseInt(text.css('font-size'));
 
         var newFontSize = Math.floor(fontSize * containerWidth / textWidth);
