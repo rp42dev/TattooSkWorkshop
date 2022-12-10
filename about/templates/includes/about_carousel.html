@@ -15,12 +15,13 @@
       </picture>
       {% endif %}
       <div class="carousel-caption px-3">
-        <span clas="quote"><i class="fa-solid fa-quote-left mb-3"></i></span>
+        <h5 class="text-light"><span clas="quote"><i class="fa-solid fa-quote-left mb-3"></i></span>
         {% if LANGUAGE_CODE == 'en' %}
-        <h5 class="text-light">{{ item.description }}</h5>
+        {{ item.description }}</h5>
         {% else %}
-        <h5 class="text-light">{{ item.description_no }}</h5>
+        {{ item.description_no }}
         {% endif %}
+      </h5>
       </div>
     </div>
     {% endfor %}
