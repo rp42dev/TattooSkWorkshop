@@ -7,7 +7,7 @@
     class="col-12 col-lg-6 col-xxl-5 d-flex text_container rounded-3 {% if section.title == 'About andrej' %}order-lg-1{% endif %}">
     <div class="my-auto px-3 ps-sm-4 text-white">
         {% for article in articles %}
-        <article class="fade">
+        <article>
           <h2 class="text-light fw-light text-capitalize">
             {% if LANGUAGE_CODE == 'en' %}{{article.subtitle}}{% else %}{{article.subtitle_no}}{%endif%}</h2>
           {% if LANGUAGE_CODE == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
