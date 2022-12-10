@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("palette.css");
 
 :root {
   --bs-999: #0d6efd;
@@ -11,22 +10,22 @@
   --bs-orange: #fd7e14;
   --bs-yellow: #e4c662;
   --bs-green: #67c29c;
-  --bs-teal: #446F78ff;
+  --bs-teal: #2b728e;;
   --bs-cyan: #1cabc4;
-  --bs-white: var(--white);
+  --bs-white: #fff;
   --bs-light: #d3dbdf;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
   --bs-gray-100: #a3a3a3;
   --bs-gray-200: #e9ecef;
-  --bs-gray-300: #FDFDFDff;
+  --bs-gray-300: #dee2e6;
   --bs-gray-400: #ced4da;
   --bs-gray-500: #adb5bd;
   --bs-gray-600: #6c757d;
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #171d20;
-  --bs-primary: #245966ff;
+  --bs-primary: #2b728e;
   --bs-secondary: #171d20;
   --bs-success: #67c29c;
   --bs-info: #1cabc4;
@@ -35,8 +34,8 @@
   --bs-light: rgba(182, 182, 182, 0.801);
   --bs-dark: rgb(45, 56, 62);
   --bs-black: #000;
-  --bs-white: #FDFDFDff;
-  --bs-primary-rgb: rgb(68, 111, 120);
+  --bs-white: #dee2e6;
+  --bs-primary-rgb: #2b728e;
   --bs-secondary-rgb: 23, 29, 32;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
@@ -53,10 +52,11 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --radial-gradient: radial-gradient(#161C1Fff 17%, #245966ff 50%, #FDFDFDff 67%, #245966ff 73%, #161C1Fff 92%);
-  --linear-gradient: linear-gradient(90deg, #161C1Fff 0%, #245966ff 49%, #B0CCD7ff 76%, #FDFDFDff 86%, #446F78ff 100%);
-  --linear-gradient-vertical: linear-gradient(180deg, #161C1Fff 0%, #245966ff 49%, #B0CCD7ff 76%, #FDFDFDff 86%, #446F78ff) 100%;
-  --linear-gradient-text: linear-gradient(120deg, #161C1Fff 0%, #245966ff 49%, #B0CCD7ff 60%, rgba(206, 230, 238, 1) 70%, #245966ff 100%);
+  --radial-gradient: radial-gradient(rgb(5, 51, 63) 17%, rgb(43, 114, 142) 67%, 73%, rgb(5, 51, 63) 92%);
+  --linear-gradient: linear-gradient(105deg, rgb(5, 51, 63) 0%, rgb(43, 114, 142) 100%);
+  --linear-gradient-social: linear-gradient(105deg, rgb(5, 51, 63) 0%, rgb(43, 114, 142) 100%);
+  --linear-gradient-vertical: linear-gradient(180deg, rgb(5, 51, 63) 0%, rgb(43, 114, 142) 100%);
+  --linear-gradient-text: linear-gradient(120deg, rgb(5, 51, 63) 0%, rgb(43, 114, 142) 100%);
   --bs-body-font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 100;
@@ -1672,7 +1672,7 @@ input {
 .form-control:active,
 .form-control:focus {
   background-color: rgba(68, 68, 68, 0.801);
-  border-color: #446F78ff;
+  border-color: #2b728e;;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(152, 204, 255, 0.25);
   border: 1px solid #999;
@@ -1802,8 +1802,8 @@ textarea.form-control {
 }
 
 .form-check-input:checked {
-  background-color: #446F78ff;
-  border-color: #446F78ff;
+  background-color: #2b728e;;
+  border-color: #2b728e;;
 }
 
 .form-check-input:checked[type=checkbox] {
@@ -1815,8 +1815,8 @@ textarea.form-control {
 }
 
 .form-check-input[type=checkbox]:indeterminate {
-  background-color: #446F78ff;
-  border-color: #446F78ff;
+  background-color: #2b728e;;
+  border-color: #2b728e;;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
 
@@ -2227,7 +2227,7 @@ fieldset:disabled .btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #446F78ff;
+  background-color: #2b728e;;
 }
 
 .btn-primary:hover {
@@ -2467,12 +2467,12 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-primary {
-  color: #446F78ff;
+  color: #2b728e;;
 }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #446F78ff;
+  background-color: #2b728e;;
 }
 
 .btn-check:focus+.btn-outline-primary,
@@ -2486,7 +2486,7 @@ fieldset:disabled .btn {
 .btn-outline-primary.active,
 .btn-outline-primary.dropdown-toggle.show {
   color: #fff;
-  background-color: #446F78ff;
+  background-color: #2b728e;;
 }
 
 .btn-check:checked+.btn-outline-primary:focus,
@@ -2499,7 +2499,7 @@ fieldset:disabled .btn {
 
 .btn-link {
   font-weight: 400;
-  color: #446F78ff;
+  color: #2b728e;;
   text-decoration: underline;
 }
 
@@ -3283,7 +3283,7 @@ fieldset:disabled .btn {
   align-items: center;
   justify-content: flex-end;
   padding: 0.75rem;
-  border-top: 1px solid #FDFDFDff;
+  border-top: 1px solid #dee2e6;
   border-bottom-right-radius: calc(0.3rem - 1px);
   border-bottom-left-radius: calc(0.3rem - 1px);
 }
@@ -4297,7 +4297,7 @@ fieldset:disabled .btn {
 /* =====================Links================== */
 
 .link-primary {
-  color: #446F78ff;
+  color: #2b728e;;
 }
 
 .link-primary:hover,
@@ -4748,7 +4748,7 @@ fieldset:disabled .btn {
 }
 
 .border-primary {
-  border-color: #245966ff; !important;
+  border-color: #2b728e; !important;
 }
 
 .border-secondary {
@@ -9228,7 +9228,7 @@ html {
   top: 0rem;
   left: .5rem;
   width: 100%;
-  z-index: 88;
+  z-index: 1000;
   font-weight: 700;
   font-size: 1.5rem;
   -webkit-text-fill-color: transparent;
@@ -9577,12 +9577,13 @@ div.zoom>img {
   width: 3rem;
   display: grid;
   place-items: center;
-  background: var(--linear-gradient);
+  background: var(--linear-gradient-social);
   border-radius: 100%;
   color: var(--bs-white);
   opacity: var(--bs-btn-opacity);
   transition: all 200ms ease-in-out;
-  box-shadow: var(--box-shadow-sm)
+  box-shadow: var(--box-shadow-sm);
+  opacity: .8;
 }
 
 .round-btn {
@@ -9602,7 +9603,7 @@ div.zoom>img {
 }
 
 .s {
-  color: #446F78ff;
+  color: #2b728e;;
 }
 
 .wrappings a {
@@ -9621,12 +9622,8 @@ div.zoom>img {
 
 
 .clipped-text {
-  background: var(--linear-gradient-text);
+  color: var(--bs-light) !important;
   font-family: 'Orbitron', sans-serif;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
   opacity: .8;
 }
 
@@ -9711,6 +9708,7 @@ div.zoom>img {
 .btn-group-sm>.btn {
   padding: 0.25rem 1rem;
   font-size: 0.5rem;
+  border-radius: .5rem;
   width: fit-content;
   width: max-content;
   min-width: 0;
