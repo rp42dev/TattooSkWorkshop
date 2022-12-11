@@ -23,7 +23,6 @@ def index(request):
     context = {
         'sections': sections,
         'page': page,
-        'index': 'home',
     }
     return render(request, 'index.html', context)
 

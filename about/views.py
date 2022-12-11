@@ -1,4 +1,4 @@
-from django.views.generic import DetailView, ListView, TemplateView, View
+from django.views.generic import DetailView, ListView
 from django.shortcuts import render
 from django.conf import settings
 from home.models import Page, Section, Article, Image, Faq
@@ -36,7 +36,7 @@ class AboutView(ListView):
 class PageDetailView(DetailView):
     """ A view to show individual image with details """
     model = Page
-
+    
     def get_slug_field(self) -> str:
         if get_language() == 'no':
             return 'slug_no'

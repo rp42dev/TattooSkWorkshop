@@ -4,31 +4,18 @@
 {% get_available_languages as languages %}
 
 {% for lang_code, lang_name in languages %}
-    {% language lang_code %}
-    {% if index %}
-    <a href="{% url index  %}">
-    {% else %}
-    <a href="{% url 'home' %}">
-    {% endif %}
-        {% if lang_code == 'no'%}
-        <img
-            class="{% if LANGUAGE_CODE == lang_code %}d-none{% else %}d-block{% endif %}"
-            src="https://flagcdn.com/36x27/no.png"
-            srcset="https://flagcdn.com/72x54/no.png 2x"
-            width="36"
-            height="27"
-            alt="Norwegian">
-        {% else %}
-        <img
-            class="{% if LANGUAGE_CODE == lang_code %}d-none{% else %}d-block{% endif %}"
-            src="https://flagcdn.com/36x27/gb.png"
-            srcset="https://flagcdn.com/72x54/gb.png 2x"
-            width="36"
-            height="27"
-            alt="English">
-        {% endif %}
-    </a>
-    {% endlanguage %}
-{% endfor %}
+{% language lang_code %}
+<a href="{% url 'home' %}" title="Set language">
+  {% if lang_code == 'no'%}
+  <img class="{% if LANGUAGE_CODE == lang_code %}d-none{% else %}d-block{% endif %}"
+    src="https://flagcdn.com/36x27/no.png" srcset="https://flagcdn.com/72x54/no.png 2x" width="36" height="27"
+    alt="Norwegian">
+  {% else %}
+  <img class="{% if LANGUAGE_CODE == lang_code %}d-none{% else %}d-block{% endif %}"
+    src="https://flagcdn.com/36x27/gb.png" srcset="https://flagcdn.com/72x54/gb.png 2x" width="36" height="27"
+    alt="English">
+  {% endif %}
+</a>
+{% endlanguage %}
 
-           
+{% endfor %}

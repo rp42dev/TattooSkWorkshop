@@ -7,7 +7,6 @@ $(document).ready(function () {
         var textWidth = text.width();
         var containerWidth = $('.masthead-content').width();
         var windowWidth = $(window).width();
-        console.log(containerWidth, windowWidth);
         if (windowWidth < 1920) {
             containerWidth = windowWidth;
         } else {

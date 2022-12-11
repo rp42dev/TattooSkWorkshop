@@ -9620,7 +9620,7 @@ div.zoom>img {
 }
 
 .round-btn {
-  margin: .5rem;
+  padding-bottom: 5%;
   text-align: center;
   height: 3rem;
   max-width: 3rem;
@@ -9671,7 +9671,6 @@ div.zoom>img {
   max-width: 80%;
   width: 100%;
   height: 4px;
-  background-size: 180% 180%;
   background: var(--linear-gradient);
   opacity: .8;
 }
@@ -9741,6 +9740,10 @@ div.zoom>img {
 #close-btn-contact {
   right: 5%;
 
+}
+
+.pl5 {
+  padding-left: 5%;
 }
 
 .btn-sm,

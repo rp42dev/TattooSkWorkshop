@@ -7,13 +7,12 @@ class ArtistView(ListView):
     """A view to return the gallery page and show all album"""
     ordering = ['order']
     model = Artist
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['page'] = Page.objects.get(slug='gallery')
         context['url'] = self.request.path
-        
-        
+
         return context
 
 
