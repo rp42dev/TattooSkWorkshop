@@ -3985,7 +3985,7 @@ fieldset:disabled .btn {
   opacity: 1;
 }
 .quote i{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -9876,7 +9876,9 @@ html::-webkit-scrollbar-thumb {
   body {
     font-size: 1.6rem !important;
   }
-
+  .btn{
+    font-size: 1.4rem;
+  }
   .social a {
     max-width: 90%;
   }
@@ -9884,7 +9886,8 @@ html::-webkit-scrollbar-thumb {
 
 
 @media print {
-
+  ul,
+  li,
   p,
   a,
   h1,
@@ -9896,6 +9899,21 @@ html::-webkit-scrollbar-thumb {
     print-color-adjust: exact;
     margin: .5rem 0;
     padding: 0;
+  }
+
+  .display-5 {
+    font-weight: 700 !important;
+    font-size: 3rem !important;
+    color: #000 !important;
+  }
+
+
+  .social {
+    display: none !important;
+  }
+
+  .navbar {
+    display: none !important;
   }
 
   article {
