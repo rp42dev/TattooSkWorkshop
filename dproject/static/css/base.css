@@ -9368,7 +9368,7 @@ p {
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 1920px;
-  opacity: .7;
+  opacity: .6;
   z-index: 9;
 }
 
@@ -9406,7 +9406,7 @@ p {
 
 /*  Main heading */
 .masthead h1 {
-  background: var(--linear-gradient);
+  background: var(--bs-gradient-light);
   font-family: 'Orbitron', sans-serif;
   -webkit-text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
