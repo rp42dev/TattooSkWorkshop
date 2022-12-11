@@ -3984,7 +3984,7 @@ fieldset:disabled .btn {
 .carousel-indicators .active {
   opacity: 1;
 }
-.quote {
+.quote i{
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.2;
