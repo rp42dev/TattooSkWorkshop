@@ -9368,7 +9368,8 @@ p {
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 1920px;
-  opacity: .8;
+  opacity: .7;
+  z-index: 9;
 }
 
 #videoContainer {
@@ -9405,23 +9406,21 @@ p {
 
 /*  Main heading */
 .masthead h1 {
-  /* background: var(--radial-gradient); */
+  background: var(--linear-gradient);
   font-family: 'Orbitron', sans-serif;
-  /* -webkit-text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text; */
-  /* background-clip: text; */
-  color: #101214;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
   transition: opacity 200ms;
   letter-spacing: 0.1em;
   max-width: fit-content;
-  text-shadow: rgb(96, 213, 246) 0 0 4px, #eff6f8 0 0 5px, #0e525e 0 0 10px, #0e525e 0 0 8px, #dce2e2 0 0 15px;
   font-size: 2.4rem;
   margin: 0 auto;
   margin-bottom: 0;
   line-height: 100%;
   font-weight: 900;
-  z-index: 3;
+  z-index: 6;
 }
 
 .masthead h2 {
