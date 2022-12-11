@@ -3985,13 +3985,10 @@ fieldset:disabled .btn {
   opacity: 1;
 }
 .quote i{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  color: var(--bs-primary);
-  border-bottom: 2px solid var(--bs-primary);
 }
+
 .carousel-caption {
   position: absolute;
   right: 0;
