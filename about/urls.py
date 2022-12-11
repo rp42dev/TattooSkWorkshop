@@ -1,10 +1,10 @@
-from django.urls import path
-from . import views
-from .views import PageDetailView
+from django.urls import path, re_path
+from .views import PageDetailView, AboutView
 
 from django.utils.translation import gettext_lazy as _
 
 
 urlpatterns = [
-    path(_(r'<slug:slug>/'), PageDetailView.as_view(), name='page'),
+    path('', AboutView.as_view(), name='about'),
+    path('<slug:slug>/', PageDetailView.as_view(), name='page'),
 ]

@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.utils.timezone import now
 from django_resized import ResizedImageField
 from pillow_heif import register_heif_opener
+from django.utils.translation import gettext_lazy as _
 
 from home.models import Seo, Page
 register_heif_opener()
@@ -24,7 +25,9 @@ class Artist(models.Model):
         Page, on_delete=models.CASCADE, blank=True, null=True)
 
     def get_absolute_url(self):
+
         return reverse("gallery", kwargs={"slug": self.slug})
+
 
     def get_friendly_name(self):
         return self.friendly_name

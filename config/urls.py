@@ -1,7 +1,6 @@
 from django.conf import settings
-from django.urls import include, re_path
 from django.conf.urls.static import static
-from django.urls import path, include as inc
+from django.urls import path, include, re_path
 from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
@@ -26,8 +25,8 @@ urlpatterns = [
 
 
 urlpatterns += i18n_patterns(
-    path('', inc('home.urls')),
-    re_path(_(r'^gallery/'), include('album.urls')),
-    re_path('', include('about.urls')),
+    path('', include('home.urls')),
+    path(_('gallery/'), include('album.urls')),
+    path(_('about/'), include('about.urls')),
     prefix_default_language=False
 )
