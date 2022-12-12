@@ -7,5 +7,5 @@ urlpatterns = [
     path('robots.txt', TemplateView.as_view(
         template_name="robots.txt", content_type='text/plain')),
     path('', views.index, name='home'),
-    path('send_email', views.send_email, name='send_email'),
+    path('send_mail/', views.send_email, name='send_mail'),
 ]

@@ -1,0 +1,27 @@
+{% extends 'email/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="content">
+
+  
+  <h2 style="color:#345a6d;">{% blocktrans %}Thank you for your message{% endblocktrans %}</h2>
+  <p>
+    {% block salutation %}
+    <p><strong>{% trans 'Dear ' %}{{ name }}</strong></p>
+    {% endblock salutation %}
+    {% if complaint %}
+      {% blocktrans %}We have received your complaint and will get back to you as soon as possible.{% endblocktrans %}
+    {% else %}
+      {% blocktrans %}We have received your message and will get back to you as soon as possible.{% endblocktrans %}
+    {% endif %}
+  </p>
+
+  <p>{% trans 'Yours sincerely' %}<br>
+    {% blocktrans %}The Tattoo Sk Workshop team{% endblocktrans %}
+  </p>
+</div>
+
+</div>
+
+{% endblock %}

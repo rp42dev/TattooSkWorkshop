@@ -1,25 +1,26 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.conf import settings
-from django.core.mail import EmailMessage
-from django.core.mail import BadHeaderError
+from django.core.mail import BadHeaderError, EmailMessage, EmailMultiAlternatives
+from django.utils.translation import gettext as _
 from django.template.loader import render_to_string
 from django.views.decorators.http import require_POST
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Page, Section
 from django.contrib import messages
 from pytube import *
- # try:
-    #     video = YouTube('https: // www.youtube.com/watch?v=XBSEn2pUa84')
-    #     video.streams.get_highest_resolution().download()
-    # except:
-    #     pass
+# try:
+#     video = YouTube('https: // www.youtube.com/watch?v=XBSEn2pUa84')
+#     video.streams.get_highest_resolution().download()
+# except:
+#     pass
+
 
 def index(request):
     """A view to return the index page"""
     page = Page.objects.get(name='home')
     sections = Section.objects.filter(page=page)
-    
+
     context = {
         'sections': sections,
         'page': page,
@@ -27,62 +28,47 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-@require_POST
 def send_email(request):
-    if not request.method == 'POST':
-        return redirect('/')
-    subject = request.POST['subject'].capitalize()
-    name = request.POST['name'].capitalize()
-    email_from = request.POST['email']
-    message = request.POST['message']
-    number = request.POST['phone_number']
-    my_email = settings.EMAIL_HOST_USER
-    if subject == 'Undefined':
-        subject = 'Inquiry'
-    body = f'''
-    Name: {name},
-    email: {email_from},
-    Phone Nmber: {number}.
-    {message}'''
+    subject = request.POST.get('subject', _('question'))
+    name = request.POST.get('name', '')
+    phone = request.POST.get('phone', '')
+    from_email = request.POST.get('from_email', '')
+    message = request.POST.get('message', '')
+    attachment = request.FILES.get('attachment', '')
+    to = settings.EMAIL_HOST_USER, ''
+    reply_to = from_email
 
-    subjects_lines = {
-        'en': 'Autoreply... From Tattoo SK Workshop',
-        'no': 'Automatisk svar.. Fra Tattoo SK Workshop'
-    }
+    if subject == _('complaint'):
+        complaint = True
+    else:
+        subject = _('question')
+        complaint = False
+        
 
-    templates = {
-        'Inquiry': {
-            'en': render_to_string('emails/email_body.txt'),
-            'no': render_to_string('emails/email_body_no.txt')
-        },
-        'Complaint': {
-            'en': render_to_string('emails/email_complaint.txt'),
-            'no': render_to_string('emails/email_complaint_no.txt')
-        }
-    }
+    mail_body = 'email/mail_body.html'
+    reply_body = 'email/reply_body.html'
 
-    if not name and message and email_from:
-        return redirect('/')
-    
-    subject_line = subject + ' ' + name
-    subject_line2 = subjects_lines[request.LANGUAGE_CODE]
-    body2 = templates[subject][request.LANGUAGE_CODE]
-    try:
-        mail = EmailMessage(subject_line, body, my_email, [my_email])
-        mail2 = EmailMessage(subject_line2, body2, my_email, [email_from])
-        if request.FILES:
-            file = request.FILES['file']
-            mail.attach(file.name, file.read(), file.content_type)
-        mail.send()
-        mail2.send()
-        if request.LANGUAGE_CODE == "en":
-            messages.success(request, f'Thank you {name} for your message. We will get back tou you as soon as possible')
-        else:
-            messages.success(request, f'Takk for {name} meldingen. Vi vil komme tilbake til deg så snart som mulig')
-    except BadHeaderError:
-        return HttpResponse('Invalid header found.')
-    return HttpResponseRedirect('/')
-    
+    message_success = _('Thank you for your message. We will get back to you as soon as possible.')
+    message_error = _('There was an error sending your message. Please check your form and try again.')
+  
 
-
-
+    if message and from_email and name:
+        try:
+            mail = EmailMultiAlternatives(
+                subject.title() + ' from ' + name, to=[to])
+            mail.attach_alternative(render_to_string(mail_body, {'subject': subject.title(), 'name': name.title(
+            ), 'email': from_email, 'message': message, 'phone': phone}), 'text/html')
+            if attachment: mail.attach(attachment.name, attachment.read(),attachment.content_type)
+            mail.send()
+            reply = EmailMultiAlternatives(
+                'Tattoo SK Workshop - '.title() + _('Thank you for your message'), to=[from_email])
+            reply.attach_alternative(render_to_string(
+                reply_body, {'name': name.title(), 'complaint': complaint, }), 'text/html')
+            reply.send()
+            messages.success(request, message_success)
+        except BadHeaderError:
+            return HttpResponse('Invalid header found.')
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        messages.error(request, message_error)
+        return render(request, 'email/reply_body.html', {'subject': subject, 'name': name, 'email': from_email, 'message': message})

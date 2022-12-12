@@ -7,8 +7,8 @@
         <div class="d-flex flex p-3 justify-content-between position-absolute w-100 top-0 start-0">
             <div class="">
                 <p>
-                    <a id="inquiries" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm  rounded-pill"
-                        data-type="inquiry" role="button">{% translate 'Inquiries' %}</a>
+                    <a id="questions" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm  rounded-pill"
+                        data-type="question" role="button">{% translate 'Inquiries' %}</a>
                     <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm d-none rounded-pill"
                         data-type="complaint" role="button">{% translate 'Complaints' %}</a>
                 </p>
@@ -44,17 +44,17 @@
 
         document.getElementById('subject').value = subject
         document.getElementById('complaints').classList.toggle('d-none')
-        document.getElementById('inquiries').classList.toggle('d-none')
+        document.getElementById('questions').classList.toggle('d-none')
         document.getElementById('age').classList.toggle('d-none');
-        document.getElementById('invalidCheck').required = subject === 'inquiry' ? true : false;
+        document.getElementById('invalidCheck').required = subject === 'question' ? true : false;
 
-        if (subject == null || subject === 'inquiry') {
+        if (subject == null || subject === 'question') {
             messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message: (image references, black or with color, size and place)' %}`;
-            contactHeading.innerHTML = `{% translate "Inquiries" %}`
+            contactHeading.innerHTML = `{% translate "Question" %}`
 
         } else {
             messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message Us' %}: `;
-            contactHeading.innerHTML = `{% translate "Complaints" %}`
+            contactHeading.innerHTML = `{% translate "Complaint" %}`
         }
     }
 

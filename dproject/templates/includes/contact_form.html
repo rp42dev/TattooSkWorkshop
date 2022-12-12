@@ -3,10 +3,10 @@
 {% load static %}
 
 <form id="form" class="fw-lighter needs-validation d-flex flex-column justify-content-around align-items-center"
-  action="{% url 'send_email' %}" method="POST" class="my-3" enctype="multipart/form-data novalidate">
+  action="{% url 'send_mail' %}" method="POST" class="my-3" enctype="multipart/form-data novalidate">
   {% csrf_token %}
 
-  <input id="subject" type="hidden" name="subject" value="">
+  <input id="subject" type="hidden" name="subject" value="" />
 
   <div class="form-floating mb-3 needs-validation">
     <input class="form-control" id="name" name="name" type="text" pattern="[a-zA-Z].{2,30}" autocomplete="on"
@@ -18,7 +18,7 @@
   </div>
 
   <div class="form-floating mb-3">
-    <input class="form-control" id="email" type="email" pattern=".{3,40}" name="email" autocomplete="on"
+    <input class="form-control" id="email" type="email" pattern=".{3,40}" name="from_email" autocomplete="on"
       placeholder="name@example.com" required />
     <label for="email"><span class="text-danger">*</span> {% translate 'Email' %}:</label>
     <div class="invalid-feedback">
@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="form-floating mb-3">
-    <input class="form-control" id="phone" name="phone_number" type="tel" autocomplete="on" pattern="[0-9].{5,30}"
+    <input class="form-control" id="phone" name="phone" type="tel" autocomplete="on" pattern="[0-9].{5,30}"
       placeholder="123 456-7890" />
     <label for="phone">&nbsp {% translate 'Phone' %}:</label>
     <div class="invalid-feedback">
@@ -43,7 +43,8 @@
     </div>
   </div>
   <div class="form-floating mb-3 file">
-    <input class="form-control" id="file" name="file" type="file" accept=".png, .jpg, .jpeg, .heic, .hevic, .gif" />
+    <input class="form-control" id="file" name="attachment" type="file"
+      accept=".png, .jpg, .jpeg, .heic, .hevic, .gif" />
     <label class="mt-1" for="file"><span class="h1 mt-1"><i class="fas fa-camera"></i></span></label>
   </div>
   <div id="age" class="col-12 mb-4 d-none">

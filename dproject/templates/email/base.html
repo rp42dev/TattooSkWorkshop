@@ -1,6 +1,7 @@
 {% load i18n %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <style type="text/css">
@@ -9,64 +10,117 @@
       font-style: normal;
       font-weight: 400;
     }
+
     body {
       font-family: NotoSans, Verdana, Helvetica, sans-serif;
       margin: 0;
       padding: 0;
       color: #000;
+      height: 100%;
+      display flex;
+      flex-direction: column;
+      justify-content: space-between;
+
     }
+
     .content {
       padding: 10px;
-      padding-bottom: 80px;
     }
+
     .menu {
       padding: 10px;
       margin: 0;
-      background-color: #3f3f3e;
-      color: #000;
+      background: linear-gradient(105deg, #0B1D21ff, #345A6Dff 100%);
+      color: #d3dbdf;
     }
+
     .menu a {
       color: #000;
     }
+
     h1.logo {
       font-size: 30pt;
     }
+
     @media (max-width: 800px) {
       h1.logo {
-        font-size: 16pt;
+        font-size: 18pt;
+      }
+
+      h2 {
+        font-size: 16px;
       }
     }
-    th {
-      background-color: #CCC;
-      border: 1px solid #000; vertical-align:top; overflow:hidden;
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      margin: 0;
+      background: linear-gradient(105deg, #0B1D21ff, #345A6Dff 100%);
+      color: #d3dbdf;
+      font-size: 10pt;
     }
-    td {
-      border: 0;
-      padding: 5px;
+
+    li {
+      list-style-type: none;
     }
+
+    .footer a {
+      color: #d3dbdf;
+    }
+
+    .footer_content {
+      margin: 0 auto;
+      max-width: 800px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
     .center {
       margin: 0 auto;
       text-align: center;
     }
+
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="menu center">
       <h1 class="logo">
-        <font color="#52ae32">{{ site.name }}</font>
+        Tattoo Sk Workshop
       </h1>
     </div>
-
-    <div class="content">
-      {% block salutation %}
-        {% if user %}<p>{% trans 'Dear ' %}{{ user.get_full_name }}{% endif %}</p>
-      {% endblock salutation %}
+    <div>
       {% block content %}{% endblock %}
-      <p>{% trans 'Yours sincerely' %}<br>
-      {% blocktrans with site_name=site.name %}The {{ site_name }} team{% endblocktrans %}</p>
     </div>
-
-  </div>
+    <div class="footer">
+      <h3>
+        <a href="https://www.tattooskworkshop.no/en/">Tattoo Sk Workshop</a>
+      </h3>
+      <div class="footer_content">
+        <div>
+          <h4>{% trans 'Contact' %}:</h4>
+          <ul>
+            <li>+47 462 53 760</li>
+            <li>info.tatooskworkshop.no</li>
+            <li>Fetveien 467, 1900 Fetsund, Norge</li>
+          </ul>
+        </div>
+        <div>
+          <h4>{% trans 'Opening hours' %}:</h4>
+          <ul>
+            <li>◉ {% trans 'Monday - Friday' %}: 9:00 - 17:00</li>
+            <li>◉ {% trans 'Saturday' %}: 10:00 - 16:00</li>
+            <li>◉ {% trans 'Sunday' %}: 12:00 - 15:00</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 </body>
+
 </html>

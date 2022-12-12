@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-11 17:09+0000\n"
+"POT-Creation-Date: 2022-12-12 14:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,10 +62,13 @@ msgid ""
 "There's been an error. It's been reported to the site administrators via "
 "email and should be fixed shortly. Thanks for your patience."
 msgstr ""
+"Det har oppstått en feil. Den har blitt rapportert til "
+"nettstedadministratorene via e-post og bør fikses snart. Takk for "
+"tålmodigheten."
 
 #: .\dproject\templates\base.html:11
 msgid "Quality Tattoos and tattoo coverups Fetsund"
-msgstr ""
+msgstr "Kvalitet Tatoveringer og tattoo coverups Fetsund"
 
 #: .\dproject\templates\base.html:23
 msgid ""
@@ -73,22 +76,64 @@ msgid ""
 "tattoos, coverups, scar cover-ups and more. Book an appointment today! + 47 "
 "46253760."
 msgstr ""
+"Tatoveringsstudio i Fetsund, Norge. Vi spesialiserer oss på "
+"kvalitetstatoveringer, Custom tatoveringer, coverups, arr cover-ups og mer. "
+"Bestill time i dag! + 47 46253760."
 
-#: .\dproject\templates\email\base.html:63
+#: .\dproject\templates\email\base.html:107
+msgid "Contact"
+msgstr "Ta kontakt med"
+
+#: .\dproject\templates\email\base.html:115
+msgid "Opening hours"
+msgstr "Åpningstider"
+
+#: .\dproject\templates\email\base.html:117
+msgid "Monday - Friday"
+msgstr "Mandag - fredag"
+
+#: .\dproject\templates\email\base.html:118
+msgid "Saturday"
+msgstr "Lørdag"
+
+#: .\dproject\templates\email\base.html:119
+msgid "Sunday"
+msgstr "Søndag"
+
 #: .\dproject\templates\email\base.txt:1
+#: .\dproject\templates\email\reply_body.html:11
 msgid "Dear "
-msgstr ""
+msgstr "Kjære"
 
-#: .\dproject\templates\email\base.html:66
 #: .\dproject\templates\email\base.txt:3
+#: .\dproject\templates\email\reply_body.html:20
 msgid "Yours sincerely"
-msgstr ""
+msgstr "Med vennlig hilsen"
 
-#: .\dproject\templates\email\base.html:67
 #: .\dproject\templates\email\base.txt:4
 #, python-format
 msgid "The %(site_name)s team"
 msgstr ""
+
+#: .\dproject\templates\email\reply_body.html:8
+msgid "Thank you for your message"
+msgstr "Takk for meldingen"
+
+#: .\dproject\templates\email\reply_body.html:14
+msgid ""
+"We have received your complaint and will get back to you as soon as possible."
+msgstr ""
+"Vi har mottatt klagen din og vil komme tilbake til deg så snart som mulig."
+
+#: .\dproject\templates\email\reply_body.html:16
+msgid ""
+"We have received your message and will get back to you as soon as possible."
+msgstr ""
+"Vi har mottatt meldingen din og vil komme tilbake til deg så snart som mulig."
+
+#: .\dproject\templates\email\reply_body.html:21
+msgid "The Tattoo Sk Workshop team"
+msgstr "Tattoo Sk Workshop-teamet"
 
 #: .\dproject\templates\includes\contact_form.html:14
 msgid "Name"
@@ -110,22 +155,20 @@ msgstr "Telefon"
 msgid "Only numbers"
 msgstr "Bare tall"
 
-#: .\dproject\templates\includes\contact_form.html:53
+#: .\dproject\templates\includes\contact_form.html:54
 msgid "Are you over 16"
 msgstr "Er du over 16"
 
-#: .\dproject\templates\includes\contact_form.html:58
+#: .\dproject\templates\includes\contact_form.html:59
 msgid "Submit"
 msgstr "Sende inn"
 
 #: .\dproject\templates\includes\offcanvas_contact.html:11
 #: .\dproject\templates\includes\offcanvas_contact.html:28
-#: .\dproject\templates\includes\offcanvas_contact.html:53
 msgid "Inquiries"
 msgstr "Forespørsler"
 
 #: .\dproject\templates\includes\offcanvas_contact.html:13
-#: .\dproject\templates\includes\offcanvas_contact.html:57
 msgid "Complaints"
 msgstr "Klager"
 
@@ -133,9 +176,19 @@ msgstr "Klager"
 msgid "Message: (image references, black or with color, size and place)"
 msgstr "Melding: (bildereferanser, svart eller med farge, størrelse og plass)"
 
+#: .\dproject\templates\includes\offcanvas_contact.html:53
+msgid "Question"
+msgstr "Spørsmål"
+
 #: .\dproject\templates\includes\offcanvas_contact.html:56
 msgid "Message Us"
 msgstr "Send oss ​​en melding"
+
+#: .\dproject\templates\includes\offcanvas_contact.html:57
+#, fuzzy
+#| msgid "Complaints"
+msgid "Complaint"
+msgstr "Klager"
 
 #: .\dproject\templates\includes\offcanvas_menu.html:18
 msgid "Menu"
