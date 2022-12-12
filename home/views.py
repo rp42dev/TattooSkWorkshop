@@ -17,7 +17,7 @@ from pytube import *
 
 
 def index(request):
-    """A view to return the index page"""
+    """A view host_email return the index page"""
     page = Page.objects.get(name='home')
     sections = Section.objects.filter(page=page)
 
@@ -32,11 +32,11 @@ def send_email(request):
     subject = request.POST.get('subject', _('question'))
     name = request.POST.get('name', '')
     phone = request.POST.get('phone', '')
-    from_email = request.POST.get('from_email', '')
+    user_email = request.POST.get('from_email', '')
     message = request.POST.get('message', '')
     attachment = request.FILES.get('attachment', '')
-    to = settings.EMAIL_HOST_USER, ''
-    reply_to = from_email
+    host_email = settings.EMAIL_HOST_USER, ''
+    reply_to = user_email
 
     if subject == _('complaint'):
         complaint = True
@@ -48,22 +48,20 @@ def send_email(request):
     mail_body = 'email/mail_body.html'
     reply_body = 'email/reply_body.html'
 
-    message_success = _('Thank you for your message. We will get back to you as soon as possible.')
+    message_success = _('Thank you for your message. We will get back host_email you as soon as possible.')
     message_error = _('There was an error sending your message. Please check your form and try again.')
+    user_subject = 'Tattoo SK workshop - ' + _('Thank you for your message')
+    host_subject = 'Tattoo SK workshop - ' + _('New message') + ' - ' + subject + ' - ' + name
   
 
-    if message and from_email and name:
+    if message and user_email and name:
         try:
-            mail = EmailMultiAlternatives(
-                subject.title() + ' from ' + name, to=[to])
-            mail.attach_alternative(render_to_string(mail_body, {'subject': subject.title(), 'name': name.title(
-            ), 'email': from_email, 'message': message, 'phone': phone}), 'text/html')
+            mail = EmailMultiAlternatives(user_subject, user_email, host_email,)
+            mail.attach_alternative(render_to_string(mail_body, {'subject': subject, 'name': name, 'email': user_email, 'message': message, 'phone': phone}), 'text/html')
             if attachment: mail.attach(attachment.name, attachment.read(),attachment.content_type)
             mail.send()
-            reply = EmailMultiAlternatives(
-                'Tattoo SK Workshop - '.title() + _('Thank you for your message'), to=[from_email])
-            reply.attach_alternative(render_to_string(
-                reply_body, {'name': name.title(), 'complaint': complaint, }), 'text/html')
+            reply = EmailMultiAlternatives(host_subject, host_email, user_email)
+            reply.attach_alternative(render_to_string(reply_body, {'name': name, 'complaint': complaint,}), 'text/html')
             reply.send()
             messages.success(request, message_success)
         except BadHeaderError:
@@ -71,4 +69,4 @@ def send_email(request):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         messages.error(request, message_error)
-        return render(request, 'email/reply_body.html', {'subject': subject, 'name': name, 'email': from_email, 'message': message})
+        return render(request, 'email/reply_body.html', {'subject': subject, 'name': name, 'email': user_email, 'message': message})
