@@ -1,126 +1,129 @@
 {% load i18n %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Fluid Grid Master</title>
+
   <style type="text/css">
-    @font-face {
-      font-family: 'Lato', sans-serif;
-      font-style: normal;
-      font-weight: 400;
+    /* Outlines the grid, remove when sending */
+    table td {}
+
+    /* CLIENT-SPECIFIC STYLES */
+    body,
+    table,
+    td,
+    a {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    table,
+    td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    /* RESET STYLES */
+    img {
+      border: 0;
+      border-radius: 12px;
+      outline: none;
+      text-decoration: none;
+    }
+    span {
+      font-size: 14px;
+    }
+
+    table {
+      border-collapse: collapse !important;
     }
 
     body {
-      font-family: NotoSans, Verdana, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #000;
-      height: 100%;
-      display flex;
-      flex-direction: column;
-      justify-content: space-between;
-
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
     }
 
-    .content {
-      padding: 10px;
+    h2,h3,h4,h5,h6 {
+      color: #dee2e6;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .menu {
-      padding: 10px;
-      margin: 0;
-      background: linear-gradient(105deg, #0B1D21ff, #345A6Dff 100%);
-      color: #d3dbdf;
+    /* iOS BLUE LINKS */
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
     }
 
-    .menu a {
-      color: #000;
-    }
-
-    h1.logo {
-      font-size: 30pt;
-    }
-
-    @media (max-width: 800px) {
-      h1.logo {
-        font-size: 18pt;
-      }
-
-      h2 {
-        font-size: 16px;
-      }
-    }
-
-    .footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      padding: 10px;
-      margin: 0;
-      background: linear-gradient(105deg, #0B1D21ff, #345A6Dff 100%);
-      color: #d3dbdf;
-      font-size: 10pt;
-    }
-
-    li {
-      list-style-type: none;
-    }
-
-    .footer a {
-      color: #d3dbdf;
-    }
-
-    .footer_content {
-      margin: 0 auto;
-      max-width: 800px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .center {
-      margin: 0 auto;
-      text-align: center;
+    /* ANDROID CENTER FIX */
+    div[style*="margin: 16px 0;"] {
+      margin: 0 !important;
     }
 
   </style>
 </head>
 
-<body>
-  <div class="container">
-    <div class="menu center">
-      <h1 class="logo">
-        Tattoo Sk Workshop
-      </h1>
-    </div>
-    <div>
+<body style="margin:0; padding:0; background-color:#171d20;">
+  <center>
+    <div
+      style="background-color:#171d20; max-width: 640px; margin: auto; color: #d3dbdf; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5;">
+      <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:640px; width:100%;">
+        <tr>
+          <td align="center" valign="top" style="padding:10px;">
+            <h1 class="logo" style="color:#345a6d">
+              Tattoo Sk Workshop
+            </h1>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="top">
+            <img src="https://www.tattooskworkshop.no/media/cache/71/e9/71e931ab5644ad38cb1f239096b261d1.jpg"
+              width="100%" height="300" alt="Logo" border="0"
+              style="margin:0; padding:0; border:none; display:block; max-width:640px; width:100%; height:auto;" />
+          </td>
+        </tr>
+      </table>
       {% block content %}{% endblock %}
-    </div>
-    <div class="footer">
-      <h3>
-        <a href="https://www.tattooskworkshop.no/en/">Tattoo Sk Workshop</a>
-      </h3>
-      <div class="footer_content">
-        <div>
-          <h4>{% trans 'Contact' %}:</h4>
-          <ul>
-            <li>+47 462 53 760</li>
-            <li>info.tatooskworkshop.no</li>
-            <li>Fetveien 467, 1900 Fetsund, Norge</li>
-          </ul>
-        </div>
-        <div>
-          <h4>{% trans 'Opening hours' %}:</h4>
-          <ul>
-            <li>◉ {% trans 'Monday - Friday' %}: 9:00 - 17:00</li>
-            <li>◉ {% trans 'Saturday' %}: 10:00 - 16:00</li>
-            <li>◉ {% trans 'Sunday' %}: 12:00 - 15:00</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-</body>
+      <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center"
+        style="max-width:640px; width:100%; border-radius: 12px; background-image: linear-gradient(105deg, #0B1D21ff,
+        #345A6Dff 100%);">
+        <tr>
+          <td width="300" valign="top" style="padding-left:10px;">
+          </td>
+        </tr>
+        <tr>
+          <td width="300" valign="top" style="padding:10px;">
+            <a href="https://www.tattooskworkshop.no/" style="color: #d3dbdf;">
+            <h3 style="color: #d3dbdf;">www Tattoo Sk Workshop</h3></a>
+            <h4>{% trans 'Contact' %}:</h4>
+            <span>+47 462 53 760</span><br>
+            <span>info.tatooskworkshop.no</span><br>
+            <span>Fetveien 467, 1900 Fetsund, Norge</span>
+            <h4>{% trans 'Opening hours' %}:</h4>
+            <span>{% trans 'Monday - Friday' %}: 9:00 - 17:00</span><br>
+            <span>{% trans 'Saturday' %}: 10:00 - 16:00</span><br>
+            <span>{% trans 'Sunday' %}: 12:00 - 15:00</span>
+          </td>
+        </tr>
 
-</html>
+        <tr>
+          <td width="300" valign="top" style="padding:10px;">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </center>
+</body>

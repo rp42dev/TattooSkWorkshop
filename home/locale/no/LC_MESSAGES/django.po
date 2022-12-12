@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 15:49+0000\n"
+"POT-Creation-Date: 2022-12-12 16:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,16 +19,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\home\views.py:41
-#, fuzzy
-#| msgid "complaint"
 msgid "Complaint"
-msgstr "klage"
+msgstr "Klage"
 
 #: .\home\views.py:44
-#, fuzzy
-#| msgid "question"
+
 msgid "Question"
-msgstr "spørsmål"
+msgstr "Spørsmål"
 
 #: .\home\views.py:51
 msgid ""
@@ -41,6 +38,11 @@ msgid ""
 "again."
 msgstr "Det oppsto en feil ved sending av meldingen. Sjekk skjemaet og prøv "
 
-#: .\home\views.py:61
-msgid "Thank you for your message"
-msgstr "Takk for meldingen"
+#: .\home\views.py:57
+msgid "New message from"
+msgstr "Ny melding fra"
+
+#: .\home\views.py:62
+msgid "Auto-reply from Tattoo SK Workshop - Thank you for your message"
+msgstr ""
+"Autosvar fra Tattoo SK Workshop - Takk for meldingen"

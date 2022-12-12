@@ -2,20 +2,25 @@
 {% load i18n %}
 
 {% block content %}
-<div class="content">
-  <h2>{{subject}} from {{ name }}</h2>
-
-  <h3>
-    Contact Details:
-  </h3>
-
-  Email: {{ email }} <br />
-  Phone: {{ phone }}
-
-  <h3>
-    Message:
-  </h3>
-
-  <p>{{message}}</p>
-</div>
+<table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:640px; width:100%;">
+  <tr>
+    <td align="left" valign="top" style="padding:10px;">
+      {% block salutation %}
+      <h2>{{subject}} {% trans 'from' %} {{ name }}</h2>
+      {% endblock salutation %}
+      <h3>
+        Contact Details:
+      </h3>
+      Email: {{ email }} <br />
+      Phone: {{ phone }}
+      <h3>
+        Message:
+      </h3>
+      <p>{{message}}</p>
+      <p>{% trans 'Yours sincerely' %}<br>
+        {% blocktrans %}The Tattoo Sk Workshop team{% endblocktrans %}
+      </p>
+    </td>
+  </tr>
+</table>
 {% endblock %}

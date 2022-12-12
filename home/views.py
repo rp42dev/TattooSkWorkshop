@@ -54,11 +54,12 @@ def send_email(request):
 
     if message and from_email and name:
         try:
+            subject = _('New message from') + ' ' + name
             mail = EmailMultiAlternatives(subject, from_email, to=[to])
             mail.attach_alternative(render_to_string(mail_body, {'subject': subject, 'name': name, 'email': from_email, 'message': message, 'phone': phone}), 'text/html')
             if attachment: mail.attach(attachment.name, attachment.read(),attachment.content_type)
             mail.send()
-            subject = _('Thank you for your message')
+            subject = _('Auto-reply from Tattoo SK Workshop - Thank you for your message')
             reply = EmailMultiAlternatives(subject, from_email=to, to=[from_email])
             reply.attach_alternative(render_to_string(reply_body, {'name': name, 'complaint': complaint,}), 'text/html')
             reply.send()
@@ -68,4 +69,5 @@ def send_email(request):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         messages.error(request, message_error)
+        
         return render(request, 'email/reply_body.html', {'subject': subject, 'name': name, 'email': from_email, 'message': message})
