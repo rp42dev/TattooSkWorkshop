@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 16:03+0000\n"
+"POT-Creation-Date: 2022-12-12 23:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,6 @@ msgid "Complaint"
 msgstr "Klage"
 
 #: .\home\views.py:44
-
 msgid "Question"
 msgstr "Spørsmål"
 
@@ -39,10 +38,12 @@ msgid ""
 msgstr "Det oppsto en feil ved sending av meldingen. Sjekk skjemaet og prøv "
 
 #: .\home\views.py:57
-msgid "New message from"
-msgstr "Ny melding fra"
+msgid "from Tattoo SK Workshop"
+msgstr ""
 
 #: .\home\views.py:62
 msgid "Auto-reply from Tattoo SK Workshop - Thank you for your message"
-msgstr ""
-"Autosvar fra Tattoo SK Workshop - Takk for meldingen"
+msgstr "Autosvar fra Tattoo SK Workshop - Takk for meldingen"
+
+#~ msgid "New message from"
+#~ msgstr "Ny melding fra"

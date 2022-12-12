@@ -34,7 +34,6 @@ def send_email(request):
     phone = request.POST.get('phone', '')
     from_email = request.POST.get('from_email', '')
     message = request.POST.get('message', '')
-    attachment = request.FILES.get('attachment', '')
     to = settings.EMAIL_HOST_USER
 
     if subject == 'complaint':
@@ -43,8 +42,7 @@ def send_email(request):
     else:
         subject = _('Question')
         complaint = False
-        
-
+    
     mail_body = 'email/mail_body.html'
     reply_body = 'email/reply_body.html'
 
@@ -57,13 +55,15 @@ def send_email(request):
             subject = subject + ' ' + _('from Tattoo SK Workshop')
             mail = EmailMultiAlternatives(subject, from_email, to=[to])
             mail.attach_alternative(render_to_string(mail_body, {'subject': subject, 'name': name, 'email': from_email, 'message': message, 'phone': phone}), 'text/html')
-            if attachment: mail.attach(attachment.name, attachment.read(),attachment.content_type)
+            if request.FILES:
+                attachment = request.FILES['attachment']
+                mail.attach(attachment.name, attachment.read(), attachment.content_type)
             mail.send()
             subject = _('Auto-reply from Tattoo SK Workshop - Thank you for your message')
             reply = EmailMultiAlternatives(subject, from_email=to, to=[from_email])
             reply.attach_alternative(render_to_string(reply_body, {'name': name, 'complaint': complaint,}), 'text/html')
             reply.send()
-            messages.success(request, message_success)
+            messages.success(request, message_success, 'file' + str(attachment.name))
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

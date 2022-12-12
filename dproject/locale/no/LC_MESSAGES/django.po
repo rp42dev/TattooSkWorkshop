@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 16:13+0000\n"
+"POT-Creation-Date: 2022-12-12 23:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgstr ""
 "kvalitetstatoveringer, Custom tatoveringer, coverups, arr cover-ups og mer. "
 "Bestill time i dag! + 47 46253760."
 
-#: .\dproject\templates\email\base.html:107
+#: .\dproject\templates\email\base.html:111
 msgid "Contact"
 msgstr "Ta kontakt med"
 
@@ -88,25 +88,25 @@ msgstr "Ta kontakt med"
 msgid "Opening hours"
 msgstr "Åpningstider"
 
-#: .\dproject\templates\email\base.html:117
+#: .\dproject\templates\email\base.html:116
 msgid "Monday - Friday"
 msgstr "Mandag - fredag"
 
-#: .\dproject\templates\email\base.html:118
+#: .\dproject\templates\email\base.html:117
 msgid "Saturday"
 msgstr "Lørdag"
 
-#: .\dproject\templates\email\base.html:119
+#: .\dproject\templates\email\base.html:118
 msgid "Sunday"
 msgstr "Søndag"
 
 #: .\dproject\templates\email\base.txt:1
-#: .\dproject\templates\email\reply_body.html:11
+#: .\dproject\templates\email\reply_body.html:13
 msgid "Dear "
 msgstr "Kjære"
 
 #: .\dproject\templates\email\base.txt:3
-#: .\dproject\templates\email\reply_body.html:20
+#: .\dproject\templates\email\reply_body.html:22
 msgid "Yours sincerely"
 msgstr "Med vennlig hilsen"
 
@@ -115,27 +115,23 @@ msgstr "Med vennlig hilsen"
 msgid "The %(site_name)s team"
 msgstr ""
 
-#: .\dproject\templates\email\mail_body.html:6
-msgid "from"
-msgstr "fra"
-
-#: .\dproject\templates\email\reply_body.html:8
+#: .\dproject\templates\email\reply_body.html:10
 msgid "Thank you for your message"
 msgstr "Takk for meldingen"
 
-#: .\dproject\templates\email\reply_body.html:14
+#: .\dproject\templates\email\reply_body.html:16
 msgid ""
 "We have received your complaint and will get back to you as soon as possible."
 msgstr ""
 "Vi har mottatt klagen din og vil komme tilbake til deg så snart som mulig."
 
-#: .\dproject\templates\email\reply_body.html:16
+#: .\dproject\templates\email\reply_body.html:18
 msgid ""
 "We have received your message and will get back to you as soon as possible."
 msgstr ""
 "Vi har mottatt meldingen din og vil komme tilbake til deg så snart som mulig."
 
-#: .\dproject\templates\email\reply_body.html:21
+#: .\dproject\templates\email\reply_body.html:23
 msgid "The Tattoo Sk Workshop team"
 msgstr "Tattoo Sk Workshop-teamet"
 
@@ -263,3 +259,6 @@ msgstr ""
 #: .\dproject\templates\registration\password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
+
+#~ msgid "from"
+#~ msgstr "fra"
