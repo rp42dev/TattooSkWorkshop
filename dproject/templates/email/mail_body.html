@@ -6,20 +6,17 @@
   <tr>
     <td align="left" valign="top" style="padding:10px;">
       {% block salutation %}
-      <h2>{{subject}} {% trans 'from' %} {{ name }}</h2>
+      <h3>{{subject}}</h3>
       {% endblock salutation %}
-      <h3>
+      <h4>
         Contact Details:
-      </h3>
+      </h4>
       Email: {{ email }} <br />
       Phone: {{ phone }}
-      <h3>
+      <h4>
         Message:
-      </h3>
+      </h4>
       <p>{{message}}</p>
-      <p>{% trans 'Yours sincerely' %}<br>
-        {% blocktrans %}The Tattoo Sk Workshop team{% endblocktrans %}
-      </p>
     </td>
   </tr>
 </table>

@@ -54,7 +54,7 @@ def send_email(request):
 
     if message and from_email and name:
         try:
-            subject = _('New message from') + ' ' + name
+            subject = subject + ' ' + _('from Tattoo SK Workshop')
             mail = EmailMultiAlternatives(subject, from_email, to=[to])
             mail.attach_alternative(render_to_string(mail_body, {'subject': subject, 'name': name, 'email': from_email, 'message': message, 'phone': phone}), 'text/html')
             if attachment: mail.attach(attachment.name, attachment.read(),attachment.content_type)
