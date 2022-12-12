@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 14:05+0000\n"
+"POT-Creation-Date: 2022-12-12 15:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -164,13 +164,18 @@ msgid "Submit"
 msgstr "Sende inn"
 
 #: .\dproject\templates\includes\offcanvas_contact.html:11
-#: .\dproject\templates\includes\offcanvas_contact.html:28
-msgid "Inquiries"
-msgstr "Forespørsler"
+#, fuzzy
+#| msgid "Question"
+msgid "Questions"
+msgstr "Spørsmål"
 
 #: .\dproject\templates\includes\offcanvas_contact.html:13
 msgid "Complaints"
 msgstr "Klager"
+
+#: .\dproject\templates\includes\offcanvas_contact.html:28
+msgid "Inquiries"
+msgstr "Forespørsler"
 
 #: .\dproject\templates\includes\offcanvas_contact.html:52
 msgid "Message: (image references, black or with color, size and place)"

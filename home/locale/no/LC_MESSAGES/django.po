@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 14:05+0000\n"
+"POT-Creation-Date: 2022-12-12 15:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\home\views.py:32
-msgid "question"
-msgstr "spørsmål"
-
-#: .\home\views.py:42
-msgid "complaint"
+#: .\home\views.py:41
+#, fuzzy
+#| msgid "complaint"
+msgid "Complaint"
 msgstr "klage"
+
+#: .\home\views.py:44
+#, fuzzy
+#| msgid "question"
+msgid "Question"
+msgstr "spørsmål"
 
 #: .\home\views.py:51
 msgid ""
@@ -35,10 +39,8 @@ msgstr "Takk for meldingen. Vi vil komme tilbake til deg så snart som mulig."
 msgid ""
 "There was an error sending your message. Please check your form and try "
 "again."
-msgstr ""
-"Det oppsto en feil ved sending av meldingen. Sjekk skjemaet og prøv "
+msgstr "Det oppsto en feil ved sending av meldingen. Sjekk skjemaet og prøv "
 
 #: .\home\views.py:61
 msgid "Thank you for your message"
-msgstr ""
-"Takk for meldingen"
+msgstr "Takk for meldingen"

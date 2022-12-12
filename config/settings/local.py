@@ -19,7 +19,7 @@ if 'TEMPLATES' in locals():
 # Mail settings
 # ------------------------------------------------------------------------------
 EMAIL_HOST = 'localhost'
-
+EMAIL_HOST_USER = env('DEFAULT_FROM_EMAIL')
 EMAIL_BACKEND = env(
     'DJANGO_EMAIL_BACKEND',
     default='django.core.mail.backends.console.EmailBackend'

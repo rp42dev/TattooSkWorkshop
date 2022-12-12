@@ -17,7 +17,7 @@ from pytube import *
 
 
 def index(request):
-    """A view host_email return the index page"""
+    """A view to return the index page"""
     page = Page.objects.get(name='home')
     sections = Section.objects.filter(page=page)
 
@@ -29,38 +29,37 @@ def index(request):
 
 
 def send_email(request):
-    subject = request.POST.get('subject', _('question'))
+    subject = request.POST.get('subject', '')
     name = request.POST.get('name', '')
     phone = request.POST.get('phone', '')
-    user_email = request.POST.get('from_email', '')
+    from_email = request.POST.get('from_email', '')
     message = request.POST.get('message', '')
     attachment = request.FILES.get('attachment', '')
-    host_email = settings.EMAIL_HOST_USER, ''
-    reply_to = user_email
+    to = settings.EMAIL_HOST_USER
 
-    if subject == _('complaint'):
+    if subject == 'complaint':
+        subject = _('Complaint')
         complaint = True
     else:
-        subject = _('question')
+        subject = _('Question')
         complaint = False
         
 
     mail_body = 'email/mail_body.html'
     reply_body = 'email/reply_body.html'
 
-    message_success = _('Thank you for your message. We will get back host_email you as soon as possible.')
+    message_success = _('Thank you for your message. We will get back to you as soon as possible.')
     message_error = _('There was an error sending your message. Please check your form and try again.')
-    user_subject = 'Tattoo SK workshop - ' + _('Thank you for your message')
-    host_subject = 'Tattoo SK workshop - ' + _('New message') + ' - ' + subject + ' - ' + name
-  
 
-    if message and user_email and name:
+
+    if message and from_email and name:
         try:
-            mail = EmailMultiAlternatives(user_subject, user_email, host_email,)
-            mail.attach_alternative(render_to_string(mail_body, {'subject': subject, 'name': name, 'email': user_email, 'message': message, 'phone': phone}), 'text/html')
+            mail = EmailMultiAlternatives(subject, from_email, to=[to])
+            mail.attach_alternative(render_to_string(mail_body, {'subject': subject, 'name': name, 'email': from_email, 'message': message, 'phone': phone}), 'text/html')
             if attachment: mail.attach(attachment.name, attachment.read(),attachment.content_type)
             mail.send()
-            reply = EmailMultiAlternatives(host_subject, host_email, user_email)
+            subject = _('Thank you for your message')
+            reply = EmailMultiAlternatives(subject, from_email=to, to=[from_email])
             reply.attach_alternative(render_to_string(reply_body, {'name': name, 'complaint': complaint,}), 'text/html')
             reply.send()
             messages.success(request, message_success)
@@ -69,4 +68,4 @@ def send_email(request):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         messages.error(request, message_error)
-        return render(request, 'email/reply_body.html', {'subject': subject, 'name': name, 'email': user_email, 'message': message})
+        return render(request, 'email/reply_body.html', {'subject': subject, 'name': name, 'email': from_email, 'message': message})
