@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Fluid Grid Master</title>
+  <title>Tattoo SK Workshop</title>
 
   <style type="text/css">
     /* Outlines the grid, remove when sending */
@@ -39,6 +39,11 @@
       outline: none;
       text-decoration: none;
     }
+
+    a {
+      text-decoration: none;
+    }
+
     span {
       font-size: 14px;
     }
@@ -53,7 +58,11 @@
       width: 100% !important;
     }
 
-    h2,h3,h4,h5,h6 {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       color: #adb5bd;
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -73,15 +82,22 @@
       margin: 0 !important;
     }
 
+    *[class="100p"] {
+      width: 100% !important;
+      height: auto !important;
+    }
+
     @media screen and (max-width: 640px) {
       h1 {
         font-size: 22px !important;
         line-height: 22px !important;
       }
+
       p {
         font-size: 14px !important;
         line-height: 14px !important;
       }
+
       h3 {
         font-size: 18px !important;
         line-height: 18px !important;
@@ -97,45 +113,97 @@
       style="background-color:#171d20; max-width: 640px; margin: auto; color: #d3dbdf; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5;">
       <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:640px; width:100%;">
         <tr>
-          <td align="center" valign="top">
+          <td align="left" valign="top" width="640" style="padding: 10px;">
             <h1 style="color: #adb5bd;">
-              Tattoo Sk Workshop
+              TATTOO SK WORKSHOP
             </h1>
+        </tr>
+      </table>
+      <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center"
+        style="border-radius: 12px; background-position: center; background: url(https://www.tattooskworkshop.no/media/cache/84/b4/84b4a921d14f894ba5ed4255e29ff72f.jpg) center center / 640px 400px no-repeat">
+       <tr>
+        <td style="padding: 20px;">
+
+        </td>
+       </tr>
+        <tr height="220">
+          <td align="left" valign="center" width="300" height="200"
+            style="padding-left: 10px; background: rgba(23, 29, 32, .8); border-radius: 12px;">
+            <h2 style="color: #345a6d;">
+              {% trans 'Tattoo studio' %}
+            </h2>
+            <h3 style="color: #adb5bd;">
+              Fetveien 467 <br>
+              1900 Fetsund
+            </h3>
+            <h3 style="color: #adb5bd;">
+              +47 462 53 760
           </td>
+          <td align="left" valign="center" width="300">
+        </td>
         </tr>
         <tr>
-          <td align="center" valign="top">
-            <img src="https://www.tattooskworkshop.no/media/cache/71/e9/71e931ab5644ad38cb1f239096b261d1.jpg"
-              width="100%" height="300" alt="Logo" border="0"
-              style="margin:0; padding:0; border:none; display:block; max-width:640px; width:100%; height:auto;" />
+          <td style="padding: 20px;">
+
           </td>
         </tr>
       </table>
       {% block content %}{% endblock %}
-      <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center"
-        style="max-width:640px; width:100%; border-radius: 12px; background-image: linear-gradient(105deg, #0B1D21ff,
-        #345A6Dff 100%);">
+      <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#adb5bd;"
+        style="max-width:640px; width:100%; border-radius: 12px;
+        background: url(https://www.tattooskworkshop.no/media/album/IMG_6792.jpg) right center / 400px 600px no-repeat">
         <tr>
-          <td width="300" valign="top" style="padding-left:10px;">
+          <td width="30" valign="top" style="padding:10px;">
+            <a style="padding-right: 10px" href=" https://www.facebook.com/tattooskworkshop/" style="color:#345a6d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="32" height="32" fill="#345a6d">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+              </svg>
+            </a>
+            <a style="padding-right: 10px" href="https://www.instagram.com/tattooskworkshop/" style="color:#345a6d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="32" height="32" fill="#345a6d">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+              </svg>
+            </a>
+            <a style="padding-right: 10px" href="tel:+4746253760" style="color:#345a6d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="32" height="32" fill="#345a6d">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+              </svg>
+            </a>
+            <a style="padding-right: 10px" href="mailto:info@tatooskworkshop.no" style="color:#345a6d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="32" height="32" fill="#345a6d">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M256 64C150 64 64 150 64 256s86 192 192 192c17.7 0 32 14.3 32 32s-14.3 32-32 32C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256v32c0 53-43 96-96 96c-29.3 0-55.6-13.2-73.2-33.9C320 371.1 289.5 384 256 384c-70.7 0-128-57.3-128-128s57.3-128 128-128c27.9 0 53.7 8.9 74.7 24.1c5.7-5 13.1-8.1 21.3-8.1c17.7 0 32 14.3 32 32v80 32c0 17.7 14.3 32 32 32s32-14.3 32-32V256c0-106-86-192-192-192zm64 192c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z" />
+              </svg>
+            </a>
           </td>
         </tr>
         <tr>
-          <td width="300" valign="top" style="padding:10px;">
-            <a href="https://www.tattooskworkshop.no/" style="color:#345a6d">
-            <h3 style="color:#345a6d">www Tattoo Sk Workshop</h3></a>
-            <h4>{% trans 'Contact' %}:</h4>
-            <span>+47 462 53 760</span><br>
-            <span>info.tatooskworkshop.no</span><br>
-            <span>Fetveien 467, 1900 Fetsund, Norge</span>
-            <h4>{% trans 'Opening hours' %}:</h4>
-            <span>{% trans 'Monday - Friday' %}: 9:00 - 17:00</span><br>
-            <span>{% trans 'Saturday' %}: 10:00 - 16:00</span><br>
-            <span>{% trans 'Sunday' %}: 12:00 - 15:00</span>
+          <td width="300" valign="top" bgcolor="#171d20"
+            style="padding:10px; border-radius: 10px; background: rgba(23, 29, 32, .8);">
+            <h4 style="margin-bottom: 10px; color: #345a6d;">{% trans 'Contact' %}:</h4>
+            <span>⦿ +47 462 53 760</span><br>
+            <span>⦿ info@tatooskworkshop.no</span><br>
+            <span>⦿ www.tattooskworkshop.no</span>
+            <h4 style="margin-bottom: 10px; color: #345a6d;">{% trans 'Opening hours' %}:</h4>
+            <span>⦿ {% trans 'Monday - Friday' %}: 9:00 - 17:00</span><br>
+            <span>⦿ {% trans 'Saturday' %}: 10:00 - 16:00</span><br>
+            <span>⦿ {% trans 'Sunday' %}: 12:00 - 15:00</span>
+            <h4 style="margin-bottom: 10px; color: #345a6d;">{% trans 'Address' %}:</h4>
+            <span>⦿ Fetveien 467, 1900 Fetsund, Norge</span>
+          </td>
+          <td width="400" valign="top">
           </td>
         </tr>
 
         <tr>
-          <td width="300" valign="top" style="padding:10px;">
+          <td width="600" valign="top" style="padding:10px;">
           </td>
         </tr>
       </table>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 23:14+0000\n"
+"POT-Creation-Date: 2022-12-13 13:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Quality Tattoos and tattoo coverups Fetsund"
 msgstr "Kvalitet Tatoveringer og tattoo coverups Fetsund"
 
-#: .\dproject\templates\base.html:23
+#: .\dproject\templates\base.html:24
 msgid ""
 "Tattoo studio in Fetsund, Norway. We specialize in quality tattoos, Custom "
 "tattoos, coverups, scar cover-ups and more. Book an appointment today! + 47 "
@@ -80,33 +80,37 @@ msgstr ""
 "kvalitetstatoveringer, Custom tatoveringer, coverups, arr cover-ups og mer. "
 "Bestill time i dag! + 47 46253760."
 
-#: .\dproject\templates\email\base.html:111
+#: .\dproject\templates\email\base.html:189
 msgid "Contact"
 msgstr "Ta kontakt med"
 
-#: .\dproject\templates\email\base.html:115
+#: .\dproject\templates\email\base.html:193
 msgid "Opening hours"
 msgstr "Åpningstider"
 
-#: .\dproject\templates\email\base.html:116
+#: .\dproject\templates\email\base.html:194
 msgid "Monday - Friday"
-msgstr "Mandag - fredag"
+msgstr "Mandag - Fredag"
 
-#: .\dproject\templates\email\base.html:117
+#: .\dproject\templates\email\base.html:195
 msgid "Saturday"
 msgstr "Lørdag"
 
-#: .\dproject\templates\email\base.html:118
+#: .\dproject\templates\email\base.html:196
 msgid "Sunday"
 msgstr "Søndag"
 
+#: .\dproject\templates\email\base.html:197
+msgid "Address"
+msgstr "Adresse"
+
 #: .\dproject\templates\email\base.txt:1
-#: .\dproject\templates\email\reply_body.html:13
+#: .\dproject\templates\email\reply_body.html:12
 msgid "Dear "
 msgstr "Kjære"
 
 #: .\dproject\templates\email\base.txt:3
-#: .\dproject\templates\email\reply_body.html:22
+#: .\dproject\templates\email\reply_body.html:23
 msgid "Yours sincerely"
 msgstr "Med vennlig hilsen"
 
@@ -115,11 +119,11 @@ msgstr "Med vennlig hilsen"
 msgid "The %(site_name)s team"
 msgstr ""
 
-#: .\dproject\templates\email\reply_body.html:10
+#: .\dproject\templates\email\reply_body.html:9
 msgid "Thank you for your message"
 msgstr "Takk for meldingen"
 
-#: .\dproject\templates\email\reply_body.html:16
+#: .\dproject\templates\email\reply_body.html:15
 msgid ""
 "We have received your complaint and will get back to you as soon as possible."
 msgstr ""
@@ -131,7 +135,7 @@ msgid ""
 msgstr ""
 "Vi har mottatt meldingen din og vil komme tilbake til deg så snart som mulig."
 
-#: .\dproject\templates\email\reply_body.html:23
+#: .\dproject\templates\email\reply_body.html:24
 msgid "The Tattoo Sk Workshop team"
 msgstr "Tattoo Sk Workshop-teamet"
 
