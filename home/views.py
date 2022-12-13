@@ -69,5 +69,5 @@ def send_email(request):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         messages.error(request, message_error)
-        # return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-        return render(request, 'email/reply_body.html', {'subject': subject, 'name': name, 'email': from_email, 'message': message})
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        # return render(request, 'email/reply_body.html', {'subject': subject, 'name': name, 'email': from_email, 'message': message})
