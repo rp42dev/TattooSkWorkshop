@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-13 13:04+0000\n"
+"POT-Creation-Date: 2022-12-13 13:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,27 +80,31 @@ msgstr ""
 "kvalitetstatoveringer, Custom tatoveringer, coverups, arr cover-ups og mer. "
 "Bestill time i dag! + 47 46253760."
 
-#: .\dproject\templates\email\base.html:189
+#: .\dproject\templates\email\base.html:141
+msgid "Tattoo studio"
+msgstr "Tatoveringsstudio"
+
+#: .\dproject\templates\email\base.html:171
 msgid "Contact"
 msgstr "Ta kontakt med"
 
-#: .\dproject\templates\email\base.html:193
+#: .\dproject\templates\email\base.html:188
 msgid "Opening hours"
 msgstr "Åpningstider"
 
-#: .\dproject\templates\email\base.html:194
+#: .\dproject\templates\email\base.html:189
 msgid "Monday - Friday"
 msgstr "Mandag - Fredag"
 
-#: .\dproject\templates\email\base.html:195
+#: .\dproject\templates\email\base.html:190
 msgid "Saturday"
 msgstr "Lørdag"
 
-#: .\dproject\templates\email\base.html:196
+#: .\dproject\templates\email\base.html:191
 msgid "Sunday"
 msgstr "Søndag"
 
-#: .\dproject\templates\email\base.html:197
+#: .\dproject\templates\email\base.html:192
 msgid "Address"
 msgstr "Adresse"
 
@@ -137,7 +141,7 @@ msgstr ""
 
 #: .\dproject\templates\email\reply_body.html:24
 msgid "The Tattoo Sk Workshop team"
-msgstr "Tattoo Sk Workshop-teamet"
+msgstr "Tattoo Sk Workshop teamet"
 
 #: .\dproject\templates\includes\contact_form.html:14
 msgid "Name"
@@ -168,8 +172,6 @@ msgid "Submit"
 msgstr "Sende inn"
 
 #: .\dproject\templates\includes\offcanvas_contact.html:11
-#, fuzzy
-#| msgid "Question"
 msgid "Questions"
 msgstr "Spørsmål"
 
