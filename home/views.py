@@ -52,7 +52,7 @@ def send_email(request):
 
     if message and from_email and name:
         try:
-            subject = subject + ' ' + _('from Tattoo SK Workshop')
+            subject = subject + ' ' + 'form' + ' ' + name
             mail = EmailMultiAlternatives(subject, from_email, to=[to])
             mail.attach_alternative(render_to_string(mail_body, {'subject': subject, 'name': name, 'email': from_email, 'message': message, 'phone': phone}), 'text/html')
             if request.FILES:
@@ -63,11 +63,11 @@ def send_email(request):
             reply = EmailMultiAlternatives(subject, from_email=to, to=[from_email])
             reply.attach_alternative(render_to_string(reply_body, {'name': name, 'complaint': complaint,}), 'text/html')
             reply.send()
-            messages.success(request, message_success, 'file' + str(attachment.name))
+            messages.success(request, message_success)
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         messages.error(request, message_error)
-        
-        return render(request, 'email/reply_body.html', {'subject': subject, 'name': name, 'email': from_email, 'message': message})
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        # return render(request, 'email/mail_body.html', {'subject': subject, 'name': name, 'email': from_email, 'message': message})
