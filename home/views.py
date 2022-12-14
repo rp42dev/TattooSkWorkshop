@@ -51,9 +51,10 @@ def contact_form(request):
         return HttpResponseRedirect('/')
 
 
-@require_POST
+# @require_POST
 def send_email(request):
     """A view to send an email via the contact form"""
+    return render(request, 'email/reply_body.html', {'name': 'name', 'complaint': True, })
 
     form = ContactForm(request.POST, request.FILES)
 
@@ -127,4 +128,3 @@ def send_email(request):
     else:
         messages.error(request, message_error)
         return redirect(reverse('contact_form'))
-        # return render(request, 'email/reply_body.html', {'subject': subject, 'name': name, 'email': from_email, 'message': message})
