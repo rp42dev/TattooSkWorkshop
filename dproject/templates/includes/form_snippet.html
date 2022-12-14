@@ -1,0 +1,83 @@
+{% load i18n %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  li {
+    float: left;
+  }
+
+</style>
+
+<div id="swap_form" class=" h-100 d-flex flex-column justify-content-between">
+  <div class="offcanvas-header position-relative text-center">
+    <div class="d-flex flex p-3 justify-content-between position-absolute w-100 top-0 start-0">
+      <div>
+        <p>
+          <a hx-get="{% url "contact_form" %}?subject={{btn_text}}" hx-target="#swap_form"
+            hx-swap="innerHTML swap:200ms settle:200ms" hx-trigger="click" class="btn btn-sm  rounded-pill"
+            role="button">{{btn_text}}</a>
+        </p>
+      </div>
+
+      <div slass="col-6"></div>
+
+      <div id="close-btn-contact" role="button" class="btn_close col-6 my-auto" data-bs-dismiss="offcanvas"
+        aria-label="Close">
+        <i class="fas fa-times float-end"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas-body pb-3">
+    <div class="col-12 ">
+      <h3 id="contact-heading" class="text-uppercase text-center display-6 my-2 clipped-text">
+        {{ subject }}
+      </h3>
+    </div>
+    <div class="gradient-line mb-4"></div>
+
+    <form hx-post={% url "send_mail" %} class="my-3 needs-validation" enctype="multipart/form-data" novalidate>
+      {% csrf_token %}
+      {% for field in form %}
+      {% if not field.name == "confirm_age" %}
+      <div class="form-floating mb-3">
+        {% else %}
+        <div class="form-check mb-3">
+          {% endif %}
+          {{ field.label_tag }} {{ field }}
+        </div>
+        {% endfor %}
+        <div class="col-12">
+          <button class="btn w-100" type="submit" name="submit_button"><i
+              class="fa-solid fa-paper-plane"></i>&nbsp{% translate "Submit" %}</button>
+        </div>
+    </form>
+
+    {% include 'includes/toast_message.html' %}
+
+  </div>
+
+  <div class="offcanvas-footer"></div>
+</div>
+
+<script>
+  var form = document.querySelector('.needs-validation')
+  form.addEventListener('submit', function (event) {
+    if (!form.checkValidity()) {
+      htmx.trigger(form, 'htmx:abort')
+      event.preventDefault()
+      event.stopPropagation()
+    }
+    form.classList.add('was-validated')
+  }, false)
+
+</script>

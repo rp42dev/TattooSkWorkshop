@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
+from django.forms.renderers import TemplatesSetting
 import os
 import environ
 from django.utils.translation import gettext_lazy as _

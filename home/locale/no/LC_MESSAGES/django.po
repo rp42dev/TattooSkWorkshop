@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-13 13:04+0000\n"
+"POT-Creation-Date: 2022-12-13 23:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,28 +18,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\home\views.py:40
-msgid "Complaint"
-msgstr "Klage"
+#: .\home\forms.py:7 .\home\views.py:42 .\home\views.py:44 .\home\views.py:72
+#: .\home\views.py:97
+msgid "question"
+msgstr "spørsmål"
 
-#: .\home\views.py:43
-msgid "Question"
-msgstr "Spørsmål"
+#: .\home\forms.py:8
+msgid "Name"
+msgstr "Navn"
 
-#: .\home\views.py:49
-msgid ""
-"Thank you for your message. We will get back to you as soon as possible."
-msgstr "Takk for meldingen. Vi vil komme tilbake til deg så snart som mulig."
+#: .\home\forms.py:9
+msgid "Email"
+msgstr "E-post"
 
-#: .\home\views.py:50
+#: .\home\forms.py:10
+msgid "Phone"
+msgstr "Telefon"
+
+#: .\home\forms.py:12
+msgid "Message: (image references, black or with color, size and place)"
+msgstr "Melding: (bildereferanser, svart eller med farge, størrelse og plass)"
+
+#: .\home\forms.py:13
+msgid "Image"
+msgstr "Bilde"
+
+#: .\home\forms.py:14
+msgid "Confirm you are over 16"
+msgstr "Bekreft at du er over 16"
+
+#: .\home\views.py:39 .\home\views.py:40 .\home\views.py:45 .\home\views.py:72
+#: .\home\views.py:94
+msgid "complaint"
+msgstr "klage"
+
+#: .\home\views.py:41
+msgid "Complaint Message:"
+msgstr "Klagemelding:"
+
+#: .\home\views.py:90 .\home\views.py:106
 msgid ""
 "There was an error sending your message. Please check your form and try "
 "again."
 msgstr "Det oppsto en feil ved sending av meldingen. Sjekk skjemaet og prøv "
 
-#: .\home\views.py:62
+#: .\home\views.py:104
+msgid ""
+"Thank you for your message. We will get back to you as soon as possible."
+msgstr "Takk for meldingen. Vi vil komme tilbake til deg så snart som mulig."
+
+#: .\home\views.py:120
 msgid "Auto-reply from Tattoo SK Workshop - Thank you for your message"
 msgstr "Autosvar fra Tattoo SK Workshop - Takk for meldingen"
 
-#~ msgid "New message from"
-#~ msgstr "Ny melding fra"
+#~ msgid "Confirm age"
+#~ msgstr "Bekreft alder"
+
+#~ msgid "Please enter your name"
+#~ msgstr "Vennligst skriv inn navnet ditt"
+
+#~ msgid "Please enter your email"
+#~ msgstr "Vennligst skriv inn e-postadressen din"
+
+#~ msgid "Please enter your phone number"
+#~ msgstr "Vennligst skriv inn telefonnummeret ditt"
+
+#~ msgid "Message"
+#~ msgstr "Melding"
+
+#~ msgid "Please enter your message"
+#~ msgstr "Skriv inn meldingen din"
+
+#~ msgid "Please upload an image"
+#~ msgstr "Last opp et bilde"
+
+#~ msgid "Please confirm your age"
+#~ msgstr "Vennligst bekreft alderen din"
+
+#~ msgid "Please enter your complaint"
+#~ msgstr "Vennligst skriv inn e-postadressen din"

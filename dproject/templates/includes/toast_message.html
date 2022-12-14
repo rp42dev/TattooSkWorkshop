@@ -1,0 +1,32 @@
+{% if messages %}
+<div style="opacity: .8; z-index: 100000;" aria-live="polite" aria-atomic="true"
+  class="position-absolute p-3 top-50 start-50 translate-middle">
+  <div class="toast-container ">
+    {% for message in messages %}
+    {% if message.tags == 'error' %}
+    <div class="toast bg-dark">
+      <div class="toast-body text-danger">
+        {{message}}
+      </div>
+    </div>
+    {% endif %}
+    {% if message.tags == 'success' %}
+    <div class="toast bg-dark">
+      <div class="toast-body
+        text-light">
+        {{message}}
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<script>
+  var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+  var toastList = toastElList.map(function (toastEl) {
+    return new bootstrap.Toast(toastEl)
+  })
+  toastList.forEach(toast => toast.show())
+</script>

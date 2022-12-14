@@ -1,62 +1,6 @@
 {% load i18n %}
 <!-- Off canvas left menu login form -->
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="contact"
-    aria-labelledby="loginLabel">
-
-   <div class="offcanvas-header position-relative text-center">
-        <div class="d-flex flex p-3 justify-content-between position-absolute w-100 top-0 start-0">
-            <div class="">
-                <p>
-                    <a id="questions" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm  rounded-pill"
-                        data-type="question" role="button">{% translate 'Questions' %}</a>
-                    <a id="complaints" onclick="getSubject(this.getAttribute('data-type'))" class="btn btn-sm d-none rounded-pill"
-                        data-type="complaint" role="button">{% translate 'Complaints' %}</a>
-                </p>
-            </div>
-
-             <div slass="col-6"> </div>
-            <div id="close-btn-contact" role="button" class="btn_close col-6 my-auto"  data-bs-dismiss="offcanvas" aria-label="Close">
-                <i class="fas fa-times float-end">
-
-                </i>
-            </div>
-        </div>
-    </div>
-    <div class="offcanvas-body">
-        <div class="col-12 ">
-            <h3 id="contact-heading" class="text-uppercase text-center display-6 my-2 clipped-text">
-                {% translate "Inquiries" %}
-            </h3>
-        </div>
-        <div class="gradient-line mb-4">
-        </div>
-        {% include 'includes/contact_form.html' %}
-    </div>
-    <div class="offcanvas-footer">
-    </div>
+<div hx-get={% url "contact_form" %} hx-target="this" hx-swap="innerHTML" hx-trigger="load"
+  class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="contact" aria-labelledby="loginLabel">
+    {% include 'includes/form_snippet.html' %}
 </div>
-
-<script>
-    // Form on channge subject
-    const getSubject = (subject) => {
-        const messageLabel = document.getElementById('messageLabel')
-        const contactHeading = document.getElementById('contact-heading');
-
-        document.getElementById('subject').value = subject
-        document.getElementById('complaints').classList.toggle('d-none')
-        document.getElementById('questions').classList.toggle('d-none')
-        document.getElementById('age').classList.toggle('d-none');
-        document.getElementById('invalidCheck').required = subject === 'question' ? true : false;
-
-        if (subject == null || subject === 'question') {
-            messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message: (image references, black or with color, size and place)' %}`;
-            contactHeading.innerHTML = `{% translate "Question" %}`
-
-        } else {
-            messageLabel.innerHTML = `<span class="text-danger">*</span> {% translate 'Message Us' %}: `;
-            contactHeading.innerHTML = `{% translate "Complaint" %}`
-        }
-    }
-
-    getSubject()
-</script>

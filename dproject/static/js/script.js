@@ -1,13 +1,4 @@
 
-// show Toast when message is sent
-$(document).ready(function () {
-    $(".toast").toast("show");
-    $('.back').on('click', function (e) {
-        e.preventDefault();
-        window.history.back();
-    });
-
-});
 
 // Lazy load images
 $(window).on("load", function () {
@@ -22,23 +13,4 @@ $(window).on("load", function () {
 
     }).scroll();
 });
-
-// form validation
-(function () {
-    'use strict'
-    var forms = document.querySelectorAll('.needs-validation')
-    Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-})();
-
-
 
