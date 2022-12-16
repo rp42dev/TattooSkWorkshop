@@ -9,17 +9,12 @@
 ## **_Introduction_**
 
 This Full Stack Django project was created for a Tattoo artist business in Norway.
-
 The backend is built with Django framework and the frontend is built with HTML, CSS, JavaScript and HTMX.
-
 Combined with Nginx web server and Gunicorn web server for production environment.
-
 The website is translated into two languages English and Norwegian.
-
 The website is designed to be easy to navigate and to locate information about products and services.
 
 Github repository: https://github.com/rp42dev/TattooSkWorkshop
-
 Live Site: https://tattooskworkshop.no
 
 Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx, HTMX
@@ -28,47 +23,27 @@ Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx, HTMX
 
 ## **_UX_**
 
-### **User Stories**
-
-#### External Visitor goals
-
-1. Easy to navigate the website and to locate information about products and services.
-1. To be able to connect with Tattoo artist on Social media.
-1. To be able contact for session or consultation appointment.
-1. To locate easily Contact and support details.
-1. To be able to find the Tattoo shop location and map.
-
-#### Site owner goals
-
-1. Drive new customers to the website and retain existing costumers.
-1. Build trust with customers - Providing with social media links.
-1. Customer Support – Improve customer satisfaction through better service.
-1. Owner's backend management interface for content management.
-1. To be able to update existing content and images.
-1. To be able to add new content and images.
-1. To be able to delete existing content and images.
-
-# [&#8686;](#TATTOO-SK-WORKSHOP)
-
-### **Strategy**
-
 #### The website needs to enable the User to:
 
-1. Easy to navigate the website and to locate information about products and services.
+1. Navigate the website and to locate information about products and services.
+1. To view the tattoo work of the artist in a gallery.
 1. To be able to connect with Tattoo artist on Social media.
 1. To be able contact for session or consultation appointment.
 1. To locate easily Contact and support details.
-1. To be able to find the Tattoo shop location and map.
 
 #### The website needs to enable the company to:
-
 1. Drive new customers to the website and retain existing costumers.
+   - Search Engine Optimization (SEO) - Improve search engine rankings.
+1. Provide user with structured information about products and services.
+   - User Experience (UX) - Improve user experience.
 1. Build trust with customers - Providing with social media links.
+   - Social Media - Improve social media presence.
 1. Customer Support – Improve customer satisfaction through better service.
-1. Owner's backend management interface for content management.
-1. To be able to update existing content and images.
-1. To be able to add new content and images.
-1. To be able to delete existing content and images.
+   - Customer Support - Contact details and support.
+
+#### The website needs to enable the Admin to:
+1. Manage the website content and images.
+1. Add or update content SEO Tags.
 
 # [&#8686;](#TATTOO-SK-WORKSHOP)
 
@@ -81,6 +56,7 @@ Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx, HTMX
 - The website needs to be easy to contact for session or consultation appointment.
 - The website needs to be easy to locate easily Contact and support details.
 - The website needs to be easy to find the Tattoo shop location and map.
+- The website needs to show the tattoo work of the artist.
 
 #### Content Requirements
 
@@ -116,6 +92,7 @@ Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx, HTMX
 - The website is designed to be easy to contact for session or consultation appointment.
 - The website is designed to be easy to locate easily Contact and support details.
 - The website is designed to be easy to find the Tattoo shop location and map.
+- The website is designed to show the tattoo work of the artist.
 
 # [&#8686;](#TATTOO-SK-WORKSHOP)
 
@@ -170,6 +147,9 @@ Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx, HTMX
 - **Lazy Loading** - The images are lazy loaded using the HTMX library combined with the Intersection Observer API.
 - **Zoom and Pan** - The images are zoomable and pannable using the JavaScript.
 - **Pagination** - The gallery is paginated on scroll using the HTMX library combined with Django pagination.
+- **Form Validation** - The form is Django form is validated using Django form validation with Bootstrap 5 form validation.
+- **Form Submission** - The form is submitted using the HTMX library combined with Django form validation.
+- **Seo** - The website is optimized for SEO using custom Model that can be added to the any page and created or updated from the admin interface.
 
 ### **Features Left to Implement**
 

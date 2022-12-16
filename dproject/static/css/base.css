@@ -1,16 +1,10 @@
 @charset "UTF-8";
-
-/* #435a60 
-
-#171d20*/
 :root {
 
-  /* CSS HEX */
---alice-blue: #E8EEF0;
---charcoal: #313E47;
---charleston-green: #0C2128;
---dark-jungle-green: #081A1E;
-
+  --alice-blue: #E8EEF0;
+  --charcoal: #313E47;
+  --charleston-green: #0C2128;
+  --dark-jungle-green: #081A1E;
 
   --bs-red: #dc3545;
   --bs-black: #000;
@@ -40,27 +34,21 @@
   --bs-danger-rgb: 220, 53, 69;
   --bs-body-bg-rgb: var(--bs-secondary-rgb);
 
-
   --bs-light-transparent: rgba(255, 255, 255, 0.3);
   --bs-dark-transparent: rgba(23, 26, 28, 0.3);
   --bs-secondary-transparent: rgba(25, 28, 30, 0.3);
   --bs-dark-transparent: rgba(23, 26, 28, 0.3);
   --bs-primary-transparent: rgba(91, 96, 99, 0.3);
 
-
-
-
   --card-overlay-color: rgba(0, 0, 0, 0.3);
   --card-overlay-color-hover: rgba(0, 0, 0, 0);
-  --bs-headings-font-family: font-family: 'Orbitron', sans-serif;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
   --bs-gradient-light: linear-gradient(90deg, var(--bs-gray) 20%, var(--bs-white));
   --linear-gradient: linear-gradient(105deg, var(--bs-dark), var(--bs-primary)100%);
   --linear-gradient-social: linear-gradient(105deg, var(--bs-dark), var(--bs-primary) 100%);
   --linear-gradient-vertical: linear-gradient(180deg, var(--bs-dark), var(--bs-primary) 100%);
   --linear-gradient-text: linear-gradient(120deg, var(--bs-dark), var(--bs-primary) 100%);
-  --bs-body-font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 100;
   --bs-body-line-height: 1.5;
@@ -71,9 +59,14 @@
   --box-shadow-sm-hover: 5px 5px 8px 2px rgba(0, 0, 0, 0.56);
   --box-shadow-lg: 15px 15px 17px -4px rgba(0, 0, 0, 0.71);
   --box-shadow-lg-hover: 15px 15px 19px 2px rgba(0, 0, 0, 0.56);
-  
+
   --border-radius: 0.5rem;
   --bs-btn-opacity: .8;
+
+  --bs-headings-font-family: font-family: 'Orbitron', sans-serif;
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-body-font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 *,
@@ -88,29 +81,20 @@
   }
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.example {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-
 body {
-  overflow-x: hidden;
-  margin: 0;
   font-family: var(--bs-body-font-family);
-  font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
   text-align: var(--bs-body-text-align);
+  font-size: var(--bs-body-font-size);
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
-  letter-spacing: 0.0625em;
   -webkit-user-select: none;
+  letter-spacing: 0.0625em;
   -ms-user-select: none;
+  overflow-x: hidden;
   user-select: none;
+  margin: 0;
 }
 
 hr {
@@ -150,7 +134,6 @@ a {
   -webkit-appearance: button;
   font-weight: 100;
 }
-
 
 output {
   display: inline-block;
@@ -9332,7 +9315,6 @@ div.zoom>img {
   padding: 1rem 0;
 }
 
-
 .clipped-text {
   color: var(--bs-light) !important;
   font-family: 'Orbitron', sans-serif;
@@ -9359,7 +9341,6 @@ div.zoom>img {
 }
 
 /*=============Contact page==================== */
-
 .form-wrap {
   max-width: 500px;
 }
@@ -9378,7 +9359,6 @@ div.zoom>img {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
   z-index: -1;
 }
-
 
 .page_container {
   width: 100%;
