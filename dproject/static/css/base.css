@@ -108,6 +108,7 @@ hr {
 
 .cursor-pointer {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent
 }
 
 a {

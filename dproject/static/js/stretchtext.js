@@ -16,7 +16,6 @@ $(document).ready(function () {
         var fontSize = parseInt(text.css('font-size'));
         
         var newFontSize = Math.floor(fontSize * containerWidth / textWidth);
-        console.log('new: ' + Math.floor(fontSize * containerWidth / textWidth), 'old: ' + fontSize, 'textWidth: ' + textWidth, 'containerWidth: ' + containerWidth, 'windowWidth: ' + windowWidth);
         text.css('font-size', newFontSize);
             clearTimeout($.data(this, 1000));
         }, 50);

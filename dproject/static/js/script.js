@@ -95,6 +95,6 @@ $(window).on("load", function () {
 
 
 
-    }, 100);
+    }, 200);
 
 });
