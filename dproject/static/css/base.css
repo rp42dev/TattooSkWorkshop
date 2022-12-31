@@ -2200,7 +2200,7 @@ textarea.form-control.is-invalid {
   z-index: 15;
   box-shadow: var(--box-shadow-sm);
   opacity: var(--bs-btn-opacity);
-  -webkit-tap-highlight-color: transparent
+  -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -2361,7 +2361,7 @@ fieldset:disabled .btn {
   -moz-box-shadow: var(--box-shadow-hover);
 }
 
-.card img{
+.card img {
   transition: all ease-in-out 300ms;
 }
 
@@ -2503,6 +2503,7 @@ fieldset:disabled .btn {
 .accordion-item .btn {
   width: 100%;
   max-width: 600px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .accordion-button {
@@ -2518,6 +2519,7 @@ fieldset:disabled .btn {
   border-radius: 0;
   overflow-anchor: none;
   transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3596,6 +3598,8 @@ fieldset:disabled .btn {
   opacity: 0.5;
   transition: opacity 0.2s ease;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -8995,6 +8999,7 @@ p {
   display: inline-block;
   width: 125px !important;
   White-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -9084,8 +9089,10 @@ p {
   -webkit-background-clip: text !important;
   background-clip: text !important;
   transition: opacity 200ms;
+  width: max-content;
+  width: fit-content;
+  max-width: 98vw;
   letter-spacing: 0.1em;
-  max-width: fit-content;
   font-size: 2.4rem;
   margin: 0 auto;
   margin-bottom: 0;
@@ -9102,7 +9109,9 @@ p {
   padding: 0%;
   letter-spacing: 0.1em;
   color: var(--bs-light);
+  width: max-content;
   width: fit-content;
+  max-width: 98vw;
   white-space: nowrap;
   margin: auto;
 }
@@ -9313,6 +9322,7 @@ div.zoom>img {
   opacity: var(--bs-btn-opacity);
   transition: all 200ms ease-in-out;
   box-shadow: var(--box-shadow-sm);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .round-btn {
@@ -9329,6 +9339,7 @@ div.zoom>img {
   transition: all 150ms;
   box-shadow: var(--box-shadow-sm);
   border: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .s {
@@ -9513,7 +9524,7 @@ article {
   }
 }
 
-.gallery-container{
+.gallery-container {
   overflow: hidden;
   position: relative;
 }
@@ -9663,11 +9674,12 @@ article {
     font-size: 3rem !important;
     color: #000 !important;
   }
+
   .clipped-text {
-     -webkit-background-clip: unset;
-     -webkit-text-fill-color: unset;
-     background-clip: unset;
-     background-image: unset;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    background-image: unset;
     color: #000 !important;
   }
 
