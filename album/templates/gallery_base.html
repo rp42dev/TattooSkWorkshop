@@ -33,8 +33,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="row mx-auto text-white page_container fade align-self-center col-12 pb-3 pt-5">
-  {% block page_content %}
-  {% endblock %}
+<div class="gallery-container">
+  <div class="title-watermark">
+    <h1 class="text-uppercase text-center text-light fw-bold display-5 mb-2 clipped-text text-nowrap">
+      {% if LANGUAGE_CODE == 'en' %}{{page.name}}{% else %}{{page.name_no}}{%endif%}
+  </div>
+  <div class="row mx-auto text-white page_container align-self-center col-12 pb-3 pt-5">
+    {% block page_content %}
+    {% endblock %}
+  </div>
 </div>
 {% endblock %}

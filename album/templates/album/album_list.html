@@ -19,6 +19,10 @@
 {% endblock %}
 
 {% block content %}
+  <div class="title-watermark">
+    <h1 class="text-uppercase text-center text-light fw-bold display-5 mb-2 clipped-text text-nowrap">
+        {{artist|title}}
+  </div>
 <div class="py-3 py-sm-4 pt-md-5 d-flex flex-column justify-content-center align-items-center">
     <div class="album row mx-2 mx-sm-3 mx-md-4 g-3 g-sm-4 g-md-5 justify-content-center">
     {% include 'includes/album_list_items.html' %}

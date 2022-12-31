@@ -10,8 +10,8 @@
         <source
           srcset="{% thumbnail item.image "1920x1080" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 1920w, {% thumbnail item.image "1280x720" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 1280w"
           type="image/webp">
-        <img class='d-block rounded-3' src="{% thumbnail item.image "1280x720" as im %} {{ im.url }} {% endthumbnail %}"
-          alt="{{ item.title }}">
+        <img class='img d-block rounded-3'
+          src="{% thumbnail item.image "1280x720" as im %} {{ im.url }} {% endthumbnail %}" alt="{{ item.title }}">
       </picture>
       {% endif %}
       <div class="carousel-caption px-3">
