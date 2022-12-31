@@ -18,16 +18,17 @@ $(window).on("load", function () {
     gsap.registerPlugin(ScrollTrigger);
 
     setTimeout(() => {
-        $('.masthead-content .slogan').each(function () {
-            $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span>$&</span>"));
-        });
-        var text = $(".slogan span");
-
-        TweenMax.staggerFrom(text, 0.5, {
-            delay: 0.5,
+        gsap.fromTo(".slogan h2", {
             opacity: 0,
-            ease: "back.out(1.7)"
-        }, 0.05);
+            y: 100,
+            scale: 0.9,
+        }, {
+            opacity: 0.8,
+            y: 0,
+            scale: 1,
+            duration: 0.5,
+            ease: "back.out(1.7)",
+        });
 
         gsap.utils.toArray(["article"]).forEach((panel) => {
             panel.classList.add("fade");
