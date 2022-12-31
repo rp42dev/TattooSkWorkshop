@@ -93,8 +93,6 @@ $(window).on("load", function () {
 
         });
 
-
-
     }, 200);
 
 });
