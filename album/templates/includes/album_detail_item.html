@@ -24,17 +24,17 @@
 
 <script>
     $(document).ready(function(){
-        setTimeout(initZoom, 500);
+        document.body.addEventListener('htmx:beforeSwap', function(evt) {
+            if(evt.detail.xhr.status === 200){
+                setTimeout(function(){
+                    clean();
+                }, 100);
+            } 
+        });
+        setTimeout(initZoom, 200);
         $('.item-gallery').removeClass('faded');
         $('.detail-item').removeClass('faded');
     });
 
-    document.body.addEventListener('htmx:beforeSwap', function(evt) {
-        if(evt.detail.xhr.status === 200){
-            setTimeout(function(){
-                clean();
-            }, 600);
-        } 
-    });
 
 </script>

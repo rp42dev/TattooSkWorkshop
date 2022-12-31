@@ -132,14 +132,16 @@ const loadMobile = function () {
 }
 
 const clean = function () {
-    zoom.removeEventListener("mousedown", onMouseDown);
-    zoom.removeEventListener("mouseup", onMouseUp);
-    zoom.removeEventListener("mousemove", onMouseMove);
-    zoom.removeEventListener("wheel", onZoom);
-    zoom.removeEventListener("touchmove", onMove);
-    zoom.removeEventListener("touchend", onTouchUp);
-    zoom.removeEventListener("touchstart", onTouchDown);
-    reset();
+    if (zoom != null) {
+        zoom.removeEventListener("mousedown", onMouseDown);
+        zoom.removeEventListener("mouseup", onMouseUp);
+        zoom.removeEventListener("mousemove", onMouseMove);
+        zoom.removeEventListener("wheel", onZoom);
+        zoom.removeEventListener("touchmove", onMove);
+        zoom.removeEventListener("touchend", onTouchUp);
+        zoom.removeEventListener("touchstart", onTouchDown);
+        reset();
+    }
 }
 
 const initZoom = function () {
