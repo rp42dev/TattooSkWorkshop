@@ -18,7 +18,7 @@
                 {% thumbnail item.image "540x960" crop="center" format="WEBP" as img %}{{ img.url }}{% endthumbnail %} 960w,
                 {% thumbnail item.image "720x1280" crop="center" format="WEBP" as img %}{{ img.url }}{% endthumbnail %} 1280w"
             type="image/webp">
-          <img class="img card-img img-fluid rounded-3"
+          <img class="card-img img-fluid rounded-3"
             src="{% thumbnail item.image "480x854" crop="center" as img %}{{ img.url }} {% endthumbnail %}"
             alt="{{ image.name }} image">
         </picture>

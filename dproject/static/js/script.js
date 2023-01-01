@@ -25,7 +25,7 @@ function initFade() {
             scrollTrigger: {
                 trigger: panel,
                 start: "top bottom",
-                end: "+=50%",
+                end: "bottom",
                 scrub: 2,
                 // markers: true,
             },
@@ -37,26 +37,6 @@ function initFade() {
                 opacity: 1,
                 y: 0
             })
-    });
-
-    gsap.utils.toArray(".img").forEach((panel) => {
-        let sctubData = panel.getAttribute("data-scroll-scrub");
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: panel,
-                start: "10% bottom",
-                end: "+=80%",
-                scrub: (sctubData == null) ? 1 : sctubData,
-                // markers: true,
-            },
-        })
-            .fromTo(panel, {
-                filter: 'grayscale(0.8)',
-            }, {
-                filter: 'grayscale(0)',
-                duration: 0.3,
-                delay: 0.3,
-            }, 0)
     });
 }
 
