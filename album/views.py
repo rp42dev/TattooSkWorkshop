@@ -19,7 +19,7 @@ class ArtistView(ListView):
 class GalleryView(ListView):
     """A view to return the artist page and show all album"""
     model = Album
-    paginate_by: int = 8
+    paginate_by: int = 2
 
     def get_queryset(self):
         self.artist = get_object_or_404(Artist, slug=self.kwargs['slug'])
