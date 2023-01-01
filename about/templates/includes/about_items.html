@@ -1,13 +1,13 @@
 <div class="row mb-3 mb-sm-5 pb-lg-5 ">
-  <div class="col-12 col-lg-6 col-xxl-7 position-relative padding-0 fade
-    {% if section.title == 'About andrej' %}order-lg-2{% endif %}" data-scroll-scrub="2">
+  <div class="col-12 col-lg-6 col-xxl-7 position-relative padding-0
+    {% if section.title == 'About andrej' %}order-lg-2{% endif %}">
     {% include 'includes/about_carousel.html' with obj=images %}
   </div>
   <div
     class="col-12 col-lg-6 col-xxl-5 d-flex text_container rounded-3 {% if section.title == 'About andrej' %}order-lg-1{% endif %}">
     <div class="my-auto px-3 ps-sm-4 text-white">
         {% for article in articles %}
-        <article data-scroll-scrub="3">
+        <article>
           <h2 class="text-light fw-light text-capitalize">
             {% if LANGUAGE_CODE == 'en' %}{{article.subtitle}}{% else %}{{article.subtitle_no}}{%endif%}</h2>
           {% if LANGUAGE_CODE == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
@@ -23,9 +23,3 @@
   </div>
 
 </div>
-
-  <script>
-    document.body.addEventListener('htmx:afterSwap', function (event) {
-      initFade()
-    });
-  </script>

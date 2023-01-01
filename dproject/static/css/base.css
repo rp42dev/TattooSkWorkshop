@@ -9100,6 +9100,8 @@ p {
   line-height: 100%;
   font-weight: 900;
   z-index: 6;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .masthead h2 {
@@ -9117,13 +9119,9 @@ p {
   margin: auto;
 }
 
-.masthead h1 {
-  opacity: 0;
-}
-
 .masthead .slogan {
   opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
+  animation: fadeIn 1s 0.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
@@ -9134,6 +9132,11 @@ p {
   100% {
     opacity: 1;
   }
+}
+
+.lazy {
+  opacity: 0;
+  transition: opacity 300ms;
 }
 
 .stretch {
@@ -9492,13 +9495,6 @@ html::-webkit-scrollbar-thumb {
   font-size: 2rem;
 }
 
-.fade {
-  opacity: 0;
-}
-
-article {
-  opacity: 0;
-}
 
 @media screen and (min-width: 450px) {
   .masthead h1 {
@@ -9528,20 +9524,6 @@ article {
 .gallery-container {
   overflow: hidden;
   position: relative;
-}
-
-.title-watermark {
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-40%, -43%);
-}
-
-.title-watermark h1 {
-  width: 100vw;
-  font-size: 25vw !important;
-  filter: blur(3px);
-  opacity: 0.05;
 }
 
 @media screen and (min-width: 575px) {
