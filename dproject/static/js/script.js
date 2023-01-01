@@ -51,13 +51,6 @@ function initFade() {
             },
         })
             .fromTo(panel, {
-                scale: 1.1,
-            }, {
-                duration: 0.8,
-                scale: 1,
-                ease: "back.out(1.7)"
-            })
-            .fromTo(panel, {
                 filter: 'grayscale(0.8)',
             }, {
                 filter: 'grayscale(0)',
