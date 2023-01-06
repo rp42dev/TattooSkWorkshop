@@ -110,7 +110,7 @@ def send_email(request):
             mail.attach_alternative(render_to_string(mail_body, {
                                     'subject': subject, 'name': name, 'email': from_email, 'message': message, 'phone': phone}), 'text/html')
             if request.FILES:
-                attachment = request.FILES['attachment']
+                attachment = request.FILES['image']
                 mail.attach(attachment.name, attachment.read(),
                             attachment.content_type)
             mail.send()
