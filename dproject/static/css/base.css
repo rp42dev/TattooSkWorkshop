@@ -9119,10 +9119,26 @@ p {
   margin: auto;
 }
 
+article{
+  opacity: 0;
+}
+
+section,
+.section-header,
 .masthead .slogan {
   opacity: 0;
   animation: fadeIn 1s 0.5s ease-in-out forwards;
 }
+
+.lazy-element {
+  opacity: 0;
+}
+
+.lazy-element.lazy-element--visible {
+  opacity: 0;
+  animation: fadeIn 0.3s 0.1s ease-in-out forwards;
+}
+
 
 @keyframes fadeIn {
   0% {
@@ -9138,6 +9154,7 @@ p {
   opacity: 0;
   transition: opacity 300ms;
 }
+
 
 .stretch {
   width: 100%;

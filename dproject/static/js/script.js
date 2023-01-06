@@ -21,4 +21,34 @@ document.body.addEventListener('htmx:afterSwap', function (event) {
 
     }
 
+    var articles = [].slice.call(document.querySelectorAll("article"));
+    var sectionHeaders = document.querySelectorAll(".section-header");
+    
+    sectionHeaders.forEach(function (sectionHeader) {
+        sectionHeader.classList.add("lazy-element");
+    });
+
+    articles.forEach(function (article) {
+        article.classList.add("lazy-element");
+    });
+
+    var lazyElement = [].slice.call(document.querySelectorAll(".lazy-element"));
+    if ("IntersectionObserver" in window) {
+        let lazyElementObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    let lazyElement = entry.target;
+                    lazyElement.classList.add("lazy-element--visible");
+                    lazyElementObserver.unobserve(lazyElement);
+                }
+            });
+        });
+        lazyElement.forEach(function (lazyElement) {
+            lazyElementObserver.observe(lazyElement);
+        });
+    } else {
+        // Possibly fall back to a more compatible method here
+
+    }
+
 });
