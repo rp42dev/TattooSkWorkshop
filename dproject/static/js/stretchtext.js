@@ -11,20 +11,25 @@ $(document).ready(function () {
         } else {
             containerWidth = 1920;
         }
-        setTimeout(function () {
+
         var textWidth = text.width();
         var fontSize = parseInt(text.css('font-size'));
-        
+
         var newFontSize = Math.floor(fontSize * containerWidth / textWidth);
         text.css('font-size', newFontSize);
-            clearTimeout($.data(this, 1000));
-        }, 50);
-    };
+        clearTimeout($.data(this, 1000));
 
-    $('.stretch ').stretch('.69rem');
-    $('.heading').stretch('2.65rem');
-    $(window).on('resize', function () {
-        $('.stretch').stretch('.69rem');
+    };
+    setTimeout(function () {
+        $('.stretch ').stretch('.69rem');
         $('.heading').stretch('2.65rem');
-    });
-});
+        $('.heading2').stretch('2.80rem');
+        $(window).on('resize', function () {
+
+            $('.stretch').stretch('.69rem');
+            $('.heading').stretch('2.65rem');
+            $('.heading2').stretch('2.80rem');
+
+        });
+    }, 150);
+}); 
