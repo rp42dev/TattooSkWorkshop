@@ -25,7 +25,6 @@ class Artist(models.Model):
         Page, on_delete=models.CASCADE, blank=True, null=True)
 
     def get_absolute_url(self):
-
         return reverse("gallery", kwargs={"slug": self.slug})
 
 

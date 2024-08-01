@@ -14,6 +14,7 @@ class AlbumAdmin(admin.ModelAdmin):
     )
     search_fields = ('name', 'artist__name',)
     readonly_fields = ('created_at', 'updated_at')
+    exclude = ('slug', 'slug_no')
 
 class ArtistAdmin(admin.ModelAdmin):
     list_display = (
