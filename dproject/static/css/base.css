@@ -8963,7 +8963,7 @@ p {
   width: 100vw;
   position: fixed;
   display: flex;
-  z-index: 1000;
+  z-index: 99;
 }
 
 .offcanvas-body a {
