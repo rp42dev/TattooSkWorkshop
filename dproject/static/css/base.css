@@ -9588,3 +9588,54 @@ html::-webkit-scrollbar-thumb {
   color: var(--bs-light);
   line-height: 1.8;
 }
+
+/* High-Quality Print Styles */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+
+  .glass-card, 
+  .pricing-section, 
+  article {
+    background: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  h1, h2, h3, h4, h5, h6, .clipped-text {
+    color: #000000 !important;
+    background: none !important;
+    -webkit-text-fill-color: #000000 !important;
+    text-shadow: none !important;
+    margin-top: 1rem !important;
+  }
+
+  p, span, li, .text-light, .text-muted {
+    color: #000000 !important;
+  }
+
+  .d-print-none, 
+  .scroll-indicator, 
+  .social, 
+  .navbar, 
+  header, 
+  .offcanvas, 
+  .round-btn, 
+  .icon-box {
+    display: none !important;
+  }
+
+  .container, .row, .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
