@@ -1,25 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %}{% if LANGUAGE_CODE == 'en' %}{{page.seo.title}}{% else %}{{page.seo.title_no}}{% endif %}{% endblock %}
+{% block extra_title %}{{ page.seo.title }}{% endblock %}
 
 {% block extra_meta %}
-{% if LANGUAGE_CODE == 'en' %}
-<meta name="title" content="{{page.seo.title}}" />
-<meta name="description" content="{{page.seo.description}}" />
-<meta name="keywords" content="{{page.seo.keywords}}" />
-<meta property="og:title" content="{{page.seo.title}}" />
-<meta property="og:description" content="{{page.seo.description}}" />
-<meta property="og:url" content="{{request.build_absolute_uri}}" />
-
-{% else %}
-<meta name="title" content="{{page.seo.title_no}}" />
-<meta name="description" content="{{page.seo.description_no}}" />
-<meta name="keywords" content="{{page.seo.keywords_no}}" />
-<meta property="og:title" content="{{page.seo.title_no}}" />
-<meta property="og:description" content="{{page.seo.description_no}}" />
-<meta property="og:url" content="{{request.build_absolute_uri}}" />
-{% endif %}
+<meta name="title" content="{{ page.seo.title }}" />
+<meta name="description" content="{{ page.seo.description }}" />
+<meta name="keywords" content="{{ page.seo.keywords }}" />
+<meta property="og:title" content="{{ page.seo.title }}" />
+<meta property="og:description" content="{{ page.seo.description }}" />
+<meta property="og:url" content="{{ request.build_absolute_uri }}" />
 
 {% if page.seo.image %}
 <meta property="og:image" content="{{page.seo.image.url}}" />

@@ -9,8 +9,8 @@
         {% for article in articles %}
         <article>
           <h2 class="text-light fw-light text-capitalize">
-            {% if LANGUAGE_CODE == 'en' %}{{article.subtitle}}{% else %}{{article.subtitle_no}}{%endif%}</h2>
-          {% if LANGUAGE_CODE == 'en' %}{{ article.body|safe }}{% else %}{{ article.body_no|safe }}{% endif %}
+            {{ article.subtitle }}</h2>
+          {{ article.body|safe }}
           {% endfor %}
         </article>
       {% if section.title_en == 'About studio' %}
