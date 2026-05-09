@@ -1,15 +1,17 @@
-<div class="accordion col-12 mx-auto px-3 gap-3" id="accordionFlushExample">
+<div class="accordion col-12 col-xl-10 col-xxl-8 mx-auto px-3 d-flex flex-column gap-3" id="faqAccordion">
   {% for item in object_list %}
-  <div class="accordion-item ">
+  <div class="accordion-item glass-card border-0 p-0 overflow-hidden">
     <h2 class="accordion-header" id="heading{{ forloop.counter }}">
-      <button class="btn text-light w-100 fw-light font collapsed" type="button" data-bs-toggle="collapse"
-        data-bs-target="#flush{{ forloop.counter }}" aria-expanded="false" aria-controls="flush-{{ forloop.counter }}">
+      <button class="accordion-button collapsed bg-transparent text-light px-4 py-3 fw-bold" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+        <span class="me-3 text-primary">0{{ forloop.counter }}.</span>
         {{ item.question }}
       </button>
     </h2>
-    <div id="flush{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="flush-{{ item.question }}">
-      <div class="accordion-body rounded-bottom text-light fw-lighter w-auto p-2">
-        <span>{{ item.answer|safe }}</span>
+    <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+      <div class="accordion-body text-light opacity-75 px-4 pb-4 pt-0">
+        <div class="gradient-line ms-0 mb-3" style="width: 50px;"></div>
+        {{ item.answer|safe }}
       </div>
     </div>
   </div>
