@@ -51,4 +51,12 @@ document.body.addEventListener('htmx:afterSwap', function (event) {
 
     }
 
+    // Initialize Carousels for HTMX loaded content
+    var carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(function (carousel) {
+        if (typeof bootstrap !== 'undefined') {
+            new bootstrap.Carousel(carousel);
+        }
+    });
+
 });

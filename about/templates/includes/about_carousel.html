@@ -17,10 +17,8 @@
       <div class="carousel-caption px-3">
         <span class="quote d-none d-sm-block">
           <i class="fa-solid fa-quote-left mb-3"></i>&nbsp
-          {% if LANGUAGE_CODE == 'en' %}
+          {% if item.description %}
           {{ item.description }}
-          {% else %}
-          {{ item.description_no }}
           {% endif %}
         </span>
       </div>
