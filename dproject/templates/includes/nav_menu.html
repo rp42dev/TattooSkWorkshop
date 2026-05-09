@@ -1,16 +1,27 @@
 {% load i18n %}
-{% if LANGUAGE_CODE == 'en' %}
-    <a class="btn mt-4" href="{% url 'home' %}"><span><i class="fa-solid fa-house"></i>&nbspHome</span></a>
-    <a class="btn mt-4" href="{% url 'about' %}"><span><i class="fa-solid fa-user-group"></i>&nbspAbout Us</span></a>
-    <a class="btn mt-4" href="{% url 'artist' %}"><span><i class="fa-solid fa-images"></i>&nbspGallery</span></a>
-    <a class="btn mt-4" href="{% url 'page' 'prices' %}"><span><i class="fa-solid fa-money-check"></i>&nbspPrices</span></a>
-    <a class="btn mt-4" href="{% url 'page' 'aftercare' %}"><span><i class="fa-solid fa-hand-holding-hand"></i>&nbspAftercare</span></a>
-    <a class="btn mt-4" href="{% url 'page' 'faq' %}"><span><i class="fa-solid fa-question"></i>&nbspFAQ</span></a>
-{% else %}
-    <a class="btn mt-4" href="{% url 'home' %}"><span><i class="fa-solid fa-house"></i>&nbspHjem</span></a>
-    <a class="btn mt-4" href="{% url 'about' %}"><span><i class="fa-solid fa-user-group"></i>&nbspOm oss</span></a>
-    <a class="btn mt-4" href="{% url 'artist' %}"><span><i class="fa-solid fa-images"></i>&nbspGalleri</span></a>
-    <a class="btn mt-4" href="{% url 'page' 'priser' %}"><span><i class="fa-solid fa-money-check"></i>&nbspPriser</span></a>
-    <a class="btn mt-4" href="{% url 'page' 'ettervern' %}"><span><i class="fa-solid fa-hand-holding-hand"></i>&nbspEttervern</span></a>
-    <a class="btn mt-4" href="{% url 'page' 'faq' %}"><span><i class="fa-solid fa-question"></i>&nbspFAQ</span></a>
-{% endif %}
+<div class="nav-menu-items d-flex flex-column gap-2 mt-4">
+    <a class="nav-link-premium" href="{% url 'home' %}">
+        <i class="fa-solid fa-house"></i>
+        <span>{% translate "Home" %}</span>
+    </a>
+    <a class="nav-link-premium" href="{% url 'about' %}">
+        <i class="fa-solid fa-user-group"></i>
+        <span>{% translate "About Us" %}</span>
+    </a>
+    <a class="nav-link-premium" href="{% url 'artist' %}">
+        <i class="fa-solid fa-images"></i>
+        <span>{% translate "Gallery" %}</span>
+    </a>
+    <a class="nav-link-premium" href="{% url 'page' 'prices' %}">
+        <i class="fa-solid fa-money-check"></i>
+        <span>{% translate "Prices" %}</span>
+    </a>
+    <a class="nav-link-premium" href="{% url 'page' 'aftercare' %}">
+        <i class="fa-solid fa-hand-holding-hand"></i>
+        <span>{% translate "Aftercare" %}</span>
+    </a>
+    <a class="nav-link-premium" href="{% url 'page' 'faq' %}">
+        <i class="fa-solid fa-question"></i>
+        <span>{% translate "FAQ" %}</span>
+    </a>
+</div>

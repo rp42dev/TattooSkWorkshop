@@ -9670,3 +9670,54 @@ html::-webkit-scrollbar-thumb {
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
+
+/* Premium Navigation Links */
+.nav-link-premium {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  color: var(--bs-light) !important;
+  font-family: var(--bs-headings-font-family);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link-premium i {
+  width: 20px;
+  text-align: center;
+  color: var(--premium-bronze);
+  transition: var(--transition);
+}
+
+.nav-link-premium:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--bs-white) !important;
+  padding-left: 2rem;
+}
+
+.nav-link-premium::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--premium-gradient);
+  transition: var(--transition);
+}
+
+.nav-link-premium:hover::after {
+  width: 100%;
+}
+
+.nav-link-premium:hover i {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
