@@ -9421,3 +9421,64 @@ html::-webkit-scrollbar-thumb {
   color: var(--premium-bronze);
   transform: scale(1.1);
 }
+
+/* Editorial Typography - Outline Text */
+.masthead h1.heading2 {
+  color: transparent !important;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.masthead h1.heading2:hover {
+  -webkit-text-stroke: 1px var(--premium-bronze);
+  opacity: 1;
+}
+
+/* Scroll Indicator Styling */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeIn 2s 2s ease-in-out forwards;
+}
+
+.scroll-indicator span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--bs-gray);
+  font-weight: 600;
+}
+
+.mouse {
+  width: 20px;
+  height: 35px;
+  border: 2px solid var(--bs-gray);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.wheel {
+  width: 2px;
+  height: 6px;
+  background: var(--premium-bronze);
+  border-radius: 1px;
+  animation: scrollWheel 2s infinite ease-in-out;
+}
+
+@keyframes scrollWheel {
+  0% { transform: translateY(0); opacity: 0; }
+  50% { transform: translateY(10px); opacity: 1; }
+  100% { transform: translateY(20px); opacity: 0; }
+}

@@ -4,33 +4,21 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 
-{% block extra_title %}{% if LANGUAGE_CODE == 'en' %}{{page.seo.title}}{% else %}{{page.seo.title_no}}{% endif %}{% endblock %}
+{% block extra_title %}{{ page.seo.title }}{% endblock %}
 
 {% block extra_meta %}
-{% if LANGUAGE_CODE == 'en' %}
-<meta name="title" content="{{page.seo.title}}" />
-<meta name="description" content="{{page.seo.description}}" />
-<meta name="keywords" content="{{page.seo.keywords}}" />
-<meta property="og:title" content="{{page.seo.title}}" />
-<meta property="og:description" content="{{page.seo.description}}" />
-<meta property="og:url" content="{{request.build_absolute_uri}}" />
-<meta property="og:locale" content="en_UK" />
-
-
-{% else %}
-<meta name="title" content="{{page.seo.title_no}}" />
-<meta name="description" content="{{page.seo.description_no}}" />
-<meta name="keywords" content="{{page.seo.keywords_no}}" />
-<meta property="og:title" content="{{page.seo.title_no}}" />
-<meta property="og:description" content="{{page.seo.description_no}}" />
-<meta property="og:url" content="{{request.build_absolute_uri}}" />
-<meta property="og:locale" content="no_NO" />
-{% endif %}
+<meta name="title" content="{{ page.seo.title }}" />
+<meta name="description" content="{{ page.seo.description }}" />
+<meta name="keywords" content="{{ page.seo.keywords }}" />
+<meta property="og:title" content="{{ page.seo.title }}" />
+<meta property="og:description" content="{{ page.seo.description }}" />
+<meta property="og:url" content="{{ request.build_absolute_uri }}" />
+<meta property="og:locale" content="{% if LANGUAGE_CODE == 'en' %}en_UK{% else %}no_NO{% endif %}" />
 
 {% if page.seo.image %}
-<meta property="og:image" content="{{request.build_absolute_uri}}{{page.seo.image.url}}" />
+<meta property="og:image" content="{{ request.build_absolute_uri }}{{ page.seo.image.url }}" />
 {% else %}
-<meta property="og:image" content="{{request.build_absolute_uri}}{% static 'images/og-image.png' %}" />
+<meta property="og:image" content="{{ request.build_absolute_uri }}{% static 'images/og-image.png' %}" />
 {% endif %}
 {% endblock %}
 
@@ -39,12 +27,7 @@
 <div class="masthead d-flex align-items-center justify-content-center flex-column">
   <div class="text-center masthead-content px-2">
     <small class="small text-muted">
-    {% if LANGUAGE_CODE == 'en' %}
-      Tattoo Studio in Lillestrøm · Near Oslo
-    {% endif %}
-    {% if LANGUAGE_CODE == 'no' %}
-      Tatoveringsstudio i Lillestrøm · Nær Oslo
-    {% endif %}
+      {% trans "Tattoo Studio in Lillestrøm · Near Oslo" %}
     </small>
     <h1 class="my-0 text-nowrap text-uppercase heading">
       ANDREJS
@@ -53,19 +36,27 @@
       TATTOO
     </h1>
     <h2 class="text-uppercase stretch slogan text-muted">
-      {% if LANGUAGE_CODE == 'en' %}{{section.subtitle}}{% else %}{{section.subtitle_no}}{% endif %}
+      {{ section.subtitle }}
     </h2>
   </div>
   <div class="overlay" id="windows">
   </div>
   <div id="videoContainer">
     <video playsinline="playsinline" muted="muted" loop="loop" id="video" autoplay="autoplay">
-      <source src="{% static 'video/video.mp4' type='video/mp4' %}">
-      <source src="{% static 'video/video.webm' type='video/webm' %}">
+      <source src="{% static 'video/video.mp4' %}" type="video/mp4">
+      <source src="{% static 'video/video.webm' %}" type="video/webm">
     </video>
   </div>
   <div class="social px-2">
     {% include 'includes/social.html' %}
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <span>{% trans "Explore" %}</span>
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
   </div>
 </div>
 {% endfor %}
