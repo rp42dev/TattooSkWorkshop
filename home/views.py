@@ -23,7 +23,7 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['page'] = Page.objects.get(name_en='home')
+        context['page'] = Page.objects.select_related('seo').get(name_en='home')
         context['sections'] = Section.objects.filter(page=context['page'])
         return context
 

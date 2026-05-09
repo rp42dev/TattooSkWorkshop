@@ -10,7 +10,8 @@ class ArtistView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['page'] = Page.objects.get(slug_en='gallery')
+        # Prefetch SEO for the gallery page
+        context['page'] = Page.objects.select_related('seo').get(slug_en='gallery')
         context['url'] = self.request.path
 
         return context
@@ -22,8 +23,9 @@ class GalleryView(ListView):
     paginate_by: int = 20
 
     def get_queryset(self):
+        # Select artist in same query
         self.artist = get_object_or_404(Artist, slug=self.kwargs['slug'])
-        return Album.objects.filter(artist=self.artist).order_by('-id')
+        return Album.objects.filter(artist=self.artist).select_related('artist').order_by('-id')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

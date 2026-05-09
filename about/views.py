@@ -10,18 +10,21 @@ class AboutView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['page'] = Page.objects.get(slug_en='about')
+        # Select SEO in same query
+        context['page'] = Page.objects.select_related('seo').get(slug_en='about')
         if self.request.htmx:
-            context['section'] = Section.objects.get(
+            # Prefetch articles for the section
+            context['section'] = Section.objects.prefetch_related('article_set').get(
                 id=self.request.GET['name'])
-            context['articles'] = Article.objects.filter(
-                section=context['section'])
+            context['articles'] = context['section'].article_set.all()
+            
+            # Prefetch images related to these articles or this section
             if Image.objects.filter(articles__in=context['articles']).exists():
                 context['images'] = Image.objects.filter(
-                    articles__in=context['articles'])
+                    articles__in=context['articles']).distinct()
             elif Image.objects.filter(sections=context['section']).exists():
                 context['images'] = Image.objects.filter(
-                    sections=context['section'])
+                    sections=context['section']).distinct()
             return context
         else:
             context['sections'] = Section.objects.filter(page=context['page'])
@@ -45,16 +48,18 @@ class PageDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.htmx:
-            context['section'] = Section.objects.get(
+            # Prefetch articles for the section
+            context['section'] = Section.objects.prefetch_related('article_set').get(
                 id=self.request.GET['name'])
-            context['articles'] = Article.objects.filter(
-                section=context['section'])
+            context['articles'] = context['section'].article_set.all()
+            
             if Image.objects.filter(articles__in=context['articles']).exists():
                 context['images'] = Image.objects.filter(
-                    articles__in=context['articles'])
+                    articles__in=context['articles']).distinct()
             elif Image.objects.filter(sections=context['section']).exists():
                 context['images'] = Image.objects.filter(
-                    sections=context['section'])
+                    sections=context['section']).distinct()
+            
             if self.object.name_en == 'faq':
                 context['object_list'] = Faq.objects.all()
             return context
