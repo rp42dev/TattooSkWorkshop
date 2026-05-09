@@ -16,7 +16,7 @@ from .forms import ContactForm
 
 def index(request):
     """A view to return the index page"""
-    page = Page.objects.get(name='home')
+    page = Page.objects.get(name_en='home')
     sections = Section.objects.filter(page=page)
 
     context = {
