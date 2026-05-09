@@ -9513,3 +9513,32 @@ html::-webkit-scrollbar-thumb {
   90% { transform: translate(10%,5%) }
   100% { transform: translate(5%,0) }
 }
+
+/* Contact Card Utilities */
+.icon-box {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--premium-bronze);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .border-start-md {
+    border-left: 1px solid var(--glass-border) !important;
+  }
+}
+
+.contact-info li span {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.opening-hours span {
+  font-size: 1rem;
+}

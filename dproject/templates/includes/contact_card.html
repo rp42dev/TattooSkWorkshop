@@ -1,39 +1,44 @@
-{% if LANGUAGE_CODE == 'en' %}
-<article class="text-light px-3 px-sm-4 rounded-3 gradient-card d-block d-sm-flex justify-content-between">
-  <div>
-    <h4>Contact:</h4>
-    <ul>
-      <li><i class="fa-solid fa-phone"></i> +47 925 00 819</li>
-      <li><i class="fa-solid fa-at"></i> 	info@andrejstattoo.no</li>
-      <li><i class="fa-solid fa-location-dot"></i> Solheimsgata 1, 2000 Lillestrøm, Norway</li>
+{% load i18n %}
+<article class="glass-card d-block d-md-flex justify-content-between align-items-start gap-4 my-5">
+  <div class="contact-info col-md-6 mb-4 mb-md-0">
+    <h3 class="clipped-text mb-4">{% translate "Get in Touch" %}</h3>
+    <ul class="list-unstyled">
+      <li class="mb-3 d-flex align-items-center">
+        <div class="icon-box me-3"><i class="fa-solid fa-phone"></i></div>
+        <span class="text-light">+47 925 00 819</span>
+      </li>
+      <li class="mb-3 d-flex align-items-center">
+        <div class="icon-box me-3"><i class="fa-solid fa-envelope"></i></div>
+        <span class="text-light">info@andrejstattoo.no</span>
+      </li>
+      <li class="mb-3 d-flex align-items-center">
+        <div class="icon-box me-3"><i class="fa-solid fa-location-dot"></i></div>
+        <span class="text-light">Solheimsgata 1, 2000 Lillestrøm, {% translate "Norway" %}</span>
+      </li>
     </ul>
+    
+    <div class="mt-4">
+        <a data-bs-toggle="offcanvas" data-bs-target="#contact" class="btn btn-outline-primary btn-sm px-4 py-2">
+            {% translate "Book Appointment" %}
+        </a>
+    </div>
   </div>
-  <div>
-    <h4>Opening hours:</h4>
-    <ul>
-      <li>◉ Monday - Friday: 9:00 - 17:00</li>
-      <li>◉ Saturday: 10:00 - 16:00</li>
-      <li>◉ Sunday: 12:00 - 15:00</li>
+  
+  <div class="opening-hours col-md-6 border-start-md ps-md-4">
+    <h3 class="clipped-text mb-4">{% translate "Opening Hours" %}</h3>
+    <ul class="list-unstyled">
+      <li class="mb-2 d-flex justify-content-between border-bottom border-secondary pb-1">
+        <span class="text-muted">{% translate "Mon - Fri" %}</span>
+        <span class="text-light">09:00 - 17:00</span>
+      </li>
+      <li class="mb-2 d-flex justify-content-between border-bottom border-secondary pb-1">
+        <span class="text-muted">{% translate "Saturday" %}</span>
+        <span class="text-light">10:00 - 16:00</span>
+      </li>
+      <li class="mb-2 d-flex justify-content-between">
+        <span class="text-muted">{% translate "Sunday" %}</span>
+        <span class="text-light">12:00 - 15:00</span>
+      </li>
     </ul>
   </div>
 </article>
-{% else %}
-<article class="text-light px-3 px-sm-4 rounded-3 gradient-card d-block d-sm-flex justify-content-between">
-  <div>
-    <h4>Kontakt:</h4>
-    <ul>
-      <li><i class="fa-solid fa-phone"></i> +47 925 00 819</li>
-      <li><i class="fa-solid fa-at"></i> 	info@andrejstattoo.no</li>
-      <li><i class="fa-solid fa-location-dot"></i> Solheimsgata 1, 2000 Lillestrøm, Norge</li>
-    </ul>
-  </div>
-  <div>
-    <h4>Åpningstider:</h4>
-    <ul>
-      <li>◉ Mandag – fredag: 9:00 – 17:00</li>
-      <li>◉ Lørdag: 10:00 - 16:00</li>
-      <li>◉ Søndag: 12:00 - 15:00</li>
-    </ul>
-  </div>
-</article>
-{% endif %}
