@@ -66,17 +66,45 @@ body {
   font-family: var(--bs-body-font-family);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  text-align: var(--bs-body-text-align);
   font-size: var(--bs-body-font-size);
   background-color: var(--bs-body-bg);
-  -webkit-text-size-adjust: 100%;
-  -webkit-user-select: none;
-  letter-spacing: 0.0625em;
-  -ms-user-select: none;
+  color: var(--bs-light); /* Force light text */
+  letter-spacing: 0.03em;
   overflow-x: hidden;
-  user-select: none;
   margin: 0;
 }
+
+p, span, li {
+  color: var(--bs-light);
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 4rem !important;
+  height: 4rem !important;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.masthead h1.heading {
+  font-size: clamp(4rem, 15vw, 10rem); /* Significantly larger */
+  text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.masthead h1.heading2 {
+  font-size: clamp(4rem, 15vw, 10rem); /* Significantly larger */
+  letter-spacing: 0.1em;
+}
+
 
 hr {
   margin: 1rem 0;
@@ -8973,7 +9001,7 @@ p {
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
-  font-size: clamp(3rem, 10vw, 6rem);
+  font-size: clamp(4rem, 15vw, 12rem); /* Increased size */
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 0.9;
@@ -8984,7 +9012,7 @@ p {
 .masthead h1.heading2 {
   font-family: var(--bs-headings-font-family);
   color: var(--bs-white);
-  font-size: clamp(3rem, 10vw, 6rem);
+  font-size: clamp(4rem, 15vw, 12rem); /* Increased size */
   font-weight: 200;
   letter-spacing: 0.2em;
   margin-top: -0.5rem;
@@ -8993,11 +9021,11 @@ p {
 }
 
 .masthead h2.slogan {
-  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-size: clamp(1rem, 3vw, 1.5rem); /* Slightly larger */
   letter-spacing: 0.4em;
   font-weight: 300;
   color: var(--bs-light);
-  margin-top: 2rem;
+  margin-top: 3rem;
   text-transform: uppercase;
   animation: fadeIn 2s 1s ease-in-out forwards;
   opacity: 0;
@@ -9014,10 +9042,27 @@ p {
   }
 }
 
+.social {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1.5rem;
+}
+
 .social a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 4.5rem !important;
+  height: 4.5rem !important;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
+  color: var(--bs-white);
+  transition: var(--transition);
+  border-radius: 50% !important;
+  font-size: 1.8rem;
+
   color: var(--bs-white);
   transition: var(--transition);
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
