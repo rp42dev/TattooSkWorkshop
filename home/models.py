@@ -141,7 +141,7 @@ class Video(models.Model):
     video = EmbedVideoField(blank=True, null=True)
     pages = models.ManyToManyField('Page', blank=True)
     sections = models.ManyToManyField('Section', blank=True)
-    articles = models.ManyToManyField('Article', blank=True)
+    articles = models.ManyToManyField('Article', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

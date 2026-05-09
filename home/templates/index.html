@@ -37,14 +37,22 @@
 {% block content %}
 {% for section in sections %}
 <div class="masthead d-flex align-items-center justify-content-center flex-column">
-  <div class="text-center masthead-content p-2">
+  <div class="text-center masthead-content px-2">
+    <small class="small text-muted">
+    {% if LANGUAGE_CODE == 'en' %}
+      Tattoo Studio in Lillestrøm · Near Oslo
+    {% endif %}
+    {% if LANGUAGE_CODE == 'no' %}
+      Tatoveringsstudio i Lillestrøm · Nær Oslo
+    {% endif %}
+    </small>
     <h1 class="my-0 text-nowrap text-uppercase heading">
       ANDREJS
     </h1>
     <h1 class="my-0 text-nowrap text-uppercase heading2">
       TATTOO
     </h1>
-    <h2 class="text-uppercase stretch slogan">
+    <h2 class="text-uppercase stretch slogan text-muted">
       {% if LANGUAGE_CODE == 'en' %}{{section.subtitle}}{% else %}{{section.subtitle_no}}{% endif %}
     </h2>
   </div>

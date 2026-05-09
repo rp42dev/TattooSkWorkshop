@@ -1,0 +1,39 @@
+{% if LANGUAGE_CODE == 'en' %}
+<div class="position-fixed bottom-0 start-0 p-3" style="z-index:1100;">
+    <small class="small text-muted">&copy; Andrejs Tattoo 2026</small>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3 small text-muted" style="z-index:1100;">
+    <a
+        href="{% url 'page' 'privacy-policy' %}"
+        data-bs-toggle="tooltip"
+        data-bs-placement="left"
+        title="Privacy Policy"
+        class="d-flex align-items-center justify-content-center text-decoration-underline"
+    >
+        <small>Privacy Policy</small>
+    </a>
+</div>
+{% endif %}
+
+{% if LANGUAGE_CODE == 'no' %}
+<div class="position-fixed bottom-0 start-0 p-3 small" style="z-index:1100;">
+    <small class="small text-muted">&copy; Andrejs Tattoo 2026</small>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3 small text-muted" style="z-index:1100;">
+    <a
+        href="{% url 'page' 'personvern' %}"
+        data-bs-toggle="tooltip"
+        data-bs-placement="left"
+        title="Personvern"
+        class="d-flex align-items-center justify-content-center text-decoration-underline"
+    >
+        <small>Personvern</small>
+    </a>
+</div>
+{% endif %}
+
+
+
+

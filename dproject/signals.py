@@ -1,10 +1,10 @@
 from django.db.models.signals import post_save, pre_save
 from django.utils.text import slugify
 from django.dispatch import receiver
-from PIL import Image, ImageOps
+from PIL import Image as PILImage, ImageOps
 import os
 
-from home.models import Page, Image
+from home.models import Page, Image as DjangoImage
 from album.models import Artist, Album
 
 
@@ -27,15 +27,11 @@ def slugify_name(sender, instance, **kwargs):
         return next_slug
 
     instance.slug = get_slug(instance.name, 'slug')
-    if not instance.name_no:
-        instance.slug_no = instance.slug
-    else:
-        instance.slug_no = get_slug(instance.name_no, 'slug_no')
 
 
 @receiver(pre_save, sender=Album)
 @receiver(pre_save, sender=Artist)
-@receiver(post_save, sender=Image)
+@receiver(post_save, sender=DjangoImage)
 def delete_old_file_on_update(sender, instance, **kwargs):
     """Deletes file from filesystem"""
     if not instance.pk:
@@ -57,7 +53,7 @@ def delete_old_file_on_update(sender, instance, **kwargs):
 
 @receiver(post_save, sender=Album)
 @receiver(post_save, sender=Artist)
-@receiver(post_save, sender=Image)
+@receiver(post_save, sender=DjangoImage)
 def pre_save_crop_images(sender, instance, **kwargs):
     """Crops images to aspect ratio"""
     if not instance.pk:
@@ -75,11 +71,11 @@ def pre_save_crop_images(sender, instance, **kwargs):
         return False
 
     try:
-        image = Image.open(instance.image)
+        image = PILImage.open(instance.image)
         image = ImageOps.fit(
             image, instance.SIZES[aspect_ratio], method=0, bleed=0.0, centering=(0.5, 0.5))
         image = image.resize(
-            (instance.SIZES[aspect_ratio][0], instance.SIZES[aspect_ratio][1]), Image.ANTIALIAS)
+            (instance.SIZES[aspect_ratio][0], instance.SIZES[aspect_ratio][1]), PILImage.LANCZOS)
     except:
         return False
 
@@ -88,7 +84,7 @@ def pre_save_crop_images(sender, instance, **kwargs):
 
 @receiver(post_save, sender=Album)
 @receiver(post_save, sender=Artist)
-@receiver(post_save, sender=Image)
+@receiver(post_save, sender=DjangoImage)
 def image_post_save(sender, instance, **kwargs):
     """Checks file size and compresses if over 1MB"""
     if not instance.pk:
@@ -101,7 +97,7 @@ def image_post_save(sender, instance, **kwargs):
         if instance.image.size > 1000000:
             print("Image size too large")
             print(instance.image.size)
-            image = Image.open(instance.image)
+            image = PILImage.open(instance.image)
             image.save(instance.image.path, quality=80, optimize=True)
             print(instance.image.size)
     except:

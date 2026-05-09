@@ -21,14 +21,14 @@ $(document).ready(function () {
 
     };
     setTimeout(function () {
-        $('.stretch ').stretch('.69rem');
+        $('.stretch ').stretch('.68rem');
         $('.heading').stretch('2.65rem');
-        $('.heading2').stretch('2.80rem');
+        $('.heading2').stretch('2rem');
         $(window).on('resize', function () {
 
-            $('.stretch').stretch('.69rem');
+            $('.stretch').stretch('.68rem');
             $('.heading').stretch('2.65rem');
-            $('.heading2').stretch('2.80rem');
+            $('.heading2').stretch('2rem');
 
         });
     }, 150);
