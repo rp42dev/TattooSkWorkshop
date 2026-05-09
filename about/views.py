@@ -10,7 +10,7 @@ class AboutView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['page'] = Page.objects.get(slug='about')
+        context['page'] = Page.objects.get(slug_en='about')
         if self.request.htmx:
             context['section'] = Section.objects.get(
                 id=self.request.GET['name'])
