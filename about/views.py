@@ -55,7 +55,7 @@ class PageDetailView(DetailView):
             elif Image.objects.filter(sections=context['section']).exists():
                 context['images'] = Image.objects.filter(
                     sections=context['section'])
-            if self.object.name == 'faq':
+            if self.object.name_en == 'faq':
                 context['object_list'] = Faq.objects.all()
             return context
         else:
@@ -63,7 +63,7 @@ class PageDetailView(DetailView):
             return context
 
     def get_template_names(self):
-        page_name = self.object.name
+        page_name = self.object.name_en
         if self.request.htmx:
             return f"includes/{page_name}_items.html"
         return 'pages/about.html'

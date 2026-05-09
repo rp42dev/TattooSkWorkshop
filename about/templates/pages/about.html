@@ -8,12 +8,12 @@
     {% if LANGUAGE_CODE == 'en' %}{{section.title}}{% else %}{{section.title_no}}{%endif%}
   </h1>
   <div class="gradient-line mb-4"></div>
-  {% if not page.name == 'about' %}
+  {% if not page.name_en == 'about' %}
   {% include 'includes/social.html' %}
   {% endif %}
 </div>
 
-{% with "includes/"|add:section.page.name|add:"_items.html" as template %}
+{% with "includes/"|add:section.page.name_en|add:"_items.html" as template %}
 <section hx-get="?name={{ section.id }}" hx-target="this" hx-trigger="load" hx-swap="innerHTML"
   class="col-12 mx-auto">
   {% include template %}
