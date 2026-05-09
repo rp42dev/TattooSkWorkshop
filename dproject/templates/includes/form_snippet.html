@@ -47,16 +47,8 @@
 
     <form hx-post={% url "send_mail" %} class="my-3 needs-validation" enctype="multipart/form-data" novalidate>
       {% csrf_token %}
-      {% for field in form %}
-      {% if not field.name == "confirm_age" %}
-      <div class="form-floating mb-3">
-        {% else %}
-        <div class="form-check mb-3">
-          {% endif %}
-          {{ field.label_tag }} {{ field }}
-        </div>
-        {% endfor %}
-        <div class="col-12">
+      {{ form|crispy }}
+      <div class="col-12 mt-3">
           <button class="btn w-100" type="submit" name="submit_button"><i
               class="fa-solid fa-paper-plane"></i>&nbsp{% translate "Submit" %}</button>
         </div>

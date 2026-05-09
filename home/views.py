@@ -14,117 +14,100 @@ from pytube import *
 from .forms import ContactForm
 
 
-def index(request):
-    """A view to return the index page"""
-    page = Page.objects.get(name_en='home')
-    sections = Section.objects.filter(page=page)
+from django.views.generic import TemplateView, View, FormView
+from .models import Page, Section
+from .forms import ContactForm
 
-    context = {
-        'sections': sections,
-        'page': page,
-    }
-    return render(request, 'index.html', context)
+class HomeView(TemplateView):
+    template_name = 'index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page'] = Page.objects.get(name_en='home')
+        context['sections'] = Section.objects.filter(page=context['page'])
+        return context
 
-@require_GET
-def contact_form(request):
-    """A view to return the contact form snippet vie htmx get"""
-
-    if request.htmx:
-        form = ContactForm()
-        if request.GET.get('subject') == _('complaint'):
-            form.initial['subject'] = _('complaint')
+class ContactFormView(View):
+    """A view to return the contact form snippet via htmx get"""
+    def get(self, request, *args, **kwargs):
+        if not request.htmx:
+            return HttpResponseRedirect('/')
+        
+        subject = request.GET.get('subject', _('question'))
+        form = ContactForm(initial={'subject': subject})
+        
+        if subject == _('complaint'):
             form.fields['message'].label = _('Complaint Message:')
             btn_text = _('question')
         else:
-            form.initial['subject'] = _('question')
             btn_text = _('complaint')
 
-        context = {
-            'form': form,
-            'subject': form.initial['subject'],
-            'btn_text': btn_text
-        }
-
-        return render(request, 'includes/form_snippet.html', context)
-    else:
-        return HttpResponseRedirect('/')
-
-
-@require_POST
-def send_email(request):
-    """A view to send an email via the contact form"""
-    # return render(request, 'email/reply_body.html', {'name': 'name', 'complaint': True, })
-
-    form = ContactForm(request.POST, request.FILES)
-
-    if form.is_valid():
-        subject = request.POST.get('subject', '')
-        name = request.POST.get('name', '')
-        phone = request.POST.get('phone', '')
-        from_email = request.POST.get('email', '')
-        message = request.POST.get('message', '')
-        to = settings.EMAIL_HOST_USER
-    else:
-        subject = request.POST.get('subject', '')
-        btn_text = _('question') if subject == 'complaint' else _('complaint')
-        for field in form:
-            if field.errors:
-                if field.name == 'confirm_age':
-                    field.field.widget.attrs.update(
-                        {'class': 'form-check-input is-invalid'})
-                else:
-                    field.field.widget.attrs.update(
-                        {'class': 'form-control is-invalid'})
-            else:
-                field.field.widget.attrs.update(
-                    {'class': 'form-control is-valid'})
         context = {
             'form': form,
             'subject': subject,
             'btn_text': btn_text
         }
-        messages.error(request, _(
-            'There was an error sending your message. Please check your form and try again.'))
         return render(request, 'includes/form_snippet.html', context)
 
-    if subject == 'complaint':
-        subject = _('complaint')
-        complaint = True
-    else:
-        subject = _('question')
-        complaint = False
+class ContactEmailView(FormView):
+    """A view to send an email via the contact form"""
+    form_class = ContactForm
+    template_name = 'includes/form_snippet.html'
 
-    mail_body = 'email/mail_body.html'
-    reply_body = 'email/reply_body.html'
+    def form_valid(self, form):
+        subject = form.cleaned_data.get('subject')
+        name = form.cleaned_data.get('name')
+        phone = form.cleaned_data.get('phone')
+        from_email = form.cleaned_data.get('email')
+        message = form.cleaned_data.get('message')
+        to = settings.EMAIL_HOST_USER
+        
+        is_complaint = (subject == 'complaint')
+        subject_label = _('complaint') if is_complaint else _('question')
+        
+        mail_body = 'email/mail_body.html'
+        reply_body = 'email/reply_body.html'
 
-    message_success = _(
-        'Thank you for your message. We will get back to you as soon as possible.')
-    message_error = _(
-        'There was an error sending your message. Please check your form and try again.')
-
-    if message and from_email and name:
         try:
-            subject = subject + ' ' + 'form' + ' ' + name
-            mail = EmailMultiAlternatives(subject, from_email, to=[to])
-            mail.attach_alternative(render_to_string(mail_body, {
-                                    'subject': subject, 'name': name, 'email': from_email, 'message': message, 'phone': phone}), 'text/html')
-            if request.FILES:
-                attachment = request.FILES['image']
-                mail.attach(attachment.name, attachment.read(),
-                            attachment.content_type)
+            # Send Email to Admin
+            full_subject = f"{subject_label} form {name}"
+            mail = EmailMultiAlternatives(full_subject, from_email, to=[to])
+            mail_context = {
+                'subject': full_subject, 
+                'name': name, 
+                'email': from_email, 
+                'message': message, 
+                'phone': phone
+            }
+            mail.attach_alternative(render_to_string(mail_body, mail_context), 'text/html')
+            
+            if self.request.FILES:
+                attachment = self.request.FILES['image']
+                mail.attach(attachment.name, attachment.read(), attachment.content_type)
+            
             mail.send()
-            subject = _(
-                'Auto-reply from Tattoo SK Workshop - Thank you for your message')
-            reply = EmailMultiAlternatives(
-                subject, from_email=to, to=[from_email])
-            reply.attach_alternative(render_to_string(
-                reply_body, {'name': name, 'complaint': complaint, }), 'text/html')
+
+            # Send Auto-reply to User
+            reply_subject = _('Auto-reply from Tattoo SK Workshop - Thank you for your message')
+            reply = EmailMultiAlternatives(reply_subject, from_email=to, to=[from_email])
+            reply.attach_alternative(render_to_string(reply_body, {'name': name, 'complaint': is_complaint}), 'text/html')
             reply.send()
-            messages.success(request, message_success)
-        except BadHeaderError:
-            return HttpResponse('Invalid header found.')
+
+            messages.success(self.request, _('Thank you for your message. We will get back to you as soon as possible.'))
+        except Exception as e:
+            messages.error(self.request, _('There was an error sending your message. Please try again later.'))
+            # In production you might want to log 'e'
+            
         return redirect(reverse('contact_form'))
-    else:
-        messages.error(request, message_error)
-        return redirect(reverse('contact_form'))
+
+    def form_invalid(self, form):
+        subject = self.request.POST.get('subject', 'question')
+        btn_text = _('question') if subject == 'complaint' else _('complaint')
+        
+        context = {
+            'form': form,
+            'subject': subject,
+            'btn_text': btn_text
+        }
+        messages.error(self.request, _('There was an error sending your message. Please check your form and try again.'))
+        return self.render_to_response(context)

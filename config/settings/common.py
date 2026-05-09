@@ -40,11 +40,13 @@ DJANGO_APPS = (
     'django.contrib.redirects',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
+    'modeltranslation',
     'django.contrib.admin',
 )
 
 THIRD_PARTY_APPS = (
     'crispy_forms',
+    'crispy_bootstrap5',
     'sorl.thumbnail',
     "django_htmx",
     'embed_video',
@@ -243,3 +245,7 @@ DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'JPEG'
 DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'JPEG': ".jpg"}
 
     
+# CRISPY FORMS
+# ------------------------------------------------------------------------------
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
