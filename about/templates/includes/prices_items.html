@@ -1,6 +1,11 @@
-<div class="text-white col-12 col-xl-10 col-xxl-8 mx-auto d-flex flex-column gap-4">
+<div class="col-12 col-xl-10 col-xxl-8 mx-auto d-flex flex-column gap-5">
   {% for article in articles %}
-  {{ article.body|safe }}
+  <div class="glass-card pricing-section">
+    <h3 class="clipped-text mb-4">{{ article.subtitle }}</h3>
+    <div class="pricing-content text-light">
+      {{ article.body|safe }}
+    </div>
+  </div>
   {% endfor %}
 </div>
 <div class="col-12 col-xl-10 col-xxl-8 mx-auto my-4">

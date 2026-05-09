@@ -9542,3 +9542,49 @@ html::-webkit-scrollbar-thumb {
 .opening-hours span {
   font-size: 1rem;
 }
+
+/* Pricing Menu Styling */
+.pricing-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, var(--premium-bronze) 0%, transparent 70%);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.pricing-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pricing-content li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.pricing-content li strong, 
+.pricing-content li b {
+  color: var(--premium-bronze);
+  font-weight: 600;
+  order: 2;
+  margin-left: 1rem;
+}
+
+.pricing-content p {
+  color: var(--bs-light);
+  line-height: 1.8;
+}
