@@ -1,7 +1,13 @@
-<div class="text-white col-12 col-xl-10 col-xxl-8 mx-auto d-flex flex-column gap-3 gap-xl-5 mb-5">
+<div class="col-12 col-xl-10 col-xxl-8 mx-auto d-flex flex-column gap-5 mb-5">
   {% for article in articles %}
-  {{ article.body|safe }}
+  <div class="glass-card">
+    <h3 class="clipped-text mb-4">{{ article.subtitle }}</h3>
+    <div class="text-light">
+      {{ article.body|safe }}
+    </div>
+  </div>
   {% endfor %}
+  
   <div class="mx-3">
     {% include 'includes/contact_card.html' %}
   </div>
