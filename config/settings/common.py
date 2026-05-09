@@ -229,12 +229,8 @@ THUMBNAIL_HIGH_RESOLUTION = True
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2]
 THUMBNAIL_QUALITY = 90
 
-THUMBNAIL_PROCESSORS = (
-    'easy_thumbnails.processors.colorspace',
-    'easy_thumbnails.processors.autocrop',
-    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters'
-)
+# THUMBNAIL_PROCESSORS are handled by sorl.thumbnail defaults
+
 
 
 # See: http://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs

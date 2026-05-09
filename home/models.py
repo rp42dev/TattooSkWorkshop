@@ -8,6 +8,9 @@ from pillow_heif import register_heif_opener
 register_heif_opener()
 
 
+from dproject.constants import ASPECT_RATIOS, SIZES
+
+
 class Seo(models.Model):
     """ SEO model """
     title = models.CharField(max_length=200, blank=True)
@@ -76,17 +79,15 @@ class Faq(models.Model):
 
 class Image(models.Model):
     """ Images model """
-    ASPECT_RATIOS = [('original', 'Original'), ('landscape', 'Landscape 16x9'),
-                     ('portrait', 'Portrait 9x16'), ('square', 'Square 1x1')]
-    SIZES = {'original': [2560, 2560], 'landscape': [
-        2560, 1440], 'portrait': [1440, 2560], 'square': [1440, 1440]}
+    ASPECT_RATIOS = ASPECT_RATIOS
+    SIZES = SIZES
 
     title = models.CharField(max_length=200, blank=True)
     title_no = models.CharField(max_length=200, blank=True)
     description = models.TextField(blank=True)
     description_no = models.TextField(blank=True)
     aspect_ratio = models.CharField(
-        choices=ASPECT_RATIOS, max_length=20, default='Original')
+        choices=ASPECT_RATIOS, max_length=20, default='original')
     image = ResizedImageField(
         size=[2560, 2560], quality=100, upload_to='images/', blank=True, null=True)
     url = models.URLField(blank=True, null=True, default=None)
@@ -114,7 +115,7 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title + ' - ' + self.section.title
+        return f"{self.title} ({self.section.title if self.section else 'No Section'})"
 
 
 class Element(models.Model):
@@ -146,4 +147,5 @@ class Video(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title + ' - ' + self.section.title + ' - ' + self.article.title
+        return self.title
+
