@@ -8997,7 +8997,8 @@ p {
 /* Premium Heading Styles */
 .masthead h1.heading {
   font-family: var(--bs-headings-font-family);
-  background: var(--premium-gradient);
+  background: linear-gradient(to right, var(--premium-bronze) 20%, var(--bronze-light) 40%, var(--bronze-light) 60%, var(--premium-bronze) 80%);
+  background-size: 200% auto;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -9006,7 +9007,13 @@ p {
   letter-spacing: -0.03em;
   line-height: 0.9;
   margin: 0;
-  animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards, shimmer 3s linear infinite 1.2s;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .masthead h1.heading2 {
@@ -9039,6 +9046,15 @@ p {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -9112,8 +9128,9 @@ p {
   height: 100%;
   margin: 0 auto;
   max-width: 2500px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .img1 img {
@@ -9720,4 +9737,575 @@ html::-webkit-scrollbar-thumb {
 .nav-link-premium:hover i {
   transform: scale(1.2);
   text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Ink Reveal Effect (Monochrome to Color) */
+#carousel2 picture img {
+  filter: grayscale(100%) contrast(110%);
+  transition: filter 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+#carousel2:hover picture img {
+  filter: grayscale(0%) contrast(100%);
+  transform: scale(1.03);
+}
+
+/* Premium Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bs-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bronze-dark);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--premium-bronze);
+}
+
+/* Premium Article Links */
+.glass-card article a:not(.social a) {
+  color: var(--premium-bronze);
+  text-decoration: none;
+  position: relative;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.glass-card article a:not(.social a)::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--premium-bronze);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.glass-card article a:not(.social a):hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* =====================================================
+   PREMIUM ANIMATED HAMBURGER MENU
+   ===================================================== */
+.premium-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.25s ease;
+  position: relative;
+  z-index: 1050;
+}
+
+.premium-hamburger:hover {
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.hamburger-line {
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, var(--premium-bronze), var(--bronze-light));
+  border-radius: 2px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.25s ease;
+  transform-origin: right center;
+}
+
+/* Staggered widths for premium asymmetric look */
+.hamburger-line:nth-child(1) { width: 28px; }
+.hamburger-line:nth-child(2) { width: 20px; }
+.hamburger-line:nth-child(3) { width: 24px; }
+
+/* Hover - all lines extend to full width with glow */
+.premium-hamburger:hover .hamburger-line:nth-child(1) { width: 28px; }
+.premium-hamburger:hover .hamburger-line:nth-child(2) { width: 28px; }
+.premium-hamburger:hover .hamburger-line:nth-child(3) { width: 28px; }
+.premium-hamburger:hover .hamburger-line {
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+/* Active (open) state - animate to X */
+.premium-hamburger.is-active .hamburger-line:nth-child(1) {
+  width: 28px;
+  transform: translateY(8px) rotate(45deg);
+}
+.premium-hamburger.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.premium-hamburger.is-active .hamburger-line:nth-child(3) {
+  width: 28px;
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =====================================================
+   PARALLAX SECTION BANNERS (About Page)
+   ===================================================== */
+
+.parallax-section-banner {
+  width: 100%;
+  align-self: stretch;
+  min-height: 340px;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ── Desaturate + darken the background image via ::before ── */
+.parallax-section-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  /* Faded, grainy, aged look */
+  filter: grayscale(65%) brightness(0.45) contrast(1.15) sepia(20%);
+  z-index: 0;
+}
+
+/* ── Deep vignette overlay ── */
+.parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(5, 8, 9, 0.7)  0%,
+      rgba(5, 8, 9, 0.25) 35%,
+      rgba(5, 8, 9, 0.25) 65%,
+      rgba(5, 8, 9, 0.8)  100%
+    );
+  z-index: 1;
+}
+
+/* ── Heavy film grain ── */
+.parallax-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Tiled SVG noise at higher frequency */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.18;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── Extra sepia-tinted washed colour wash ── */
+.parallax-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 10, 5, 0.3);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 5rem 2rem;
+  width: 100%;
+}
+
+.parallax-title {
+  font-family: var(--bs-headings-font-family);
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right,
+    var(--premium-bronze) 20%,
+    var(--bronze-light) 40%,
+    var(--bronze-light) 60%,
+    var(--premium-bronze) 80%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+  filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.35));
+}
+
+/* Centred bronze divider */
+.gradient-line {
+  height: 2px;
+  background: var(--premium-gradient);
+  border-radius: 2px;
+  margin: 0 auto 1rem;
+}
+
+.gradient-line--centered {
+  width: 80px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Section body — flush against banners, no gap */
+.about-section-body {
+  width: 100%;
+  padding-top: 3.5rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Prevent Bootstrap row margin from adding space before the next banner */
+.about-section-body > .row,
+.about-section-body > div > .row {
+  margin-bottom: 0;
+}
+
+/* Inner content gets its bottom breathing room, not the section wrapper */
+.about-section-body .glass-card,
+.about-section-body > .row > [class*="col"] {
+  padding-bottom: 3.5rem;
+}
+
+/* Entrance fade-up animation */
+@keyframes parallaxFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.parallax-section-banner .parallax-content {
+  opacity: 0;
+}
+
+.parallax-section-banner.in-view .parallax-content {
+  animation: parallaxFadeUp 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Mobile fallback */
+@media (max-width: 768px) {
+  .parallax-section-banner,
+  .parallax-section-banner::before {
+    background-attachment: scroll;
+    min-height: 260px;
+  }
+  .parallax-title {
+    font-size: clamp(1.8rem, 10vw, 3rem);
+  }
+}
+
+
+
+/* =====================================================
+   ABOUT PAGE � FULL REDESIGN
+   ===================================================== */
+
+/* Full-width flex column container bypassing page_container */
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px; /* clear the fixed navbar */
+}
+
+/* -- Parallax Section Banner ------------------- */
+.parallax-section-banner {
+  width: 100%;
+  min-height: 380px;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Desaturate + darken the background via ::before */
+.parallax-section-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  filter: grayscale(60%) brightness(0.42) contrast(1.1) sepia(15%);
+  z-index: 0;
+}
+
+/* Deep vignette */
+.parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 8, 9, 0.72) 0%,
+    rgba(5, 8, 9, 0.18) 40%,
+    rgba(5, 8, 9, 0.18) 60%,
+    rgba(5, 8, 9, 0.78) 100%
+  );
+  z-index: 1;
+}
+
+/* Film grain */
+.parallax-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.14;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Content sits above overlays */
+.parallax-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 5rem 1.5rem;
+  width: 100%;
+}
+
+.parallax-title {
+  font-family: var(--bs-headings-font-family);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin: 0 0 1.2rem;
+  background: linear-gradient(
+    90deg,
+    var(--premium-bronze) 20%,
+    var(--bronze-light) 50%,
+    var(--premium-bronze) 80%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s linear infinite;
+  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.3));
+}
+
+.parallax-divider {
+  width: 64px;
+  height: 2px;
+  background: var(--premium-gradient);
+  border-radius: 2px;
+  margin: 0 auto;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+/* Entrance animation */
+.parallax-content {
+  opacity: 0;
+}
+.parallax-section-banner.in-view .parallax-content {
+  animation: parallaxFadeUp 0.85s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* -- Section Body ------------------------------- */
+.about-section-body {
+  width: 100%;
+  background: var(--bs-secondary);
+  flex-shrink: 0;
+}
+
+.about-body-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Media column: carousel fills height */
+.about-media-col {
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.about-media-col img,
+.about-media-col .carousel,
+.about-media-col .carousel-inner,
+.about-media-col .carousel-item {
+  height: 100%;
+  min-height: 420px;
+}
+
+.about-media-col .carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+}
+
+/* Text column */
+.about-text-col {
+  display: flex;
+  align-items: center;
+  padding: 3.5rem 2.5rem;
+}
+
+.about-text-inner {
+  width: 100%;
+}
+
+.about-article {
+  margin-bottom: 1.5rem;
+}
+
+.about-article-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 300;
+  color: var(--bs-light);
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+  border-left: 2px solid var(--premium-bronze);
+  padding-left: 0.85rem;
+}
+
+.about-article-body {
+  color: rgba(224, 224, 224, 0.85);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.about-studio-extras {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .about-text-col {
+    padding: 2.5rem 1.5rem;
+  }
+  .about-media-col,
+  .about-media-col .carousel,
+  .about-media-col .carousel-inner,
+  .about-media-col .carousel-item,
+  .about-media-col .carousel-item img {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-section-banner,
+  .parallax-section-banner::before {
+    background-attachment: scroll;
+    min-height: 280px;
+  }
+  .parallax-title {
+    font-size: clamp(1.6rem, 9vw, 2.5rem);
+  }
+  .about-text-col {
+    padding: 2rem 1rem;
+  }
+}
+
+/* =====================================================
+   ABOUT PAGE � WHITESPACE & BREATHING ROOM
+   ===================================================== */
+
+/* Taller banners � give the image more presence */
+.parallax-section-banner {
+  min-height: 500px !important;
+}
+
+/* More vertical space in the content section */
+.about-section-body {
+  padding: 6rem 0 !important;
+}
+
+/* Wider inner padding on the text column */
+.about-text-col {
+  padding: 4rem 4rem !important;
+}
+
+/* Space between articles */
+.about-article {
+  margin-bottom: 2.5rem !important;
+}
+
+/* Article subtitle � more breath above */
+.about-article-subtitle {
+  margin-bottom: 1rem !important;
+}
+
+/* More space in article body text � open line height */
+.about-article-body {
+  line-height: 2 !important;
+  font-size: 1rem !important;
+}
+
+/* Studio extras � more space from the text */
+.about-studio-extras {
+  margin-top: 3rem !important;
+  padding-top: 2rem !important;
+}
+
+/* Media column � taller to match taller text column */
+.about-media-col,
+.about-media-col .carousel,
+.about-media-col .carousel-inner,
+.about-media-col .carousel-item,
+.about-media-col .carousel-item img {
+  min-height: 560px !important;
+}
+
+/* Responsive overrides � scale back gracefully */
+@media (max-width: 1199px) {
+  .about-text-col { padding: 3rem 3rem !important; }
+}
+
+@media (max-width: 991px) {
+  .about-section-body { padding: 4rem 0 !important; }
+  .about-text-col { padding: 3rem 2rem !important; }
+  .about-media-col,
+  .about-media-col .carousel,
+  .about-media-col .carousel-inner,
+  .about-media-col .carousel-item,
+  .about-media-col .carousel-item img {
+    min-height: 380px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-section-banner { min-height: 320px !important; }
+  .about-section-body { padding: 3rem 0 !important; }
+  .about-text-col { padding: 2.5rem 1.25rem !important; }
+  .about-media-col,
+  .about-media-col .carousel,
+  .about-media-col .carousel-inner,
+  .about-media-col .carousel-item,
+  .about-media-col .carousel-item img {
+    min-height: 280px !important;
+  }
 }

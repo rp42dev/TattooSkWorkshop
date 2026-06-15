@@ -1,25 +1,38 @@
 {% extends "page_base.html" %}
+{% load static %}
 
-{% block page_content %}
+{# Override the full content block so parallax banners are truly full-bleed #}
+{% block content %}
+<div class="about-page">
 
-{% for section in sections %}
-<div class="px-3 px-sm-4 col-12 col-xl-10 col-xxl-8 mx-auto section-header mb-3 mb-sm-4">
-  <h1 class="text-uppercase text-center text-light fw-bold display-5 mb-2 clipped-text">
-    {% if LANGUAGE_CODE == 'en' %}{{section.title}}{% else %}{{section.title_no}}{%endif%}
-  </h1>
-  <div class="gradient-line mb-4"></div>
-  {% if not page.name_en == 'about' %}
-  {% include 'includes/social.html' %}
+  {% for section in sections %}
+
+  {# ── Parallax Section Banner ── #}
+  {% if section.title_en == 'About studio' %}
+  <div class="parallax-section-banner" style="background-image: url('{% static 'images/parallax-studio.jpg' %}');">
+  {% elif section.title_en == 'About andrej' %}
+  <div class="parallax-section-banner" style="background-image: url('{% static 'images/parallax-andrej.jpg' %}');">
+  {% elif section.title_en == 'About jane' %}
+  <div class="parallax-section-banner" style="background-image: url('{% static 'images/parallax-jane.jpg' %}');">
+  {% else %}
+  <div class="parallax-section-banner" style="background-image: url('{% static 'images/parallax-bg.jpg' %}');">
   {% endif %}
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content">
+      <h2 class="parallax-title text-uppercase">{{ section.title }}</h2>
+      <div class="parallax-divider"></div>
+    </div>
+  </div>
+
+  {# ── Section Body ── #}
+  {% with "includes/"|add:section.page.name_en|add:"_items.html" as template %}
+  <section hx-get="?name={{ section.id }}" hx-target="this" hx-trigger="load" hx-swap="innerHTML"
+    class="about-section-body">
+    {% include template %}
+  </section>
+  {% endwith %}
+
+  {% endfor %}
+
 </div>
-
-{% with "includes/"|add:section.page.name_en|add:"_items.html" as template %}
-<section hx-get="?name={{ section.id }}" hx-target="this" hx-trigger="load" hx-swap="innerHTML"
-  class="col-12 mx-auto">
-  {% include template %}
-</section>
-{% endwith %}
-
-{% endfor %}
 {% endblock %}
-

@@ -20,7 +20,6 @@ class Artist(models.Model):
         size=[2560, 2560], quality=100,
         upload_to='artist', blank=True, null=True)
     slug = models.SlugField(auto_created=True, blank=True, null=True)
-    slug_no = models.SlugField(auto_created=True, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     order = models.IntegerField(blank=True, null=True)
@@ -56,7 +55,8 @@ class Album(models.Model):
     seo = models.ForeignKey(
         Seo, on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(auto_created=True, blank=True, null=True)
-    slug_no = models.SlugField(auto_created=True, blank=True, null=True)
+
+
 
     def get_absolute_url(self):
         return reverse("details", kwargs={"artist_slug": self.artist.slug, "slug": self.slug})

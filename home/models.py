@@ -14,11 +14,8 @@ from dproject.constants import ASPECT_RATIOS, SIZES
 class Seo(models.Model):
     """ SEO model """
     title = models.CharField(max_length=200, blank=True)
-    title_no = models.CharField(max_length=200, blank=True)
     description = models.TextField(max_length=160, blank=True)
-    description_no = models.TextField(max_length=160, blank=True)
     keywords = models.TextField(blank=True)
-    keywords_no = models.TextField(blank=True)
     image = ResizedImageField(
         size=[1200, 630], quality=100, upload_to='seo', blank=True, null=True)
 
@@ -29,21 +26,16 @@ class Seo(models.Model):
 class Page(models.Model):
     """ Page model """
     name = models.CharField(max_length=200, blank=False)
-    name_no = models.CharField(max_length=200, blank=True)
     description = models.TextField(blank=True)
-    description_no = models.TextField(blank=True)
     seo = models.ForeignKey(
         'Seo', on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(max_length=200, blank=True)
-    slug_no = models.SlugField(max_length=200, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
-        if get_language() == 'no':
-            return reverse(self.slug_no + '/')
-        else:
-            return reverse(self.slug + '/')
+        # Now handled automatically by modeltranslation or slug field
+        return reverse(self.slug + '/')
 
     def __str__(self):
         return self.name
@@ -52,9 +44,7 @@ class Page(models.Model):
 class Section(models.Model):
     """ Section model """
     title = models.CharField(max_length=200, blank=True)
-    title_no = models.CharField(max_length=200, blank=True)
     subtitle = models.CharField(max_length=300, blank=True)
-    subtitle_no = models.CharField(max_length=300, blank=True)
     page = models.ForeignKey(
         'Page', on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -67,9 +57,7 @@ class Section(models.Model):
 class Faq(models.Model):
     """ FAQ model """
     question = models.CharField(max_length=200, blank=True)
-    question_no = models.CharField(max_length=200, blank=True)
     answer = models.TextField(blank=True)
-    answer_no = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -83,9 +71,7 @@ class Image(models.Model):
     SIZES = SIZES
 
     title = models.CharField(max_length=200, blank=True)
-    title_no = models.CharField(max_length=200, blank=True)
     description = models.TextField(blank=True)
-    description_no = models.TextField(blank=True)
     aspect_ratio = models.CharField(
         choices=ASPECT_RATIOS, max_length=20, default='original')
     image = ResizedImageField(
@@ -104,13 +90,10 @@ class Image(models.Model):
 class Article(models.Model):
     """ Article model """
     title = models.CharField(max_length=200, blank=True)
-    title_no = models.CharField(max_length=200, blank=True)
     subtitle = models.CharField(max_length=200, blank=True)
-    subtitle_no = models.CharField(max_length=200, blank=True)
     section = models.ForeignKey(
         'Section', on_delete=models.CASCADE, blank=True, null=True)
     body = models.TextField(blank=True)
-    body_no = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -122,7 +105,6 @@ class Element(models.Model):
     """ Article model """
     name = models.CharField(max_length=200, blank=True)
     body = models.TextField(blank=True)
-    body_no = models.TextField(blank=True)
     pages = models.ManyToManyField('Page', blank=True)
     sections = models.ManyToManyField('Section', blank=True)
     articles = models.ManyToManyField('Article', blank=True)
@@ -136,9 +118,7 @@ class Element(models.Model):
 class Video(models.Model):
     """ Video model """
     title = models.CharField(max_length=200, blank=True)
-    title_no = models.CharField(max_length=200, blank=True)
     description = models.TextField(blank=True)
-    description_no = models.TextField(blank=True)
     video = EmbedVideoField(blank=True, null=True)
     pages = models.ManyToManyField('Page', blank=True)
     sections = models.ManyToManyField('Section', blank=True)

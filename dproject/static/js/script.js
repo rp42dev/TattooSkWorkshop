@@ -60,3 +60,38 @@ document.body.addEventListener('htmx:afterSwap', function (event) {
     });
 
 });
+
+// ── Parallax Banners – Entrance Observer ─────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+    var banners = document.querySelectorAll('.parallax-section-banner');
+    if (!banners.length) return;
+
+    if ('IntersectionObserver' in window) {
+        var bannerObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    bannerObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        banners.forEach(function (b) { bannerObserver.observe(b); });
+    } else {
+        banners.forEach(function (b) { b.classList.add('in-view'); });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var hamburger = document.querySelector('.premium-hamburger');
+    var menuEl    = document.getElementById('menu');
+
+    if (!hamburger || !menuEl) return;
+
+    menuEl.addEventListener('show.bs.offcanvas', function () {
+        hamburger.classList.add('is-active');
+    });
+    menuEl.addEventListener('hide.bs.offcanvas', function () {
+        hamburger.classList.remove('is-active');
+    });
+});

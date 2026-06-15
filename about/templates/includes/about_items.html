@@ -1,25 +1,29 @@
-<div class="row mb-3 mb-sm-5 pb-lg-5 ">
-  <div class="col-12 col-lg-6 col-xxl-7 position-relative padding-0 lazy-element
-    {% if section.title_en == 'About andrej' %}order-lg-2{% endif %}">
-    {% include 'includes/about_carousel.html' with obj=images %}
-  </div>
-  <div
-    class="col-12 col-lg-6 col-xxl-5 d-flex glass-card {% if section.title_en == 'About andrej' %}order-lg-1{% endif %}">
-    <div class="my-auto px-3 ps-sm-4 text-white">
-        {% for article in articles %}
-        <article>
-          <h2 class="text-light fw-light text-capitalize">
-            {{ article.subtitle }}</h2>
-          {{ article.body|safe }}
-          {% endfor %}
-        </article>
-      {% if section.title_en == 'About studio' %}
-      <article>
-      {% include 'includes/social.html' %}
-      </article>
-      {% include 'includes/hours_card.html' %}
-      {% endif %}
-    </div>
-  </div>
+<div class="about-body-inner">
+  <div class="row g-0">
 
+    {# Image carousel column #}
+    <div class="col-12 col-lg-6 {% if section.title_en == 'About andrej' %}order-lg-2{% endif %} about-media-col lazy-element">
+      {% include 'includes/about_carousel.html' with obj=images %}
+    </div>
+
+    {# Text column #}
+    <div class="col-12 col-lg-6 {% if section.title_en == 'About andrej' %}order-lg-1{% endif %} about-text-col">
+      <div class="about-text-inner">
+        {% for article in articles %}
+        <article class="about-article">
+          <h2 class="about-article-subtitle">{{ article.subtitle }}</h2>
+          <div class="about-article-body">{{ article.body|safe }}</div>
+        </article>
+        {% endfor %}
+
+        {% if section.title_en == 'About studio' %}
+        <div class="about-studio-extras">
+          {% include 'includes/social.html' %}
+          {% include 'includes/hours_card.html' %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
 </div>

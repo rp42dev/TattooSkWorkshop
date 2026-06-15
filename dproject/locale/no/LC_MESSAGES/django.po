@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-13 23:20+0000\n"
+"POT-Creation-Date: 2026-05-09 17:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,47 +17,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\config\settings\common.py:108
-msgid "English"
-msgstr "Engelsk"
-
-#: .\config\settings\common.py:109
-msgid "Norwegian"
-msgstr "Norsk"
-
-#: .\config\urls.py:29
-msgid "gallery/"
-msgstr "galleri/"
-
-#: .\config\urls.py:30
-msgid "about/"
-msgstr "om/"
-
-#: .\dproject\templates\403.html:4 .\dproject\templates\403.html:9
+#: .\templates\403.html:4 .\templates\403.html:9
 msgid "Permission denied"
 msgstr ""
 
-#: .\dproject\templates\403_csrf.html:3 .\dproject\templates\403_csrf.html:7
+#: .\templates\403_csrf.html:3 .\templates\403_csrf.html:7
 msgid "CSRF verification failed. Request aborted."
 msgstr ""
 
-#: .\dproject\templates\404.html:4 .\dproject\templates\404.html:9
+#: .\templates\404.html:4 .\templates\404.html:9
 msgid "Page not found"
 msgstr ""
 
-#: .\dproject\templates\404.html:10
+#: .\templates\404.html:10
 msgid "We're sorry, but the requested page could not be found."
 msgstr ""
 
-#: .\dproject\templates\500.html:4
+#: .\templates\500.html:4
 msgid "Server error (500)"
 msgstr ""
 
-#: .\dproject\templates\500.html:8
+#: .\templates\500.html:8
 msgid "Server Error <em>(500)</em>"
 msgstr ""
 
-#: .\dproject\templates\500.html:9
+#: .\templates\500.html:9
 msgid ""
 "There's been an error. It's been reported to the site administrators via "
 "email and should be fixed shortly. Thanks for your patience."
@@ -66,11 +50,11 @@ msgstr ""
 "nettstedadministratorene via e-post og bør fikses snart. Takk for "
 "tålmodigheten."
 
-#: .\dproject\templates\base.html:11
+#: .\templates\base.html:11
 msgid "Quality Tattoos and tattoo coverups Fetsund"
 msgstr "Kvalitet Tatoveringer og tattoo coverups Fetsund"
 
-#: .\dproject\templates\base.html:24
+#: .\templates\base.html:24
 msgid ""
 "Tattoo studio in Fetsund, Norway. We specialize in quality tattoos, Custom "
 "tattoos, coverups, scar cover-ups and more. Book an appointment today! + 47 "
@@ -80,174 +64,183 @@ msgstr ""
 "kvalitetstatoveringer, Custom tatoveringer, coverups, arr cover-ups og mer. "
 "Bestill time i dag! + 47 46253760."
 
-#: .\dproject\templates\email\base.html:142
+#: .\templates\email\base.html:142
 msgid "Tattoo studio"
 msgstr "Tatoveringsstudio"
 
-#: .\dproject\templates\email\base.html:172
+#: .\templates\email\base.html:172
 msgid "Contact"
 msgstr "Ta kontakt med"
 
-#: .\dproject\templates\email\base.html:189
+#: .\templates\email\base.html:190
 msgid "Opening hours"
 msgstr "Åpningstider"
 
-#: .\dproject\templates\email\base.html:190
+#: .\templates\email\base.html:191
 msgid "Monday - Friday"
 msgstr "Mandag - Fredag"
 
-#: .\dproject\templates\email\base.html:191
+#: .\templates\email\base.html:192 .\templates\includes\contact_card.html:35
 msgid "Saturday"
 msgstr "Lørdag"
 
-#: .\dproject\templates\email\base.html:192
+#: .\templates\email\base.html:193 .\templates\includes\contact_card.html:39
 msgid "Sunday"
 msgstr "Søndag"
 
-#: .\dproject\templates\email\base.html:193
+#: .\templates\email\base.html:194
 msgid "Address"
 msgstr "Adresse"
 
-#: .\dproject\templates\email\base.txt:1
-#: .\dproject\templates\email\reply_body.html:12
+#: .\templates\email\base.txt:1 .\templates\email\reply_body.html:12
 msgid "Dear "
 msgstr "Kjære"
 
-#: .\dproject\templates\email\base.txt:3
-#: .\dproject\templates\email\reply_body.html:23
+#: .\templates\email\base.txt:3 .\templates\email\reply_body.html:23
 msgid "Yours sincerely"
 msgstr "Med vennlig hilsen"
 
-#: .\dproject\templates\email\base.txt:4
+#: .\templates\email\base.txt:4
 #, python-format
 msgid "The %(site_name)s team"
 msgstr ""
 
-#: .\dproject\templates\email\reply_body.html:9
+#: .\templates\email\reply_body.html:9
 msgid "Thank you for your message"
 msgstr "Takk for meldingen"
 
-#: .\dproject\templates\email\reply_body.html:15
+#: .\templates\email\reply_body.html:15
 msgid ""
 "We have received your complaint and will get back to you as soon as possible."
 msgstr ""
 "Vi har mottatt klagen din og vil komme tilbake til deg så snart som mulig."
 
-#: .\dproject\templates\email\reply_body.html:18
+#: .\templates\email\reply_body.html:18
 msgid ""
 "We have received your message and will get back to you as soon as possible."
 msgstr ""
 "Vi har mottatt meldingen din og vil komme tilbake til deg så snart som mulig."
 
-#: .\dproject\templates\email\reply_body.html:24
-msgid "The Tattoo Sk Workshop team"
+#: .\templates\email\reply_body.html:24
+#, fuzzy
+#| msgid "The Tattoo Sk Workshop team"
+msgid "The ANDREJS TATTOO Workshop team"
 msgstr "Tattoo Sk Workshop teamet"
 
-#: .\dproject\templates\includes\contact_form.html:14
-msgid "Name"
-msgstr "Navn"
+#: .\templates\includes\contact_card.html:4
+msgid "Get in Touch"
+msgstr "Ta kontakt"
 
-#: .\dproject\templates\includes\contact_form.html:16
-msgid "Invalid"
-msgstr "Ugyldig"
+#: .\templates\includes\contact_card.html:16
+#, fuzzy
+#| msgid "Norwegian"
+msgid "Norway"
+msgstr "Norge"
 
-#: .\dproject\templates\includes\contact_form.html:23
-msgid "Email"
-msgstr "E-post"
+#: .\templates\includes\contact_card.html:22
+msgid "Book Appointment"
+msgstr "Bestill time"
 
-#: .\dproject\templates\includes\contact_form.html:31
-msgid "Phone"
-msgstr "Telefon"
+#: .\templates\includes\contact_card.html:28
+#, fuzzy
+#| msgid "Opening hours"
+msgid "Opening Hours"
+msgstr "Åpningstider"
 
-#: .\dproject\templates\includes\contact_form.html:33
-msgid "Only numbers"
-msgstr "Bare tall"
+#: .\templates\includes\contact_card.html:31
+#, fuzzy
+#| msgid "Monday - Friday"
+msgid "Mon - Fri"
+msgstr "Man - Fre"
 
-#: .\dproject\templates\includes\contact_form.html:54
-msgid "Are you over 16"
-msgstr "Er du over 16"
-
-#: .\dproject\templates\includes\contact_form.html:59
-#: .\dproject\templates\includes\form_snippet.html:59
+#: .\templates\includes\form_snippet.html:53
 msgid "Submit"
 msgstr "Sende inn"
 
-#: .\dproject\templates\includes\offcanvas_menu.html:18
-msgid "Menu"
-msgstr "Meny"
+#: .\templates\includes\nav_menu.html:5
+msgid "Home"
+msgstr "Hjem"
 
-#: .\dproject\templates\registration\logged_out.html:5
+#: .\templates\includes\nav_menu.html:9
+msgid "About Us"
+msgstr "Om oss"
+
+#: .\templates\includes\nav_menu.html:13
+msgid "Gallery"
+msgstr "Galleri"
+
+#: .\templates\includes\nav_menu.html:17
+msgid "Prices"
+msgstr "Priser"
+
+#: .\templates\includes\nav_menu.html:21
+msgid "Aftercare"
+msgstr "Ettervern"
+
+#: .\templates\includes\nav_menu.html:25
+msgid "FAQ"
+msgstr "FAQ"
+
+#: .\templates\includes\offcanvas_menu.html:18
+msgid "Menu"
+msgstr ""
+
+#: .\templates\registration\logged_out.html:5
 msgid "Logged out"
 msgstr ""
 
-#: .\dproject\templates\registration\logged_out.html:6
+#: .\templates\registration\logged_out.html:6
 msgid "Log in again"
 msgstr ""
 
-#: .\dproject\templates\registration\login.html:5
-#: .\dproject\templates\registration\login.html:9
-#: .\dproject\templates\registration\login.html:15
-#: .\dproject\templates\registration\password_reset_complete.html:11
+#: .\templates\registration\login.html:5 .\templates\registration\login.html:9
+#: .\templates\registration\login.html:15
+#: .\templates\registration\password_reset_complete.html:11
 msgid "Log in"
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_complete.html:8
+#: .\templates\registration\password_reset_complete.html:8
 msgid "Your password has been set.  You may go ahead and log in now."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_confirm.html:10
+#: .\templates\registration\password_reset_confirm.html:10
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_confirm.html:14
+#: .\templates\registration\password_reset_confirm.html:14
 msgid "Change my password"
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_confirm.html:18
+#: .\templates\registration\password_reset_confirm.html:18
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_confirm.html:20
+#: .\templates\registration\password_reset_confirm.html:20
 msgid "Request a new password"
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_done.html:8
+#: .\templates\registration\password_reset_done.html:8
 msgid ""
 "We've emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_done.html:9
+#: .\templates\registration\password_reset_done.html:9
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_form.html:9
+#: .\templates\registration\password_reset_form.html:9
 msgid ""
 "Forgotten your password? Enter your email address below, and we'll email "
 "instructions for setting a new one."
 msgstr ""
 
-#: .\dproject\templates\registration\password_reset_form.html:14
+#: .\templates\registration\password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
-
-#~ msgid "Message: (image references, black or with color, size and place)"
-#~ msgstr ""
-#~ "Melding: (bildereferanser, svart eller med farge, størrelse og plass)"
-
-#~ msgid "Question"
-#~ msgstr "Spørsmål"
-
-#~ msgid "Message Us"
-#~ msgstr "Send oss ​​en melding"
-
-#, fuzzy
-#~| msgid "Complaints"
-#~ msgid "Complaint"
-#~ msgstr "Klager"

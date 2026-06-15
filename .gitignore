@@ -58,6 +58,7 @@ node_modules/
 # virtual environments
 .env
 .venv
+.venv_old/
 
 # User-uploaded media
 dproject/media/
