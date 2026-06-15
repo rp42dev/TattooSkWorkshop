@@ -13,6 +13,11 @@
     const minScale = 1.0;
 
     function init() {
+        // Clean up previous instance if it exists to prevent listener leaks on HTMX swaps
+        if (typeof window.destroyZoom === "function") {
+            window.destroyZoom();
+        }
+
         // Target the actual image container (.item-gallery) instead of the full screen container
         zoomTarget = document.querySelector(".item-gallery");
         if (!zoomTarget) return;
@@ -28,6 +33,7 @@
 
         // PC Listeners
         zoomTarget.addEventListener("mousedown", onMouseDown);
+        zoomTarget.addEventListener("dragstart", onDragStart);
         window.addEventListener("mousemove", onMouseMove);
         window.addEventListener("mouseup", onMouseUp);
         zoomTarget.addEventListener("wheel", onWheel, { passive: false });
@@ -43,6 +49,9 @@
 
         // First-time tutorial overlay logic
         initTutorial();
+
+        // Register current destroy function globally for HTMX/SPAs clean cleanup
+        window.destroyZoom = destroy;
     }
 
     function initTutorial() {
@@ -65,23 +74,23 @@
     }
 
     function getBounds() {
-        if (!zoomTarget) return { minX: 0, maxX: 0, minY: 0, maxY: 0 };
+        if (!zoomTarget || !zoomTarget.parentElement) return { minX: 0, maxX: 0, minY: 0, maxY: 0 };
         
-        const viewport = zoomTarget.parentElement.getBoundingClientRect();
-        const scaledRect = zoomTarget.getBoundingClientRect();
+        const viewportW = zoomTarget.parentElement.clientWidth;
+        const viewportH = zoomTarget.parentElement.clientHeight;
         
-        const scaledW = scaledRect.width;
-        const scaledH = scaledRect.height;
+        const scaledW = zoomTarget.offsetWidth * scale;
+        const scaledH = zoomTarget.offsetHeight * scale;
 
         let minX = 0, maxX = 0;
-        if (scaledW > viewport.width) {
-            maxX = (scaledW - viewport.width) / 2;
+        if (scaledW > viewportW) {
+            maxX = (scaledW - viewportW) / 2;
             minX = -maxX;
         }
 
         let minY = 0, maxY = 0;
-        if (scaledH > viewport.height) {
-            maxY = (scaledH - viewport.height) / 2;
+        if (scaledH > viewportH) {
+            maxY = (scaledH - viewportH) / 2;
             minY = -maxY;
         }
 
@@ -107,6 +116,10 @@
     }
 
     // --- Mouse Event Handlers ---
+    function onDragStart(e) {
+        e.preventDefault();
+    }
+
     function onMouseDown(e) {
         if (e.button !== 0) return; // Only left click
         e.preventDefault();
@@ -230,7 +243,12 @@
 
     function onTouchMove(e) {
         e.preventDefault();
-        if (e.touches.length === 1 && panning) {
+        if (e.touches.length === 1) {
+            if (!panning) {
+                panning = true;
+                startX = e.touches[0].clientX - pointX;
+                startY = e.touches[0].clientY - pointY;
+            }
             pointX = e.touches[0].clientX - startX;
             pointY = e.touches[0].clientY - startY;
             updateTransform(false);
@@ -286,15 +304,17 @@
     }
 
     function destroy() {
-        if (!zoomTarget) return;
-        zoomTarget.removeEventListener("mousedown", onMouseDown);
+        if (zoomTarget) {
+            zoomTarget.removeEventListener("mousedown", onMouseDown);
+            zoomTarget.removeEventListener("dragstart", onDragStart);
+            zoomTarget.removeEventListener("wheel", onWheel);
+            zoomTarget.removeEventListener("dblclick", onDoubleClick);
+            zoomTarget.removeEventListener("touchstart", onTouchStart);
+            zoomTarget.removeEventListener("touchmove", onTouchMove);
+            zoomTarget.removeEventListener("touchend", onTouchEnd);
+        }
         window.removeEventListener("mousemove", onMouseMove);
         window.removeEventListener("mouseup", onMouseUp);
-        zoomTarget.removeEventListener("wheel", onWheel);
-        zoomTarget.removeEventListener("dblclick", onDoubleClick);
-        zoomTarget.removeEventListener("touchstart", onTouchStart);
-        zoomTarget.removeEventListener("touchmove", onTouchMove);
-        zoomTarget.removeEventListener("touchend", onTouchEnd);
         window.removeEventListener("keydown", onKeyDown);
     }
 

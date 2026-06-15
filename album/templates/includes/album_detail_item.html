@@ -38,7 +38,7 @@
                 {% else %}
                 <source srcset="{% thumbnail object.image "1920" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 1920w, {% thumbnail object.image "2500" format="WEBP" as im %} {{ im.url }} {% endthumbnail %} 2500w" type="image/webp">
                 {% endif %}
-                <img class="rounded-3" src="{{ object.image.url }}" alt="{{ object.name }} Image">
+                <img class="rounded-3" src="{{ object.image.url }}" alt="{{ object.name }} Image" draggable="false">
             </picture>
             {% endif %}
         </div>
@@ -54,11 +54,11 @@
 </div>
 {% include 'includes/album_detail_buttons.html' %}
 
-<script defer src="{% static 'js/zoom.js' %}"></script>
+<script src="{% static 'js/zoom.js' %}"></script>
 <script>
-    $(document).ready(function(){
+    if (typeof initZoom === 'function') {
         initZoom();
-        $('.item-gallery').removeClass('faded');
-        $('.detail-item').removeClass('faded');
-    });
+    }
+    $('.item-gallery').removeClass('faded');
+    $('.detail-item').removeClass('faded');
 </script>
