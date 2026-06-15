@@ -14,19 +14,25 @@ from album.models import Artist, Album
 def slugify_name(sender, instance, **kwargs):
     """Slugify name before saving"""
     
-    if instance.slug_no and instance.slug:
-        return
+    # Generate base slug value
+    slug_val = slugify(instance.name)
+    if not slug_val:
+        slug_val = "unknown"
+        
+    next_slug = slug_val
+    num = 1
+    # Check uniqueness of the slug, excluding the current instance if it exists
+    while sender.objects.filter(slug=next_slug).exclude(pk=instance.pk).exists():
+        next_slug = f"{slug_val}-{num}"
+        num += 1
 
-    def get_slug(name, lang):
-        slug = slugify(name)
-        next_slug = slug
-        num = 1
-        while sender.objects.filter(**{lang: next_slug}).exists():
-            next_slug = f"{slug}-{num}"
-            num += 1
-        return next_slug
-
-    instance.slug = get_slug(instance.name, 'slug')
+    # Set slug for base field and all translation languages to keep them in sync
+    if not instance.slug:
+        instance.slug = next_slug
+    if hasattr(instance, 'slug_en') and not instance.slug_en:
+        instance.slug_en = next_slug
+    if hasattr(instance, 'slug_no') and not instance.slug_no:
+        instance.slug_no = next_slug
 
 
 @receiver(pre_save, sender=Album)
