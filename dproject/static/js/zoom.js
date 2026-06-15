@@ -8,6 +8,7 @@
     let prevDistance = 0;
     let zoomTarget = null;
     let imgElement = null;
+    let lastTap = 0;
 
     const maxScale = 4.0;
     const minScale = 1.0;
@@ -42,6 +43,28 @@
 
         // Keyboard navigation
         window.addEventListener("keydown", onKeyDown);
+
+        // First-time tutorial overlay logic
+        initTutorial();
+    }
+
+    function initTutorial() {
+        const tutorial = document.querySelector("#zoom-tutorial");
+        if (!tutorial) return;
+
+        const tutorialSeen = localStorage.getItem("zoom_tutorial_seen");
+        if (!tutorialSeen) {
+            // Show overlay
+            tutorial.classList.add("show");
+
+            // Dismiss handler (clicking anywhere on the overlay or on the button)
+            const dismissFunc = function (e) {
+                tutorial.classList.remove("show");
+                localStorage.setItem("zoom_tutorial_seen", "true");
+                tutorial.removeEventListener("click", dismissFunc);
+            };
+            tutorial.addEventListener("click", dismissFunc);
+        }
     }
 
     function getBounds() {
@@ -99,6 +122,7 @@
         zoomTarget.style.cursor = "grabbing";
     }
 
+    // Fixed: panning must not slide when not holding mouse
     function onMouseMove(e) {
         if (!panning) return;
         e.preventDefault();
@@ -160,6 +184,18 @@
     let touchStartScale = 1;
 
     function onTouchStart(e) {
+        const now = Date.now();
+        const DOUBLE_TAP_DELAY = 300;
+
+        // Double-tap zoom logic for mobile
+        if (e.touches.length === 1 && (now - lastTap) < DOUBLE_TAP_DELAY) {
+            e.preventDefault();
+            onDoubleTap(e);
+            lastTap = 0;
+            return;
+        }
+        lastTap = now;
+
         if (e.touches.length === 1) {
             panning = true;
             startX = e.touches[0].clientX - pointX;
@@ -169,6 +205,22 @@
             touchStartDist = getTouchDistance(e);
             touchStartScale = scale;
         }
+    }
+
+    function onDoubleTap(e) {
+        if (scale > 1) {
+            scale = 1;
+            pointX = 0;
+            pointY = 0;
+        } else {
+            scale = 2.5;
+            const rect = zoomTarget.getBoundingClientRect();
+            const touchX = e.touches[0].clientX - rect.left - rect.width / 2;
+            const touchY = e.touches[0].clientY - rect.top - rect.height / 2;
+            pointX = touchX - (touchX - pointX) * scale;
+            pointY = touchY - (touchY - pointY) * scale;
+        }
+        updateTransform(true);
     }
 
     function onTouchMove(e) {

@@ -4,6 +4,30 @@
 
 
 <div class="detail-item">
+    <!-- Shadow Tutorial Overlay -->
+    <div id="zoom-tutorial" class="zoom-tutorial-overlay">
+        <div class="tutorial-content">
+            <div class="tutorial-icon-wrapper pc-only-icon pc-tutorial-icon">
+                <i class="fa-solid fa-mouse"></i>
+            </div>
+            <div class="tutorial-icon-wrapper mobile-only-icon mobile-tutorial-icon">
+                <i class="fa-solid fa-hand-pointer"></i>
+            </div>
+            <h2 class="tutorial-title">{% trans "Interactive Gallery" %}</h2>
+            <p class="tutorial-text pc-only-icon">
+                {% trans "Scroll wheel to Zoom" %}<br>
+                {% trans "Drag to Pan/Move" %}<br>
+                {% trans "Double-click to auto-zoom/reset" %}
+            </p>
+            <p class="tutorial-text mobile-only-icon">
+                {% trans "Pinch with two fingers to Zoom" %}<br>
+                {% trans "Drag with one finger to Move" %}<br>
+                {% trans "Double-tap to auto-zoom/reset" %}
+            </p>
+            <button class="tutorial-btn" id="dismiss-tutorial-btn">{% trans "Got It" %}</button>
+        </div>
+    </div>
+
     <img src="{% thumbnail object.image "192x108"%}" class="img-bg" alt="{{ object.name }}">
     <div id="zoom" class="zoom">
         <div class="item-gallery {% if object.id == item_id %}active{% endif %}">
