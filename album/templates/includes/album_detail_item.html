@@ -19,6 +19,14 @@
             {% endif %}
         </div>
     </div>
+    
+    <!-- Elegant Frosted Glass Info Caption -->
+    <div class="detail-caption">
+        <h1 class="detail-caption-title">{{ object.name }}</h1>
+        {% if object.artist %}
+        <div class="detail-caption-artist">{% trans "By" %} {{ object.artist.name }}</div>
+        {% endif %}
+    </div>
 </div>
 {% include 'includes/album_detail_buttons.html' %}
 

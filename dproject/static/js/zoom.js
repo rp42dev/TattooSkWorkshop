@@ -1,155 +1,238 @@
-var scale = 1,
-    panning = false,
-    distance = 0,
-    prevPositions = [],
-    maxScale = 2.5,
-    minScale = 0.6,
-    threshold = 5,
-    pointX = 0,
-    pointY = 0,
-    start = { x: 0, y: 0 },
-    zoom = document.querySelector(".zoom");
+(function () {
+    let scale = 1;
+    let pointX = 0;
+    let pointY = 0;
+    let startX = 0;
+    let startY = 0;
+    let panning = false;
+    let prevDistance = 0;
+    let zoomTarget = null;
+    let imgElement = null;
 
+    const maxScale = 4.0;
+    const minScale = 1.0;
 
-function scaler(number, in_min, in_max, out_min, out_max) {
-    return (number - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
+    function init() {
+        zoomTarget = document.querySelector("#zoom");
+        if (!zoomTarget) return;
 
-function setTransform() {
-    zoom.style.transform = "translate(" + pointX + "px, " + pointY + "px) scale(" + scale + ")";
-}
+        imgElement = zoomTarget.querySelector("img");
+        if (!imgElement) return;
 
-const reset = function () {
-    scale = 1;
-    pointX = 0;
-    pointY = 0;
-    setTransform();
-}
+        // Reset positions
+        scale = 1;
+        pointX = 0;
+        pointY = 0;
+        updateTransform(false);
 
-const onMouseDown = function (e) {
-    e.preventDefault();
-    start = { x: e.clientX - pointX, y: e.clientY - pointY };
-    panning = true;
-}
+        // Remove any old event listeners (clean state)
+        destroy();
 
-const onMouseUp = function (e) {
-    panning = false;
-}
+        // PC Listeners
+        zoomTarget.addEventListener("mousedown", onMouseDown);
+        window.addEventListener("mousemove", onMouseMove);
+        window.addEventListener("mouseup", onMouseUp);
+        zoomTarget.addEventListener("wheel", onWheel, { passive: false });
+        zoomTarget.addEventListener("dblclick", onDoubleClick);
 
-const onMouseMove = function (e) {
-    e.preventDefault();
-    if (!panning) {
-        return;
+        // Mobile Listeners
+        zoomTarget.addEventListener("touchstart", onTouchStart, { passive: false });
+        zoomTarget.addEventListener("touchmove", onTouchMove, { passive: false });
+        zoomTarget.addEventListener("touchend", onTouchEnd);
+
+        // Keyboard navigation
+        window.addEventListener("keydown", onKeyDown);
     }
-    pointX = (e.clientX - start.x);
-    pointY = (e.clientY - start.y);
-    setTransform();
-}
 
-const onZoom = function (e) {
-    e.preventDefault();
-    var xs = (e.clientX - pointX) / scale,
-    ys = (e.clientY - pointY) / scale,
-    delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+    function getBounds() {
+        if (!imgElement || !zoomTarget) return { minX: 0, maxX: 0, minY: 0, maxY: 0 };
+        
+        const containerRect = zoomTarget.getBoundingClientRect();
+        const imgRect = imgElement.getBoundingClientRect();
 
-    (delta > 0) ? ((maxScale > scale) && (scale *= 1.2)) : ((minScale < scale)&& (scale /= 1.2));
+        // Natural dimensions of the image inside the viewport
+        const w = imgRect.width / scale;
+        const h = imgRect.height / scale;
 
-    pointX = e.clientX - xs * scale;
-    pointY = e.clientY - ys * scale;
-    setTransform();
-}
+        const scaledW = w * scale;
+        const scaledH = h * scale;
 
-const getDistance = function (e) {
-    distance = Math.sqrt(Math.pow(e.touches[0].clientX - e.touches[1].clientX, 2) + Math.pow(e.touches[0].clientY - e.touches[1].clientY, 2));
-    return distance;
-}
+        let minX = 0, maxX = 0;
+        if (scaledW > containerRect.width) {
+            maxX = (scaledW - containerRect.width) / 2;
+            minX = -maxX;
+        }
 
-const onTouchDown = function (e) {
-    e.preventDefault();
-    start = { x: e.touches[0].clientX - pointX, y: e.touches[0].clientY - pointY };
-    panning = true;
-}
+        let minY = 0, maxY = 0;
+        if (scaledH > containerRect.height) {
+            maxY = (scaledH - containerRect.height) / 2;
+            minY = -maxY;
+        }
 
-const onTouchUp = function (e) {
-    setTransform();
-    prevPositions = [];
-    panning = false;
-}
+        return { minX, maxX, minY, maxY };
+    }
 
-const onPinchZoom = function (e) {
-    e.preventDefault();
-    if (e.touches.length != 2) return;
-    panning = false;
-    var currentDistance = getDistance(e);
-    if (prevPositions.length > 0) {
-        var prevDistance = prevPositions[0].distance;
-        var diff = currentDistance - prevDistance;
-        var xs = (e.touches[0].clientX - pointX) / scale,
-            ys = (e.touches[0].clientY - pointY) / scale;
-        if (Math.abs(diff) > threshold) {
-            if (diff > 0) {
-                (maxScale > scale) && (scale *= 1.08);
-            } else {
-                (minScale < scale) && (scale /= 1.08);
-            }   
-            pointX = e.touches[0].clientX - xs * scale;
-            pointY = e.touches[0].clientY - ys * scale;
-            setTransform();
-            prevPositions = [];
+    function updateTransform(animate = true) {
+        if (!zoomTarget) return;
+        
+        // Apply boundaries
+        const bounds = getBounds();
+        if (scale === 1) {
+            pointX = 0;
+            pointY = 0;
+        } else {
+            pointX = Math.max(bounds.minX, Math.min(bounds.maxX, pointX));
+            pointY = Math.max(bounds.minY, Math.min(bounds.maxY, pointY));
+        }
+
+        zoomTarget.style.transition = animate ? "transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94)" : "none";
+        zoomTarget.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+    }
+
+    // --- Mouse Event Handlers ---
+    function onMouseDown(e) {
+        if (e.button !== 0) return; // Only left click
+        e.preventDefault();
+        panning = true;
+        startX = e.clientX - pointX;
+        startY = e.clientY - pointY;
+        zoomTarget.style.cursor = "grabbing";
+    }
+
+    function onMouseMove(e) {
+        if (!panning) return;
+        e.preventDefault();
+        pointX = e.clientX - startX;
+        pointY = e.clientY - startY;
+        updateTransform(false);
+    }
+
+    function onMouseUp() {
+        if (!panning) return;
+        panning = false;
+        if (zoomTarget) zoomTarget.style.cursor = "grab";
+        updateTransform(true);
+    }
+
+    function onWheel(e) {
+        e.preventDefault();
+        
+        const zoomFactor = 1.25;
+        const oldScale = scale;
+
+        if (e.deltaY < 0) {
+            scale = Math.min(maxScale, scale * zoomFactor);
+        } else {
+            scale = Math.max(minScale, scale / zoomFactor);
+        }
+
+        if (scale !== oldScale) {
+            const rect = zoomTarget.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left - rect.width / 2;
+            const mouseY = e.clientY - rect.top - rect.height / 2;
+
+            // Zoom relative to mouse cursor position
+            pointX = mouseX - (mouseX - pointX) * (scale / oldScale);
+            pointY = mouseY - (mouseY - pointY) * (scale / oldScale);
+            updateTransform(true);
         }
     }
-    prevPositions.push({ distance: currentDistance });
-    
-}
 
-const onMove = function (e) {
-    e.preventDefault();
-    if (e.touches.length == 2) {
-        onPinchZoom(e);
-    } else {
-        if (!panning) {
-            return;
+    function onDoubleClick(e) {
+        e.preventDefault();
+        if (scale > 1) {
+            scale = 1;
+            pointX = 0;
+            pointY = 0;
+        } else {
+            scale = 2.5;
+            const rect = zoomTarget.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left - rect.width / 2;
+            const mouseY = e.clientY - rect.top - rect.height / 2;
+            pointX = mouseX - (mouseX - pointX) * scale;
+            pointY = mouseY - (mouseY - pointY) * scale;
         }
-        pointX = (e.touches[0].clientX - start.x);
-        pointY = (e.touches[0].clientY - start.y);
-        setTransform();
+        updateTransform(true);
     }
-}
 
-const loadPc = function () {
-    setTransform();
-    zoom.addEventListener("mousedown", onMouseDown);
-    zoom.addEventListener("mouseup", onMouseUp);
-    zoom.addEventListener("mousemove", onMouseMove);
-    zoom.addEventListener("wheel", onZoom);
-}
+    // --- Touch Event Handlers ---
+    let touchStartDist = 0;
+    let touchStartScale = 1;
 
-const loadMobile = function () {
-    setTransform();
-    zoom.addEventListener("touchmove", onMove);
-    zoom.addEventListener("touchend", onTouchUp);
-    zoom.addEventListener("touchstart", onTouchDown);
-}
-
-const clean = function () {
-    if (zoom != null) {
-        zoom.removeEventListener("mousedown", onMouseDown);
-        zoom.removeEventListener("mouseup", onMouseUp);
-        zoom.removeEventListener("mousemove", onMouseMove);
-        zoom.removeEventListener("wheel", onZoom);
-        zoom.removeEventListener("touchmove", onMove);
-        zoom.removeEventListener("touchend", onTouchUp);
-        zoom.removeEventListener("touchstart", onTouchDown);
-        reset();
+    function onTouchStart(e) {
+        if (e.touches.length === 1) {
+            panning = true;
+            startX = e.touches[0].clientX - pointX;
+            startY = e.touches[0].clientY - pointY;
+        } else if (e.touches.length === 2) {
+            panning = false;
+            touchStartDist = getTouchDistance(e);
+            touchStartScale = scale;
+        }
     }
-}
 
-const initZoom = function () {
-    clean();
-    zoom = document.querySelector('#zoom');
-    if (window.matchMedia("(pointer: coarse)").matches) {
-        loadMobile();
-    } else {
-        loadPc();
+    function onTouchMove(e) {
+        e.preventDefault();
+        if (e.touches.length === 1 && panning) {
+            pointX = e.touches[0].clientX - startX;
+            pointY = e.touches[0].clientY - startY;
+            updateTransform(false);
+        } else if (e.touches.length === 2) {
+            const dist = getTouchDistance(e);
+            const factor = dist / touchStartDist;
+            const oldScale = scale;
+            scale = Math.max(minScale, Math.min(maxScale, touchStartScale * factor));
+
+            // Pinch zoom relative to midpoint of the two touches
+            const rect = zoomTarget.getBoundingClientRect();
+            const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left - rect.width / 2;
+            const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2 - rect.top - rect.height / 2;
+
+            pointX = midX - (midX - pointX) * (scale / oldScale);
+            pointY = midY - (midY - pointY) * (scale / oldScale);
+            updateTransform(false);
+        }
     }
-}
+
+    function onTouchEnd() {
+        panning = false;
+        updateTransform(true);
+    }
+
+    function getTouchDistance(e) {
+        return Math.sqrt(
+            Math.pow(e.touches[0].clientX - e.touches[1].clientX, 2) +
+            Math.pow(e.touches[0].clientY - e.touches[1].clientY, 2)
+        );
+    }
+
+    // --- Keyboard Navigation ---
+    function onKeyDown(e) {
+        if (e.key === "ArrowLeft") {
+            const prevBtn = document.querySelector(".carousel-control-prev");
+            if (prevBtn) prevBtn.click();
+        } else if (e.key === "ArrowRight") {
+            const nextBtn = document.querySelector(".carousel-control-next");
+            if (nextBtn) nextBtn.click();
+        } else if (e.key === "Escape") {
+            const backBtn = document.querySelector(".btn-back-gallery");
+            if (backBtn) backBtn.click();
+        }
+    }
+
+    function destroy() {
+        if (!zoomTarget) return;
+        zoomTarget.removeEventListener("mousedown", onMouseDown);
+        window.removeEventListener("mousemove", onMouseMove);
+        window.removeEventListener("mouseup", onMouseUp);
+        zoomTarget.removeEventListener("wheel", onWheel);
+        zoomTarget.removeEventListener("dblclick", onDoubleClick);
+        zoomTarget.removeEventListener("touchstart", onTouchStart);
+        zoomTarget.removeEventListener("touchmove", onTouchMove);
+        zoomTarget.removeEventListener("touchend", onTouchEnd);
+        window.removeEventListener("keydown", onKeyDown);
+    }
+
+    // Expose global initializer
+    window.initZoom = init;
+})();

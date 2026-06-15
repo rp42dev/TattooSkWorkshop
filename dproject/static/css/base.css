@@ -9875,7 +9875,7 @@ html::-webkit-scrollbar-thumb {
   overflow: hidden;
 }
 
-/* ── Desaturate + darken the background image via ::before ── */
+/* â”€â”€ Desaturate + darken the background image via ::before â”€â”€ */
 .parallax-section-banner::before {
   content: '';
   position: absolute;
@@ -9889,7 +9889,7 @@ html::-webkit-scrollbar-thumb {
   z-index: 0;
 }
 
-/* ── Deep vignette overlay ── */
+/* â”€â”€ Deep vignette overlay â”€â”€ */
 .parallax-overlay {
   position: absolute;
   inset: 0;
@@ -9903,7 +9903,7 @@ html::-webkit-scrollbar-thumb {
   z-index: 1;
 }
 
-/* ── Heavy film grain ── */
+/* â”€â”€ Heavy film grain â”€â”€ */
 .parallax-overlay::after {
   content: '';
   position: absolute;
@@ -9917,7 +9917,7 @@ html::-webkit-scrollbar-thumb {
   z-index: 2;
 }
 
-/* ── Extra sepia-tinted washed colour wash ── */
+/* â”€â”€ Extra sepia-tinted washed colour wash â”€â”€ */
 .parallax-overlay::before {
   content: '';
   position: absolute;
@@ -9968,7 +9968,7 @@ html::-webkit-scrollbar-thumb {
   margin: 0 auto 1.5rem;
 }
 
-/* Section body — flush against banners, no gap */
+/* Section body â€” flush against banners, no gap */
 .about-section-body {
   width: 100%;
   padding-top: 3.5rem;
@@ -10017,7 +10017,7 @@ html::-webkit-scrollbar-thumb {
 
 
 /* =====================================================
-   ABOUT PAGE � FULL REDESIGN
+   ABOUT PAGE — FULL REDESIGN
    ===================================================== */
 
 /* Full-width flex column container bypassing page_container */
@@ -10231,10 +10231,10 @@ html::-webkit-scrollbar-thumb {
 }
 
 /* =====================================================
-   ABOUT PAGE � WHITESPACE & BREATHING ROOM
+   ABOUT PAGE — WHITESPACE & BREATHING ROOM
    ===================================================== */
 
-/* Taller banners � give the image more presence */
+/* Taller banners — give the image more presence */
 .parallax-section-banner {
   min-height: 500px !important;
 }
@@ -10254,24 +10254,24 @@ html::-webkit-scrollbar-thumb {
   margin-bottom: 2.5rem !important;
 }
 
-/* Article subtitle � more breath above */
+/* Article subtitle — more breath above */
 .about-article-subtitle {
   margin-bottom: 1rem !important;
 }
 
-/* More space in article body text � open line height */
+/* More space in article body text — open line height */
 .about-article-body {
   line-height: 2 !important;
   font-size: 1rem !important;
 }
 
-/* Studio extras � more space from the text */
+/* Studio extras — more space from the text */
 .about-studio-extras {
   margin-top: 3rem !important;
   padding-top: 2rem !important;
 }
 
-/* Media column � taller to match taller text column */
+/* Media column — taller to match taller text column */
 .about-media-col,
 .about-media-col .carousel,
 .about-media-col .carousel-inner,
@@ -10280,7 +10280,7 @@ html::-webkit-scrollbar-thumb {
   min-height: 560px !important;
 }
 
-/* Responsive overrides � scale back gracefully */
+/* Responsive overrides — scale back gracefully */
 @media (max-width: 1199px) {
   .about-text-col { padding: 3rem 3rem !important; }
 }
@@ -10308,4 +10308,223 @@ html::-webkit-scrollbar-thumb {
   .about-media-col .carousel-item img {
     min-height: 280px !important;
   }
+}
+
+
+/* =====================================================
+   DETAILS VIEW & LIGHTBOX GALLERY STYLING
+   ===================================================== */
+.detail-item {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #050809;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Premium blurred backdrop */
+.detail-item .img-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  z-index: 1;
+  object-fit: cover;
+  filter: blur(40px) brightness(0.35) saturate(0.8);
+  -webkit-filter: blur(40px) brightness(0.35) saturate(0.8);
+  pointer-events: none;
+  opacity: 0.8;
+  animation: blur-bg 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes blur-bg {
+  0% {
+    filter: blur(120px) brightness(0.2);
+    -webkit-filter: blur(120px) brightness(0.2);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(40px) brightness(0.35) saturate(0.8);
+    -webkit-filter: blur(40px) brightness(0.35) saturate(0.8);
+    opacity: 0.8;
+  }
+}
+
+/* Interactive Pinch-Zoom / Pan Area */
+.zoom {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  user-select: none;
+}
+
+.item-gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  max-height: 85%;
+  transition: opacity 0.3s ease;
+}
+
+.item-gallery img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: detailsImageFade 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes detailsImageFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Frosted Glass Navigation Buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(5, 8, 9, 0.45) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  opacity: 0.65;
+  color: var(--bs-light) !important;
+}
+
+.carousel-control-prev { left: 2.5rem; }
+.carousel-control-next { right: 2.5rem; }
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  background: rgba(212, 175, 55, 0.15) !important;
+  border-color: var(--premium-bronze) !important;
+  color: var(--premium-bronze) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+  font-size: 1.5rem;
+}
+
+/* Frosted Glass Info Caption box */
+.detail-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 3rem);
+  max-width: 460px;
+  background: rgba(5, 8, 9, 0.76);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  z-index: 10;
+  text-align: center;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+}
+
+.detail-caption-title {
+  font-family: var(--bs-headings-font-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--bs-light);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+  text-transform: capitalize;
+}
+
+.detail-caption-artist {
+  font-size: 0.85rem;
+  color: var(--premium-bronze);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+/* Premium Back Button in Nav block */
+.btn-back-gallery {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(5, 8, 9, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  transition: all 0.3s ease;
+  color: var(--bs-light);
+  text-decoration: none;
+}
+
+.btn-back-gallery:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--premium-bronze);
+  color: var(--premium-bronze);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.25);
+  transform: scale(1.05);
+}
+
+.btn-back-gallery i {
+  font-size: 1.25rem;
+}
+
+/* Screen Size Specific Overrides */
+@media (max-width: 768px) {
+  .carousel-control-prev { left: 1rem; }
+  .carousel-control-next { right: 1rem; }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 44px;
+    height: 44px;
+  }
+  .detail-caption {
+    bottom: 1.5rem;
+    padding: 0.75rem 1.25rem;
+  }
+  .detail-caption-title { font-size: 1.05rem; }
+  .detail-caption-artist { font-size: 0.75rem; }
 }
