@@ -122,7 +122,6 @@
         zoomTarget.style.cursor = "grabbing";
     }
 
-    // Fixed: panning must not slide when not holding mouse
     function onMouseMove(e) {
         if (!panning) return;
         e.preventDefault();
@@ -141,8 +140,15 @@
     function onWheel(e) {
         e.preventDefault();
         
-        const zoomFactor = 1.25;
+        const zoomFactor = 1.15;
         const oldScale = scale;
+
+        // Mouse pivot points (zoom into cursor)
+        const pivotX = e.clientX;
+        const pivotY = e.clientY;
+
+        const xs = (pivotX - pointX) / scale;
+        const ys = (pivotY - pointY) / scale;
 
         if (e.deltaY < 0) {
             scale = Math.min(maxScale, scale * zoomFactor);
@@ -150,16 +156,9 @@
             scale = Math.max(minScale, scale / zoomFactor);
         }
 
-        if (scale !== oldScale) {
-            const rect = zoomTarget.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left - rect.width / 2;
-            const mouseY = e.clientY - rect.top - rect.height / 2;
-
-            // Zoom relative to mouse cursor position
-            pointX = mouseX - (mouseX - pointX) * (scale / oldScale);
-            pointY = mouseY - (mouseY - pointY) * (scale / oldScale);
-            updateTransform(true);
-        }
+        pointX = pivotX - xs * scale;
+        pointY = pivotY - ys * scale;
+        updateTransform(true);
     }
 
     function onDoubleClick(e) {
@@ -170,11 +169,12 @@
             pointY = 0;
         } else {
             scale = 2.5;
-            const rect = zoomTarget.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left - rect.width / 2;
-            const mouseY = e.clientY - rect.top - rect.height / 2;
-            pointX = mouseX - (mouseX - pointX) * scale;
-            pointY = mouseY - (mouseY - pointY) * scale;
+            const pivotX = e.clientX;
+            const pivotY = e.clientY;
+            const xs = (pivotX - pointX) / 1;
+            const ys = (pivotY - pointY) / 1;
+            pointX = pivotX - xs * scale;
+            pointY = pivotY - ys * scale;
         }
         updateTransform(true);
     }
@@ -214,11 +214,12 @@
             pointY = 0;
         } else {
             scale = 2.5;
-            const rect = zoomTarget.getBoundingClientRect();
-            const touchX = e.touches[0].clientX - rect.left - rect.width / 2;
-            const touchY = e.touches[0].clientY - rect.top - rect.height / 2;
-            pointX = touchX - (touchX - pointX) * scale;
-            pointY = touchY - (touchY - pointY) * scale;
+            const pivotX = e.touches[0].clientX;
+            const pivotY = e.touches[0].clientY;
+            const xs = (pivotX - pointX) / 1;
+            const ys = (pivotY - pointY) / 1;
+            pointX = pivotX - xs * scale;
+            pointY = pivotY - ys * scale;
         }
         updateTransform(true);
     }
@@ -233,15 +234,18 @@
             const dist = getTouchDistance(e);
             const factor = dist / touchStartDist;
             const oldScale = scale;
-            scale = Math.max(minScale, Math.min(maxScale, touchStartScale * factor));
 
             // Pinch zoom relative to midpoint of the two touches
-            const rect = zoomTarget.getBoundingClientRect();
-            const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left - rect.width / 2;
-            const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2 - rect.top - rect.height / 2;
+            const midpointX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+            const midpointY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
 
-            pointX = midX - (midX - pointX) * (scale / oldScale);
-            pointY = midY - (midY - pointY) * (scale / oldScale);
+            const xs = (midpointX - pointX) / scale;
+            const ys = (midpointY - pointY) / scale;
+
+            scale = Math.max(minScale, Math.min(maxScale, touchStartScale * factor));
+
+            pointX = midpointX - xs * scale;
+            pointY = midpointY - ys * scale;
             updateTransform(false);
         }
     }
