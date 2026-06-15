@@ -10666,3 +10666,71 @@ html::-webkit-scrollbar-thumb {
     display: block;
   }
 }
+
+/* =====================================================
+   COMPACT & PREMIUM CONTACT FORM STYLES
+   ===================================================== */
+#swap_form form .mb-3,
+#swap_form form .form-group {
+  margin-bottom: 0.65rem !important;
+}
+
+#swap_form form label,
+#swap_form form .form-label {
+  font-size: 0.78rem !important;
+  margin-bottom: 0.15rem !important;
+  font-weight: 500;
+  color: rgba(224, 224, 224, 0.75) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#swap_form form .form-control,
+#swap_form form input,
+#swap_form form textarea,
+#swap_form form select {
+  font-size: 0.82rem !important;
+  padding: 0.4rem 0.7rem !important;
+  border-radius: 8px !important;
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  transition: all 0.2s ease;
+}
+
+#swap_form form .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: var(--premium-bronze) !important;
+  box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.15) !important;
+}
+
+#swap_form form textarea.form-control {
+  min-height: 70px !important;
+  height: 80px !important;
+  resize: vertical;
+}
+
+/* Highlight Submit Button with Premium Bronze Theme */
+#swap_form form button[type="submit"] {
+  background: var(--premium-gradient) !important;
+  color: #050809 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  font-size: 0.82rem !important;
+  padding: 0.5rem 1.25rem !important;
+  border-radius: 30px !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#swap_form form button[type="submit"]:hover {
+  transform: translateY(-1.5px) scale(1.01) !important;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3) !important;
+  filter: brightness(1.1) !important;
+}
+
+#swap_form form button[type="submit"]:active {
+  transform: translateY(0) scale(1) !important;
+}
