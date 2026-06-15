@@ -7,18 +7,15 @@
     let panning = false;
     let prevDistance = 0;
     let zoomTarget = null;
-    let imgElement = null;
     let lastTap = 0;
 
     const maxScale = 4.0;
     const minScale = 1.0;
 
     function init() {
-        zoomTarget = document.querySelector("#zoom");
+        // Target the actual image container (.item-gallery) instead of the full screen container
+        zoomTarget = document.querySelector(".item-gallery");
         if (!zoomTarget) return;
-
-        imgElement = zoomTarget.querySelector("img");
-        if (!imgElement) return;
 
         // Reset positions
         scale = 1;
@@ -68,27 +65,23 @@
     }
 
     function getBounds() {
-        if (!imgElement || !zoomTarget) return { minX: 0, maxX: 0, minY: 0, maxY: 0 };
+        if (!zoomTarget) return { minX: 0, maxX: 0, minY: 0, maxY: 0 };
         
-        const containerRect = zoomTarget.getBoundingClientRect();
-        const imgRect = imgElement.getBoundingClientRect();
-
-        // Natural dimensions of the image inside the viewport
-        const w = imgRect.width / scale;
-        const h = imgRect.height / scale;
-
-        const scaledW = w * scale;
-        const scaledH = h * scale;
+        const viewport = zoomTarget.parentElement.getBoundingClientRect();
+        const scaledRect = zoomTarget.getBoundingClientRect();
+        
+        const scaledW = scaledRect.width;
+        const scaledH = scaledRect.height;
 
         let minX = 0, maxX = 0;
-        if (scaledW > containerRect.width) {
-            maxX = (scaledW - containerRect.width) / 2;
+        if (scaledW > viewport.width) {
+            maxX = (scaledW - viewport.width) / 2;
             minX = -maxX;
         }
 
         let minY = 0, maxY = 0;
-        if (scaledH > containerRect.height) {
-            maxY = (scaledH - containerRect.height) / 2;
+        if (scaledH > viewport.height) {
+            maxY = (scaledH - viewport.height) / 2;
             minY = -maxY;
         }
 
@@ -109,6 +102,7 @@
         }
 
         zoomTarget.style.transition = animate ? "transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94)" : "none";
+        zoomTarget.style.transformOrigin = "center center";
         zoomTarget.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
     }
 
@@ -143,22 +137,26 @@
         const zoomFactor = 1.15;
         const oldScale = scale;
 
-        // Mouse pivot points (zoom into cursor)
-        const pivotX = e.clientX;
-        const pivotY = e.clientY;
-
-        const xs = (pivotX - pointX) / scale;
-        const ys = (pivotY - pointY) / scale;
-
         if (e.deltaY < 0) {
             scale = Math.min(maxScale, scale * zoomFactor);
         } else {
             scale = Math.max(minScale, scale / zoomFactor);
         }
 
-        pointX = pivotX - xs * scale;
-        pointY = pivotY - ys * scale;
-        updateTransform(true);
+        if (scale !== oldScale) {
+            const viewport = zoomTarget.parentElement.getBoundingClientRect();
+            const viewportCenterX = viewport.left + viewport.width / 2;
+            const viewportCenterY = viewport.top + viewport.height / 2;
+
+            // Mouse offset from viewport center
+            const dx = e.clientX - viewportCenterX;
+            const dy = e.clientY - viewportCenterY;
+
+            // Zoom relative to mouse cursor position
+            pointX = dx * (1 - scale);
+            pointY = dy * (1 - scale);
+            updateTransform(true);
+        }
     }
 
     function onDoubleClick(e) {
@@ -169,12 +167,15 @@
             pointY = 0;
         } else {
             scale = 2.5;
-            const pivotX = e.clientX;
-            const pivotY = e.clientY;
-            const xs = (pivotX - pointX) / 1;
-            const ys = (pivotY - pointY) / 1;
-            pointX = pivotX - xs * scale;
-            pointY = pivotY - ys * scale;
+            const viewport = zoomTarget.parentElement.getBoundingClientRect();
+            const viewportCenterX = viewport.left + viewport.width / 2;
+            const viewportCenterY = viewport.top + viewport.height / 2;
+
+            const dx = e.clientX - viewportCenterX;
+            const dy = e.clientY - viewportCenterY;
+
+            pointX = dx * (1 - scale);
+            pointY = dy * (1 - scale);
         }
         updateTransform(true);
     }
@@ -214,12 +215,15 @@
             pointY = 0;
         } else {
             scale = 2.5;
-            const pivotX = e.touches[0].clientX;
-            const pivotY = e.touches[0].clientY;
-            const xs = (pivotX - pointX) / 1;
-            const ys = (pivotY - pointY) / 1;
-            pointX = pivotX - xs * scale;
-            pointY = pivotY - ys * scale;
+            const viewport = zoomTarget.parentElement.getBoundingClientRect();
+            const viewportCenterX = viewport.left + viewport.width / 2;
+            const viewportCenterY = viewport.top + viewport.height / 2;
+
+            const dx = e.touches[0].clientX - viewportCenterX;
+            const dy = e.touches[0].clientY - viewportCenterY;
+
+            pointX = dx * (1 - scale);
+            pointY = dy * (1 - scale);
         }
         updateTransform(true);
     }
@@ -235,21 +239,26 @@
             const factor = dist / touchStartDist;
             const oldScale = scale;
 
-            // Pinch zoom relative to midpoint of the two touches
+            // Midpoint of the two fingers
             const midpointX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
             const midpointY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
 
-            const xs = (midpointX - pointX) / scale;
-            const ys = (midpointY - pointY) / scale;
+            const viewport = zoomTarget.parentElement.getBoundingClientRect();
+            const viewportCenterX = viewport.left + viewport.width / 2;
+            const viewportCenterY = viewport.top + viewport.height / 2;
+
+            const dx = midpointX - viewportCenterX;
+            const dy = midpointY - viewportCenterY;
 
             scale = Math.max(minScale, Math.min(maxScale, touchStartScale * factor));
 
-            pointX = midpointX - xs * scale;
-            pointY = midpointY - ys * scale;
+            pointX = dx * (1 - scale);
+            pointY = dy * (1 - scale);
             updateTransform(false);
         }
     }
 
+    // Fixed: Touchend should clean up and pan back within boundaries properly
     function onTouchEnd() {
         panning = false;
         updateTransform(true);
