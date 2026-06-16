@@ -10762,4 +10762,10 @@ html::-webkit-scrollbar-thumb {
     transition-duration: 1.2s;
     transform: translateY(40px);
   }
+
+  /* When the column scrolls into view on mobile, transition the images from grayscale to color & zoom slightly */
+  .about-media-col.lazy-element.lazy-element--visible #carousel2 picture img {
+    filter: grayscale(0%) contrast(100%);
+    transform: scale(1.03);
+  }
 }
