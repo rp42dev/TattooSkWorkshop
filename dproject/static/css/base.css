@@ -9468,6 +9468,12 @@ html::-webkit-scrollbar-thumb {
   animation: fadeIn 2s 2s ease-in-out forwards;
 }
 
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: calc(2rem + 30px);
+  }
+}
+
 .scroll-indicator span {
   font-size: 0.7rem;
   text-transform: uppercase;
