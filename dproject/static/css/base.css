@@ -10740,3 +10740,26 @@ html::-webkit-scrollbar-thumb {
 #swap_form form button[type="submit"]:active {
   transform: translateY(0) scale(1) !important;
 }
+
+/* Scroll-into-view (lazy-load) transitions for elements */
+.lazy-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+              transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: opacity, transform;
+}
+
+.lazy-element.lazy-element--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile specific transition delay for About page carousel images */
+@media (max-width: 768px) {
+  .about-media-col.lazy-element {
+    transition-delay: 0.3s;
+    transition-duration: 1.2s;
+    transform: translateY(40px);
+  }
+}
