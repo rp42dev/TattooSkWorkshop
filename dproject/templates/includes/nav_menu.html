@@ -1,4 +1,5 @@
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <div class="nav-menu-items d-flex flex-column gap-2 mt-4">
     <a class="nav-link-premium" href="{% url 'home' %}">
         <i class="fa-solid fa-house"></i>
@@ -12,6 +13,16 @@
         <i class="fa-solid fa-images"></i>
         <span>{% translate "Gallery" %}</span>
     </a>
+    {% if LANGUAGE_CODE == 'no' %}
+    <a class="nav-link-premium" href="{% url 'page' 'priser' %}">
+        <i class="fa-solid fa-money-check"></i>
+        <span>{% translate "Prices" %}</span>
+    </a>
+    <a class="nav-link-premium" href="{% url 'page' 'ettervern' %}">
+        <i class="fa-solid fa-hand-holding-hand"></i>
+        <span>{% translate "Aftercare" %}</span>
+    </a>
+    {% else %}
     <a class="nav-link-premium" href="{% url 'page' 'prices' %}">
         <i class="fa-solid fa-money-check"></i>
         <span>{% translate "Prices" %}</span>
@@ -20,6 +31,7 @@
         <i class="fa-solid fa-hand-holding-hand"></i>
         <span>{% translate "Aftercare" %}</span>
     </a>
+    {% endif %}
     <a class="nav-link-premium" href="{% url 'page' 'faq' %}">
         <i class="fa-solid fa-question"></i>
         <span>{% translate "FAQ" %}</span>

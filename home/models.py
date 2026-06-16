@@ -34,8 +34,14 @@ class Page(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
-        # Now handled automatically by modeltranslation or slug field
-        return reverse(self.slug + '/')
+        if self.slug_en == 'home':
+            return reverse('home')
+        elif self.slug_en == 'about':
+            return reverse('about')
+        elif self.slug_en == 'gallery':
+            return reverse('artist')
+        else:
+            return reverse('page', args=[self.slug])
 
     def __str__(self):
         return self.name
