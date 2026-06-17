@@ -1593,19 +1593,31 @@ input {
   height: 1.5em;
 }
 
+.form-control::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.05rem !important;
+}
+
 .form-control::-moz-placeholder {
-  color: var(--bs-white);
-  opacity: 1;
+  color: rgba(255, 255, 255, 0.45) !important;
+  opacity: 1 !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.05rem !important;
 }
 
 .form-control:-ms-input-placeholder {
-  color: var(--bs-white);
-  opacity: 1;
+  color: rgba(255, 255, 255, 0.45) !important;
+  opacity: 1 !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.05rem !important;
 }
 
 .form-control::placeholder {
-  color: var(--bs-white);
-  opacity: 1;
+  color: rgba(255, 255, 255, 0.45) !important;
+  opacity: 1 !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.05rem !important;
 }
 
 .form-control:disabled,
