@@ -10693,7 +10693,7 @@ html::-webkit-scrollbar-thumb {
    ===================================================== */
 #swap_form form .mb-3,
 #swap_form form .form-group {
-  margin-bottom: 1.25rem !important;
+  margin-bottom: 1.6rem !important;
 }
 
 #swap_form form label,
@@ -10711,7 +10711,7 @@ html::-webkit-scrollbar-thumb {
 #swap_form form textarea,
 #swap_form form select {
   font-size: 0.82rem !important;
-  padding: 0.75rem 1.0rem !important;
+  padding: 0.9rem 1.15rem !important;
   border-radius: 8px !important;
   background-color: rgba(255, 255, 255, 0.03) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -10726,8 +10726,8 @@ html::-webkit-scrollbar-thumb {
 }
 
 #swap_form form textarea.form-control {
-  min-height: 70px !important;
-  height: 80px !important;
+  min-height: 90px !important;
+  height: 110px !important;
   resize: vertical;
 }
 
