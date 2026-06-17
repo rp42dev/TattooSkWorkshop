@@ -9762,7 +9762,7 @@ html::-webkit-scrollbar-thumb {
 
 /* Ink Reveal Effect (Monochrome to Color) */
 #carousel2 picture img {
-  filter: grayscale(100%) contrast(110%);
+  filter: grayscale(80%) contrast(110%);
   transition: filter 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
