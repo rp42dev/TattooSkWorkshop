@@ -24,6 +24,13 @@ class ContactForm(forms.Form):
         self.helper.form_show_labels = True
         self.helper.label_class = 'text-light'
 
+        # Use placeholders instead of labels for text/email/textarea inputs
+        for field_name in ['name', 'email', 'phone', 'message']:
+            field = self.fields.get(field_name)
+            if field:
+                field.widget.attrs['placeholder'] = field.label
+                field.label = ""
+
     def clean(self):
         cleaned_data = super().clean()
         if cleaned_data.get('subject') == 'complaint':

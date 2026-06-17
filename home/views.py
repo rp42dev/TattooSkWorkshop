@@ -37,7 +37,8 @@ class ContactFormView(View):
         form = ContactForm(initial={'subject': subject})
         
         if subject == _('complaint'):
-            form.fields['message'].label = _('Complaint Message:')
+            form.fields['message'].widget.attrs['placeholder'] = _('Complaint Message:')
+            form.fields['message'].label = ""
             btn_text = _('question')
         else:
             btn_text = _('complaint')
