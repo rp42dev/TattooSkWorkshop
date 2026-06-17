@@ -244,3 +244,7 @@ msgstr ""
 #: .\templates\registration\password_reset_form.html:14
 msgid "Reset my password"
 msgstr ""
+
+#: .\home\templates\index.html:30
+msgid "Tattoo Studio in Lillestrøm · Near Oslo"
+msgstr "Tatoveringsstudio i Lillestrøm · Nær Oslo"
