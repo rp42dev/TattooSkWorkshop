@@ -10956,12 +10956,16 @@ html::-webkit-scrollbar-thumb {
 
 .album.row > [class^="col-"],
 .album.row > [class*=" col-"] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   padding: 0.5rem !important; /* Mobile: 1rem spacing total (0.5rem on all sides) */
 }
 
 @media (min-width: 576px) {
   .album.row > [class^="col-"],
   .album.row > [class*=" col-"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     padding: 0.75rem !important; /* Tablet: 1.5rem spacing total */
   }
 }
@@ -10969,6 +10973,8 @@ html::-webkit-scrollbar-thumb {
 @media (min-width: 992px) {
   .album.row > [class^="col-"],
   .album.row > [class*=" col-"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     padding: 1rem !important; /* Desktop: 2rem spacing total */
   }
 }
