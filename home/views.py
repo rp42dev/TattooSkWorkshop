@@ -1,20 +1,13 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.conf import settings
-from django.core.mail import BadHeaderError, EmailMessage, EmailMultiAlternatives
+from django.core.mail import EmailMultiAlternatives
 from django.utils.translation import gettext as _
 from django.template.loader import render_to_string
-from django.views.decorators.http import require_POST, require_GET
-from django.http import HttpResponse, HttpResponseRedirect
-from .models import Page, Section
+from django.http import HttpResponseRedirect
 from django.contrib import messages
-from pytube import *
-
-from .forms import ContactForm
-
-
 from django.views.generic import TemplateView, View, FormView
+
 from .models import Page, Section
 from .forms import ContactForm
 
