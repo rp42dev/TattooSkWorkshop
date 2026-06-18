@@ -43,7 +43,7 @@
     <div class="grain-overlay"></div>
   </div>
   <div id="videoContainer">
-    <video playsinline="playsinline" muted="muted" loop="loop" id="video" autoplay="autoplay">
+    <video playsinline="playsinline" muted="muted" loop="loop" id="video" autoplay="autoplay" poster="{% static 'video/video-poster.jpg' %}">
       <source src="{% static 'video/video.mp4' %}" type="video/mp4">
       <source src="{% static 'video/video.webm' %}" type="video/webm">
     </video>
