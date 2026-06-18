@@ -10947,6 +10947,32 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
+/* Gallery Grid Uniform X and Y Gap Spacing */
+.album.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+
+.album.row > [class^="col-"],
+.album.row > [class*=" col-"] {
+  padding: 0.5rem !important; /* Mobile: 1rem spacing total (0.5rem on all sides) */
+}
+
+@media (min-width: 576px) {
+  .album.row > [class^="col-"],
+  .album.row > [class*=" col-"] {
+    padding: 0.75rem !important; /* Tablet: 1.5rem spacing total */
+  }
+}
+
+@media (min-width: 992px) {
+  .album.row > [class^="col-"],
+  .album.row > [class*=" col-"] {
+    padding: 1rem !important; /* Desktop: 2rem spacing total */
+  }
+}
+
 
 
 
