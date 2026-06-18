@@ -9,8 +9,8 @@
   {% else %}
   <div class="col-6 col-xl-4 col-xxl-3">
     {% endif %}
-    <div class="card rounded-3 h-100 mx-2 mx-sm-3 mx-md-4 g-dark">
-      <div class="card-body rounded-3 loading-card p-0">
+    <div class="gallery-card rounded-3 h-100 bg-transparent">
+      <div class="loading-card rounded-3 p-0 overflow-hidden position-relative">
         {% if item.image %}
         <picture>
           <source
@@ -18,14 +18,16 @@
                 {% thumbnail item.image "540x960" crop="center" format="WEBP" as img %}{{ img.url }}{% endthumbnail %} 960w,
                 {% thumbnail item.image "720x1280" crop="center" format="WEBP" as img %}{{ img.url }}{% endthumbnail %} 1280w"
             type="image/webp">
-          <img class="card-img img-fluid rounded-3 lazy"
+          <img class="gallery-card-img img-fluid rounded-3 lazy"
             src="{% thumbnail item.image "480x854" crop="center" as img %}{{ img.url }} {% endthumbnail %}"
-            alt="{{ image.name }} image">
+            onload="this.classList.add('loaded'); this.closest('.loading-card').classList.add('loaded');"
+            alt="{{ item.name|default:'Tattoo' }} image">
         </picture>
         <a href="{{ item.get_absolute_url }}">
-          <div class="card-img-overlay p-2 text-left rounded-3">
-            <h3 class="m-0 fs-6 text-capitalize fw-lighter">
-              {% if item.artist %}{{ item.artist }}{% else %}{{ item.name }}{% endif %}</h3>
+          <div class="gallery-card-overlay p-3 text-left rounded-3 d-flex flex-column justify-content-end">
+            <h3 class="gallery-card-title m-0">
+              {% if item.artist %}{{ item.artist }}{% else %}{{ item.name }}{% endif %}
+            </h3>
           </div>
         </a>
         {% endif %}
@@ -36,5 +38,12 @@
 
 
   <script>
-    
+    // Handle cached or already complete images on initial load / htmx swap
+    document.querySelectorAll('.gallery-card-img').forEach(function(img) {
+      if (img.complete) {
+        img.classList.add('loaded');
+        var loader = img.closest('.loading-card');
+        if (loader) loader.classList.add('loaded');
+      }
+    });
   </script>
