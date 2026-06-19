@@ -44,8 +44,8 @@ msgid "Image"
 msgstr "Bilde"
 
 #: .\home\forms.py:19
-msgid "Confirm you are over 16"
-msgstr "Bekreft at du er over 16"
+msgid "Privacy Policy"
+msgstr "Personvern"
 
 #: .\home\templates\index.html:30
 msgid "Tattoo Studio in Lillestrøm · Near Oslo"

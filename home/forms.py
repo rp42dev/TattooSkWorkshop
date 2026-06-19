@@ -16,7 +16,7 @@ class ContactForm(forms.Form):
         required=True
     )
     image = forms.ImageField(label=_('Image'), required=False)
-    confirm_age = forms.BooleanField(label=_('Confirm you are over 16'), required=True)
+    confirm_age = forms.BooleanField(label=_('Privacy Policy'), required=True)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -30,6 +30,22 @@ class ContactForm(forms.Form):
             if field:
                 field.widget.attrs['placeholder'] = field.label
                 field.label = ""
+
+        # Set dynamic translated label with link for privacy policy
+        from django.utils.safestring import mark_safe
+        from django.urls import reverse
+        from django.utils.translation import gettext as _
+        from django.utils.translation import get_language
+        try:
+            lang = get_language()
+            slug = 'personvern' if lang == 'no' else 'privacy-policy'
+            url = reverse('page', args=[slug])
+            label_text = _('Privacy Policy')
+            self.fields['confirm_age'].label = mark_safe(
+                f'<a href="{url}" target="_blank" class="text-decoration-underline text-light">{label_text}</a>'
+            )
+        except Exception:
+            pass
 
     def clean(self):
         cleaned_data = super().clean()
