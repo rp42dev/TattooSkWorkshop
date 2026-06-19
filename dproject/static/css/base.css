@@ -10976,8 +10976,23 @@ html::-webkit-scrollbar-thumb {
   .album.row > [class*=" col-"] {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    padding: 1rem !important; /* Desktop: 2rem spacing total */
   }
+}
+
+/* ── FAQ Accordion Dim Styles ── */
+.accordion-button.collapsed {
+  color: rgba(224, 224, 224, 0.75) !important;
+  transition: color 0.2s ease-in-out;
+}
+.accordion-button.collapsed span {
+  color: rgba(212, 175, 55, 0.75) !important;
+  transition: color 0.2s ease-in-out;
+}
+.accordion-button:not(.collapsed) {
+  color: var(--bs-white) !important;
+}
+.accordion-button:not(.collapsed) span {
+  color: var(--premium-bronze) !important;
 }
 
 /* ── Print Styles for Ettervern / Aftercare Page ── */
