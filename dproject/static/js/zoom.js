@@ -58,18 +58,26 @@
         const tutorial = document.querySelector("#zoom-tutorial");
         if (!tutorial) return;
 
+        // Dismiss handler (clicking anywhere on the overlay or on the button)
+        const dismissFunc = function (e) {
+            tutorial.classList.remove("show");
+            localStorage.setItem("zoom_tutorial_seen", "true");
+        };
+        tutorial.removeEventListener("click", dismissFunc);
+        tutorial.addEventListener("click", dismissFunc);
+
         const tutorialSeen = localStorage.getItem("zoom_tutorial_seen");
         if (!tutorialSeen) {
-            // Show overlay
             tutorial.classList.add("show");
+        }
 
-            // Dismiss handler (clicking anywhere on the overlay or on the button)
-            const dismissFunc = function (e) {
-                tutorial.classList.remove("show");
-                localStorage.setItem("zoom_tutorial_seen", "true");
-                tutorial.removeEventListener("click", dismissFunc);
+        // Handle reopen button
+        const reopenBtn = document.querySelector("#reopen-tutorial-btn");
+        if (reopenBtn) {
+            reopenBtn.onclick = function (e) {
+                e.stopPropagation();
+                tutorial.classList.add("show");
             };
-            tutorial.addEventListener("click", dismissFunc);
         }
     }
 

@@ -10503,6 +10503,29 @@ html::-webkit-scrollbar-thumb {
   font-weight: 500;
 }
 
+.btn-reopen-tutorial {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.35rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+}
+
+.btn-reopen-tutorial:hover {
+  color: var(--premium-bronze);
+  transform: translateY(-50%) scale(1.15);
+}
+
 /* Premium Back Button in Nav block */
 .btn-back-gallery {
   position: absolute;
