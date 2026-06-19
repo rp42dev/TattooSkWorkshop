@@ -1,6 +1,7 @@
 {% load static %}
 {% load i18n %}
 {% load thumbnail %}
+{% get_current_language as LANGUAGE_CODE %}
 
 
 <div class="detail-item">
@@ -13,18 +14,22 @@
             <div class="tutorial-icon-wrapper mobile-only-icon mobile-tutorial-icon">
                 <i class="bi bi-hand-index-thumb"></i>
             </div>
-            <h2 class="tutorial-title">{% trans "Interactive Gallery" %}</h2>
+            <h2 class="tutorial-title">
+                {% if LANGUAGE_CODE == 'en' %}Interactive Gallery{% else %}Interaktivt galleri{% endif %}
+            </h2>
             <p class="tutorial-text pc-only-icon">
-                {% trans "Scroll wheel to Zoom" %}<br>
-                {% trans "Drag to Pan/Move" %}<br>
-                {% trans "Double-click to auto-zoom/reset" %}
+                {% if LANGUAGE_CODE == 'en' %}Scroll wheel to Zoom{% else %}Rull med hjulet for å zoome{% endif %}<br>
+                {% if LANGUAGE_CODE == 'en' %}Drag to Pan/Move{% else %}Dra for å panorere/flytte{% endif %}<br>
+                {% if LANGUAGE_CODE == 'en' %}Double-click to auto-zoom/reset{% else %}Dobbeltklikk for å zoome/nullstille{% endif %}
             </p>
             <p class="tutorial-text mobile-only-icon">
-                {% trans "Pinch with two fingers to Zoom" %}<br>
-                {% trans "Drag with one finger to Move" %}<br>
-                {% trans "Double-tap to auto-zoom/reset" %}
+                {% if LANGUAGE_CODE == 'en' %}Pinch with two fingers to Zoom{% else %}Knip med to fingre for å zoome{% endif %}<br>
+                {% if LANGUAGE_CODE == 'en' %}Drag with one finger to Move{% else %}Dra med én finger for å flytte{% endif %}<br>
+                {% if LANGUAGE_CODE == 'en' %}Double-tap to auto-zoom/reset{% else %}Dobbelttrykk for å zoome/nullstille{% endif %}
             </p>
-            <button class="tutorial-btn" id="dismiss-tutorial-btn">{% trans "Got It" %}</button>
+            <button class="tutorial-btn" id="dismiss-tutorial-btn">
+                {% if LANGUAGE_CODE == 'en' %}Got It{% else %}Greit{% endif %}
+            </button>
         </div>
     </div>
 
@@ -46,7 +51,7 @@
     
     <!-- Elegant Frosted Glass Info Caption -->
     <div class="detail-caption">
-        <button id="reopen-tutorial-btn" class="btn-reopen-tutorial" aria-label="Show instructions"><i class="bi bi-info-circle"></i></button>
+        <button id="reopen-tutorial-btn" class="btn-reopen-tutorial" aria-label="{% if LANGUAGE_CODE == 'en' %}Show instructions{% else %}Vis instruksjoner{% endif %}"><i class="bi bi-info-circle"></i></button>
         <h1 class="detail-caption-title">{{ object.name }}</h1>
         {% if object.artist %}
         <div class="detail-caption-artist">{% trans "By" %} {{ object.artist.name }}</div>
