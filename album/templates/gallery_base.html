@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block nav %}
-<a href="/" class="back" aria-label="Return back to previous page"><i class="bi bi-reply-all"></i></a>
+<a href="/" class="back" aria-label="Return back to previous page" onclick="if (document.referrer && document.referrer.indexOf(window.location.host) !== -1) { history.back(); return false; }"><i class="bi bi-reply-all"></i></a>
 {% endblock %}
 
 {% block content %}
