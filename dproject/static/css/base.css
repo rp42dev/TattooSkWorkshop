@@ -9579,6 +9579,102 @@ html::-webkit-scrollbar-thumb {
   transform-origin: bottom left;
 }
 
+/* Premium Dark Theme Map Container & UI */
+.map-container-custom {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(10, 10, 10, 0.6);
+  height: 450px;
+}
+
+.map-container-custom:hover {
+  border-color: var(--premium-bronze);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+.map-container-custom iframe {
+  width: 100%;
+  height: 100%;
+  filter: invert(90%) hue-rotate(180deg) contrast(120%) saturate(60%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.map-container-custom:hover iframe {
+  filter: invert(90%) hue-rotate(180deg) contrast(110%) saturate(80%);
+}
+
+/* Floating frosted glass info card */
+.map-floating-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 10;
+  max-width: 280px;
+  background: rgba(12, 18, 20, 0.85) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  text-align: left;
+}
+
+.map-container-custom:hover .map-floating-badge {
+  border-color: var(--premium-bronze) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Directions Button */
+.map-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-family: var(--bs-headings-font-family);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--premium-bronze) !important;
+  background: rgba(212, 175, 55, 0.05) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: var(--border-radius) !important;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
+
+.map-badge-btn:hover {
+  color: var(--bs-black) !important;
+  background: var(--premium-bronze) !important;
+  border-color: var(--premium-bronze) !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+@media (max-width: 576px) {
+  .map-floating-badge {
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    margin: 1rem;
+    background: var(--glass-bg) !important;
+  }
+  .map-container-custom {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .map-container-custom iframe {
+    height: 300px;
+  }
+}
+
 .navbar i {
   color: var(--bs-white);
   font-size: 1.5rem;
