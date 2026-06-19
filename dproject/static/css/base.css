@@ -10980,6 +10980,98 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
+/* ── Print Styles for Ettervern / Aftercare Page ── */
+@media print {
+  /* 1. Global background reset to white and text to black */
+  html,
+  body,
+  .about-page,
+  .about-section-body,
+  .page_container,
+  .glass-card,
+  .container,
+  .row,
+  .col-12,
+  .col-md-6,
+  article,
+  section {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    border: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* 2. Text elements must be printed in solid black */
+  h1, h2, h3, h4, h5, h6,
+  p, span, li, a, strong,
+  .text-light, .text-white, .clipped-text, .text-muted {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    background: none !important;
+  }
+
+  /* 3. Hide non-printable elements */
+  header,
+  .navbar,
+  .premium-hamburger,
+  .back,
+  .parallax-section-banner,
+  .parallax-overlay,
+  .scroll-indicator,
+  .offcanvas,
+  .offcanvas-backdrop,
+  .privacy-banner,
+  #privacyConsent,
+  .d-print-none,
+  .print-button,
+  .round-btn,
+  .btn,
+  .btn-outline-primary,
+  .icon-box i {
+    display: none !important;
+  }
+
+  /* 4. Page layout adjustments for printing */
+  .page_container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .about-page {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .about-section-body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .glass-card {
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  /* 5. Contact card layout in print */
+  .contact-info,
+  .opening-hours {
+    width: 100% !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .opening-hours li {
+    border-bottom: 1px dashed #cccccc !important;
+  }
+}
+
 
 
 
