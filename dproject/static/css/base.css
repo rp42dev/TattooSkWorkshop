@@ -95,6 +95,7 @@ p, span, li {
   height: 4rem !important;
   border-radius: 50%;
   font-size: 1.5rem;
+  flex-shrink: 0 !important;
 }
 
 .masthead h1.heading {
