@@ -98,6 +98,17 @@ p, span, li {
   flex-shrink: 0 !important;
 }
 
+@media (max-width: 490px) {
+  .social {
+    gap: 0.75rem !important;
+  }
+  .social a {
+    width: 2.8rem !important;
+    height: 2.8rem !important;
+    font-size: 1.1rem !important;
+  }
+}
+
 .masthead h1.heading {
   font-size: clamp(4rem, 15vw, 10rem); /* Significantly larger */
   text-shadow: 0 10px 30px rgba(0,0,0,0.8);
