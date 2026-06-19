@@ -8993,12 +8993,13 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   object-fit: cover;
+  filter: brightness(0.65) contrast(1.15) saturate(0.95);
 }
 
 .masthead .overlay {
-  background: radial-gradient(circle, transparent 0%, var(--bs-secondary) 100%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, var(--bs-secondary) 100%);
   position: absolute;
-  opacity: 0.7;
+  opacity: 0.85;
   height: 100vh;
   width: 100vw;
   z-index: 2;
