@@ -2,22 +2,26 @@
 {% load i18n %}
 
 {% block content %}
-<table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:640px; width:100%;">
-  <tr>
-    <td align="left" valign="top" style="padding:10px;">
-      {% block salutation %}
-      <h3>{{subject}}</h3>
-      {% endblock salutation %}
-      <h4>
-        Contact Details:
-      </h4>
-      Email: {{ email }} <br />
-      Phone: {{ phone }}
-      <h4>
-        Message:
-      </h4>
-      <p style="color: #d3dbdf;">{{message}}</p>
-    </td>
-  </tr>
-</table>
+{% block salutation %}
+<h3 style="color:#D4AF37; font-size: 20px; font-weight: bold; margin-bottom: 15px;">
+  {{ subject }}
+</h3>
+{% endblock salutation %}
+
+<h4 style="color:#D4AF37; font-size: 16px; font-weight: bold; margin: 20px 0 10px 0;">
+  {% trans 'Contact Details' %}:
+</h4>
+<p style="color:#E0E0E0; font-size: 15px; margin: 0 0 5px 0;">
+  <strong style="color: #A68A2D;">{% trans 'Email' %}:</strong> {{ email }}
+</p>
+<p style="color:#E0E0E0; font-size: 15px; margin: 0 0 20px 0;">
+  <strong style="color: #A68A2D;">{% trans 'Phone' %}:</strong> {{ phone }}
+</p>
+
+<h4 style="color:#D4AF37; font-size: 16px; font-weight: bold; margin: 20px 0 10px 0;">
+  {% trans 'Message' %}:
+</h4>
+<div style="background-color: #050809; border-left: 3px solid #D4AF37; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+  <p style="color: #C0C0C0; font-size: 15px; line-height: 1.6; margin: 0; white-space: pre-wrap;">{{ message }}</p>
+</div>
 {% endblock %}
