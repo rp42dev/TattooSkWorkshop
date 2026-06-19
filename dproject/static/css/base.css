@@ -11365,7 +11365,9 @@ html::-webkit-scrollbar-thumb {
 /* Bottom Override for Mobile Breakpoint 490px */
 @media (max-width: 490px) {
   .social {
-    gap: 0.6rem !important;
+    justify-content: space-between !important;
+    padding: 0 3px !important;
+    gap: 0 !important;
   }
   .social a {
     width: 2.3rem !important;
