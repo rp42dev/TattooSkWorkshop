@@ -1,60 +1,64 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
-
 {% get_available_languages as languages %}
 
 {% for lang_code, lang_name in languages %}
-{% language lang_code %}
-<a href="{% url 'home' %}" title="{% if lang_code == 'no' %}Switch to Norwegian{% else %}Switch to English{% endif %}" class="flag-btn-custom {% if LANGUAGE_CODE == lang_code %}d-none{% else %}d-inline-flex{% endif %}">
-  {% if lang_code == 'no'%}
-  <!-- Premium Custom Circular Norway SVG Flag -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 16" width="32" height="32" class="custom-flag-svg">
-    <defs>
-      <clipPath id="circle-no">
-        <circle cx="11" cy="8" r="8" />
-      </clipPath>
-    </defs>
-    <g clip-path="url(#circle-no)">
-      <!-- Red base -->
-      <rect width="22" height="16" fill="#EF2B2D" />
-      <!-- White cross -->
-      <rect x="6" width="4" height="16" fill="#FFFFFF" />
-      <rect y="6" width="22" height="4" fill="#FFFFFF" />
-      <!-- Blue cross -->
-      <rect x="7" width="2" height="16" fill="#002868" />
-      <rect y="7" width="22" height="2" fill="#002868" />
-    </g>
-    <!-- Premium border -->
-    <circle cx="11" cy="8" r="7.6" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="0.8" class="flag-gold-border" />
-  </svg>
-  {% else %}
-  <!-- Premium Custom Circular UK/English SVG Flag -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 15" width="32" height="32" class="custom-flag-svg">
-    <defs>
-      <clipPath id="circle-gb">
-        <circle cx="15" cy="7.5" r="7.5" />
-      </clipPath>
-    </defs>
-    <g clip-path="url(#circle-gb)">
-      <!-- Blue base -->
-      <rect width="30" height="15" fill="#012169" />
-      <!-- Diagonal white saltire -->
-      <line x1="0" y1="0" x2="30" y2="15" stroke="#FFFFFF" stroke-width="3.5" />
-      <line x1="30" y1="0" x2="0" y2="15" stroke="#FFFFFF" stroke-width="3.5" />
-      <!-- Diagonal red saltire -->
-      <line x1="0" y1="0" x2="30" y2="15" stroke="#C8102E" stroke-width="1.2" />
-      <line x1="30" y1="0" x2="0" y2="15" stroke="#C8102E" stroke-width="1.2" />
-      <!-- White cross -->
-      <rect x="12" y="0" width="6" height="15" fill="#FFFFFF" />
-      <rect x="0" y="4.5" width="30" height="6" fill="#FFFFFF" />
-      <!-- Red cross -->
-      <rect x="13.5" y="0" width="3" height="15" fill="#C8102E" />
-      <rect x="0" y="6" width="30" height="3" fill="#C8102E" />
-    </g>
-    <!-- Premium border -->
-    <circle cx="15" cy="7.5" r="7.1" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="0.8" class="flag-gold-border" />
-  </svg>
+  {% if lang_code != LANGUAGE_CODE %}
+  <form action="{% url 'set_language' %}" method="post" class="d-inline-flex">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ request.get_full_path }}">
+    <input name="language" type="hidden" value="{{ lang_code }}">
+    <button type="submit" class="flag-btn-custom d-inline-flex" title="{% if lang_code == 'no' %}Switch to Norwegian{% else %}Switch to English{% endif %}" style="border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.03); padding: 0; outline: none;">
+      {% if lang_code == 'no'%}
+      <!-- Premium Custom Circular Norway SVG Flag -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 16" width="32" height="32" class="custom-flag-svg">
+        <defs>
+          <clipPath id="circle-no">
+            <circle cx="11" cy="8" r="8" />
+          </clipPath>
+        </defs>
+        <g clip-path="url(#circle-no)">
+          <!-- Red base -->
+          <rect width="22" height="16" fill="#EF2B2D" />
+          <!-- White cross -->
+          <rect x="6" width="4" height="16" fill="#FFFFFF" />
+          <rect y="6" width="22" height="4" fill="#FFFFFF" />
+          <!-- Blue cross -->
+          <rect x="7" width="2" height="16" fill="#002868" />
+          <rect y="7" width="22" height="2" fill="#002868" />
+        </g>
+        <!-- Premium border -->
+        <circle cx="11" cy="8" r="7.6" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="0.8" class="flag-gold-border" />
+      </svg>
+      {% else %}
+      <!-- Premium Custom Circular UK/English SVG Flag -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 15" width="32" height="32" class="custom-flag-svg">
+        <defs>
+          <clipPath id="circle-gb">
+            <circle cx="15" cy="7.5" r="7.5" />
+          </clipPath>
+        </defs>
+        <g clip-path="url(#circle-gb)">
+          <!-- Blue base -->
+          <rect width="30" height="15" fill="#012169" />
+          <!-- Diagonal white saltire -->
+          <line x1="0" y1="0" x2="30" y2="15" stroke="#FFFFFF" stroke-width="3.5" />
+          <line x1="30" y1="0" x2="0" y2="15" stroke="#FFFFFF" stroke-width="3.5" />
+          <!-- Diagonal red saltire -->
+          <line x1="0" y1="0" x2="30" y2="15" stroke="#C8102E" stroke-width="1.2" />
+          <line x1="30" y1="0" x2="0" y2="15" stroke="#C8102E" stroke-width="1.2" />
+          <!-- White cross -->
+          <rect x="12" y="0" width="6" height="15" fill="#FFFFFF" />
+          <rect x="0" y="4.5" width="30" height="6" fill="#FFFFFF" />
+          <!-- Red cross -->
+          <rect x="13.5" y="0" width="3" height="15" fill="#C8102E" />
+          <rect x="0" y="6" width="30" height="3" fill="#C8102E" />
+        </g>
+        <!-- Premium border -->
+        <circle cx="15" cy="7.5" r="7.1" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="0.8" class="flag-gold-border" />
+      </svg>
+      {% endif %}
+    </button>
+  </form>
   {% endif %}
-</a>
-{% endlanguage %}
 {% endfor %}
