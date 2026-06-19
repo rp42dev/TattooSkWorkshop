@@ -18,6 +18,24 @@
         <meta charset="utf-8">
         <meta name="theme-color" content="var(--bs-secondary)">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
+
+        <!-- Multilingual alternate language connections -->
+        {% if LANGUAGE_CODE|slice:":2" == "en" %}
+        <link rel="alternate" hreflang="en" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
+        <link rel="alternate" hreflang="no" href="{{ request.scheme }}://{{ request.get_host }}{% if request.path == '/en' or request.path == '/en/' %}/{% else %}{{ request.path|slice:'3:' }}{% endif %}" />
+        <link rel="alternate" hreflang="x-default" href="{{ request.scheme }}://{{ request.get_host }}{% if request.path == '/en' or request.path == '/en/' %}/{% else %}{{ request.path|slice:'3:' }}{% endif %}" />
+        {% else %}
+        <link rel="alternate" hreflang="no" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
+        <link rel="alternate" hreflang="en" href="{{ request.scheme }}://{{ request.get_host }}/en{{ request.path }}" />
+        <link rel="alternate" hreflang="x-default" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}" />
+        {% endif %}
+
+        <!-- Open Graph Locale Details -->
+        <meta property="og:locale" content="{% if LANGUAGE_CODE|slice:':2' == 'en' %}en_GB{% else %}nb_NO{% endif %}" />
+        <meta property="og:locale:alternate" content="{% if LANGUAGE_CODE|slice:':2' == 'en' %}nb_NO{% else %}en_GB{% endif %}" />
         {% endblock %}
         
         {% block extra_meta %}
@@ -49,6 +67,63 @@
 
         {% block extra_js %}
         {% endblock %}
+
+        <!-- Structured Data (Schema.org / JSON-LD) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "TattooParlor",
+          "name": "Tattoo SK Workshop",
+          "alternateName": "Andrejs Tattoo",
+          "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'images/og-image.png' %}",
+          "@id": "{{ request.scheme }}://{{ request.get_host }}/",
+          "url": "{{ request.scheme }}://{{ request.get_host }}/",
+          "telephone": "+4792500819",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Fetveien 467",
+            "addressLocality": "Fetsund",
+            "postalCode": "1900",
+            "addressCountry": "NO"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 59.9257,
+            "longitude": 11.1685
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "17:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "10:00",
+              "closes": "16:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Sunday",
+              "opens": "12:00",
+              "closes": "15:00"
+            }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/tattooskworkshop",
+            "https://www.instagram.com/tattooskworkshop"
+          ]
+        }
+        </script>
     </head>
 
     <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
