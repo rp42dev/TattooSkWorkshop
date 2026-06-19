@@ -58,6 +58,46 @@ class Album(models.Model):
 
 
 
+    def _build_seo_strings(self):
+        """Return (title_en, desc_en, title_no, desc_no) generated from album data."""
+        name = self.name or 'Tattoo'
+        artist_name = self.artist.name if self.artist else 'Andrejs Baranovs'
+
+        title_en = f"{name} – Andrejs Tattoo | Custom Tattoo Lillestrøm"
+        desc_en  = (
+            f"Custom tattoo '{name}' by {artist_name} at Andrejs Tattoo in "
+            f"Lillestrøm, Norway. Quality tattoos, coverups and unique designs. Book today!"
+        )
+
+        title_no = f"{name} – Andrejs Tattoo | Tilpasset tatovering Lillestrøm"
+        desc_no  = (
+            f"Tilpasset tatovering '{name}' av {artist_name} på Andrejs Tattoo i "
+            f"Lillestrøm, Norge. Kvalitetstatoveringer, coverups og unike design. Bestill i dag!"
+        )
+        # Clamp descriptions to 160 chars (meta description limit)
+        return title_en[:200], desc_en[:160], title_no[:200], desc_no[:160]
+
+    def save(self, *args, **kwargs):
+        """Auto-create or update the linked Seo record on every save."""
+        from home.models import Seo as SeoModel
+        title_en, desc_en, title_no, desc_no = self._build_seo_strings()
+
+        if self.seo_id:
+            # Update existing linked Seo record
+            SeoModel.objects.filter(pk=self.seo_id).update(
+                title_en=title_en, description_en=desc_en,
+                title_no=title_no,  description_no=desc_no,
+            )
+        else:
+            # Create a fresh Seo record and link it
+            seo = SeoModel.objects.create(
+                title_en=title_en, description_en=desc_en,
+                title_no=title_no,  description_no=desc_no,
+            )
+            self.seo = seo
+
+        super().save(*args, **kwargs)
+
     def get_absolute_url(self):
         return reverse("details", kwargs={"artist_slug": self.artist.slug, "slug": self.slug})
 
