@@ -8,7 +8,7 @@
 
 <html lang="{{ LANGUAGE_CODE }}">
     <head>
-        <title>{% block extra_title %}Tattoo Sk Workshop | {% translate 'Quality Tattoos and tattoo coverups Lillestrøm' %}{% endblock %}</title>
+        <title>{% block extra_title %}Andrejs Tattoo | {% translate 'Quality Tattoos and tattoo coverups Lillestrøm' %}{% endblock %}</title>
 
         {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,7 +73,7 @@
         {
           "@context": "https://schema.org",
           "@type": "TattooParlor",
-          "name": "Tattoo SK Workshop",
+          "name": "Andrejs Tattoo",
           "alternateName": "Andrejs Tattoo",
           "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'images/og-image.png' %}",
           "@id": "{{ request.scheme }}://{{ request.get_host }}/",

@@ -82,7 +82,7 @@ class ContactEmailView(FormView):
             mail.send()
 
             # Send Auto-reply to User
-            reply_subject = _('Auto-reply from Tattoo SK Workshop - Thank you for your message')
+            reply_subject = _('Auto-reply from Andrejs Tattoo - Thank you for your message')
             reply = EmailMultiAlternatives(reply_subject, from_email=to, to=[from_email])
             reply.attach_alternative(render_to_string(reply_body, {'name': name, 'complaint': is_complaint}), 'text/html')
             reply.send()
