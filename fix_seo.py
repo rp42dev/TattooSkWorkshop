@@ -1,7 +1,7 @@
 # One-off script: update all SEO records to reflect the new branding.
 # Run with:  .venv/Scripts/python.exe fix_seo.py
 import os, django
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.local')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.production')
 django.setup()
 
 from home.models import Seo
