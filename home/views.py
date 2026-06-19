@@ -49,6 +49,11 @@ class ContactEmailView(FormView):
     template_name = 'includes/form_snippet.html'
 
     def form_valid(self, form):
+        # Honeypot spam protection: silently ignore if 'website' field is populated
+        if form.cleaned_data.get('website'):
+            messages.success(self.request, _('Thank you for your message. We will get back to you as soon as possible.'))
+            return redirect(reverse('contact_form'))
+
         subject = form.cleaned_data.get('subject')
         name = form.cleaned_data.get('name')
         phone = form.cleaned_data.get('phone')

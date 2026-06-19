@@ -11449,6 +11449,11 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
+/* Honeypot Spam Protection Field */
+#div_id_website {
+  display: none !important;
+}
+
 
 
 

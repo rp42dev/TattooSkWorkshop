@@ -17,6 +17,11 @@ class ContactForm(forms.Form):
     )
     image = forms.ImageField(label=_('Image'), required=False)
     confirm_age = forms.BooleanField(label=_('Privacy Policy'), required=True)
+    website = forms.CharField(
+        required=False,
+        label='',
+        widget=forms.TextInput(attrs={'tabindex': '-1', 'autocomplete': 'off'})
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -46,6 +51,19 @@ class ContactForm(forms.Form):
             )
         except Exception:
             pass
+
+        # Define Layout with hidden honeypot field
+        from crispy_forms.layout import Layout, Field
+        self.helper.layout = Layout(
+            'subject',
+            'name',
+            'email',
+            'phone',
+            'message',
+            'image',
+            'confirm_age',
+            Field('website', wrapper_class='d-none')
+        )
 
     def clean(self):
         cleaned_data = super().clean()
