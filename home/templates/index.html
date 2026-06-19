@@ -13,7 +13,6 @@
 <meta property="og:title" content="{{ page.seo.title }}" />
 <meta property="og:description" content="{{ page.seo.description }}" />
 <meta property="og:url" content="{{ request.build_absolute_uri }}" />
-<meta property="og:locale" content="{% if LANGUAGE_CODE == 'en' %}en_UK{% else %}no_NO{% endif %}" />
 
 {% if page.seo.image %}
 <meta property="og:image" content="{{ request.build_absolute_uri }}{{ page.seo.image.url }}" />
