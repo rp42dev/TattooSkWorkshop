@@ -61,6 +61,18 @@
 <script>
   var form = document.querySelector('.needs-validation')
   form.addEventListener('submit', function (event) {
+    // Inject invalid feedback if not present
+    var ageDiv = document.getElementById('div_id_confirm_age');
+    if (ageDiv && !ageDiv.querySelector('.invalid-feedback')) {
+      var feedback = document.createElement('div');
+      feedback.className = 'invalid-feedback mt-1';
+      feedback.style.color = '#dc3545';
+      feedback.style.fontSize = '0.75rem';
+      var isNo = (document.documentElement.lang === 'no' || window.location.pathname.includes('/no/'));
+      feedback.textContent = isNo ? 'Du må godta personvernerklæringen.' : 'You must accept the privacy policy.';
+      ageDiv.appendChild(feedback);
+    }
+
     if (!form.checkValidity()) {
       htmx.trigger(form, 'htmx:abort')
       event.preventDefault()

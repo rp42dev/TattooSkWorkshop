@@ -47,7 +47,7 @@ class ContactForm(forms.Form):
             url = reverse('page', args=[slug])
             label_text = _('Privacy Policy')
             self.fields['confirm_age'].label = mark_safe(
-                f'<a href="{url}" target="_blank" class="text-decoration-underline text-light">{label_text}</a>'
+                f'<a href="{url}" target="_blank" class="text-decoration-underline text-reset">{label_text}</a>'
             )
         except Exception:
             pass
