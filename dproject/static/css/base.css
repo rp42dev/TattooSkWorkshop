@@ -9547,6 +9547,38 @@ html::-webkit-scrollbar-thumb {
   transform: translateY(-1px);
 }
 
+/* GSO Footer Link Trace Animation */
+.gso-footer-link {
+  position: relative;
+  color: var(--bs-light) !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.gso-footer-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--premium-bronze);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+}
+
+.gso-footer-link:hover {
+  color: var(--premium-bronze) !important;
+}
+
+.gso-footer-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .navbar i {
   color: var(--bs-white);
   font-size: 1.5rem;
