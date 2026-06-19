@@ -5,18 +5,18 @@
 
 {% block extra_title %}
 {% if object.artist == 'andrej'|lower %}
-"{% blocktranslate with name=object.name  trimmed %}Tattoo SK Workshop Fetsund - Tattoo  {{ name }} done by tattoo artist Andjejs Baranovs {% endblocktranslate %}"
+"{% blocktranslate with name=object.name  trimmed %}Tattoo SK Workshop Lillestrøm - Tattoo  {{ name }} done by tattoo artist Andjejs Baranovs {% endblocktranslate %}"
 {% else %}
-"{% blocktranslate with name=object.name trimmed %}Tattoo SK Workshop Fetsund - {{ name }} | Tattoo studio for best quality tattoos {% endblocktranslate %}"
+"{% blocktranslate with name=object.name trimmed %}Tattoo SK Workshop Lillestrøm - {{ name }} | Tattoo studio for best quality tattoos {% endblocktranslate %}"
 {% endif %}
 {% endblock %}
 
 {% block extra_meta %}
 {% if object.artist == 'andrej'|lower %}
-<meta name="description" content="{% blocktranslate with name=object.name trimmed %}Best Quality Tattoos like {{ name }} in Fetsund. Tattoo artist Andjejs Baranovs.{% endblocktranslate %}">
+<meta name="description" content="{% blocktranslate with name=object.name trimmed %}Best Quality Tattoos like {{ name }} in Lillestrøm. Tattoo artist Andjejs Baranovs.{% endblocktranslate %}">
 {% else %}
 <meta name="description"
-  content="{% blocktranslate trimmed %}Ready to be different and unique? ANDREJS TATTOO Workshop is the best tattoo studio in Fetsund. We offer the best quality tattoos.{% endblocktranslate %}">
+  content="{% blocktranslate trimmed %}Ready to be different and unique? ANDREJS TATTOO Workshop is the best tattoo studio in Lillestrøm. We offer the best quality tattoos.{% endblocktranslate %}">
 {% endif %}
 {% endblock %}
 

@@ -3,14 +3,14 @@
 {% load i18n %}
 
 {% block extra_title %} 
-{{artist|title}} {% blocktranslate %}Gallery - Tattoo SK Workshop | Custom tattoo Fetsund {% endblocktranslate %}
+{{artist|title}} {% blocktranslate %}Gallery - Tattoo SK Workshop | Custom tattoo Lillestrøm {% endblocktranslate %}
 {% endblock %}
 
 {% block extra_meta %}
 {% if artist == 'andrej'|lower %}
-<meta name="description" content="{% blocktranslate %}Andrej's gallery of tattoos. Tattoo artist in Fetsund, Norway. We can work together to create a unique Tattoo tattoo design for you.{% endblocktranslate %}">
+<meta name="description" content="{% blocktranslate %}Andrej's gallery of tattoos. Tattoo artist in Lillestrøm, Norway. We can work together to create a unique Tattoo tattoo design for you.{% endblocktranslate %}">
 {% else %}
-<meta name="description" content="{{artist|title}} {% blocktranslate trimmed %}Gallery - We are a tattoo studio in Fetsund, Norway. We do all kinds of tattoos, from small to large. We are located in Fetsund Fetveien.{% endblocktranslate %}">
+<meta name="description" content="{{artist|title}} {% blocktranslate trimmed %}Gallery - We are a tattoo studio in Lillestrøm, Norway. We do all kinds of tattoos, from small to large. We are located in Lillestrøm.{% endblocktranslate %}">
 {% endif %}
 {% endblock %}
 
