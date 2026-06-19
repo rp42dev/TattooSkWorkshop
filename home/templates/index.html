@@ -44,8 +44,7 @@
   </div>
   <div id="videoContainer">
     <video playsinline="playsinline" muted="muted" loop="loop" id="video" autoplay="autoplay" poster="{% static 'video/video-poster.jpg' %}">
-      <source src="{% static 'video/video.mp4' %}" type="video/mp4">
-      <source src="{% static 'video/video.webm' %}" type="video/webm">
+      <!-- Sources will be dynamically loaded via JavaScript based on connection speed and device -->
     </video>
   </div>
   
@@ -64,7 +63,51 @@
 <script>
   $(document).ready(function () {
      if ($(".masthead")[0]) {
-      $('#video').get(0).play();
+      // Adaptive video quality detection (YouTube-style)
+      const videoLowMp4 = "{% static 'video/video-low.mp4' %}";
+      const videoLowWebm = "{% static 'video/video-low.webm' %}";
+      const videoHighMp4 = "{% static 'video/video-high.mp4' %}";
+      const videoHighWebm = "{% static 'video/video-high.webm' %}";
+      
+      const videoElement = document.getElementById('video');
+      let quality = 'low'; // Default to low (mobile / slow)
+      
+      // Determine screen width and connection quality
+      const isLargeScreen = window.innerWidth >= 992;
+      
+      if (isLargeScreen) {
+        quality = 'high'; // Default to high on desktop
+        const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        if (conn) {
+          if (conn.saveData) {
+            quality = 'low';
+          } else {
+            const effectiveType = conn.effectiveType;
+            const downlink = conn.downlink;
+            // Fallback to low quality if connection is slow (3G/2G) or downlink bandwidth is below 1.5 Mbps
+            if (effectiveType === 'slow-2g' || effectiveType === '2g' || effectiveType === '3g' || (downlink && downlink < 1.5)) {
+              quality = 'low';
+            }
+          }
+        }
+      }
+      
+      console.log('Selected background video quality:', quality);
+      
+      const webmSource = document.createElement('source');
+      webmSource.src = quality === 'high' ? videoHighWebm : videoLowWebm;
+      webmSource.type = 'video/webm';
+      
+      const mp4Source = document.createElement('source');
+      mp4Source.src = quality === 'high' ? videoHighMp4 : videoLowMp4;
+      mp4Source.type = 'video/mp4';
+      
+      videoElement.appendChild(webmSource);
+      videoElement.appendChild(mp4Source);
+      videoElement.load();
+      videoElement.play().catch(function(error) {
+        console.log("Video autoplay was prevented or failed:", error);
+      });
 
       let isScrolling = false;
       window.addEventListener('wheel', function(e) {
