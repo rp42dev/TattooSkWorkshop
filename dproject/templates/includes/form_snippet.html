@@ -18,22 +18,17 @@
 </style>
 
 <div id="swap_form" class=" h-100 d-flex flex-column justify-content-between">
-  <div class="offcanvas-header position-relative text-center">
-    <div class="d-flex flex p-3 justify-content-between position-absolute w-100 top-0 start-0">
-      <div>
-        <p>
-          <a hx-get="{% url "contact_form" %}?subject={{btn_text}}" hx-target="#swap_form"
-            hx-swap="innerHTML swap:200ms settle:200ms" hx-trigger="click" class="btn btn-sm  rounded-pill"
-            role="button">{{btn_text}}</a>
-        </p>
-      </div>
-
-      <div class="col-6"></div>
-
-      <div id="close-btn-contact" role="button" class="btn_close col-6 my-auto" data-bs-dismiss="offcanvas"
-        aria-label="Close">
-        <i class="bi bi-x-lg float-end"></i>
-      </div>
+  <div class="offcanvas-header offcanvas-header-custom">
+    <div>
+      <a hx-get="{% url "contact_form" %}?subject={{btn_text}}" hx-target="#swap_form"
+        hx-swap="innerHTML swap:200ms settle:200ms" hx-trigger="click" class="contact-subject-toggle-btn"
+        role="button">{{btn_text}}</a>
+    </div>
+    <div id="close-btn-contact" role="button" class="close-btn-custom" data-bs-dismiss="offcanvas" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="custom-close-svg">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
     </div>
   </div>
 

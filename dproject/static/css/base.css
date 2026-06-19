@@ -9445,6 +9445,108 @@ html::-webkit-scrollbar-thumb {
   -webkit-backdrop-filter: blur(4px);
 }
 
+/* Custom Offcanvas Headers */
+.offcanvas-header-custom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+/* Custom Close Button */
+.close-btn-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--bs-light) !important;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  padding: 0;
+}
+
+.close-btn-custom:hover {
+  color: var(--premium-bronze) !important;
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--premium-bronze);
+  transform: rotate(90deg) scale(1.05);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.close-btn-custom svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2;
+}
+
+/* Custom Flag Selector Button */
+.flag-btn-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.flag-btn-custom:hover {
+  border-color: var(--premium-bronze);
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.flag-btn-custom svg {
+  width: 28px;
+  height: 28px;
+  transition: all 0.3s ease;
+}
+
+.flag-btn-custom:hover svg .flag-gold-border {
+  stroke: var(--premium-bronze);
+  stroke-width: 1.2px;
+}
+
+/* Custom Subject Toggle Button for Contact Drawer */
+.contact-subject-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  font-family: var(--bs-headings-font-family);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--premium-bronze) !important;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none !important;
+}
+
+.contact-subject-toggle-btn:hover {
+  color: var(--bs-black) !important;
+  background: var(--premium-bronze);
+  border-color: var(--premium-bronze);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  transform: translateY(-1px);
+}
+
 .navbar i {
   color: var(--bs-white);
   font-size: 1.5rem;
