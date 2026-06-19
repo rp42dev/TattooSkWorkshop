@@ -110,6 +110,11 @@
 
       let isScrolling = false;
       window.addEventListener('wheel', function(e) {
+        // Do not trigger navigation if any offcanvas or modal is currently open
+        if (document.querySelector('.offcanvas.show') || document.querySelector('.modal.show') || document.body.classList.contains('modal-open')) {
+          return;
+        }
+
         if (e.deltaY > 0 && !isScrolling) {
           isScrolling = true;
           // Cinematic fade out
@@ -136,6 +141,11 @@
 
         let diffX = touchstartX - touchendX;
         let diffY = touchstartY - touchendY;
+
+        // Do not trigger navigation if any offcanvas or modal is currently open
+        if (document.querySelector('.offcanvas.show') || document.querySelector('.modal.show') || document.body.classList.contains('modal-open')) {
+          return;
+        }
 
         // diffY > 50 detects swipe up (scroll down)
         // diffX > 50 detects swipe left (page turn forward)
