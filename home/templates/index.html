@@ -50,7 +50,7 @@
   
   <!-- Scroll Indicator -->
   <a href="{% url 'about' %}" class="scroll-indicator text-decoration-none">
-    <span>{% trans "Explore" %}</span>
+    <span>{% if LANGUAGE_CODE|slice:":2" == "en" %}Explore{% else %}Utforsk{% endif %}</span>
     <div class="mouse">
       <div class="wheel"></div>
     </div>
