@@ -2,26 +2,55 @@
 {% load i18n %}
 
 {% block content %}
-{% block salutation %}
-<h3 style="color:#D4AF37; font-size: 20px; font-weight: bold; margin-bottom: 15px;">
-  {{ subject }}
-</h3>
-{% endblock salutation %}
+<!-- Subject / Title -->
+<div style="text-align: center; margin-bottom: 28px;">
+  <div style="display: inline-block; background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05)); border: 1px solid rgba(212,175,55,0.4); border-radius: 8px; padding: 12px 24px;">
+    <h3 style="margin: 0; font-family:'Outfit','Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 19px; font-weight: 800; letter-spacing: 0.08em; color: #D4AF37; text-transform: uppercase;">
+      {{ subject }}
+    </h3>
+  </div>
+</div>
 
-<h4 style="color:#D4AF37; font-size: 16px; font-weight: bold; margin: 20px 0 10px 0;">
-  {% trans 'Contact Details' %}:
-</h4>
-<p style="color:#E0E0E0; font-size: 15px; margin: 0 0 5px 0;">
-  <strong style="color: #A68A2D;">{% trans 'Email' %}:</strong> {{ email }}
-</p>
-<p style="color:#E0E0E0; font-size: 15px; margin: 0 0 20px 0;">
-  <strong style="color: #A68A2D;">{% trans 'Phone' %}:</strong> {{ phone }}
-</p>
+<!-- Contact Details -->
+<table width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 24px; background: rgba(255,255,255,0.03); border: 1px solid rgba(212,175,55,0.2); border-radius: 8px; overflow: hidden;">
+  <tr>
+    <td style="padding: 0;">
+      <div style="height: 2px; background: linear-gradient(90deg, #B8860B, #FFD700, #B8860B);"></div>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 18px 20px;">
+      <h4 style="margin: 0 0 12px 0; font-family:'Outfit',Helvetica,Arial,sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: #D4AF37;">
+        ▸ {% trans 'Contact Details' %}
+      </h4>
+      <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td style="padding: 4px 0;">
+            <span style="font-family:'Inter',Helvetica,Arial,sans-serif; font-size: 13px; color: #7A6A30; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">{% trans 'Email' %}</span>
+          </td>
+          <td style="padding: 4px 0; font-family:'Inter',Helvetica,Arial,sans-serif; font-size: 14px; color: #E0E0E0;">
+            {{ email }}
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 4px 0;">
+            <span style="font-family:'Inter',Helvetica,Arial,sans-serif; font-size: 13px; color: #7A6A30; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">{% trans 'Phone' %}</span>
+          </td>
+          <td style="padding: 4px 0; font-family:'Inter',Helvetica,Arial,sans-serif; font-size: 14px; color: #E0E0E0;">
+            {{ phone }}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 
-<h4 style="color:#D4AF37; font-size: 16px; font-weight: bold; margin: 20px 0 10px 0;">
-  {% trans 'Message' %}:
+<!-- Message -->
+<h4 style="margin: 0 0 10px 0; font-family:'Outfit',Helvetica,Arial,sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: #D4AF37;">
+  ▸ {% trans 'Message' %}
 </h4>
-<div style="background-color: #050809; border-left: 3px solid #D4AF37; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
-  <p style="color: #C0C0C0; font-size: 15px; line-height: 1.6; margin: 0; white-space: pre-wrap;">{{ message }}</p>
+<div style="background: #060809; border-left: 3px solid #D4AF37; border-radius: 0 6px 6px 0; padding: 18px 20px; position: relative;">
+  <div style="font-size: 36px; line-height: 1; color: rgba(212,175,55,0.15); font-family: Georgia, serif; margin-bottom: -10px;">&ldquo;</div>
+  <p style="font-family:'Inter',Helvetica,Arial,sans-serif; color: #C8C8C8; font-size: 15px; line-height: 1.75; margin: 0; white-space: pre-wrap;">{{ message }}</p>
 </div>
 {% endblock %}

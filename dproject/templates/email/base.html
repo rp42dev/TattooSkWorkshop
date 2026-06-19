@@ -10,52 +10,37 @@
   <title>Andrejs Tattoo</title>
 
   <style type="text/css">
-    /* CLIENT-SPECIFIC STYLES */
-    body,
-    table,
-    td,
-    a {
+    body, table, td, a {
       -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
     }
-
-    table,
-    td {
+    table, td {
       mso-table-lspace: 0pt;
       mso-table-rspace: 0pt;
     }
-
-    /* RESET STYLES */
     a {
       text-decoration: none;
       color: #D4AF37 !important;
     }
-
     table {
       border-collapse: collapse !important;
     }
-
     body {
       margin: 0 !important;
       padding: 0 !important;
       width: 100% !important;
-      background-color: #0A0A0A !important;
+      background-color: #080A0C !important;
     }
-
-    /* TYPOGRAPHY */
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Outfit', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-weight: bold;
       margin-top: 0;
     }
-
     p, span, td {
       font-family: 'Inter', Helvetica, Arial, sans-serif;
       font-size: 15px;
       line-height: 1.6;
     }
-
-    /* iOS BLUE LINKS */
     a[x-apple-data-detectors] {
       color: inherit !important;
       text-decoration: none !important;
@@ -64,19 +49,12 @@
       font-weight: inherit !important;
       line-height: inherit !important;
     }
-
-    /* ANDROID CENTER FIX */
     div[style*="margin: 16px 0;"] {
       margin: 0 !important;
     }
-
     @media screen and (max-width: 640px) {
-      .responsive-table {
-        width: 100% !important;
-      }
-      .responsive-padding {
-        padding: 15px !important;
-      }
+      .responsive-table { width: 100% !important; }
+      .responsive-padding { padding: 15px !important; }
       .two-col-stack {
         display: block !important;
         width: 100% !important;
@@ -88,89 +66,86 @@
   </style>
 </head>
 
-<body style="margin:0; padding:0; background-color:#0A0A0A; color:#E0E0E0;">
-  <center style="width: 100%; background-color: #0A0A0A; padding-top: 40px; padding-bottom: 40px;">
-    <!-- Outer Card Container -->
-    <div class="responsive-table" style="background-color:#0C1214; max-width: 640px; margin: 0 auto; color: #E0E0E0; border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 12px; overflow: hidden; padding-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-      
-      <!-- Brand Header -->
-      <table class="responsive-table" width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="width: 100%;">
+<body style="margin:0; padding:0; background-color:#080A0C; color:#E0E0E0;">
+  <center style="width: 100%; background-color: #080A0C; padding: 40px 0;">
+
+    <!-- Outer wrapper -->
+    <div class="responsive-table" style="max-width: 640px; margin: 0 auto;">
+
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- HERO HEADER                                 -->
+      <!-- ═══════════════════════════════════════════ -->
+      <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="width:100%; border-radius: 16px 16px 0 0; overflow: hidden; background: linear-gradient(135deg, #0D0D0D 0%, #1A1200 50%, #0D0D0D 100%); border: 1px solid rgba(212,175,55,0.35); border-bottom: none;">
         <tr>
-          <td align="center" valign="top" style="padding: 25px 20px 20px 20px; border-bottom: 1px solid rgba(212, 175, 55, 0.15);">
-            <h2 style="color: #D4AF37; font-size: 24px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">
-              ANDREJS TATTOO WORKSHOP
-            </h2>
+          <td align="center" style="padding: 0;">
+            <!-- Gold top stripe -->
+            <div style="height: 4px; background: linear-gradient(90deg, transparent 0%, #B8860B 20%, #FFD700 50%, #B8860B 80%, transparent 100%);"></div>
+
+            <!-- Decorative header content -->
+            <div style="padding: 40px 30px 30px 30px; text-align: center;">
+              <!-- Ornament row -->
+              <div style="font-size: 22px; letter-spacing: 12px; color: #D4AF37; opacity: 0.6; margin-bottom: 14px;">✦ ✦ ✦</div>
+
+              <!-- Studio name -->
+              <h1 style="margin: 0 0 6px 0; font-family: 'Outfit','Helvetica Neue',Helvetica,Arial,sans-serif; font-size: 28px; font-weight: 900; letter-spacing: 0.18em; text-transform: uppercase; background: linear-gradient(135deg, #C8A84B 0%, #FFD700 40%, #E8C84B 60%, #C8A84B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: #D4AF37;">
+                ANDREJS TATTOO
+              </h1>
+              <p style="margin: 0; font-family: 'Inter',Helvetica,Arial,sans-serif; font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; color: #8A7040;">
+                LILLESTRØM · NORWAY
+              </p>
+
+              <!-- Divider ornament -->
+              <div style="margin: 18px auto 0 auto; width: 180px; height: 1px; background: linear-gradient(90deg, transparent, #D4AF37, transparent);"></div>
+              <div style="margin: 6px auto 0 auto; font-size: 14px; color: #D4AF37; letter-spacing: 4px;">◆</div>
+            </div>
           </td>
         </tr>
       </table>
 
-      <!-- Address / Studio Details Block (Revamped Business Card Style without background image) -->
-      <table class="responsive-table" width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="width: 90%; margin: 25px auto; background-color: #050809; border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 8px;">
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- MAIN CONTENT CARD                           -->
+      <!-- ═══════════════════════════════════════════ -->
+      <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="width:100%; background-color: #0E1215; border-left: 1px solid rgba(212,175,55,0.35); border-right: 1px solid rgba(212,175,55,0.35);">
         <tr>
-          <td class="responsive-padding" style="padding: 25px; text-align: left;">
-            <h3 style="color: #D4AF37; font-size: 18px; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">
-              {% trans 'Tattoo studio' %}
-            </h3>
-            <p style="color: #C0C0C0; font-size: 15px; margin: 0 0 15px 0;">
-              Solheimsgata 1<br>
-              2000 Lillestrøm, Norway
-            </p>
-            <p style="color: #D4AF37; font-size: 15px; font-weight: bold; margin: 0;">
-              Tel: +47 925 00 819
-            </p>
-          </td>
-        </tr>
-      </table>
-
-      <!-- Email Content Block -->
-      <table class="responsive-table" width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="width: 90%; margin: 0 auto 25px auto;">
-        <tr>
-          <td class="responsive-padding" align="left" valign="top" style="padding: 10px 15px; color: #E0E0E0;">
+          <td class="responsive-padding" style="padding: 35px 40px;">
             {% block content %}{% endblock %}
           </td>
         </tr>
       </table>
 
-      <!-- Footer Contact & Info Block (Revamped without background image) -->
-      <table class="responsive-table" width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="width: 90%; margin: 25px auto 0 auto; background-color: #050809; border-top: 2px solid #D4AF37; border-radius: 0 0 8px 8px;">
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- STUDIO INFO STRIP                           -->
+      <!-- ═══════════════════════════════════════════ -->
+      <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="width:100%; background: linear-gradient(135deg, #0A0C0E 0%, #111608 50%, #0A0C0E 100%); border-left: 1px solid rgba(212,175,55,0.35); border-right: 1px solid rgba(212,175,55,0.35);">
         <tr>
-          <td class="responsive-padding" style="padding: 25px; vertical-align: top;">
+          <td style="padding: 0 40px 25px 40px;">
+            <!-- Glowing separator -->
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.6), transparent); margin-bottom: 25px;"></div>
+
             <table width="100%" cellspacing="0" cellpadding="0" border="0">
               <tr>
-                <!-- Column 1: Contact Details -->
-                <td class="two-col-stack" width="280" valign="top" style="padding-right: 20px;">
-                  <h4 style="margin-bottom: 12px; color: #D4AF37; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em;">
-                    {% trans 'Contact' %}:
+                <!-- Studio address -->
+                <td class="two-col-stack" width="50%" valign="top" style="padding-right: 20px;">
+                  <h4 style="margin: 0 0 10px 0; font-family:'Outfit',Helvetica,Arial,sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #D4AF37;">
+                    ▸ {% trans 'Tattoo studio' %}
                   </h4>
-                  <div style="font-size: 14px; color: #C0C0C0; line-height: 1.8;">
-                    <a href="tel:+4792500819" target="_blank" style="color: #E0E0E0; text-decoration: none;">
-                      <span style="color: #D4AF37;">⦿</span> +47 925 00 819
-                    </a><br>
-                    <a href="mailto:info@andrejstattoo.no" target="_blank" style="color: #E0E0E0; text-decoration: none;">
-                      <span style="color: #D4AF37;">⦿</span> info@andrejstattoo.no
-                    </a><br>
-                    <a href="https://tattooskworkshop.no/" target="_blank" style="color: #D4AF37; text-decoration: none; font-weight: bold;">
-                      <span style="color: #D4AF37;">⦿</span> tattooskworkshop.no
-                    </a><br>
-                    <a href="https://www.facebook.com/andrejstattoo" target="_blank" style="color: #E0E0E0; text-decoration: none;">
-                      <span style="color: #D4AF37;">⦿</span> Facebook
-                    </a><br>
-                    <a href="https://www.instagram.com/andrejstattoo/" target="_blank" style="color: #E0E0E0; text-decoration: none;">
-                      <span style="color: #D4AF37;">⦿</span> Instagram
-                    </a>
-                  </div>
+                  <p style="margin: 0; font-size: 13px; color: #A0A0A0; line-height: 1.7;">
+                    Solheimsgata 1<br>
+                    2000 Lillestrøm, Norway<br>
+                    <span style="color: #D4AF37; font-weight: bold;">+47 925 00 819</span>
+                  </p>
                 </td>
-                
-                <!-- Column 2: Opening Hours -->
-                <td class="two-col-stack" width="280" valign="top">
-                  <h4 style="margin-bottom: 12px; color: #D4AF37; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em;">
-                    {% trans 'Opening hours' %}:
+
+                <!-- Opening hours -->
+                <td class="two-col-stack" width="50%" valign="top">
+                  <h4 style="margin: 0 0 10px 0; font-family:'Outfit',Helvetica,Arial,sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #D4AF37;">
+                    ▸ {% trans 'Opening hours' %}
                   </h4>
-                  <div style="font-size: 14px; color: #C0C0C0; line-height: 1.8;">
-                    <span style="color: #D4AF37;">⦿</span> {% trans 'Monday - Friday' %}: 9:00 - 17:00<br>
-                    <span style="color: #D4AF37;">⦿</span> {% trans 'Saturday' %}: 10:00 - 16:00<br>
-                    <span style="color: #D4AF37;">⦿</span> {% trans 'Sunday' %}: 12:00 - 15:00
-                  </div>
+                  <p style="margin: 0; font-size: 13px; color: #A0A0A0; line-height: 1.7;">
+                    {% trans 'Monday - Friday' %}: <span style="color: #E0E0E0;">9:00 – 17:00</span><br>
+                    {% trans 'Saturday' %}: <span style="color: #E0E0E0;">10:00 – 16:00</span><br>
+                    {% trans 'Sunday' %}: <span style="color: #E0E0E0;">12:00 – 15:00</span>
+                  </p>
                 </td>
               </tr>
             </table>
@@ -178,11 +153,71 @@
         </tr>
       </table>
 
-      <!-- Small Footer Copyright -->
-      <table class="responsive-table" width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="width: 90%; margin-top: 15px;">
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- FOOTER                                      -->
+      <!-- ═══════════════════════════════════════════ -->
+      <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="width:100%; background: linear-gradient(135deg, #0C0E10 0%, #13100A 50%, #0C0E10 100%); border-radius: 0 0 16px 16px; overflow: hidden; border: 1px solid rgba(212,175,55,0.35); border-top: none;">
         <tr>
-          <td align="center" style="font-size: 12px; color: #7D7D7D; padding: 10px;">
-            &copy; {% trans "Andrejs Tattoo Workshop. All rights reserved." %}
+          <td style="padding: 25px 40px;">
+
+            <!-- Gold glow divider -->
+            <div style="height: 2px; background: linear-gradient(90deg, transparent 0%, #B8860B 20%, #FFD700 50%, #B8860B 80%, transparent 100%); margin-bottom: 22px; border-radius: 2px;"></div>
+
+            <!-- Contact links row -->
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tr>
+                <td align="center">
+                  <table cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                      <!-- Phone -->
+                      <td style="padding: 0 10px;">
+                        <a href="tel:+4792500819" target="_blank" style="display:inline-block; font-family:'Inter',Helvetica,Arial,sans-serif; font-size: 12px; font-weight: 600; color: #C0C0C0 !important; text-decoration: none; letter-spacing: 0.05em;">
+                          <span style="color: #D4AF37;">📞</span>&nbsp;+47 925 00 819
+                        </a>
+                      </td>
+                      <!-- Dot separator -->
+                      <td style="color: rgba(212,175,55,0.4); font-size: 16px; padding: 0 4px;">·</td>
+                      <!-- Email -->
+                      <td style="padding: 0 10px;">
+                        <a href="mailto:info@andrejstattoo.no" target="_blank" style="display:inline-block; font-family:'Inter',Helvetica,Arial,sans-serif; font-size: 12px; font-weight: 600; color: #C0C0C0 !important; text-decoration: none; letter-spacing: 0.05em;">
+                          <span style="color: #D4AF37;">✉</span>&nbsp;info@andrejstattoo.no
+                        </a>
+                      </td>
+                      <!-- Dot separator -->
+                      <td style="color: rgba(212,175,55,0.4); font-size: 16px; padding: 0 4px;">·</td>
+                      <!-- Website -->
+                      <td style="padding: 0 10px;">
+                        <a href="https://andrejstattoo.no/" target="_blank" style="display:inline-block; font-family:'Inter',Helvetica,Arial,sans-serif; font-size: 12px; font-weight: 700; color: #D4AF37 !important; text-decoration: none; letter-spacing: 0.05em;">
+                          <span style="color: #D4AF37;">🌐</span>&nbsp;andrejstattoo.no
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Social row -->
+            <table width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top: 16px;">
+              <tr>
+                <td align="center">
+                  <a href="https://www.instagram.com/andrejstattoo/" target="_blank" style="display:inline-block; margin: 0 8px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3); border-radius: 20px; padding: 5px 16px; font-family:'Inter',Helvetica,Arial,sans-serif; font-size: 12px; color: #D4AF37 !important; text-decoration: none; font-weight: 600; letter-spacing: 0.05em;">
+                    Instagram
+                  </a>
+                  <a href="https://www.facebook.com/andrejstattoo" target="_blank" style="display:inline-block; margin: 0 8px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3); border-radius: 20px; padding: 5px 16px; font-family:'Inter',Helvetica,Arial,sans-serif; font-size: 12px; color: #D4AF37 !important; text-decoration: none; font-weight: 600; letter-spacing: 0.05em;">
+                    Facebook
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Copyright -->
+            <p style="margin: 20px 0 0 0; text-align: center; font-family:'Inter',Helvetica,Arial,sans-serif; font-size: 11px; color: #4A4A4A; letter-spacing: 0.05em;">
+              &copy; {% trans "Andrejs Tattoo. All rights reserved." %}
+            </p>
+
+            <!-- Bottom gold stripe -->
+            <div style="height: 3px; background: linear-gradient(90deg, transparent 0%, #B8860B 20%, #FFD700 50%, #B8860B 80%, transparent 100%); margin-top: 18px; border-radius: 2px;"></div>
           </td>
         </tr>
       </table>

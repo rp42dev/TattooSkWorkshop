@@ -121,11 +121,8 @@ msgid ""
 msgstr ""
 "Vi har mottatt meldingen din og vil komme tilbake til deg så snart som mulig."
 
-#: .\templates\email\reply_body.html:24
-#, fuzzy
-#| msgid "The Tattoo Sk Workshop team"
-msgid "The ANDREJS TATTOO Workshop team"
-msgstr "Tattoo Sk Workshop teamet"
+msgid "The Andrejs Tattoo Team"
+msgstr "Andrejs Tattoo teamet"
 
 #: .\templates\includes\contact_card.html:4
 msgid "Get in Touch"

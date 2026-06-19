@@ -2,7 +2,7 @@
 
 ![banner](README-files/Capture.jpg)
 
-## [View the live project here.](https://tattooskworkshop.no/)
+## [View the live project here.](https://andrejstattoo.no/)
 
 # [&#8686;](#TATTOO-SK-WORKSHOP)
 
@@ -15,7 +15,7 @@ The website is translated into two languages English and Norwegian.
 The website is designed to be easy to navigate and to locate information about products and services.
 
 Github repository: https://github.com/rp42dev/TattooSkWorkshop
-Live Site: https://tattooskworkshop.no
+Live Site: https://andrejstattoo.no
 
 Main Technologies: HTML, CSS, JavaScript, Python+Django, Nginx, HTMX
 
